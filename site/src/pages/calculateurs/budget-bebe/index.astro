@@ -31,7 +31,7 @@ const breadcrumbs = jsonLdBreadcrumbs([
       </h1>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p>Le **coût d'un bébé la première année** en France : entre **8 000 € et 12 000 €** selon le mode de garde et l'équipement. Postes principaux : **garde (4 000 à 8 000 €)**, équipement initial (1 500 à 2 500 €), couches/lait/repas (1 200 à 1 800 €), santé (300 à 600 € reste à charge), vêtements (400 à 800 €). **Aides CAF** : prime à la naissance ~1 000 €, allocation de base ~190 €/mois, complément de garde 200-700 €/mois selon revenus et mode de garde.</p>
+        <p set:html={`Le <strong>coût d'un bébé la première année</strong> en France : entre <strong>8 000 € et 12 000 €</strong> selon le mode de garde et l'équipement. Postes principaux : garde (4 000 à 8 000 €), équipement initial (1 500 à 2 500 €), couches/lait/repas (1 200 à 1 800 €), santé (300 à 600 € reste à charge), vêtements (400 à 800 €). <strong>Aides CAF</strong> : prime à la naissance ~1 000 €, allocation de base ~190 €/mois, complément de garde 200-700 €/mois selon revenus et mode de garde.`} />
       </aside>
     </div>
   </section>
@@ -44,7 +44,7 @@ const breadcrumbs = jsonLdBreadcrumbs([
         <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
           Le calculateur arrive.
         </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur par mode de garde et revenus arrive. En attendant, sache que le **mode de garde fait varier le coût du simple au double**.</p>
+        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur par mode de garde et revenus arrive. En attendant, sache que le mode de garde fait varier le coût du simple au double.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
             Essayer le budget mensuel

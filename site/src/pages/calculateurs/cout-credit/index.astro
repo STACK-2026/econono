@@ -31,7 +31,7 @@ const breadcrumbs = jsonLdBreadcrumbs([
       </h1>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p>Le **coût total d'un crédit** = (mensualité × nombre de mensualités) , capital emprunté + assurance emprunteur. Pour un crédit de 200 000 € sur 20 ans à 3,5% avec assurance à 0,3%, le coût total des intérêts est de **~78 000 €** + ~12 000 € d'assurance = **90 000 € de surcoût** vs. capital emprunté.</p>
+        <p set:html={`Le <strong>coût total d'un crédit</strong> = (mensualité × nombre de mensualités) , capital emprunté + assurance emprunteur. Pour un crédit de 200 000 € sur 20 ans à 3,5% avec assurance à 0,3%, le coût total des intérêts est de ~<strong>78 000 €</strong> + ~12 000 € d'assurance = <strong>90 000 € de surcoût</strong> vs capital emprunté.`} />
       </aside>
     </div>
   </section>

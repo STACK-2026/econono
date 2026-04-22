@@ -1,0 +1,176 @@
+{
+  "plan_version": "v1",
+  "created_at": "2026-04-23",
+  "rules": {
+    "scheduling": "1-3 par jour, heure aléatoire 7h-9h Europe/Paris",
+    "pipeline": "serp_brief Gemini → Mistral large draft → Claude Sonnet audit → Mistral fix",
+    "standards": "3500+ mots si pillar, 1800-2500 si spoke, TL;DR data-speakable, FAQ 5+, Sources 5+, 10+ liens internes, 5+ liens externes autorité, 0 tiret cadratin"
+  },
+  "articles": [
+    {
+      "slug": "smic-net-2026-combien-touche-on-vraiment",
+      "scheduled_date": "2026-04-23",
+      "category": "decryptage",
+      "pillar": "/guides/comment-gerer-son-budget-mensuel/",
+      "cluster": "smic-revalorisation, smic-mensuel, salaire-minimum-france",
+      "target_keyword": "smic net 2026",
+      "working_title": "SMIC net 2026 : combien touche-t-on vraiment chaque mois ?",
+      "intent": "informational",
+      "angle": "Réponse factuelle dès la 1ère phrase (1 443 € net), puis détail par profil (CDI, alternance, fonction publique, temps partiel). Comparaison avec coût de la vie par ville. Chiffres officiels Service-Public + INSEE. Quick win SEO : volume 20-50k/mois, concurrence souvent datée 2024-2025."
+    },
+    {
+      "slug": "livret-a-2026-taux-fonctionnement-strategie",
+      "scheduled_date": "2026-04-24",
+      "category": "guide",
+      "pillar": "/guides/comment-epargner-petit-salaire/",
+      "cluster": "lep, ldds, pel, livrets-defiscalises",
+      "target_keyword": "taux livret A 2026",
+      "working_title": "Livret A 2026 : taux à 2,4%, plafond 22 950 €, et ce que tu fais quand il est plein",
+      "intent": "informational",
+      "angle": "Volume fenêtre post-révision février 2026 (8-15k/mois). Réponse directe au taux + plafond. Stratégie pour quand le livret est plein (LEP si éligible, LDDS, assurance vie, PEA). Calculateur intérêts composés en lien."
+    },
+    {
+      "slug": "vivre-avec-1500-euros-par-mois-budget-realiste",
+      "scheduled_date": "2026-04-25",
+      "category": "guide",
+      "pillar": "/guides/comment-gerer-son-budget-mensuel/",
+      "cluster": "vivre-smic, budget-1800, budget-celibataire",
+      "target_keyword": "vivre avec 1500 euros par mois",
+      "working_title": "Vivre avec 1 500 € par mois en 2026 : budget type, ce qui passe, ce qui coince",
+      "intent": "informational",
+      "angle": "Ton complice et empathique (ne pas juger, ne pas idéaliser). Budget type ventilé poste par poste (loyer, courses, transport, loisirs). Comparaison province vs grandes villes vs IDF. Aides à activer (LEP, prime d'activité, APL). 5-12k/mois. Quick win avec quasi aucun concurrent FR moderne."
+    },
+    {
+      "slug": "vivre-avec-2000-euros-par-mois-classe-moyenne-france",
+      "scheduled_date": "2026-04-26",
+      "category": "guide",
+      "pillar": "/guides/comment-gerer-son-budget-mensuel/",
+      "cluster": "budget-1500, budget-2500, classe-moyenne",
+      "target_keyword": "vivre avec 2000 euros par mois",
+      "working_title": "Vivre avec 2 000 € par mois en France : à quoi ça ressemble vraiment ?",
+      "intent": "informational",
+      "angle": "Pendant du précédent. Budget type 2 000 € net (au-dessus de la médiane). Capacité d'épargne réelle (10-15%), poste loisirs, achat immobilier possible ou pas. Quick win comme l'autre."
+    },
+    {
+      "slug": "regle-50-30-20-budget-explication-france-2026",
+      "scheduled_date": "2026-04-27",
+      "category": "guide",
+      "pillar": "/calculateurs/regle-50-30-20/",
+      "cluster": "budget-mensuel, methode-enveloppes, kakebo",
+      "target_keyword": "règle 50 30 20 budget",
+      "working_title": "La règle 50/30/20 expliquée simplement : marche-t-elle vraiment en France ?",
+      "intent": "informational",
+      "angle": "Origine américaine (Elizabeth Warren), application FR avec ses limites (loyer urbain dépasse 30%). Calculs concrets sur SMIC, 2 000 €, 3 000 €, 4 000 €. Lien vers calculateur. Volume 5-15k/mois."
+    },
+    {
+      "slug": "sortir-decouvert-bancaire-plan-30-jours",
+      "scheduled_date": "2026-04-28",
+      "category": "guide",
+      "pillar": "/guides/sortir-decouvert-bancaire/",
+      "cluster": "frais-bancaires, agios, prime-activite",
+      "target_keyword": "sortir du découvert bancaire",
+      "working_title": "Sortir du découvert bancaire : plan d'action concret en 30 jours",
+      "intent": "informational",
+      "angle": "Sans morale, ton solidaire. Étape par étape : audit reste à vivre, identifier les agios, négocier la banque, activer aides oubliées (prime d'activité, LEP, APL), couper abonnements. 5-8k/mois, urgence émotionnelle forte."
+    },
+    {
+      "slug": "comparatif-applications-budget-2026-bankin-linxo-finary-ynab",
+      "scheduled_date": "2026-04-29",
+      "category": "comparatif",
+      "pillar": "/comparatifs/meilleures-applications-budget-2026/",
+      "cluster": "bankin-avis, linxo-avis, finary-avis, ynab-avis, plan-multiply",
+      "target_keyword": "meilleure application budget 2026",
+      "working_title": "Meilleure application de gestion de budget en 2026 : on a testé les 7 principales",
+      "intent": "commercial_investigation",
+      "angle": "Comparatif honnête : Bankin, Linxo, Finary, YNAB, Plan & Multiply, Origin, Spendee. Critères : connexion bancaire ou pas, prix, design, RGPD, méthode enveloppes. Tableau comparatif. Pour chacune : pour qui c'est fait, pour qui ce ne l'est pas. Volume 5-15k/mois."
+    },
+    {
+      "slug": "meilleurs-coachs-budget-france-2026-influenceurs-finance-perso",
+      "scheduled_date": "2026-04-30",
+      "category": "comparatif",
+      "pillar": "/comparatifs/meilleures-applications-budget-2026/",
+      "cluster": "creator-economy-finance, education-financiere",
+      "target_keyword": "meilleur coach budget france",
+      "working_title": "Les meilleurs coachs budget et créateurs finances perso en France 2026 : qui suivre vraiment",
+      "intent": "commercial_investigation",
+      "angle": "Comparatif des créateurs FR (TikTok, YouTube, Instagram, newsletters) qui parlent budget : Heu?reka, Léa Bordier, Naelle Tesfa, Daphné Borel, Mes Allocs Show, Le Coin des Investisseurs, Crystal Coaching. Pour chaque : nombre d'abonnés, méthode, transparence (gratuit/payant/affiliations), public idéal, à éviter si... Critères : sérieux scientifique, indépendance, accessibilité. Format tableau + portraits courts. Volume estimé 1-3k/mois mais excellent pour brand awareness + maillage social."
+    },
+    {
+      "slug": "calculer-reste-a-vivre-formule-officielle-vs-realite",
+      "scheduled_date": "2026-05-01",
+      "category": "guide",
+      "pillar": "/calculateurs/reste-a-vivre/",
+      "cluster": "taux-effort-logement, charges-fixes, banque-de-france",
+      "target_keyword": "calcul reste à vivre",
+      "working_title": "Calcul du reste à vivre : la formule officielle, et ce qu'elle oublie de te dire",
+      "intent": "informational",
+      "angle": "Volume 2-4k/mois. Formule officielle (revenus moins charges fixes), barèmes des banques (~700€ pers seule, 1100€ couple). Mais ce que la formule oublie : variabilité saisonnière, imprévus, qualité de vie subjective. Lien vers calculateur."
+    },
+    {
+      "slug": "smic-2026-revalorisation-janvier-pourcentage-pouvoir-achat",
+      "scheduled_date": "2026-05-02",
+      "category": "actu",
+      "pillar": "/guides/comment-gerer-son-budget-mensuel/",
+      "cluster": "smic-net, salaire-minimum, inflation-2026",
+      "target_keyword": "smic 2026 revalorisation",
+      "working_title": "Revalorisation du SMIC au 1er janvier 2026 : combien tu gagnes en plus chaque mois",
+      "intent": "informational",
+      "angle": "Hauteur exacte de la revalorisation, gain net mensuel concret (ex : +X€/mois), comparaison avec inflation 2025. Limites : seuil prime d'activité, taxation. Volume 3-8k/mois (pic janvier-février)."
+    },
+    {
+      "slug": "lep-livret-epargne-populaire-eligible-comment-ouvrir",
+      "scheduled_date": "2026-05-03",
+      "category": "guide",
+      "pillar": "/guides/comment-epargner-petit-salaire/",
+      "cluster": "livret-a, ldds, plafonds-fiscaux",
+      "target_keyword": "lep livret épargne populaire",
+      "working_title": "LEP en 2026 : 3,5%, 10 000 € de plafond, et pourquoi 1 éligible sur 4 passe à côté",
+      "intent": "informational",
+      "angle": "Conditions d'éligibilité (RFR par parts), procédure d'ouverture, gain annuel concret (350€ sur 10k à 3,5%), comparaison avec livret A. Statistique d'éligibles non-souscripteurs. Volume 4-8k/mois."
+    },
+    {
+      "slug": "taux-endettement-35-pourcent-comment-calculer-banque",
+      "scheduled_date": "2026-05-04",
+      "category": "guide",
+      "pillar": "/calculateurs/taux-endettement/",
+      "cluster": "credit-immobilier, hcsf, capacite-emprunt",
+      "target_keyword": "calcul taux endettement",
+      "working_title": "Taux d'endettement : la règle des 35% expliquée par la banque (et le calcul officiel HCSF)",
+      "intent": "informational",
+      "angle": "Plafond HCSF 35% depuis 2022, calcul exact (mensualités/revenus), 20% de dérogations, conséquences si dépassé. Cas pratiques : peut-on encore emprunter avec déjà un crédit auto ? Volume 8-15k/mois."
+    },
+    {
+      "slug": "budget-courses-couple-france-2026-combien-depenser",
+      "scheduled_date": "2026-05-05",
+      "category": "guide",
+      "pillar": "/calculateurs/budget-courses/",
+      "cluster": "alimentation-france, hard-discount, panier-moyen",
+      "target_keyword": "budget courses couple",
+      "working_title": "Budget courses pour 2 personnes en 2026 : 480 €/mois en moyenne, ce qui change selon les choix",
+      "intent": "informational",
+      "angle": "Données INSEE médiane 480€/mois, ventilation par catégorie, comparaison hard discount vs supermarché vs marché vs bio. Levier d'optimisation. Volume 5-12k/mois."
+    },
+    {
+      "slug": "budget-bebe-premiere-annee-cout-aides-caf-2026",
+      "scheduled_date": "2026-05-06",
+      "category": "guide",
+      "pillar": "/calculateurs/budget-bebe/",
+      "cluster": "prime-naissance, paje, allocation-base, mode-garde",
+      "target_keyword": "budget bébé première année",
+      "working_title": "Combien coûte un bébé la première année en 2026 : entre 8 000 € et 12 000 €, aides CAF déduites",
+      "intent": "informational",
+      "angle": "Détail par poste (équipement, garde, alimentation, santé, vêtements), aides CAF avec barèmes 2026 (prime naissance, allocation de base, complément libre choix), conseil budget en attendant retour de couches. Volume 3-8k/mois."
+    },
+    {
+      "slug": "comparateur-abonnements-streaming-telecom-recuperer-50-euros",
+      "scheduled_date": "2026-05-07",
+      "category": "astuce",
+      "pillar": "/calculateurs/comparateur-abonnements/",
+      "cluster": "netflix-disney-prime, mobile-low-cost, salle-sport",
+      "target_keyword": "réduire abonnements mensuels",
+      "working_title": "Récupère 50 € par mois en auditant tes abonnements : la méthode 30 minutes",
+      "intent": "informational",
+      "angle": "Méthode pratique : audit prélèvements 3 derniers mois, identification doublons (streaming, mobile, salle), négociation, désabonnement. Outils. Volume 3-6k/mois. Très shareable."
+    }
+  ]
+}

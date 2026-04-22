@@ -31,7 +31,7 @@ const breadcrumbs = jsonLdBreadcrumbs([
       </h1>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p>Le **calcul d'épargne avec intérêts composés** est : Capital_final = Capital_initial × (1 + taux)^années + Versements_mensuels × ((1 + taux/12)^(années×12) , 1) / (taux/12). Le **livret A est à 2,4%** en 2026, le **LEP à 3,5%**. Sur 20 ans à 2,4%, 100 €/mois = ~**31 000 €** dont 7 000 € d'intérêts cumulés.</p>
+        <p set:html={`Le <strong>calcul d'épargne avec intérêts composés</strong> : Capital_final = Capital_initial × (1 + taux)^années + Versements_mensuels × ((1 + taux/12)^(années×12) , 1) / (taux/12). Le <strong>livret A est à 2,4%</strong> en 2026, le <strong>LEP à 3,5%</strong>. Sur 20 ans à 2,4%, 100 €/mois = ~<strong>31 000 €</strong> dont 7 000 € d'intérêts cumulés.`} />
       </aside>
     </div>
   </section>
@@ -44,7 +44,7 @@ const breadcrumbs = jsonLdBreadcrumbs([
         <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
           Le calculateur arrive.
         </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le simulateur interactif arrive. En attendant, sache qu'épargner **50 €/mois pendant 10 ans à 2,4%** te donne ~6 800 €.</p>
+        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le simulateur interactif arrive. En attendant, sache qu'épargner 50 €/mois pendant 10 ans à 2,4% te donne ~6 800 €.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
             Essayer le budget mensuel
