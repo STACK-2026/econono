@@ -38,7 +38,7 @@ const faqItems = [
     answer: "C'est une note qui combine 4 critères : ton reste à vivre rapporté à ton revenu, ton taux d'effort logement (idéal sous 30%), ton taux d'épargne (idéal au-dessus de 10%), et la part de tes dépenses contraintes. Plus le score est haut, plus tu as de marge financière.",
   },
   {
-    question: "Vous utilisez la règle 50/30/20 ?",
+    question: "Tu utilises la règle 50/30/20 ?",
     answer: "Oui, on l'utilise comme référence : 50% besoins (logement, courses, transport), 30% envies (loisirs, restos, abonnements), 20% épargne. Mais on sait qu'avec un SMIC à Paris, c'est mathématiquement impossible. Le calculateur te montre ton vrai écart sans te culpabiliser.",
   },
   {
@@ -226,7 +226,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
                 <div class="wax-seal text-[9px]">Résultat</div>
               </div>
               <p class="eyebrow text-xs mb-2">Ton reste à vivre</p>
-              <p class="font-mono font-bold tabular leading-none mb-1" id="result-reste" style="font-family: var(--font-mono); color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">— €</p>
+              <p class="font-mono font-bold tabular leading-none mb-1" id="result-reste" style="font-family: var(--font-mono); color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">· €</p>
               <p class="text-sm text-stone-600 mb-4" id="result-pct">Remplis le formulaire pour voir ton calcul</p>
 
               <div class="h-3 rounded-full overflow-hidden mb-1" style="background: #f5f5f4;">
@@ -243,7 +243,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
             <div class="ticket p-7">
               <p class="eyebrow text-xs mb-2">Score santé budgétaire</p>
               <div class="flex items-baseline gap-2 mb-2">
-                <p class="font-bold tabular leading-none" id="result-score" style="font-family: var(--font-display); color: #0f2419; font-size: 3rem;">—</p>
+                <p class="font-bold tabular leading-none" id="result-score" style="font-family: var(--font-display); color: #0f2419; font-size: 3rem;">-</p>
                 <span class="text-stone-400 text-lg font-mono">/ 100</span>
               </div>
               <p class="text-sm text-stone-600 leading-relaxed" id="result-score-label">Calculé sur 4 critères : reste à vivre, taux logement, taux épargne, dépenses contraintes.</p>
@@ -425,10 +425,10 @@ const faqJsonLd = jsonLdFaq(faqItems);
     const reste = revenus - sortiesTotales;
 
     if (revenus <= 0) {
-      if (elReste) elReste.textContent = "— €";
+      if (elReste) elReste.textContent = "· €";
       if (elPct) elPct.textContent = "Remplis tes revenus pour démarrer.";
       if (elBar) (elBar as HTMLElement).style.width = "0%";
-      if (elScore) elScore.textContent = "—";
+      if (elScore) elScore.textContent = "-";
       if (elScoreLabel) elScoreLabel.textContent = "Calculé sur 4 critères : reste à vivre, taux logement, taux épargne, dépenses contraintes.";
       if (elReco) elReco.innerHTML = '<li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici dès le premier chiffre saisi.</li>';
       return;

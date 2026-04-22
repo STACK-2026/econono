@@ -70,12 +70,12 @@ const breadcrumbs = jsonLdBreadcrumbs([
           <div class="lg:sticky lg:top-24 ticket p-7 relative">
             <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Ton chiffre</div></div>
             <p class="eyebrow text-xs mb-2">Reste à vivre</p>
-            <p id="rav-result" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">— €</p>
+            <p id="rav-result" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">· €</p>
             <p id="rav-label" class="text-sm text-stone-600 mb-5">Remplis le formulaire pour voir ton calcul.</p>
             <div class="pt-4 border-t border-stone-200">
               <p class="text-xs font-mono uppercase tracking-wider text-stone-400 mb-1">Médiane française</p>
               <p class="font-mono font-bold text-stone-700 text-2xl tabular">1 196 €</p>
-              <p id="rav-vs" class="text-sm text-stone-500 mt-1">— vs médiane</p>
+              <p id="rav-vs" class="text-sm text-stone-500 mt-1">· vs médiane</p>
             </div>
           </div>
         </aside>
@@ -125,9 +125,9 @@ const breadcrumbs = jsonLdBreadcrumbs([
     const r = getNum("revenus");
     const charges = getNum("loyer") + getNum("assurances") + getNum("autres");
     if (r <= 0) {
-      if (elResult) elResult.textContent = "— €";
+      if (elResult) elResult.textContent = "· €";
       if (elLabel) elLabel.textContent = "Remplis le formulaire pour voir ton calcul.";
-      if (elVs) elVs.textContent = "— vs médiane";
+      if (elVs) elVs.textContent = "· vs médiane";
       return;
     }
     const rav = r - charges;

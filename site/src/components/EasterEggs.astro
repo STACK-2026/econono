@@ -9,31 +9,24 @@
 <script>
   // Console ASCII Art
   console.log(`
-  ╔═══════════════════════════════════════╗
-  ║                                       ║
-  ║     █████╗ ██████╗  █████╗ ██████╗    ║
-  ║    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗   ║
-  ║    ███████║██║  ██║███████║██████╔╝   ║
-  ║    ██╔══██║██║  ██║██╔══██║██╔═══╝    ║
-  ║    ██║  ██║██████╔╝██║  ██║██║        ║
-  ║    ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝        ║
-  ║                                       ║
-  ║    ████████╗███████╗                  ║
-  ║    ╚══██╔══╝██╔════╝                  ║
-  ║       ██║   █████╗  ═ TOI            ║
-  ║       ██║   ██╔══╝                    ║
-  ║       ██║   ███████╗                  ║
-  ║       ╚═╝   ╚══════╝                  ║
-  ║                                       ║
-  ║   Le média qui te prépare au monde    ║
-  ║   du travail de demain.               ║
-  ║                                       ║
-  ║   https://econono.com              ║
-  ║                                       ║
-  ║   Easter eggs ? Tape : adaptetoi,     ║
-  ║   matrix, disco, gravity, signal 😉   ║
-  ║                                       ║
-  ╚═══════════════════════════════════════╝
+  ╔═══════════════════════════════════════════╗
+  ║                                           ║
+  ║   ███████╗ ██████╗ ██████╗ ███╗   ██╗   ║
+  ║   ██╔════╝██╔════╝██╔═══██╗████╗  ██║   ║
+  ║   █████╗  ██║     ██║   ██║██╔██╗ ██║   ║
+  ║   ██╔══╝  ██║     ██║   ██║██║╚██╗██║   ║
+  ║   ███████╗╚██████╗╚██████╔╝██║ ╚████║   ║
+  ║   ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ║
+  ║                                           ║
+  ║   Le média qui aide les Français à        ║
+  ║   reprendre la main sur leur budget.      ║
+  ║                                           ║
+  ║   https://econono.com                     ║
+  ║                                           ║
+  ║   Easter eggs ? Tape sur ton clavier :    ║
+  ║      magot, tirelire, pactole, pige       ║
+  ║                                           ║
+  ╚═══════════════════════════════════════════╝
   `);
 
   // TikTok/Instagram in-app browser detection
@@ -55,20 +48,20 @@
     }
   })();
 
-  // Easter egg listener
+  // Easter egg listener · keywords brand Econono
   let buffer = "";
-  const maxLen = 9; // "adaptetoi" = 9 chars
+  const maxLen = 10;
 
   window.addEventListener("keydown", (e) => {
     const key = e.key.toLowerCase();
     if (key.length !== 1) return;
     buffer = (buffer + key).slice(-maxLen);
 
-    if (buffer.endsWith("adaptetoi")) triggerConfetti();
-    if (buffer.endsWith("matrix")) triggerMatrix();
-    if (buffer.endsWith("disco")) triggerDisco();
-    if (buffer.endsWith("gravity")) triggerGravity();
-    if (buffer.endsWith("signal")) triggerSignal();
+    if (buffer.endsWith("magot")) triggerConfetti();         // pluie de pièces
+    if (buffer.endsWith("tirelire")) triggerGravity();       // tout tombe
+    if (buffer.endsWith("pactole")) triggerDisco();          // hue rotate doré
+    if (buffer.endsWith("pige")) triggerSignal();            // chromatic
+    if (buffer.endsWith("matrix")) triggerMatrix();          // bonus dev
   });
 
   // === CONFETTI (adaptetoi) ===

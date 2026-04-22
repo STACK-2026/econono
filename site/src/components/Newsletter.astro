@@ -35,7 +35,7 @@
             Reçois<br/>la prochaine lettre.
           </h3>
 
-          <form id="newsletter-form" class="space-y-3" action="/newsletter" method="post">
+          <form id="newsletter-home-form" class="space-y-3" novalidate>
             <div>
               <label for="nl-email" class="sr-only">Email</label>
               <input
@@ -60,6 +60,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
+            <p id="nl-home-msg" class="text-xs text-center" style="color: #57534e; min-height: 16px;"></p>
           </form>
 
           <!-- Marginalia handwritten -->
@@ -72,3 +73,43 @@
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("newsletter-home-form") as HTMLFormElement | null;
+  const msg = document.getElementById("nl-home-msg");
+  const SB_URL = "https://rxdcejlofnhjicupzikx.supabase.co";
+  const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZGNlamxvZm5oamljdXB6aWt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4OTc2MDUsImV4cCI6MjA5MjQ3MzYwNX0.uG3WBUQ6LBnUxYBzo9LGoxRKU4oSzNlggixjNVSoJIY";
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value?.trim();
+    if (!email) return;
+    try {
+      const r = await fetch(SB_URL + "/rest/v1/newsletter_subscribers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SB_ANON,
+          "Authorization": "Bearer " + SB_ANON,
+          "Prefer": "return=minimal",
+        },
+        body: JSON.stringify({
+          email,
+          source: "homepage",
+          user_agent: navigator.userAgent,
+          referrer: document.referrer || null,
+        }),
+      });
+      if (r.ok) {
+        if (msg) { msg.textContent = "C'est noté. Premier Carnet dimanche matin."; msg.style.color = "#15803d"; }
+        form.reset();
+      } else if (r.status === 409) {
+        if (msg) { msg.textContent = "Tu es déjà inscrit·e. À dimanche."; msg.style.color = "#ca8a04"; }
+      } else {
+        if (msg) { msg.textContent = "Erreur réseau. Réessaie."; msg.style.color = "#b91c1c"; }
+      }
+    } catch {
+      if (msg) { msg.textContent = "Erreur réseau. Réessaie."; msg.style.color = "#b91c1c"; }
+    }
+  });
+</script>
