@@ -26,8 +26,13 @@ import random
 import re
 import sys
 import time
-from datetime import datetime, date, timezone
+from datetime import datetime, date, timezone, timedelta
 from pathlib import Path
+try:
+    from zoneinfo import ZoneInfo
+    PARIS_TZ = ZoneInfo("Europe/Paris")
+except Exception:
+    PARIS_TZ = timezone(timedelta(hours=2))  # fallback summer offset
 
 import requests
 
@@ -103,7 +108,8 @@ def pick_author(slug: str, override: str | None = None) -> str:
 
 
 def today_str() -> str:
-    return date.today().isoformat()
+    """Date du jour en zone Paris · évite le bug runner UTC vs cron 7h-9h Paris."""
+    return datetime.now(PARIS_TZ).date().isoformat()
 
 
 def random_publish_time_iso() -> str:
