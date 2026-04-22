@@ -1,59 +1,298 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Comparateur d'abonnements", url: siteConfig.url + "/calculateurs/comparateur-abonnements/" },
 ]);
+
+const faqItems = [
+  { question: "Combien dépense un Français en abonnements ?", answer: "Un Français adulte paie en moyenne 42 €/mois en abonnements récurrents (streaming, télécom, presse, salle, services cloud, livraisons). Plus de 60% des Français sous-utilisent au moins un abonnement, soit environ 15-25 €/mois jetés." },
+  { question: "Quels abonnements lister ?", answer: "Tous les prélèvements automatiques mensuels ou annuels : Netflix, Disney+, Prime, Spotify, Apple Music, Canal+, OCS, abonnement mobile (forfait), box internet, salle de sport, presse en ligne, services cloud (iCloud, Google One, Dropbox), licences logicielles (Adobe, Microsoft 365), assurances complémentaires, dons récurrents, abonnements 'box' (vin, beauté), Strava Premium, applications fitness." },
+  { question: "Comment repérer les abonnements sous-utilisés ?", answer: "Audit en 3 étapes : (1) liste tous tes abonnements avec leur coût, (2) note la fréquence d'utilisation (quotidien, hebdo, mensuel, jamais), (3) coupe tout ce qui n'a pas servi en 60 jours. Garde seulement ceux que tu utiliserais aussi en payant à l'usage." },
+  { question: "Quelle économie réelle peut-on faire ?", answer: "En moyenne 30 à 80 €/mois récupérés après audit, soit 360 à 960 €/an. Sur 5 ans, c'est 1 800 à 4 800 €. Les plus gros leviers : doublons streaming (Netflix + Disney+ + Prime, alors qu'on en utilise 1), salle de sport non fréquentée, presse non lue, abonnements 'essai' devenus payants." },
+  { question: "Faut-il tout résilier en bloc ?", answer: "Non. Procède en 2 vagues : vague 1 (immédiate), résilie ce que tu n'as pas utilisé en 60 jours. Vague 2 (3 mois), réévalue le reste avec une vraie expérience d'usage. Les services type Netflix qu'on regarde 1 fois par mois en moyenne valent peut-être un retour à l'abonnement à la demande type Pluto TV (gratuit) ou abo annuel négocié." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+
+const calcJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Comparateur d'abonnements · Econono",
+  url: siteConfig.url + "/calculateurs/comparateur-abonnements/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Liste tes abonnements, calcule le total mensuel et annuel, identifie les doublons. Récupère 30-80 €/mois en moyenne. Sauvegarde locale.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
 ---
 
 <BaseLayout
-  title="Comparateur d'abonnements 2026 · calculateur gratuit · Econono"
-  description="Liste tes abonnements et trouve les doublons. Récupère 30 à 80 €/mois en moyenne."
-  jsonLd={[breadcrumbs]}
+  title="Comparateur d'abonnements 2026 · récupère 30-80 €/mois · Econono"
+  description="Liste tous tes abonnements (streaming, télécom, salle, presse). Total mensuel + annuel + détection doublons. Récupère en moyenne 30 à 80 €/mois. Sauvegarde locale."
+  jsonLd={[breadcrumbs, calcJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
-        <a href="/" class="hover:underline">Accueil</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
-        <span class="mx-2 text-stone-300">›</span>
+        <a href="/" class="hover:underline">Accueil</a><span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a><span class="mx-2 text-stone-300">›</span>
         <span style="color: #1a3d2e;">Comparateur d'abonnements</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 09</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Comparateur d'abonnements.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 09 · audit personnel</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Comparateur d'abonnements.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Combien tu perds chaque mois.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Un Français adulte paie en moyenne <strong>42 €/mois en abonnements récurrents</strong> (streaming, télécom, presse, salle, services cloud, livraisons). Un audit régulier permet de <strong>récupérer 30 à 80 €/mois</strong> : abonnements doublons (Netflix + Disney+ + Prime Video), abonnements oubliés (essais devenus payants), services sous-utilisés.`} />
+        <p>Le <strong>budget abonnements moyen</strong> d'un Français adulte en 2026 est de <strong>42 €/mois</strong> (streaming, télécom, salle de sport, presse, services cloud, livraisons). Un audit régulier permet de <strong>récupérer 30 à 80 €/mois</strong> en supprimant les doublons (Netflix + Disney+ + Prime), les abonnements oubliés (essais devenus payants) et les services sous-utilisés. Soit 360 à 960 €/an, sans changer son mode de vie.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
-    <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le comparateur d'abonnements interactif arrive. En attendant : liste tes prélèvements bancaires des 3 derniers mois, identifie les récurrents, et coupe ce que tu n'as pas utilisé en 60 jours.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-7 ticket p-7 md:p-10 space-y-5">
+          <header>
+            <p class="eyebrow text-xs mb-2">Tes abonnements</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Liste-les un par un</h2>
+            <p class="text-sm text-stone-500">Sauvegarde automatique dans ton navigateur (rien envoyé sur nos serveurs).</p>
+          </header>
+
+          <div id="abos-list" class="space-y-3"></div>
+
+          <div class="flex gap-3 pt-3 border-t border-dashed border-stone-300">
+            <input id="abo-name" type="text" placeholder="Nom (ex: Netflix)" class="flex-1 px-3 py-2 rounded-md border-2 text-sm" style="border-color: #e7e5e4; background: #fffefb;" />
+            <input id="abo-price" type="number" min="0" step="0.5" placeholder="13.49" class="w-24 px-3 py-2 rounded-md border-2 text-sm font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" />
+            <select id="abo-period" class="px-3 py-2 rounded-md border-2 text-sm" style="border-color: #e7e5e4; background: #fffefb;">
+              <option value="month">€/mois</option>
+              <option value="year">€/an</option>
+            </select>
+            <button id="abo-add" type="button" class="px-4 py-2 rounded-md text-white font-semibold text-sm" style="background: #1a3d2e;">+ Ajouter</button>
+          </div>
+
+          <div class="text-xs text-stone-500">
+            Suggestions courantes :
+            <button type="button" data-quick="Netflix|13.49|month" class="abo-quick underline mx-1">Netflix</button>
+            <button type="button" data-quick="Spotify|10.99|month" class="abo-quick underline mx-1">Spotify</button>
+            <button type="button" data-quick="Disney+|11.99|month" class="abo-quick underline mx-1">Disney+</button>
+            <button type="button" data-quick="Prime|8.99|month" class="abo-quick underline mx-1">Prime</button>
+            <button type="button" data-quick="Forfait mobile|15|month" class="abo-quick underline mx-1">Forfait mobile</button>
+            <button type="button" data-quick="Box internet|35|month" class="abo-quick underline mx-1">Box internet</button>
+            <button type="button" data-quick="Salle de sport|29|month" class="abo-quick underline mx-1">Salle de sport</button>
+            <button type="button" data-quick="iCloud 200Go|2.99|month" class="abo-quick underline mx-1">iCloud</button>
+          </div>
         </div>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Ton total</div></div>
+              <p class="eyebrow text-xs mb-2">Par mois</p>
+              <p id="abo-total-mois" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">0 €</p>
+              <p class="eyebrow text-xs mt-4 mb-1">Sur l'année</p>
+              <p id="abo-total-annee" class="font-mono font-bold tabular leading-none" style="color: #c2410c; font-size: 2rem;">0 €</p>
+            </div>
+
+            <div id="abo-doublons" class="ticket p-7 hidden">
+              <p class="eyebrow text-xs mb-3" style="color: #c2410c;">Doublons potentiels détectés</p>
+              <ul id="abo-doublons-list" class="space-y-1 text-sm text-stone-700"></ul>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="abo-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ ajoute tes abonnements pour voir l'analyse.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>L'audit d'abonnements en 30 minutes</h2>
+      <p>L'audit d'abonnements est probablement le levier d'optimisation budgétaire le plus rentable en termes de minutes investies. <strong>30 minutes pour récupérer 30 à 80 €/mois</strong>, soit 360 à 960 €/an. C'est plus rentable que beaucoup d'astuces économies plus complexes.</p>
+      <p>La méthode :</p>
+      <ol>
+        <li><strong>Liste exhaustive (15 min)</strong> : connecte-toi à ta banque, cherche tous les prélèvements récurrents des 3 derniers mois. Note nom + montant + fréquence.</li>
+        <li><strong>Tri usage (10 min)</strong> : pour chaque, marque "utilisé en 60 derniers jours ?" oui/non.</li>
+        <li><strong>Coupures rapides (5 min)</strong> : tout ce qui est "non" → résiliation. Tout ce qui est "oui mais doublon" (3 streamings) → garde-en 1.</li>
+      </ol>
+
+      <h2>Les 5 catégories à auditer en priorité</h2>
+      <h3>1. Streaming vidéo</h3>
+      <p>Netflix (13,49 €), Disney+ (11,99 €), Prime Video (8,99 €), Apple TV+ (9,99 €), Canal+ (35-50 €), OCS (12,99 €), Paramount+ (7,99 €). Total possible : 100 €/mois. La plupart des gens en utilisent 1 vraiment. Stratégie : alterner mois par mois (résilier puis réabonner facile chez tous).</p>
+      <h3>2. Streaming musique</h3>
+      <p>Spotify (10,99 €), Apple Music (10,99 €), Deezer (11,99 €), YouTube Music (10,99 €), Tidal (10,99 €). 1 seul nécessaire. Souvent inclus dans les forfaits mobiles ou box internet, vérifie.</p>
+      <h3>3. Cloud / stockage</h3>
+      <p>iCloud (0,99 à 9,99 €), Google One (1,99 à 9,99 €), Dropbox (9,99 €), OneDrive (souvent inclus avec Microsoft 365). Souvent doublons quand on a un iPhone + un PC. Choisis-en un et migre.</p>
+      <h3>4. Salle de sport / fitness</h3>
+      <p>Salle classique : 25-40 €/mois. Le Pass Vitalité ou app équivalente : 9-15 €/mois. <strong>Si tu y vas moins de 2 fois/semaine</strong>, c'est probablement non rentable vs séances à l'unité (8-12 €/séance).</p>
+      <h3>5. Forfait mobile + box</h3>
+      <p>Forfait mobile : 5-25 €/mois selon opérateur. Free 2€ ou RED 5€ couvrent largement les besoins de la majorité. Box internet : passer à un opérateur low-cost (RED Box, Sosh) économise 10-20 €/mois sans changer d'usage réel.</p>
+
+      <h2>Les abonnements 'invisibles' qu'on oublie</h2>
+      <ul>
+        <li><strong>Apps achetées sur l'App Store/Play Store</strong> : essais gratuits devenus payants (1 à 9,99 €/mois chacun)</li>
+        <li><strong>Renouvellements annuels</strong> : antivirus (40-80 €), nom de domaine (10-15 €), licences logicielles</li>
+        <li><strong>Box mensuelles</strong> : vin, beauté, snacks (15-50 €/mois)</li>
+        <li><strong>Newsletters payantes</strong> : Substack, Médiapart, etc.</li>
+        <li><strong>Cotisations associations</strong> : carte de membre annuelle souvent oubliée</li>
+        <li><strong>Assurances en doublon</strong> : assurance carte bancaire premium + assurance voyage achetée à part</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.ufc-quechoisir.org/" target="_blank" rel="noopener">UFC-Que Choisir · études abonnements</a></li>
+        <li><a href="https://www.lafinancepourtous.com/" target="_blank" rel="noopener">La Finance pour Tous · gestion budget</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Tarifs indicatifs susceptibles d'évoluer.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  type Abo = { id: string; name: string; price: number; period: "month" | "year" };
+
+  const STORAGE_KEY = "ec_abos_v1";
+  let abos: Abo[] = [];
+
+  const elList = document.getElementById("abos-list");
+  const elName = document.getElementById("abo-name") as HTMLInputElement;
+  const elPrice = document.getElementById("abo-price") as HTMLInputElement;
+  const elPeriod = document.getElementById("abo-period") as HTMLSelectElement;
+  const elAdd = document.getElementById("abo-add");
+  const elTotalMois = document.getElementById("abo-total-mois");
+  const elTotalAnnee = document.getElementById("abo-total-annee");
+  const elDoublons = document.getElementById("abo-doublons");
+  const elDoublonsList = document.getElementById("abo-doublons-list");
+  const elReco = document.getElementById("abo-reco");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function load() {
+    try { abos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch { abos = []; }
+  }
+
+  function save() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(abos)); } catch {}
+  }
+
+  function monthly(a: Abo): number {
+    return a.period === "year" ? a.price / 12 : a.price;
+  }
+
+  function render() {
+    if (!elList) return;
+    elList.innerHTML = "";
+    if (abos.length === 0) {
+      elList.innerHTML = '<p class="text-sm text-stone-500 italic py-4 text-center">Aucun abonnement. Ajoute le premier ci-dessous.</p>';
+    } else {
+      abos.forEach((a) => {
+        const row = document.createElement("div");
+        row.className = "flex items-center gap-3 p-3 rounded-md border border-stone-200";
+        row.style.background = "#fffefb";
+        row.innerHTML = `
+          <span class="flex-1 font-medium text-sm" style="color: #0f2419;">${a.name}</span>
+          <span class="font-mono text-sm tabular text-stone-700">${a.price.toFixed(2)} €${a.period === "year" ? "/an" : "/mois"}</span>
+          <button data-rm="${a.id}" class="text-xs text-stone-400 hover:text-[#b91c1c] px-2">×</button>
+        `;
+        elList.appendChild(row);
+      });
+      elList.querySelectorAll("[data-rm]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-rm");
+          abos = abos.filter((a) => a.id !== id);
+          save(); render();
+        });
+      });
+    }
+
+    const totalM = abos.reduce((s, a) => s + monthly(a), 0);
+    if (elTotalMois) elTotalMois.textContent = fmt(totalM);
+    if (elTotalAnnee) elTotalAnnee.textContent = fmt(totalM * 12);
+
+    // Doublons : streaming vidéo, streaming audio, cloud
+    const cats = {
+      "Streaming vidéo": ["netflix", "disney", "prime", "ocs", "canal", "paramount", "apple tv"],
+      "Streaming audio": ["spotify", "apple music", "deezer", "youtube music", "tidal"],
+      "Cloud/Stockage": ["icloud", "google one", "dropbox", "onedrive"],
+    };
+    const found: string[] = [];
+    Object.entries(cats).forEach(([cat, kws]) => {
+      const hits = abos.filter((a) => kws.some((k) => a.name.toLowerCase().includes(k)));
+      if (hits.length > 1) found.push(`${cat} : ${hits.length} services (${hits.map((h) => h.name).join(", ")})`);
+    });
+    if (found.length > 0 && elDoublons && elDoublonsList) {
+      elDoublons.classList.remove("hidden");
+      elDoublonsList.innerHTML = found.map((f) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">⚠</span><span>${f}</span></li>`).join("");
+    } else if (elDoublons) {
+      elDoublons.classList.add("hidden");
+    }
+
+    const recos: string[] = [];
+    if (totalM > 60) recos.push(`Tu paies ${fmt(totalM)}/mois en abonnements (au-dessus de la moyenne FR à 42 €). Audit usage à faire.`);
+    if (found.length > 0) recos.push("Détectés : doublons. Garde un seul service par catégorie en alternant si besoin.");
+    if (totalM > 0 && totalM < 30) recos.push("Discipline impressionnante. Vérifie juste qu'aucun essai gratuit n'est devenu payant sans que tu le saches.");
+    if (totalM === 0) recos.push("Aucun abonnement listé. Connecte-toi à ta banque, cherche tous les prélèvements récurrents des 3 derniers mois et reviens.");
+    if (totalM >= 30 && totalM <= 60 && found.length === 0) recos.push("Niveau standard et sans doublon évident. Vérifie usage réel : un abonnement non utilisé en 60 jours = à couper.");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  function add(name: string, price: number, period: "month" | "year") {
+    if (!name.trim() || !(price > 0)) return;
+    abos.push({ id: Math.random().toString(36).slice(2), name: name.trim(), price, period });
+    save(); render();
+    if (elName) elName.value = "";
+    if (elPrice) elPrice.value = "";
+  }
+
+  elAdd?.addEventListener("click", () => add(elName?.value || "", parseFloat(elPrice?.value || "0"), (elPeriod?.value || "month") as "month" | "year"));
+  elName?.addEventListener("keydown", (e) => { if (e.key === "Enter") elAdd?.click(); });
+  elPrice?.addEventListener("keydown", (e) => { if (e.key === "Enter") elAdd?.click(); });
+
+  document.querySelectorAll<HTMLButtonElement>(".abo-quick").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const [name, price, period] = (btn.getAttribute("data-quick") || "").split("|");
+      add(name, parseFloat(price), period as "month" | "year");
+    });
+  });
+
+  load();
+  render();
+</script>

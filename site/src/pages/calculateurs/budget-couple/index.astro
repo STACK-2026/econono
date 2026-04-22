@@ -1,59 +1,261 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Budget couple", url: siteConfig.url + "/calculateurs/budget-couple/" },
 ]);
+
+const faqItems = [
+  { question: "Comment répartir équitablement les charges en couple ?", answer: "Trois méthodes principales : (1) 50/50 si vos revenus sont proches (écart < 10%), (2) prorata des revenus si écart significatif (chacun paie au prorata de son salaire), (3) modèle 'enveloppes' avec un compte commun alimenté par X% du revenu de chacun. Le prorata est la méthode la plus utilisée par les jeunes couples français en 2026 (étude OpinionWay 2025)." },
+  { question: "Compte commun ou comptes séparés ?", answer: "Compte commun pour les charges récurrentes (loyer, charges, courses, énergie) + comptes individuels pour le perso (loisirs, vêtements, cadeaux). C'est le modèle le plus pratique. Évite le 'tout commun' qui crée des frictions sur les achats individuels, et le 'tout séparé' qui demande des virements constants." },
+  { question: "Faut-il faire un PACS ou se marier pour optimiser le budget ?", answer: "Le PACS donne un avantage fiscal (imposition commune) souvent intéressant si écart de revenus important. Le mariage ajoute une protection juridique (héritage, séparation). Mais ni l'un ni l'autre n'optimise vraiment le budget : c'est plus une question de cohérence patrimoniale long terme." },
+  { question: "Comment gérer une grosse différence de revenus ?", answer: "La méthode prorata est faite pour ça. Exemple : Aïcha gagne 3 000 € net, Marc 1 800 €. Total = 4 800 €. Aïcha gagne 62,5%, Marc 37,5%. Pour 1 200 € de charges communes : Aïcha paie 750 €, Marc 450 €. Chacun garde ses revenus restants pour son perso." },
+  { question: "On épargne en commun ou séparément ?", answer: "Recommandation : (1) une réserve de précaution commune (3-6 mois de charges du foyer), (2) projets communs sur un livret commun (vacances, achat immo), (3) épargne long terme individuelle (PEA, assurance-vie ouverte au nom de chacun pour conserver l'antériorité fiscale). En cas de séparation, c'est mieux organisé." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+
+const calcJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur budget couple · Econono",
+  url: siteConfig.url + "/calculateurs/budget-couple/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Comment répartir équitablement les charges en couple : 50/50, prorata des revenus, ou enveloppes. Comparatif des 3 méthodes pour ton couple.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
 ---
 
 <BaseLayout
-  title="Budget couple 2026 · calculateur gratuit · Econono"
-  description="Comment répartir équitablement les charges en couple selon tes revenus."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur budget couple 2026 · répartir charges équitablement · Econono"
+  description="Comment répartir les charges en couple : 50/50, prorata des revenus, méthode enveloppes. Comparatif des 3 méthodes appliquées à ton couple. Gratuit."
+  jsonLd={[breadcrumbs, calcJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
-        <a href="/" class="hover:underline">Accueil</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
-        <span class="mx-2 text-stone-300">›</span>
+        <a href="/" class="hover:underline">Accueil</a><span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a><span class="mx-2 text-stone-300">›</span>
         <span style="color: #1a3d2e;">Budget couple</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 11</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Budget couple.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 11 · 3 méthodes comparées</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Budget couple.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Comment répartir équitablement.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Trois méthodes de <strong>répartition des charges en couple</strong> : <strong>50/50</strong> (équitable si revenus proches), <strong>prorata des revenus</strong> (chacun paie au prorata de son salaire, équitable si écart de revenus important), <strong>modèle 'enveloppes'</strong> (chacun met X% sur un compte commun pour les charges, garde le reste perso). Le prorata est la méthode la plus utilisée par les jeunes couples français en 2026.`} />
+        <p>Trois méthodes pour <strong>répartir les charges en couple</strong> : <strong>50/50</strong> (équitable si revenus proches), <strong>prorata des revenus</strong> (chacun paie au prorata de son salaire), <strong>modèle enveloppes</strong> (chacun met X% sur un compte commun pour les charges, garde le reste perso). Le <strong>prorata</strong> est la méthode la plus utilisée par les jeunes couples français en 2026, surtout en cas d'écart de revenus significatif.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="bcp-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · vos revenus</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Salaires nets mensuels</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Revenu personne A</span>
+              <div class="relative"><input type="number" name="revA" min="0" step="50" placeholder="2 500" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Revenu personne B</span>
+              <div class="relative"><input type="number" name="revB" min="0" step="50" placeholder="1 800" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · charges communes</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Le total à se répartir</h2>
+            <p class="text-sm text-stone-500">Loyer + charges + courses + énergie + abonnements communs.</p>
+          </header>
+
+          <label class="block">
+            <div class="relative max-w-xs"><input type="number" name="charges" min="0" step="50" placeholder="1 500" class="w-full pl-4 pr-12 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+          </label>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Méthode 1</div></div>
+              <p class="eyebrow text-xs mb-2">50/50 (égalité stricte)</p>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="text-center p-3 rounded-md" style="background: #faf7f2;">
+                  <p class="text-xs uppercase tracking-wider text-stone-500">A paie</p>
+                  <p id="m1-a" class="font-mono font-bold text-xl tabular" style="color: #1a3d2e;">- €</p>
+                  <p id="m1-a-pct" class="text-xs text-stone-500">- % revenu</p>
+                </div>
+                <div class="text-center p-3 rounded-md" style="background: #faf7f2;">
+                  <p class="text-xs uppercase tracking-wider text-stone-500">B paie</p>
+                  <p id="m1-b" class="font-mono font-bold text-xl tabular" style="color: #1a3d2e;">- €</p>
+                  <p id="m1-b-pct" class="text-xs text-stone-500">- % revenu</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Méthode 2</div></div>
+              <p class="eyebrow text-xs mb-2">Prorata des revenus</p>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="text-center p-3 rounded-md" style="background: #faf7f2;">
+                  <p class="text-xs uppercase tracking-wider text-stone-500">A paie</p>
+                  <p id="m2-a" class="font-mono font-bold text-xl tabular" style="color: #1a3d2e;">- €</p>
+                  <p id="m2-a-pct" class="text-xs text-stone-500">- % revenu</p>
+                </div>
+                <div class="text-center p-3 rounded-md" style="background: #faf7f2;">
+                  <p class="text-xs uppercase tracking-wider text-stone-500">B paie</p>
+                  <p id="m2-b" class="font-mono font-bold text-xl tabular" style="color: #1a3d2e;">- €</p>
+                  <p id="m2-b-pct" class="text-xs text-stone-500">- % revenu</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="bcp-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Les 3 méthodes de répartition en couple</h2>
+      <h3>Méthode 1 · 50/50 (égalité stricte)</h3>
+      <p>Chacun paie 50% des charges communes, peu importe les revenus. Simple, mais inéquitable si l'écart de revenus est important. Exemple : Aïcha gagne 3 000 €, Marc 1 800 €. Pour 1 500 € de charges, chacun paie 750 €. Aïcha sacrifie 25% de ses revenus, Marc 42%. Marc se retrouve à l'étroit.</p>
+      <h3>Méthode 2 · Prorata des revenus (recommandée)</h3>
+      <p>Chacun paie au prorata de son revenu. Aïcha (62,5% du revenu commun) paie 938 €, Marc (37,5%) paie 562 €. Chacun sacrifie 31% de ses revenus, équitable. <strong>Méthode la plus utilisée par les jeunes couples français en 2026</strong>.</p>
+      <h3>Méthode 3 · Enveloppes (compte commun + comptes individuels)</h3>
+      <p>Vous virez chacun X% de votre revenu sur un compte commun qui paie toutes les charges. Le reste de votre salaire reste sur votre compte perso. Exemple : 30% de chaque revenu va sur le commun, 70% reste perso. Avantage : chacun garde son autonomie sur les achats individuels.</p>
+
+      <h2>Compte commun, comptes séparés, mix : que choisir</h2>
+      <p>Le modèle le plus pratique en 2026 selon les jeunes couples : <strong>3 comptes (commun + 2 perso)</strong>. Le commun reçoit X% de chaque revenu et paie toutes les charges récurrentes. Les perso restent pour les achats individuels (vêtements, sorties entre amis, cadeaux).</p>
+      <p>À éviter : tout en commun (frictions sur les achats individuels) ou tout séparé (virements constants, perte de visibilité globale).</p>
+
+      <h2>PACS, mariage, concubinage : impact budget</h2>
+      <p>Le PACS et le mariage permettent l'<strong>imposition commune</strong>, ce qui peut faire baisser l'impôt si écart de revenus important. Avec 3 000 € + 1 800 € en concubinage, vous payez chacun votre impôt séparément. PACSés ou mariés, vous bénéficiez du quotient familial qui peut économiser 500-1 500 €/an d'impôt selon votre situation. À simuler sur <a href="https://www.impots.gouv.fr/portail/simulateurs" target="_blank" rel="noopener">impots.gouv.fr</a>.</p>
+
+      <h2>L'épargne en couple</h2>
+      <p>Stratégie recommandée :</p>
+      <ol>
+        <li><strong>Réserve commune</strong> : 3 à 6 mois de charges du foyer sur un livret A commun (en compte joint).</li>
+        <li><strong>Projets communs</strong> : voyages, immobilier, mariage. Sur un livret dédié pour suivi clair.</li>
+        <li><strong>Long terme individuel</strong> : assurance-vie au nom de chacun (préserve l'antériorité fiscale en cas de séparation), PEA individuel.</li>
+      </ol>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.insee.fr/fr/statistiques" target="_blank" rel="noopener">INSEE · couples et inégalités de revenus</a></li>
+        <li><a href="https://www.impots.gouv.fr/portail/simulateurs" target="_blank" rel="noopener">Impots.gouv · simulateur impôt</a></li>
+        <li><a href="https://www.lafinancepourtous.com/" target="_blank" rel="noopener">La Finance pour Tous · finances en couple</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur de répartition arrive. En attendant : si tu gagnes 60% des revenus du couple, tu paies 60% des charges communes.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("bcp-form") as HTMLFormElement | null;
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function set(id: string, val: string) { const el = document.getElementById(id); if (el) el.textContent = val; }
+
+  function compute() {
+    const a = getNum("revA");
+    const b = getNum("revB");
+    const charges = getNum("charges");
+    const total = a + b;
+
+    if (total <= 0 || charges <= 0) {
+      ["m1-a", "m1-b", "m2-a", "m2-b"].forEach((id) => set(id, "- €"));
+      ["m1-a-pct", "m1-b-pct", "m2-a-pct", "m2-b-pct"].forEach((id) => set(id, "- % revenu"));
+      const r = document.getElementById("bcp-reco");
+      if (r) r.innerHTML = '<li class="text-stone-500 italic">↳ saisis revenus + charges pour démarrer.</li>';
+      return;
+    }
+
+    // Méthode 1 : 50/50
+    const m1 = charges / 2;
+    set("m1-a", fmt(m1));
+    set("m1-b", fmt(m1));
+    set("m1-a-pct", `${a > 0 ? Math.round(m1 / a * 100) : 0}% de A`);
+    set("m1-b-pct", `${b > 0 ? Math.round(m1 / b * 100) : 0}% de B`);
+
+    // Méthode 2 : prorata
+    const m2a = (a / total) * charges;
+    const m2b = (b / total) * charges;
+    set("m2-a", fmt(m2a));
+    set("m2-b", fmt(m2b));
+    set("m2-a-pct", `${a > 0 ? Math.round(m2a / a * 100) : 0}% de A`);
+    set("m2-b-pct", `${b > 0 ? Math.round(m2b / b * 100) : 0}% de B`);
+
+    const recos: string[] = [];
+    const ecartPct = Math.abs(a - b) / Math.max(a, b) * 100;
+    if (ecartPct < 10) recos.push(`Vos revenus sont proches (écart ${ecartPct.toFixed(0)}%). Le 50/50 est équitable et simple.`);
+    else if (ecartPct < 25) recos.push(`Écart de revenus modéré (${ecartPct.toFixed(0)}%). Les deux méthodes sont défendables, le prorata est plus juste.`);
+    else recos.push(`Écart de revenus important (${ecartPct.toFixed(0)}%). Le prorata est nettement plus équitable. Le 50/50 mettrait B à l'étroit.`);
+
+    if (charges > total * 0.45) recos.push("Les charges communes dépassent 45% de votre revenu cumulé. Optimiser logement et énergie peut significativement améliorer votre marge.");
+    if (a > 0 && b > 0 && (m2a / a > 0.5 || m2b / b > 0.5)) recos.push("Au prorata, l'un de vous y consacre +50% de son revenu : signe que les charges sont élevées par rapport à votre revenu cumulé.");
+    recos.push("Pense à PACS/mariage si gros écart de revenus : économie d'impôt possible 500-1 500 €/an.");
+
+    const r = document.getElementById("bcp-reco");
+    if (r) r.innerHTML = recos.map((rec) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${rec}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll('input[type="number"]').forEach((i) => {
+    (i as HTMLInputElement).addEventListener("focus", () => ((i as HTMLInputElement).style.borderColor = "#1a3d2e"));
+    (i as HTMLInputElement).addEventListener("blur", () => ((i as HTMLInputElement).style.borderColor = "#e7e5e4"));
+  });
+</script>

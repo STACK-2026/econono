@@ -1,22 +1,44 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Règle 50/30/20", url: siteConfig.url + "/calculateurs/regle-50-30-20/" },
 ]);
+
+const calculatorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Simulateur règle 50/30/20 · Econono",
+  url: siteConfig.url + "/calculateurs/regle-50-30-20/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Applique la règle 50/30/20 à ton revenu : 50% besoins, 30% envies, 20% épargne. Compare avec ta vraie répartition. Gratuit, sans inscription.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
+
+const faqItems = [
+  { question: "C'est quoi la règle 50/30/20 ?", answer: "C'est une méthode de répartition du budget popularisée par la sénatrice américaine Elizabeth Warren : 50% des revenus aux besoins essentiels (logement, alimentation, transport, charges, santé), 30% aux envies (loisirs, restos, abonnements, vêtements), 20% à l'épargne et au remboursement de dettes." },
+  { question: "La règle 50/30/20 marche-t-elle en France ?", answer: "Théoriquement oui, en pratique difficilement pour les bas revenus en grande ville. Avec le SMIC à Paris où le loyer prend 40-50%, atteindre 50% de besoins est mathématiquement impossible. La règle reste un repère utile pour identifier les déséquilibres, pas un objectif rigide." },
+  { question: "Qu'est-ce qui rentre dans 'besoins' (50%) ?", answer: "Tout ce qui est strictement nécessaire pour vivre : loyer/crédit immo, charges (énergie, eau, télécom basique), courses alimentaires de base, transport (essence ou abo), assurances obligatoires (auto, habitation, mutuelle), santé, garde d'enfants si tu travailles, mensualités de crédit en cours." },
+  { question: "Qu'est-ce qui rentre dans 'envies' (30%) ?", answer: "Tout ce qui améliore ta vie sans être strictement nécessaire : restos, sorties, voyages, abonnements streaming, vêtements au-delà du minimum, salle de sport, loisirs, cadeaux, restos d'entreprise. La frontière avec les besoins est subjective : un téléphone à 1 200 €, c'est une envie." },
+  { question: "Comment atteindre 20% d'épargne ?", answer: "Trois leviers : (1) automatiser un virement vers le livret A le 1er du mois (pay yourself first), (2) cibler les fuites discrètes (abonnements doublons, frais bancaires inutiles, restos non planifiés), (3) augmenter les revenus si possible (négo salaire, second job). Si tu pars de 5%, vise +1 point chaque trimestre, pas 20% du jour au lendemain." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
 ---
 
 <BaseLayout
-  title="Règle 50/30/20 2026 · calculateur gratuit · Econono"
-  description="Applique la règle 50/30/20 à ton revenu : 50% besoins, 30% envies, 20% épargne. Et compare avec ta vraie répartition."
-  jsonLd={[breadcrumbs]}
+  title="Règle 50/30/20 calculateur 2026 · répartition idéale du budget · Econono"
+  description="Applique la règle 50/30/20 à ton revenu : 50% besoins, 30% envies, 20% épargne. Compare avec ta vraie répartition et identifie les déséquilibres. Gratuit."
+  jsonLd={[breadcrumbs, calculatorJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
         <a href="/" class="hover:underline">Accueil</a>
         <span class="mx-2 text-stone-300">›</span>
@@ -25,35 +47,310 @@ const breadcrumbs = jsonLdBreadcrumbs([
         <span style="color: #1a3d2e;">Règle 50/30/20</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 04</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Règle 50/30/20.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 04 · méthode Elizabeth Warren</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Règle 50/30/20.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">La répartition idéale, et ta réalité.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`La <strong>règle 50/30/20</strong> est une méthode de gestion de budget popularisée par la sénatrice américaine Elizabeth Warren : <strong>50% des revenus aux besoins</strong> (logement, alimentation, transport, charges, santé), <strong>30% aux envies</strong> (loisirs, restos, abonnements, vêtements), <strong>20% à l'épargne et au remboursement de dettes</strong>.`} />
+        <p>La <strong>règle 50/30/20</strong> est une méthode de répartition du budget : <strong>50% des revenus aux besoins</strong> (logement, alimentation, transport, charges), <strong>30% aux envies</strong> (loisirs, restos, abonnements, vêtements), <strong>20% à l'épargne</strong> ou au remboursement de dettes. Popularisée par la sénatrice américaine Elizabeth Warren. Applicable en France mais difficile pour les bas revenus en grande ville (loyer souvent supérieur à 40%).</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="rule-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · ton revenu</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Ton revenu net mensuel</h2>
+            <p class="text-sm text-stone-500">Salaire net + aides régulières (APL, allocs, prime d'activité).</p>
+          </header>
+
+          <label class="block">
+            <div class="relative max-w-xs"><input type="number" name="revenu" min="0" step="50" placeholder="2 000" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+          </label>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · ta répartition réelle (optionnel)</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Ce que tu dépenses vraiment</h2>
+            <p class="text-sm text-stone-500">Saute cette étape si tu ne sais pas. Sinon on compare avec l'idéal.</p>
+          </header>
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Besoins</span>
+              <div class="relative"><input type="number" name="besoins" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+              <p class="text-xs text-stone-500 mt-1">Logement, courses, transport, charges</p>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Envies</span>
+              <div class="relative"><input type="number" name="envies" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+              <p class="text-xs text-stone-500 mt-1">Loisirs, restos, abos, vêtements</p>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Épargne</span>
+              <div class="relative"><input type="number" name="epargne" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+              <p class="text-xs text-stone-500 mt-1">Livret, remboursements anticipés</p>
+            </label>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Idéal</div></div>
+              <p class="eyebrow text-xs mb-3">La répartition idéale</p>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm font-semibold" style="color: #0f2419;">Besoins · 50%</span>
+                    <span id="ideal-besoins" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.2rem;">- €</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background: #f5f5f4;"><div class="h-full" style="width: 50%; background: #1a3d2e;"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm font-semibold" style="color: #0f2419;">Envies · 30%</span>
+                    <span id="ideal-envies" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.2rem;">- €</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background: #f5f5f4;"><div class="h-full" style="width: 30%; background: #f4c430;"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm font-semibold" style="color: #0f2419;">Épargne · 20%</span>
+                    <span id="ideal-epargne" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.2rem;">- €</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background: #f5f5f4;"><div class="h-full" style="width: 20%; background: #c2410c;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="reality-block" class="ticket p-7 hidden">
+              <p class="eyebrow text-xs mb-3">Ta vraie répartition</p>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm font-semibold" style="color: #0f2419;">Besoins · <span id="real-pct-besoins">-</span>%</span>
+                    <span id="real-besoins" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.2rem;">- €</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background: #f5f5f4;"><div id="real-bar-besoins" class="h-full transition-all duration-700" style="width: 0%; background: #1a3d2e;"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm font-semibold" style="color: #0f2419;">Envies · <span id="real-pct-envies">-</span>%</span>
+                    <span id="real-envies" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.2rem;">- €</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background: #f5f5f4;"><div id="real-bar-envies" class="h-full transition-all duration-700" style="width: 0%; background: #f4c430;"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-sm font-semibold" style="color: #0f2419;">Épargne · <span id="real-pct-epargne">-</span>%</span>
+                    <span id="real-epargne" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.2rem;">- €</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background: #f5f5f4;"><div id="real-bar-epargne" class="h-full transition-all duration-700" style="width: 0%; background: #c2410c;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="rule-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ saisis ton revenu pour voir la répartition idéale.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>L'origine de la règle 50/30/20</h2>
+      <p>La règle 50/30/20 a été formalisée en 2005 par <strong>Elizabeth Warren</strong> (alors professeure de droit à Harvard, future sénatrice américaine) et sa fille Amelia Warren Tyagi dans leur livre <em>All Your Worth: The Ultimate Lifetime Money Plan</em>. L'idée : remplacer les budgets ultra-détaillés (qu'on n'arrive jamais à tenir) par 3 grandes enveloppes simples.</p>
+      <p>Le principe est <strong>flexible</strong> : à l'intérieur de chaque enveloppe, tu fais ce que tu veux. Tu n'as pas à justifier chaque café à 3 €, tu vérifies juste que la catégorie 'envies' ne dépasse pas 30%.</p>
+
+      <h2>Marche-t-elle vraiment en France</h2>
+      <p>La règle a été pensée dans un contexte américain où le logement était souvent <strong>sous 25%</strong> du revenu. En France en 2026, c'est rarement le cas en grande ville. Selon les données INSEE et de l'<a href="https://www.lafinancepourtous.com/" target="_blank" rel="noopener">Observatoire des inégalités</a> :</p>
+      <ul>
+        <li>Loyer médian en province : 28-32% des revenus du locataire moyen</li>
+        <li>Loyer médian en grandes villes (Lyon, Marseille, Bordeaux) : 35-42%</li>
+        <li>Loyer médian à Paris : 45-55% des revenus pour un studio en intra-muros</li>
+      </ul>
+      <p>Conséquence : un Parisien au SMIC qui veut respecter la règle des 50% est mathématiquement bloqué dès le loyer. Cela ne veut pas dire que la règle est inutile, juste qu'il faut l'utiliser comme <strong>repère</strong>, pas comme objectif rigide.</p>
+
+      <h2>Comment classer tes dépenses</h2>
+      <p>La frontière entre besoins, envies et épargne peut prêter à confusion. Voici une grille pratique :</p>
+      <h3>Besoins (50%)</h3>
+      <ul>
+        <li>Loyer ou mensualité de crédit immobilier</li>
+        <li>Charges (énergie, eau, télécom basique)</li>
+        <li>Courses alimentaires de base (hors restos, hors plats préparés haut de gamme)</li>
+        <li>Transport vers le travail (essence + péage ou abo)</li>
+        <li>Assurances obligatoires (auto si tu en as besoin, habitation, mutuelle)</li>
+        <li>Santé : reste à charge médecin, dentiste, médicaments</li>
+        <li>Garde d'enfants si tu travailles</li>
+        <li><a href="/calculateurs/taux-endettement/">Mensualités de crédits en cours</a></li>
+      </ul>
+      <h3>Envies (30%)</h3>
+      <ul>
+        <li>Restos, livraisons, cafés à emporter</li>
+        <li>Voyages, sorties, loisirs payants</li>
+        <li>Abonnements streaming/audio/news (au-delà d'un service de base)</li>
+        <li>Vêtements au-delà du minimum fonctionnel</li>
+        <li>Salle de sport (sauf prescription médicale)</li>
+        <li>Cadeaux et fêtes</li>
+      </ul>
+      <h3>Épargne (20%)</h3>
+      <ul>
+        <li>Versements sur livret A, LEP, LDDS</li>
+        <li>Versements sur assurance-vie, PEA, PER</li>
+        <li>Remboursement anticipé de crédit (au-delà de la mensualité contractuelle)</li>
+        <li>Constitution d'une réserve de précaution (3 à 6 mois de charges)</li>
+      </ul>
+
+      <h2>Si tu n'arrives pas au 50/30/20, que faire</h2>
+      <p>Tu n'es pas seul·e : selon les données <a href="https://www.lafinancepourtous.com/2026/03/16/budget-les-depenses-contraintes-des-francais-continuent-daugmenter-en-2026/" target="_blank" rel="noopener">La Finance pour Tous (mars 2026)</a>, les dépenses contraintes des Français pèsent en moyenne <strong>1 186 €/mois</strong>, ce qui représente déjà plus de 50% du revenu pour la moitié des ménages. Plusieurs pistes :</p>
+      <ol>
+        <li><strong>Rééquilibrer envies → épargne</strong> avant de toucher aux besoins. C'est souvent la marge la plus accessible (<a href="/calculateurs/comparateur-abonnements/">comparateur d'abonnements</a>).</li>
+        <li><strong>Activer toutes tes aides</strong> : APL, prime d'activité, LEP, chèque énergie. Un quart des éligibles n'y souscrivent pas (Cour des comptes 2024).</li>
+        <li><strong>Renégocier tes assurances</strong> chaque année (loi Hamon).</li>
+        <li><strong>Variante 60/30/10</strong> ou <strong>70/20/10</strong> : si la règle 50/30/20 est inatteignable, fixe une cible adaptée à ta réalité (par exemple 65% besoins, 25% envies, 10% épargne).</li>
+      </ol>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Elizabeth Warren · <em>All Your Worth: The Ultimate Lifetime Money Plan</em> (2005)</li>
+        <li><a href="https://www.lafinancepourtous.com/2026/03/16/budget-les-depenses-contraintes-des-francais-continuent-daugmenter-en-2026/" target="_blank" rel="noopener">La Finance pour Tous · dépenses contraintes 2026</a></li>
+        <li><a href="https://www.insee.fr/fr/statistiques" target="_blank" rel="noopener">INSEE · consommation des ménages</a></li>
+        <li><a href="https://drees.solidarites-sante.gouv.fr/" target="_blank" rel="noopener">DREES · revenus et patrimoine</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026 par l'équipe éditoriale Econono.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le simulateur dédié arrive. En attendant, on a intégré la règle 50/30/20 directement dans le calculateur de budget mensuel.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-center mb-3">Pour aller plus loin</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">3 calculateurs liés</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="/calculateurs/budget-mensuel/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 01</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Budget mensuel complet</h3><p class="text-sm text-stone-600">Score santé sur 100 et reste à vivre détaillé.</p></a>
+        <a href="/calculateurs/reste-a-vivre/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 02</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Reste à vivre</h3><p class="text-sm text-stone-600">Combien il te reste vraiment chaque mois.</p></a>
+        <a href="/calculateurs/comparateur-abonnements/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 09</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Comparateur abonnements</h3><p class="text-sm text-stone-600">Le levier le plus rapide pour libérer de l'épargne.</p></a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("rule-form") as HTMLFormElement | null;
+  const elIBesoins = document.getElementById("ideal-besoins");
+  const elIEnvies = document.getElementById("ideal-envies");
+  const elIEpargne = document.getElementById("ideal-epargne");
+  const elRBlock = document.getElementById("reality-block");
+  const elRBesoins = document.getElementById("real-besoins");
+  const elREnvies = document.getElementById("real-envies");
+  const elREpargne = document.getElementById("real-epargne");
+  const elRPctB = document.getElementById("real-pct-besoins");
+  const elRPctE = document.getElementById("real-pct-envies");
+  const elRPctEp = document.getElementById("real-pct-epargne");
+  const elRBarB = document.getElementById("real-bar-besoins");
+  const elRBarE = document.getElementById("real-bar-envies");
+  const elRBarEp = document.getElementById("real-bar-epargne");
+  const elReco = document.getElementById("rule-reco");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function compute() {
+    const r = getNum("revenu");
+    if (r <= 0) {
+      [elIBesoins, elIEnvies, elIEpargne].forEach((e) => { if (e) e.textContent = "- €"; });
+      if (elRBlock) elRBlock.classList.add("hidden");
+      if (elReco) elReco.innerHTML = '<li class="text-stone-500 italic">↳ saisis ton revenu pour voir la répartition idéale.</li>';
+      return;
+    }
+
+    const ideal = { besoins: r * 0.5, envies: r * 0.3, epargne: r * 0.2 };
+    if (elIBesoins) elIBesoins.textContent = fmt(ideal.besoins);
+    if (elIEnvies) elIEnvies.textContent = fmt(ideal.envies);
+    if (elIEpargne) elIEpargne.textContent = fmt(ideal.epargne);
+
+    const reel = { besoins: getNum("besoins"), envies: getNum("envies"), epargne: getNum("epargne") };
+    const totalReel = reel.besoins + reel.envies + reel.epargne;
+
+    const recos: string[] = [];
+    if (totalReel === 0) {
+      if (elRBlock) elRBlock.classList.add("hidden");
+      recos.push(`Avec ${fmt(r)} de revenu mensuel, l'idéal est ${fmt(ideal.besoins)} pour les besoins, ${fmt(ideal.envies)} pour les envies, ${fmt(ideal.epargne)} d'épargne.`);
+      if (r < 1500) recos.push("Avec un revenu sous 1 500 €, la règle 50/30/20 est très difficile en grande ville. Vise plutôt 60/25/15 et active toutes tes aides (LEP, prime d'activité).");
+      if (r >= 3000) recos.push("Avec ce revenu, tu as une vraie marge pour atteindre les 20% d'épargne. Pose le virement automatique le 1er du mois (pay yourself first).");
+    } else {
+      if (elRBlock) elRBlock.classList.remove("hidden");
+      const pctB = (reel.besoins / r) * 100;
+      const pctE = (reel.envies / r) * 100;
+      const pctEp = (reel.epargne / r) * 100;
+      if (elRBesoins) elRBesoins.textContent = fmt(reel.besoins);
+      if (elREnvies) elREnvies.textContent = fmt(reel.envies);
+      if (elREpargne) elREpargne.textContent = fmt(reel.epargne);
+      if (elRPctB) elRPctB.textContent = pctB.toFixed(0);
+      if (elRPctE) elRPctE.textContent = pctE.toFixed(0);
+      if (elRPctEp) elRPctEp.textContent = pctEp.toFixed(0);
+      if (elRBarB) (elRBarB as HTMLElement).style.width = `${Math.min(100, pctB)}%`;
+      if (elRBarE) (elRBarE as HTMLElement).style.width = `${Math.min(100, pctE)}%`;
+      if (elRBarEp) (elRBarEp as HTMLElement).style.width = `${Math.min(100, pctEp)}%`;
+
+      if (pctB > 60) recos.push(`Tes besoins représentent ${pctB.toFixed(0)}% (idéal : 50%). Très probablement le loyer + énergie. Si tu es en grande ville, c'est structurel. Sinon, regarde les charges fixes optimisables.`);
+      else if (pctB < 50) recos.push(`Tes besoins ne sont qu'à ${pctB.toFixed(0)}% : excellent. Soit tu sous-estimes (vérifie les assurances et abonnements télécom), soit tu as une situation logement très favorable.`);
+
+      if (pctE > 35) recos.push(`Tes envies sont à ${pctE.toFixed(0)}% (idéal : 30%). Levier d'optimisation rapide. Cible 1-2 postes : restos/livraisons, abonnements doublons, vêtements.`);
+      if (pctEp < 10 && r >= 1800) recos.push(`Ton épargne n'est qu'à ${pctEp.toFixed(0)}% (idéal : 20%). Vise au moins 10% en automatisant un virement le 1er du mois.`);
+      if (pctEp >= 20) recos.push(`Épargne à ${pctEp.toFixed(0)}% : tu es au niveau. Prochaine étape : optimiser le placement (LEP si éligible, livret A complet, puis assurance vie).`);
+
+      const totalPct = pctB + pctE + pctEp;
+      if (totalPct > 100) recos.push(`Tes dépenses + épargne dépassent ton revenu de ${fmt((totalReel - r))}/mois. Vérifie les chiffres ou regarde où ça déborde (souvent : crédit conso ou découvert).`);
+    }
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll("input").forEach((i) => {
+    i.addEventListener("focus", () => (i.style.borderColor = "#1a3d2e"));
+    i.addEventListener("blur", () => (i.style.borderColor = "#e7e5e4"));
+  });
+</script>

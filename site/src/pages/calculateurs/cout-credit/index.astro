@@ -1,59 +1,277 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Coût total d'un crédit", url: siteConfig.url + "/calculateurs/cout-credit/" },
 ]);
+
+const faqItems = [
+  { question: "Comment calculer le coût total d'un crédit ?", answer: "Coût total = (mensualité × nombre de mensualités) - capital emprunté + assurance emprunteur. Pour un crédit immo de 200 000 € sur 20 ans à 3,5% avec assurance à 0,3%, le coût total des intérêts est d'environ 78 000 € + 12 000 € d'assurance = 90 000 € de surcoût (45% du capital)." },
+  { question: "C'est quoi le TAEG ?", answer: "Le TAEG (Taux Annuel Effectif Global) inclut le taux d'intérêt nominal + les frais de dossier + l'assurance emprunteur + les frais de garantie. C'est le seul indicateur qui permet de comparer 2 offres de crédit. Si une banque te propose 3,4% nominal mais 4,1% TAEG, c'est ce dernier qui compte vraiment." },
+  { question: "L'assurance emprunteur est-elle obligatoire ?", answer: "Pas légalement, mais en pratique aucune banque n'accorde un crédit immobilier sans. Tu peux choisir une assurance externe (loi Lagarde 2010) ou la changer en cours de crédit (loi Lemoine 2022, n'importe quand sans frais). Économie possible : 5 000 à 15 000 € sur la durée totale." },
+  { question: "Mensualité ou durée : que privilégier ?", answer: "Mensualité plus faible = durée plus longue = coût total plus élevé. Pour un même crédit de 200 000 € à 3,5% : 15 ans = 1 430 €/mois (coût intérêts 57 000 €). 20 ans = 1 160 €/mois (coût 78 000 €). 25 ans = 1 000 €/mois (coût 100 000 €). Choisis la mensualité que tu peux confortablement payer (sous 30% de tes revenus), pas le minimum possible." },
+  { question: "Et si je rembourse par anticipation ?", answer: "Tu peux rembourser totalement ou partiellement à tout moment. Pénalité légale max : 3% du capital restant dû ou 6 mois d'intérêts (la plus faible des deux). Sur les nouveaux crédits, beaucoup de banques renoncent aux pénalités. Économie : tout dépend du taux et du moment. Plus tu rembourses tôt, plus tu économises d'intérêts." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+
+const calcJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur coût total d'un crédit · Econono",
+  url: siteConfig.url + "/calculateurs/cout-credit/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Calcule le vrai coût d'un crédit immobilier ou conso : capital + intérêts + assurance, pas juste la mensualité. Gratuit, sans inscription.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
 ---
 
 <BaseLayout
-  title="Coût total d'un crédit 2026 · calculateur gratuit · Econono"
-  description="Le vrai prix d'un crédit : capital + intérêts + assurance, pas juste la mensualité."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur coût total crédit 2026 · capital + intérêts + assurance · Econono"
+  description="Calcule le vrai prix d'un crédit immo ou conso : capital + intérêts cumulés + assurance emprunteur. Mensualité officielle (annuité constante). Gratuit."
+  jsonLd={[breadcrumbs, calcJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
-        <a href="/" class="hover:underline">Accueil</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
-        <span class="mx-2 text-stone-300">›</span>
+        <a href="/" class="hover:underline">Accueil</a><span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a><span class="mx-2 text-stone-300">›</span>
         <span style="color: #1a3d2e;">Coût total d'un crédit</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 08</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Coût total d'un crédit.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 08 · annuité constante</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Coût total d'un crédit.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Le vrai prix, pas la mensualité.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Le <strong>coût total d'un crédit</strong> = (mensualité × nombre de mensualités) , capital emprunté + assurance emprunteur. Pour un crédit de 200 000 € sur 20 ans à 3,5% avec assurance à 0,3%, le coût total des intérêts est de ~<strong>78 000 €</strong> + ~12 000 € d'assurance = <strong>90 000 € de surcoût</strong> vs capital emprunté.`} />
+        <p>Le <strong>coût total d'un crédit</strong> = (mensualité × nombre de mensualités) - capital emprunté + assurance emprunteur. Pour un <strong>crédit immobilier de 200 000 €</strong> sur <strong>20 ans à 3,5%</strong> avec assurance à 0,3% : mensualité ~1 160 €, intérêts cumulés ~78 000 €, assurance ~12 000 €, soit <strong>~90 000 € de surcoût</strong> par rapport au capital emprunté (45%). Le <strong>TAEG</strong> est le seul indicateur officiel pour comparer deux offres.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="cc-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · le crédit</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Montant et durée</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Capital emprunté</span>
+              <div class="relative"><input type="number" name="capital" min="0" step="1000" placeholder="200 000" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Durée</span>
+              <div class="relative"><input type="number" name="duree" min="1" max="30" step="1" placeholder="20" class="w-full pl-4 pr-12 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">ans</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Taux d'intérêt nominal</span>
+              <div class="relative"><input type="number" name="taux" min="0" max="20" step="0.05" placeholder="3.5" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">%</span></div>
+              <p class="text-xs text-stone-500 mt-1">Hors assurance et frais</p>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Taux assurance emprunteur</span>
+              <div class="relative"><input type="number" name="assurance" min="0" max="2" step="0.05" placeholder="0.3" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">%/an</span></div>
+              <p class="text-xs text-stone-500 mt-1">Sur capital initial. 0% si tu n'en as pas.</p>
+            </label>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-2">
+            <button type="button" data-preset="immo" class="cc-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">Immo · 200k/20a/3.5%</button>
+            <button type="button" data-preset="auto" class="cc-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">Auto · 15k/5a/4.5%</button>
+            <button type="button" data-preset="conso" class="cc-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">Conso · 5k/2a/8%</button>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Mensualité</div></div>
+              <p class="eyebrow text-xs mb-2">Tu paieras chaque mois</p>
+              <p id="cc-mensualite" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="cc-mensualite-detail" class="text-sm text-stone-600">Saisis tes paramètres pour démarrer.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Coût total</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Capital emprunté</span><span id="cc-capital" class="font-mono tabular text-stone-800">- €</span></div>
+                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Intérêts cumulés</span><span id="cc-interets" class="font-mono tabular" style="color: #c2410c;">- €</span></div>
+                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Assurance cumulée</span><span id="cc-assur-total" class="font-mono tabular" style="color: #c2410c;">- €</span></div>
+                <div class="flex justify-between items-baseline pt-2 border-t-2" style="border-color: #1a3d2e;">
+                  <span class="font-semibold" style="color: #1a3d2e;">Coût total</span>
+                  <span id="cc-total" class="font-mono font-bold tabular" style="color: #1a3d2e; font-size: 1.3rem;">- €</span>
+                </div>
+                <div class="flex justify-between items-baseline">
+                  <span class="text-xs text-stone-500">Surcoût vs capital</span>
+                  <span id="cc-surcout" class="font-mono text-xs text-stone-500">-</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="cc-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Comprendre le coût total d'un crédit</h2>
+      <p>Quand une banque te propose un crédit, elle met en avant la <strong>mensualité</strong>. C'est trompeur : la mensualité ne te dit rien sur ce que tu vas vraiment payer. Pour comparer deux offres, tu dois regarder le <strong>coût total</strong>, qui inclut tous les intérêts cumulés sur la durée du prêt + l'assurance emprunteur.</p>
+      <p>La formule de la mensualité (annuité constante) est : <strong>M = C × r / (1 - (1+r)^(-n))</strong>, où C = capital, r = taux mensuel (taux annuel / 12), n = nombre de mensualités. Le coût total = (M × n) - C + assurance cumulée.</p>
+
+      <h2>L'assurance emprunteur : levier souvent oublié</h2>
+      <p>Représente 30 à 50% du coût total d'un crédit immobilier. La banque te propose son assurance interne (groupe), souvent 2 fois plus chère qu'une délégation externe. Depuis la <a href="https://www.economie.gouv.fr/cedef/loi-lemoine-assurance-emprunteur" target="_blank" rel="noopener">loi Lemoine 2022</a>, tu peux changer d'assurance à tout moment, sans frais, sans justification. Économie potentielle : <strong>5 000 à 15 000 €</strong> sur un crédit immo.</p>
+
+      <h2>Mensualité vs durée : le bon arbitrage</h2>
+      <p>Pour un crédit de 200 000 € à 3,5% :</p>
+      <ul>
+        <li><strong>15 ans</strong> : 1 430 €/mois, intérêts cumulés <strong>~57 000 €</strong></li>
+        <li><strong>20 ans</strong> : 1 160 €/mois, intérêts cumulés <strong>~78 000 €</strong> (+37%)</li>
+        <li><strong>25 ans</strong> : 1 000 €/mois, intérêts cumulés <strong>~100 000 €</strong> (+75%)</li>
+      </ul>
+      <p>Allonger la durée de 5 ans coûte 22 000 € de plus en intérêts. À toi d'arbitrer entre confort mensuel et coût final.</p>
+
+      <h2>Le piège des taux bas : sur 25 ans même avec un faible taux</h2>
+      <p>Tu peux croire qu'un taux bas (2%) sur 25 ans, c'est anodin. Pour 200 000 € à 2% sur 25 ans : intérêts cumulés ~54 000 €. C'est plus que pour 15 ans à 3,5% (57 000 € sur 15 ans, mais 25 vs 15). Plus la durée est longue, plus les intérêts s'empilent même avec un taux faible.</p>
+
+      <h2>Le rachat de crédit : utile, dangereux</h2>
+      <p>Le <a href="/calculateurs/taux-endettement/">rachat de crédit</a> consiste à regrouper plusieurs crédits en un seul, étalé sur une durée plus longue. Avantage : mensualité plus basse, taux d'endettement réduit. Inconvénient : coût total qui explose. Outil de gestion d'urgence, pas solution durable.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.banque-france.fr/" target="_blank" rel="noopener">Banque de France · taux moyens crédit</a></li>
+        <li><a href="https://www.service-public.fr/particuliers/vosdroits/F1875" target="_blank" rel="noopener">Service-Public · prêt immobilier</a></li>
+        <li><a href="https://www.economie.gouv.fr/cedef/loi-lemoine-assurance-emprunteur" target="_blank" rel="noopener">Loi Lemoine · assurance emprunteur</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Formule officielle annuité constante (la plus utilisée par les banques françaises).</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le simulateur complet (immo + conso + auto) arrive. Pour estimation rapide : sur 20 ans à 3,5%, tu rembourses environ 1,4× le capital emprunté.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("cc-form") as HTMLFormElement | null;
+  const elM = document.getElementById("cc-mensualite");
+  const elMD = document.getElementById("cc-mensualite-detail");
+  const elCap = document.getElementById("cc-capital");
+  const elInt = document.getElementById("cc-interets");
+  const elAssur = document.getElementById("cc-assur-total");
+  const elTotal = document.getElementById("cc-total");
+  const elSurcout = document.getElementById("cc-surcout");
+  const elReco = document.getElementById("cc-reco");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function compute() {
+    const C = getNum("capital");
+    const annees = getNum("duree");
+    const tauxAnnuel = getNum("taux") / 100;
+    const assurAnnuel = getNum("assurance") / 100;
+
+    if (C <= 0 || annees <= 0) {
+      [elM, elTotal].forEach((e) => { if (e) e.textContent = "- €"; });
+      if (elMD) elMD.textContent = "Saisis capital + durée + taux pour démarrer.";
+      [elCap, elInt, elAssur].forEach((e) => { if (e) e.textContent = "- €"; });
+      if (elSurcout) elSurcout.textContent = "-";
+      if (elReco) elReco.innerHTML = '<li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>';
+      return;
+    }
+
+    const r = tauxAnnuel / 12;
+    const n = annees * 12;
+    const mensualiteCapital = r > 0 ? C * r / (1 - Math.pow(1 + r, -n)) : C / n;
+    const interets = mensualiteCapital * n - C;
+    const assuranceMensuelle = (C * assurAnnuel) / 12;
+    const assuranceTotale = assuranceMensuelle * n;
+    const mensualiteTotale = mensualiteCapital + assuranceMensuelle;
+    const total = C + interets + assuranceTotale;
+    const surcoutPct = (interets + assuranceTotale) / C * 100;
+
+    if (elM) elM.textContent = `${fmt(mensualiteTotale)}/mois`;
+    if (elMD) elMD.textContent = `Capital : ${fmt(mensualiteCapital)}/mois · Assurance : ${fmt(assuranceMensuelle)}/mois`;
+    if (elCap) elCap.textContent = fmt(C);
+    if (elInt) elInt.textContent = fmt(interets);
+    if (elAssur) elAssur.textContent = fmt(assuranceTotale);
+    if (elTotal) elTotal.textContent = fmt(total);
+    if (elSurcout) elSurcout.textContent = `+${surcoutPct.toFixed(0)}% vs capital`;
+
+    const recos: string[] = [];
+    if (annees > 20) recos.push(`Sur ${annees} ans, l'effet 'durée' coûte cher. Si tu peux supporter une mensualité plus élevée, raccourcir à 20 ans économiserait ~${fmt(interets * 0.25)}.`);
+    if (assurAnnuel > 0.35) recos.push(`Assurance emprunteur à ${getNum("assurance")}%/an : tarif élevé. Loi Lemoine 2022 : tu peux la changer à tout moment, sans frais. Délégation externe = souvent 0,15-0,25%.`);
+    if (assurAnnuel === 0 && C > 50000) recos.push("Tu n'as pas mis d'assurance. Pour un crédit immo, c'est obligatoire de fait. Compte 0,15-0,40% selon profil.");
+    if (tauxAnnuel > 0.05) recos.push(`Taux à ${getNum("taux")}% : c'est élevé. Si crédit conso, c'est normal. Si immo en 2026, négocie ou compare.`);
+    if (recos.length === 0) recos.push("Bonne simulation. N'oublie pas de comparer le TAEG (et pas juste le taux nominal) entre deux offres.");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  const PRESETS: Record<string, [number, number, number, number]> = {
+    immo: [200000, 20, 3.5, 0.3],
+    auto: [15000, 5, 4.5, 0.25],
+    conso: [5000, 2, 8, 0],
+  };
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll<HTMLButtonElement>(".cc-preset").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const p = btn.getAttribute("data-preset") || "immo";
+      const [C, n, t, a] = PRESETS[p];
+      (form.elements.namedItem("capital") as HTMLInputElement).value = String(C);
+      (form.elements.namedItem("duree") as HTMLInputElement).value = String(n);
+      (form.elements.namedItem("taux") as HTMLInputElement).value = String(t);
+      (form.elements.namedItem("assurance") as HTMLInputElement).value = String(a);
+      compute();
+    });
+  });
+  form?.querySelectorAll('input[type="number"]').forEach((i) => {
+    (i as HTMLInputElement).addEventListener("focus", () => ((i as HTMLInputElement).style.borderColor = "#1a3d2e"));
+    (i as HTMLInputElement).addEventListener("blur", () => ((i as HTMLInputElement).style.borderColor = "#e7e5e4"));
+  });
+</script>

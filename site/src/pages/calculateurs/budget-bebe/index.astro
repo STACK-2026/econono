@@ -1,59 +1,349 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
-  { name: "Budget bébé première année", url: siteConfig.url + "/calculateurs/budget-bebe/" },
+  { name: "Budget bébé", url: siteConfig.url + "/calculateurs/budget-bebe/" },
 ]);
+
+const faqItems = [
+  { question: "Combien coûte un bébé la première année en France ?", answer: "Entre 8 000 € et 12 000 € selon le mode de garde et les choix d'équipement. Postes principaux : garde (4 000 à 8 000 €), équipement initial (1 500 à 2 500 €), couches/lait/repas (1 200 à 1 800 €), santé reste à charge (300 à 600 €), vêtements (400 à 800 €). Aides CAF déduites : la PAJE (prime naissance + allocation de base + complément libre choix mode de garde) couvre 30 à 70% selon revenus." },
+  { question: "Quelles aides CAF pour bébé ?", answer: "PAJE (Prestation d'Accueil du Jeune Enfant) : (1) prime à la naissance ~1 010 €, versée 7e mois grossesse, (2) allocation de base ~190 €/mois jusqu'aux 3 ans, sous conditions de ressources, (3) Complément libre Choix de Mode de Garde (CMG) 200-700 €/mois selon revenus + mode de garde. Allocation parent isolé si applicable. Allocations familiales à partir du 2e enfant." },
+  { question: "Crèche, assistante maternelle, garde domicile : que choisir ?", answer: "Crèche collective : 0 à 700 €/mois reste à charge selon revenus (places limitées). Assistante maternelle agréée : 350-600 €/mois reste à charge en moyenne. Garde à domicile : 800-1 500 €/mois (le plus cher mais flexibilité max). Parent au foyer : 0 € mais perte du salaire de ce parent. Selon vos revenus + dispo de places, optimum varie." },
+  { question: "Comment réduire le coût d'un bébé ?", answer: "5 leviers : (1) acheter d'occasion (poussette, berceau, vêtements -70% sur Vinted/Le Bon Coin/donations familiales), (2) allaiter si possible (économie 600-1 200 €/an de lait infantile), (3) couches lavables (économie 800 €/an), (4) cuisiner les petits pots maison à partir de 6 mois, (5) demander la liste cadeaux à l'entourage pour les achats coûteux (chaise haute, parc, transat)." },
+  { question: "Combien prévoir d'épargne pour la 1ère année ?", answer: "Idéal : avoir 3 000 à 5 000 € d'épargne avant la naissance. Couvre l'équipement initial (le gros poste pré-arrivée), les imprévus santé, et le différé entre arrêt de salaire et premiers versements CAF. Si tu pars du congé maternité avec déjà 1 mois d'avance de paie, c'est plus serein." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+
+const calcJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur budget bébé première année · Econono",
+  url: siteConfig.url + "/calculateurs/budget-bebe/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Calcule le coût d'un bébé la première année en France 2026, aides CAF déduites. Selon mode de garde + revenus.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
 ---
 
 <BaseLayout
-  title="Budget bébé première année 2026 · calculateur gratuit · Econono"
-  description="Tout ce qu'il faut prévoir pour la 1ère année d'un bébé. Aides CAF déduites."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur budget bébé 1ère année 2026 · aides CAF · Econono"
+  description="Combien coûte un bébé la 1ère année selon le mode de garde et tes revenus. Aides CAF déduites (PAJE, CMG). Données officielles 2026. Gratuit."
+  jsonLd={[breadcrumbs, calcJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
-        <a href="/" class="hover:underline">Accueil</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <span style="color: #1a3d2e;">Budget bébé première année</span>
+        <a href="/" class="hover:underline">Accueil</a><span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a><span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Budget bébé</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 12</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Budget bébé première année.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 12 · aides CAF 2026</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Budget bébé.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Première année, aides comprises.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Le <strong>coût d'un bébé la première année</strong> en France : entre <strong>8 000 € et 12 000 €</strong> selon le mode de garde et l'équipement. Postes principaux : garde (4 000 à 8 000 €), équipement initial (1 500 à 2 500 €), couches/lait/repas (1 200 à 1 800 €), santé (300 à 600 € reste à charge), vêtements (400 à 800 €). <strong>Aides CAF</strong> : prime à la naissance ~1 000 €, allocation de base ~190 €/mois, complément de garde 200-700 €/mois selon revenus et mode de garde.`} />
+        <p>Le <strong>coût d'un bébé la première année</strong> en France varie entre <strong>8 000 € et 12 000 €</strong> selon le mode de garde et l'équipement. Postes principaux : <strong>garde (4 000 à 8 000 €)</strong>, équipement initial (1 500 à 2 500 €), couches/lait/repas (1 200 à 1 800 €), santé (300 à 600 € reste à charge), vêtements (400 à 800 €). <strong>Aides CAF</strong> : prime à la naissance ~1 010 €, allocation de base ~190 €/mois (sous conditions de ressources), complément libre choix de mode de garde 200-700 €/mois selon revenus.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="bb-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · vos revenus</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Revenus annuels du foyer</h2>
+            <p class="text-sm text-stone-500">Ressources N-2. Détermine vos aides CAF.</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Revenu fiscal de référence (annuel)</span>
+              <div class="relative"><input type="number" name="rfr" min="0" step="1000" placeholder="35 000" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/an</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Composition foyer</span>
+              <select name="parents" class="w-full px-4 py-3 rounded-md border-2 text-base" style="border-color: #e7e5e4; background: #fffefb;">
+                <option value="couple">Couple (2 parents)</option>
+                <option value="solo">Parent isolé</option>
+              </select>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · mode de garde</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Comment vous comptez garder bébé</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="garde" value="parent" checked class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Parent au foyer</span><span class="block text-xs text-stone-500 mt-1">0 € mais salaire perdu</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="garde" value="creche" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Crèche collective</span><span class="block text-xs text-stone-500 mt-1">~150-700 €/mois</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="garde" value="assmat" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Assistante maternelle</span><span class="block text-xs text-stone-500 mt-1">~350-600 €/mois reste</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="garde" value="domicile" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Garde à domicile</span><span class="block text-xs text-stone-500 mt-1">~800-1 500 €/mois</span></label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 3 · équipement</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Niveau d'équipement</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-3 gap-3">
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="equipement" value="economique" checked class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Économique</span><span class="block text-xs text-stone-500 mt-1">Occasion, dons</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="equipement" value="moyen" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Standard</span><span class="block text-xs text-stone-500 mt-1">Mix neuf + occasion</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="equipement" value="premium" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Premium</span><span class="block text-xs text-stone-500 mt-1">Tout neuf, marques</span></label>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Année 1</div></div>
+              <p class="eyebrow text-xs mb-2">Coût total estimé</p>
+              <p id="bb-total" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="bb-mensuel" class="text-sm text-stone-600">Choisis ta situation pour démarrer.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Détail des coûts</p>
+              <ul id="bb-detail" class="space-y-1 text-sm"></ul>
+            </div>
+
+            <div class="ticket p-7" style="background: rgba(244, 196, 48, 0.08);">
+              <p class="eyebrow text-xs mb-2" style="color: #c2410c;">Aides CAF estimées</p>
+              <p id="bb-aides" class="font-mono font-bold tabular leading-none mb-1" style="color: #15803d; font-size: 1.5rem;">- € sur l'année</p>
+              <ul id="bb-aides-detail" class="space-y-1 text-xs text-stone-600 mt-2"></ul>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="bb-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Combien coûte vraiment un bébé la première année</h2>
+      <p>Selon les études <a href="https://www.caf.fr/" target="_blank" rel="noopener">CAF</a> et de l'<a href="https://www.observatoire-emploi-formation.fr/" target="_blank" rel="noopener">UNAF</a>, le coût brut d'un bébé la première année varie de <strong>8 000 € à 12 000 €</strong> selon le mode de garde + l'équipement choisi. Aides CAF déduites, le reste à charge réel descend à <strong>3 500 € à 8 000 €</strong> selon les revenus du foyer.</p>
+
+      <h2>Détail par poste (estimation moyenne)</h2>
+      <h3>Équipement initial (à anticiper)</h3>
+      <ul>
+        <li><strong>Économique</strong> (occasion, dons familiaux) : 800-1 200 €</li>
+        <li><strong>Standard</strong> (mix neuf et occasion) : 1 500-2 500 €</li>
+        <li><strong>Premium</strong> (tout neuf, marques) : 2 800-5 000 €</li>
+      </ul>
+      <p>Postes : poussette (200-1 200 €), siège auto (100-500 €), lit + matelas (150-600 €), table à langer (50-300 €), transat (50-200 €), baignoire (20-100 €), vêtements naissance (200-500 €), chambre (lit, commode, déco : 500-2 000 €).</p>
+
+      <h3>Couches, lait, repas</h3>
+      <ul>
+        <li><strong>Couches</strong> : ~70 €/mois en jetables, ~10 €/mois en lavables (après investissement initial 200 €)</li>
+        <li><strong>Lait infantile</strong> : ~80-100 €/mois si non allaitement, 0 € si allaitement</li>
+        <li><strong>Repas dès 6 mois</strong> : ~50-80 €/mois (petits pots ou maison)</li>
+      </ul>
+
+      <h3>Garde (le plus gros poste)</h3>
+      <ul>
+        <li><strong>Crèche collective</strong> : 0 à 700 €/mois reste à charge selon revenus (places limitées, demande dès 4e mois grossesse)</li>
+        <li><strong>Assistante maternelle agréée</strong> : 350-600 €/mois reste à charge en moyenne (avec CMG)</li>
+        <li><strong>Garde à domicile</strong> : 800-1 500 €/mois (CMG aide partiellement, mais reste cher)</li>
+        <li><strong>Parent au foyer</strong> : 0 € mais perte du salaire de ce parent (à comparer avec les coûts garde)</li>
+      </ul>
+
+      <h3>Santé</h3>
+      <p>Reste à charge moyen 300-600 €/an pour les soins courants. Pédiatre, dentiste, vaccinations sont remboursés à 100% les premières années pour la plupart des actes.</p>
+
+      <h2>Les aides CAF en détail</h2>
+      <h3>Prime à la naissance</h3>
+      <p>~1 010 € versée au 7e mois de grossesse, sous condition de ressources. La majorité des familles y sont éligibles.</p>
+      <h3>Allocation de base PAJE</h3>
+      <p>~190 €/mois jusqu'aux 3 ans de l'enfant, sous condition de ressources (plafond ~50 000 €/an pour un couple).</p>
+      <h3>CMG (Complément libre Choix Mode de Garde)</h3>
+      <p>200-700 €/mois selon revenus + mode de garde. Plus tu gardes via une assistante maternelle déclarée ou en garde à domicile, plus le CMG est élevé.</p>
+      <h3>Allocation parent isolé</h3>
+      <p>Si applicable. Compte ~250 €/mois en plus pour les revenus très modestes.</p>
+
+      <h2>5 leviers pour réduire le coût</h2>
+      <ol>
+        <li><strong>Acheter d'occasion</strong> : Vinted, Le Bon Coin, donations familiales. -70% sur la plupart des équipements.</li>
+        <li><strong>Allaiter si possible</strong> : économie 600-1 200 €/an de lait infantile.</li>
+        <li><strong>Couches lavables</strong> : économie 800 €/an, mais effort logistique.</li>
+        <li><strong>Petits pots maison</strong> : à partir de 6 mois, légumes mixés, économie 30-50 €/mois.</li>
+        <li><strong>Liste cadeaux à l'entourage</strong> : naissance, baptême, premier Noël = opportunités d'avoir l'équipement coûteux offert.</li>
+      </ol>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/petite-enfance" target="_blank" rel="noopener">CAF · prestations petite enfance</a></li>
+        <li><a href="https://monenfant.fr/" target="_blank" rel="noopener">monenfant.fr · simulateur garde</a></li>
+        <li><a href="https://www.unaf.fr/" target="_blank" rel="noopener">UNAF · études coût enfant</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Aides CAF actualisées chaque 1er avril.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur par mode de garde et revenus arrive. En attendant, sache que le mode de garde fait varier le coût du simple au double.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("bb-form") as HTMLFormElement | null;
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+  function getRadio(name: string, def: string): string {
+    if (!form) return def;
+    const radios = form.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`);
+    for (const r of radios) if (r.checked) return r.value;
+    return def;
+  }
+  function getSel(name: string, def: string): string {
+    if (!form) return def;
+    return (form.elements.namedItem(name) as HTMLSelectElement)?.value || def;
+  }
+
+  const EQUIPEMENT: Record<string, number> = { economique: 1000, moyen: 2000, premium: 3500 };
+  const GARDE_BRUT: Record<string, number> = { parent: 0, creche: 600, assmat: 950, domicile: 1300 };
+
+  function compute() {
+    const rfr = getNum("rfr");
+    const parents = getSel("parents", "couple");
+    const garde = getRadio("garde", "parent");
+    const equipement = getRadio("equipement", "economique");
+
+    // Coûts annuels (sur 12 mois pour la garde, mais bébé naît mid-year en pratique , on suppose 12 mois pour simplification)
+    const couts = {
+      equipement: EQUIPEMENT[equipement],
+      couches: equipement === "economique" ? 200 : 850, // jetables vs lavables
+      lait: 1000, // si pas d'allaitement
+      repas: 600, // dès 6 mois
+      sante: 450,
+      vetements: equipement === "premium" ? 800 : (equipement === "moyen" ? 500 : 300),
+      garde: GARDE_BRUT[garde] * 12,
+    };
+    const totalBrut = Object.values(couts).reduce((s, v) => s + v, 0);
+
+    // Aides estimées simplifiées
+    let aides = 0;
+    const detailAides: string[] = [];
+    aides += 1010; detailAides.push("Prime naissance ~1 010 € (ouverte à la majorité des familles)");
+
+    // Allocation de base sous condition (plafond simplifié)
+    const plafondBase = parents === "couple" ? 50000 : 35000;
+    if (rfr === 0 || rfr <= plafondBase) {
+      aides += 190 * 12;
+      detailAides.push("Allocation de base PAJE ~190 €/mois × 12 = 2 280 €");
+    }
+
+    // CMG selon mode de garde
+    if (garde !== "parent" && garde !== "creche") {
+      let cmg = 350; // moyenne
+      if (rfr > 0 && rfr < 25000) cmg = 580;
+      else if (rfr > 60000) cmg = 200;
+      aides += cmg * 12;
+      detailAides.push(`CMG estimé ~${cmg} €/mois × 12 = ${fmt(cmg * 12)}`);
+    }
+
+    const resteCharge = totalBrut - aides;
+    const mensuel = resteCharge / 12;
+
+    const elTotal = document.getElementById("bb-total");
+    const elMensuel = document.getElementById("bb-mensuel");
+    const elDetail = document.getElementById("bb-detail");
+    const elAides = document.getElementById("bb-aides");
+    const elAidesDetail = document.getElementById("bb-aides-detail");
+    const elReco = document.getElementById("bb-reco");
+
+    if (elTotal) elTotal.textContent = fmt(resteCharge);
+    if (elMensuel) elMensuel.textContent = `Soit ~${fmt(mensuel)}/mois reste à charge.`;
+    if (elDetail) elDetail.innerHTML = [
+      ["Équipement initial", couts.equipement],
+      ["Couches", couts.couches],
+      ["Lait infantile", couts.lait],
+      ["Repas (dès 6 mois)", couts.repas],
+      ["Santé reste à charge", couts.sante],
+      ["Vêtements", couts.vetements],
+      ["Garde (sur 12 mois)", couts.garde],
+    ].map(([n, v]) => `<li class="flex justify-between border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">${n}</span><span class="font-mono tabular text-stone-800">${fmt(v as number)}</span></li>`).join("") + `<li class="flex justify-between pt-2 border-t-2 border-[#1a3d2e]"><span class="font-semibold" style="color: #1a3d2e;">Total brut</span><span class="font-mono font-bold tabular" style="color: #1a3d2e;">${fmt(totalBrut)}</span></li>`;
+
+    if (elAides) elAides.textContent = `+ ${fmt(aides)} sur l'année`;
+    if (elAidesDetail) elAidesDetail.innerHTML = detailAides.map((d) => `<li>· ${d}</li>`).join("");
+
+    const recos: string[] = [];
+    if (garde === "domicile") recos.push("Garde à domicile : le plus cher mais flexibilité max. Si tu peux mutualiser avec une autre famille (garde partagée), tu divises par 2.");
+    if (garde === "creche") recos.push("Crèche : meilleur rapport qualité/prix. Demande à inscrire dès le 4e mois de grossesse (places limitées).");
+    if (garde === "parent") recos.push("Parent au foyer : 0 € de garde mais perte du salaire. Compte le congé parental (PreParE) qui peut compenser partiellement.");
+    if (equipement === "premium") recos.push("Niveau premium : tu peux économiser 30-50% en mixant neuf (ce qui touche peau du bébé) et occasion (poussette, lit, transat).");
+    if (rfr === 0) recos.push("Saisis ton revenu fiscal pour estimer plus précisément les aides CAF auxquelles tu as droit.");
+    if (resteCharge > 8000) recos.push(`Reste à charge ${fmt(resteCharge)} : prévois une réserve d'épargne de 3 000-5 000 € avant la naissance pour absorber l'équipement initial + les premiers mois.`);
+    if (resteCharge < 4000) recos.push("Reste à charge maîtrisé : tes choix limitent bien la dépense. Profite de la 1ère année pour épargner un peu sur livret A 'projet bébé 2'.");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll<HTMLInputElement>('input[type="radio"]').forEach((r) => {
+    r.addEventListener("change", () => {
+      form.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+        const inp = l.querySelector<HTMLInputElement>('input[type="radio"]');
+        if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+        else { l.style.outline = "none"; }
+      });
+      compute();
+    });
+  });
+  form?.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+    const inp = l.querySelector<HTMLInputElement>('input[type="radio"]');
+    if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+  });
+  form?.querySelectorAll('input[type="number"]').forEach((i) => {
+    (i as HTMLInputElement).addEventListener("focus", () => ((i as HTMLInputElement).style.borderColor = "#1a3d2e"));
+    (i as HTMLInputElement).addEventListener("blur", () => ((i as HTMLInputElement).style.borderColor = "#e7e5e4"));
+  });
+  compute();
+</script>

@@ -1,22 +1,44 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Calculateur d'épargne", url: siteConfig.url + "/calculateurs/epargne/" },
 ]);
+
+const calculatorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur d'épargne intérêts composés · Econono",
+  url: siteConfig.url + "/calculateurs/epargne/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Calcule combien tu auras dans 10, 20 ou 30 ans en mettant X €/mois. Intérêts composés inclus. Compatible livret A, LEP, assurance vie. Gratuit.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
+
+const faqItems = [
+  { question: "C'est quoi les intérêts composés ?", answer: "Les intérêts composés, c'est quand les intérêts d'une année sont ajoutés au capital, et génèrent eux-mêmes des intérêts l'année suivante. Plus la durée est longue, plus l'effet est puissant. Exemple : 100 €/mois pendant 30 ans à 4% = 69 000 € (dont 33 000 € d'intérêts cumulés). Sur 10 ans : 14 700 € (dont 2 700 € d'intérêts)." },
+  { question: "Quel taux utiliser pour le livret A ?", answer: "Le livret A est à 2,4% en 2026 (révisable 2 fois/an par l'État). Pour le LEP : 3,5%. Pour le LDDS : 2,4%. Pour le PEL ouvert en 2026 : 1,75%. Pour une assurance-vie en fonds euros : 2,5 à 3,5% selon le contrat. Pour un PEA en bourse : long terme ~6-8% (avec volatilité)." },
+  { question: "La formule des intérêts composés ?", answer: "Capital final = Capital_initial × (1 + r)^n + PMT × ((1 + r/12)^(12n) - 1) / (r/12), où r = taux annuel décimal, n = nombre d'années, PMT = versement mensuel. Notre calculateur fait le calcul automatiquement." },
+  { question: "Vaut-il mieux capital initial ou versements mensuels ?", answer: "Sur le très long terme (20+ ans), les versements mensuels réguliers battent presque toujours un capital initial. Mathématiquement : 100 €/mois pendant 30 ans (36 000 € versés) à 4% → 69 000 €. Capital initial 36 000 € à 4% sur 30 ans → 116 700 €. Mais peu de gens ont 36 000 € à placer d'un coup. La régularité bat le timing." },
+  { question: "Puis-je utiliser ce calculateur pour la retraite ?", answer: "Oui, c'est même son cas d'usage principal. Pour la retraite : capital initial = ton épargne actuelle, versement = ce que tu peux mettre par mois, durée = nombre d'années avant la retraite, taux = 4-5% (mix livrets + assurance-vie + PEA en lissé)." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
 ---
 
 <BaseLayout
-  title="Calculateur d'épargne 2026 · calculateur gratuit · Econono"
-  description="Combien tu auras dans 10, 20 ou 30 ans en mettant X €/mois ? Intérêts composés inclus."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur épargne intérêts composés 2026 · livret A, LEP · Econono"
+  description="Calcule combien tu auras dans 10, 20 ou 30 ans en mettant X €/mois. Intérêts composés inclus. Compatible livret A (2,4%), LEP (3,5%), assurance-vie."
+  jsonLd={[breadcrumbs, calculatorJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
         <a href="/" class="hover:underline">Accueil</a>
         <span class="mx-2 text-stone-300">›</span>
@@ -25,35 +47,267 @@ const breadcrumbs = jsonLdBreadcrumbs([
         <span style="color: #1a3d2e;">Calculateur d'épargne</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 06</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Calculateur d'épargne.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 06 · intérêts composés</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Combien tu auras dans 10 ans.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Avec les intérêts composés.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Le <strong>calcul d'épargne avec intérêts composés</strong> : Capital_final = Capital_initial × (1 + taux)^années + Versements_mensuels × ((1 + taux/12)^(années×12) , 1) / (taux/12). Le <strong>livret A est à 2,4%</strong> en 2026, le <strong>LEP à 3,5%</strong>. Sur 20 ans à 2,4%, 100 €/mois = ~<strong>31 000 €</strong> dont 7 000 € d'intérêts cumulés.`} />
+        <p>Le calcul d'<strong>épargne avec intérêts composés</strong> permet de projeter ton capital final en fonction du capital initial, du versement mensuel régulier, du taux d'intérêt et de la durée. Formule : <strong>C × (1+r)^n + PMT × ((1+r/12)^(12n) - 1) / (r/12)</strong>. En 2026 : <strong>livret A 2,4%</strong>, <strong>LEP 3,5%</strong>, <strong>LDDS 2,4%</strong>, <strong>PEL nouveau 1,75%</strong>. 100 €/mois pendant 20 ans à 2,4% = ~31 000 € dont 7 000 € d'intérêts.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="ep-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · ton point de départ</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Capital + versement mensuel</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Capital initial</span>
+              <div class="relative"><input type="number" name="capital" min="0" step="100" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+              <p class="text-xs text-stone-500 mt-1">Ce que tu as déjà épargné</p>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Versement mensuel</span>
+              <div class="relative"><input type="number" name="versement" min="0" step="10" placeholder="100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+              <p class="text-xs text-stone-500 mt-1">Idéal : automatiser le 1er du mois</p>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · durée et taux</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Combien de temps, à quel taux</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Durée</span>
+              <div class="relative"><input type="number" name="duree" min="1" max="60" step="1" placeholder="20" value="20" class="w-full pl-4 pr-12 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">ans</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Taux annuel</span>
+              <div class="relative"><input type="number" name="taux" min="0" max="20" step="0.1" placeholder="2.4" value="2.4" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">%</span></div>
+            </label>
+          </div>
+
+          <div class="grid sm:grid-cols-4 gap-2">
+            <button type="button" data-taux="2.4" class="taux-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">Livret A · 2,4%</button>
+            <button type="button" data-taux="3.5" class="taux-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">LEP · 3,5%</button>
+            <button type="button" data-taux="3" class="taux-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">Ass. vie · 3%</button>
+            <button type="button" data-taux="6" class="taux-preset px-3 py-2 text-xs font-semibold border-2 rounded-md hover:bg-[#fef3c7]" style="color: #1a3d2e; border-color: #1a3d2e;">PEA long · 6%</button>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Capital final</div></div>
+              <p class="eyebrow text-xs mb-2">Tu auras</p>
+              <p id="ep-final" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="ep-final-detail" class="text-sm text-stone-600">Saisis tes paramètres pour démarrer.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Décomposition</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5">
+                  <span class="text-stone-600">Capital initial</span>
+                  <span id="ep-init" class="font-mono tabular text-stone-800">- €</span>
+                </div>
+                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5">
+                  <span class="text-stone-600">Versements cumulés</span>
+                  <span id="ep-vers" class="font-mono tabular text-stone-800">- €</span>
+                </div>
+                <div class="flex justify-between items-baseline pt-2 border-t-2" style="border-color: #1a3d2e;">
+                  <span class="font-semibold" style="color: #1a3d2e;">Intérêts cumulés</span>
+                  <span id="ep-int" class="font-mono font-bold tabular" style="color: #c2410c; font-size: 1.2rem;">- €</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="ep-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Pourquoi les intérêts composés sont la 8e merveille du monde</h2>
+      <p>L'expression est attribuée à Einstein (apocryphe mais géniale). L'idée : les intérêts d'une période s'ajoutent au capital, et génèrent eux-mêmes des intérêts à la période suivante. Sur 30 ans, ça change tout.</p>
+      <p>Exemple concret. Tu places 100 €/mois pendant 30 ans à 4% :</p>
+      <ul>
+        <li><strong>Sans intérêts composés (intérêts simples)</strong> : 36 000 € versés + intérêts sur capital constant ≈ 50 000 €</li>
+        <li><strong>Avec intérêts composés</strong> : 36 000 € versés + intérêts composés ≈ <strong>69 000 €</strong></li>
+      </ul>
+      <p>Différence : <strong>+19 000 €</strong> sans aucun effort de plus. C'est juste le temps qui travaille pour toi.</p>
+
+      <h2>Les taux 2026 à connaître</h2>
+      <p>Pour utiliser ce calculateur intelligemment, voici les taux applicables en France en 2026 :</p>
+      <ul>
+        <li><strong>Livret A</strong> : 2,4% (plafond 22 950 €, défiscalisé)</li>
+        <li><strong>LEP (Livret d'Épargne Populaire)</strong> : 3,5% (plafond 10 000 €, défiscalisé, sous conditions de revenus)</li>
+        <li><strong>LDDS (Livret de Développement Durable)</strong> : 2,4% (plafond 12 000 €, défiscalisé)</li>
+        <li><strong>PEL (Plan Épargne Logement)</strong> ouvert en 2026 : 1,75% (durée 4 à 10 ans, fiscalité après 12 ans)</li>
+        <li><strong>Assurance-vie fonds euros</strong> : 2,5 à 3,5% selon contrat (fiscalité avantageuse après 8 ans)</li>
+        <li><strong>PEA en actions long terme</strong> : 6-8% en moyenne historique (volatilité élevée court terme, fiscalité 17,2% après 5 ans)</li>
+      </ul>
+
+      <h2>Quelle stratégie d'allocation</h2>
+      <p>L'idéal n'est pas de tout mettre sur un seul produit. Voici une stratégie classique selon ton horizon :</p>
+      <h3>Court terme (moins de 2 ans)</h3>
+      <p>Liquidité totale : <a href="/glossaire/#livret-a">livret A</a> et <a href="/glossaire/#lep">LEP</a> (si éligible). Aucun risque, disponibilité 24h, défiscalisation. Cible : 3 à 6 mois de charges fixes en réserve d'urgence.</p>
+      <h3>Moyen terme (2 à 8 ans)</h3>
+      <p>Mix livrets pleins + assurance-vie en fonds euros. Risque très faible, rendement légèrement supérieur à l'inflation.</p>
+      <h3>Long terme (plus de 8 ans)</h3>
+      <p>Assurance-vie en unités de compte + PEA. Acceptation de la volatilité court terme contre rendement long terme supérieur. Lisser via versements mensuels (DCA, dollar cost averaging).</p>
+
+      <h2>Le piège de l'inflation</h2>
+      <p>2,4% sur le livret A en 2026, c'est tout juste au niveau de l'inflation cible BCE (2%). En termes de pouvoir d'achat réel, ton épargne en livret A perd peu mais ne croît pas vraiment. C'est pour cette raison que sur le long terme, une part en actions (via PEA ou assurance-vie unités de compte) reste pertinente, malgré la volatilité.</p>
+
+      <h2>Sources et méthodologie</h2>
+      <ul>
+        <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2365" target="_blank" rel="noopener">Service-Public · livret A</a></li>
+        <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2367" target="_blank" rel="noopener">Service-Public · LEP</a></li>
+        <li><a href="https://www.banque-france.fr/" target="_blank" rel="noopener">Banque de France · taux d'épargne réglementée</a></li>
+        <li><a href="https://www.lafinancepourtous.com/decryptages/marches-financiers/produits-financiers/livrets/" target="_blank" rel="noopener">La Finance pour Tous · livrets bancaires</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Taux livret A et LEP révisables 2 fois/an (1er février et 1er août).</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le simulateur interactif arrive. En attendant, sache qu'épargner 50 €/mois pendant 10 ans à 2,4% te donne ~6 800 €.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-center mb-3">Pour aller plus loin</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">3 calculateurs liés</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="/calculateurs/budget-mensuel/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 01</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Budget mensuel</h3><p class="text-sm text-stone-600">Pour calibrer ce que tu peux vraiment épargner par mois.</p></a>
+        <a href="/calculateurs/comparateur-abonnements/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 09</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Comparateur abonnements</h3><p class="text-sm text-stone-600">Pour libérer 30-80 €/mois à diriger vers l'épargne.</p></a>
+        <a href="/calculateurs/regle-50-30-20/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 04</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Règle 50/30/20</h3><p class="text-sm text-stone-600">Vise 20% d'épargne sur ton revenu net.</p></a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("ep-form") as HTMLFormElement | null;
+  const elFinal = document.getElementById("ep-final");
+  const elFinalDetail = document.getElementById("ep-final-detail");
+  const elInit = document.getElementById("ep-init");
+  const elVers = document.getElementById("ep-vers");
+  const elInt = document.getElementById("ep-int");
+  const elReco = document.getElementById("ep-reco");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function compute() {
+    const C = getNum("capital");
+    const PMT = getNum("versement");
+    const annees = getNum("duree");
+    const tauxPct = getNum("taux");
+    const r = tauxPct / 100;
+
+    if (annees <= 0 || (C === 0 && PMT === 0)) {
+      if (elFinal) elFinal.textContent = "- €";
+      if (elFinalDetail) elFinalDetail.textContent = "Saisis tes paramètres pour démarrer.";
+      [elInit, elVers, elInt].forEach((e) => { if (e) e.textContent = "- €"; });
+      if (elReco) elReco.innerHTML = '<li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>';
+      return;
+    }
+
+    // Capital initial composé
+    const capInitFinal = C * Math.pow(1 + r, annees);
+    // Annuités versements mensuels (avec capitalisation mensuelle)
+    let versFinal = 0;
+    if (r > 0) {
+      const rm = r / 12;
+      const n = annees * 12;
+      versFinal = PMT * (Math.pow(1 + rm, n) - 1) / rm;
+    } else {
+      versFinal = PMT * 12 * annees;
+    }
+
+    const total = capInitFinal + versFinal;
+    const versementsCumules = PMT * 12 * annees;
+    const interets = total - C - versementsCumules;
+
+    if (elFinal) elFinal.textContent = fmt(total);
+    if (elFinalDetail) elFinalDetail.textContent = `Dans ${annees} an${annees > 1 ? "s" : ""} à ${tauxPct}% annuel.`;
+    if (elInit) elInit.textContent = fmt(C);
+    if (elVers) elVers.textContent = fmt(versementsCumules);
+    if (elInt) elInt.textContent = fmt(interets);
+
+    const recos: string[] = [];
+    const partInterets = total > 0 ? (interets / total) * 100 : 0;
+
+    if (annees < 5 && tauxPct > 4) recos.push("Avec moins de 5 ans, évite les supports volatils (PEA, unités de compte). Reste sur livret A et LEP : aucun risque.");
+    if (annees >= 15 && tauxPct < 3) recos.push(`Sur ${annees} ans, un taux de ${tauxPct}% c'est conservateur. Une partie en assurance-vie multisupport ou PEA peut viser 5-7% sur le long terme.`);
+    if (PMT === 0 && C > 0) recos.push("Sans versement régulier, tu ne profites pas de l'effet 'capitalisation par étalement temporel'. Même 50 €/mois change la donne sur 20 ans.");
+    if (PMT > 0 && partInterets > 30) recos.push(`Sur ce projet, les intérêts représentent ${partInterets.toFixed(0)}% du capital final. C'est l'effet boule de neige des intérêts composés.`);
+    if (C === 0 && PMT < 50) recos.push("Avec ce niveau de versement, tu construis quand même quelque chose. Sur 30 ans à 3%, 50 €/mois = ~29 000 €.");
+    if (recos.length === 0) recos.push("Bonne projection. Pour aller plus loin, vérifie que tu profites bien du LEP si tu y es éligible (3,5% défiscalisé).");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll(".taux-preset").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const t = btn.getAttribute("data-taux") || "2.4";
+      const input = form.elements.namedItem("taux") as HTMLInputElement;
+      input.value = t;
+      compute();
+    });
+  });
+  form?.querySelectorAll('input[type="number"]').forEach((i) => {
+    (i as HTMLInputElement).addEventListener("focus", () => ((i as HTMLInputElement).style.borderColor = "#1a3d2e"));
+    (i as HTMLInputElement).addEventListener("blur", () => ((i as HTMLInputElement).style.borderColor = "#e7e5e4"));
+  });
+  // initial compute
+  compute();
+</script>

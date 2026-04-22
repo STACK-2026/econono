@@ -1,22 +1,44 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Salaire brut/net", url: siteConfig.url + "/calculateurs/salaire-net/" },
 ]);
+
+const calculatorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Convertisseur salaire brut/net 2026 · Econono",
+  url: siteConfig.url + "/calculateurs/salaire-net/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Convertisseur salaire brut/net 2026 avec barèmes à jour pour CDI non-cadre, cadre, fonction publique, alternance. Mensuel et annuel. Gratuit.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
+
+const faqItems = [
+  { question: "Quelle est la différence brut/net en France 2026 ?", answer: "L'écart moyen entre salaire brut et net est d'environ 23% pour un non-cadre du secteur privé et 25% pour un cadre. La différence vient des cotisations sociales salariales : sécurité sociale, retraite, chômage, CSG/CRDS, complémentaire retraite, prévoyance. Pour la fonction publique, l'écart est plus faible (~15%) car certaines cotisations diffèrent." },
+  { question: "Comment calculer rapidement net depuis brut ?", answer: "Multiplie le brut par 0,77 si tu es non-cadre, 0,75 si tu es cadre, 0,85 si tu es dans la fonction publique. Exemple : 2 500 € brut non-cadre = 2 500 × 0,77 = 1 925 € net. Pour avoir le chiffre exact, utilise notre calculateur qui applique les barèmes officiels 2026." },
+  { question: "Le SMIC net 2026 c'est combien ?", answer: "Le SMIC brut 2026 est à 1 823,03 € par mois (35h/semaine). Le SMIC net mensuel est d'environ 1 443 €. Sur l'année : ~17 300 € net pour un temps plein. Le SMIC horaire brut est à 12,02 €." },
+  { question: "Le salaire net imposable est-il le même que le net à payer ?", answer: "Non. Le net imposable est légèrement supérieur au net à payer car il inclut la CSG-CRDS non déductible (2,9% du brut environ). C'est ce montant qui est utilisé pour le prélèvement à la source. La différence est généralement de quelques dizaines d'euros par mois." },
+  { question: "Quels sont les barèmes 2026 ?", answer: "Cotisations salariales privé non-cadre : ~22-24% du brut. Cadre : ~25%. Fonction publique : ~15%. Apprentissage : 0% jusqu'à 79% du SMIC. Ces taux varient légèrement selon l'âge, le statut, et la convention collective." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
 ---
 
 <BaseLayout
-  title="Salaire brut/net 2026 · calculateur gratuit · Econono"
-  description="Convertisseur salaire brut/net 2026. Barèmes à jour pour CDI, cadre, fonction publique, alternance."
-  jsonLd={[breadcrumbs]}
+  title="Salaire brut net 2026 · convertisseur officiel · Econono"
+  description="Convertis ton salaire brut en net 2026 : non-cadre, cadre, fonction publique, alternance. Barèmes officiels à jour. Mensuel et annuel. SMIC net 2026 : 1 443 €."
+  jsonLd={[breadcrumbs, calculatorJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
         <a href="/" class="hover:underline">Accueil</a>
         <span class="mx-2 text-stone-300">›</span>
@@ -25,35 +47,292 @@ const breadcrumbs = jsonLdBreadcrumbs([
         <span style="color: #1a3d2e;">Salaire brut/net</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 05</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Salaire brut/net.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 05 · barèmes 2026</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Salaire brut/net.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Conversion exacte 2026.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`En France, le <strong>salaire net</strong> = salaire brut moins les cotisations sociales salariales (sécurité sociale, retraite, chômage, CSG/CRDS). En 2026, l'écart moyen est de <strong>23% pour les non-cadres</strong> et <strong>25% pour les cadres</strong>. Le <strong>SMIC brut 2026</strong> est à 1 823,03 €/mois, soit environ <strong>1 443 € net</strong>.`} />
+        <p>En France, le <strong>salaire net</strong> = salaire brut moins les cotisations sociales salariales (sécurité sociale, retraite, chômage, CSG/CRDS). En 2026, l'écart moyen est de <strong>23% pour les non-cadres</strong>, <strong>25% pour les cadres</strong> et <strong>15% pour la fonction publique</strong>. Le <strong>SMIC brut 2026</strong> est à <strong>1 823,03 €/mois</strong> (35h), soit environ <strong>1 443 € net</strong>.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="sn-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · ton salaire</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Indique ton salaire brut</h2>
+            <p class="text-sm text-stone-500">Salaire mensuel ou annuel, on convertit dans les deux sens.</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Salaire brut mensuel</span>
+              <div class="relative"><input type="number" name="brutMois" min="0" step="50" placeholder="2 500" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Ou salaire brut annuel</span>
+              <div class="relative"><input type="number" name="brutAnnee" min="0" step="500" placeholder="30 000" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/an</span></div>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · ton statut</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Quel est ton statut ?</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="ticket p-4 cursor-pointer transition-all hover:scale-[1.02]" style="background: #fffefb;">
+              <input type="radio" name="statut" value="nonCadre" checked class="sr-only" />
+              <span class="block text-sm font-semibold" style="color: #0f2419;">CDI non-cadre</span>
+              <span class="block text-xs text-stone-500 mt-1">Privé, ~23% de cotisations</span>
+            </label>
+            <label class="ticket p-4 cursor-pointer transition-all hover:scale-[1.02]" style="background: #fffefb;">
+              <input type="radio" name="statut" value="cadre" class="sr-only" />
+              <span class="block text-sm font-semibold" style="color: #0f2419;">CDI cadre</span>
+              <span class="block text-xs text-stone-500 mt-1">Privé, ~25% de cotisations</span>
+            </label>
+            <label class="ticket p-4 cursor-pointer transition-all hover:scale-[1.02]" style="background: #fffefb;">
+              <input type="radio" name="statut" value="fonctionPublique" class="sr-only" />
+              <span class="block text-sm font-semibold" style="color: #0f2419;">Fonction publique</span>
+              <span class="block text-xs text-stone-500 mt-1">~15% de cotisations</span>
+            </label>
+            <label class="ticket p-4 cursor-pointer transition-all hover:scale-[1.02]" style="background: #fffefb;">
+              <input type="radio" name="statut" value="alternance" class="sr-only" />
+              <span class="block text-sm font-semibold" style="color: #0f2419;">Alternance</span>
+              <span class="block text-xs text-stone-500 mt-1">Exonéré jusqu'à 79% SMIC</span>
+            </label>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Net 2026</div></div>
+              <p class="eyebrow text-xs mb-2">Net mensuel estimé</p>
+              <p id="sn-mois" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="sn-mois-detail" class="text-sm text-stone-600">Saisis ton brut pour démarrer.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-2">Net annuel estimé</p>
+              <p id="sn-annee" class="font-mono font-bold tabular leading-none mb-1" style="color: #0f2419; font-size: 2rem;">- €</p>
+              <p id="sn-annee-detail" class="text-sm text-stone-500">Sur 12 mois, hors primes et 13e mois.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Détail des cotisations</p>
+              <ul id="sn-detail" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ détail apparaîtra ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Comment passer du brut au net en France</h2>
+      <p>Le <strong>salaire brut</strong> correspond à ce qui figure sur ton contrat de travail et sur ta fiche de paie en haut. Le <strong>salaire net</strong> est ce qui arrive vraiment sur ton compte bancaire après prélèvement des cotisations sociales salariales. Entre les deux : <strong>23 à 25% du brut</strong> partent en cotisations dans le privé, environ 15% dans la fonction publique.</p>
+      <p>Détail des principales cotisations salariales 2026 (privé) :</p>
+      <ul>
+        <li><strong>Sécurité sociale (assurance maladie)</strong> : ~0,75% du brut</li>
+        <li><strong>Retraite de base</strong> : ~6,9% jusqu'au plafond, ~0,4% au-delà</li>
+        <li><strong>Retraite complémentaire AGIRC-ARRCO</strong> : 3,15% jusqu'au PASS, 8,64% au-delà (cadre)</li>
+        <li><strong>Assurance chômage</strong> : 0% (cotisation patronale uniquement depuis 2019)</li>
+        <li><strong>CSG déductible</strong> : 6,8% sur 98,25% du brut</li>
+        <li><strong>CSG-CRDS non déductible</strong> : 2,9% sur 98,25% du brut</li>
+        <li><strong>Prévoyance, complémentaire santé</strong> : variable selon convention</li>
+      </ul>
+
+      <h2>Brut vs net imposable vs net à payer</h2>
+      <p>Trois notions à ne pas confondre, surtout depuis le prélèvement à la source en 2019 :</p>
+      <ul>
+        <li><strong>Salaire brut</strong> : ce qui est inscrit au contrat (avant cotisations).</li>
+        <li><strong>Salaire net imposable</strong> : utilisé pour calculer ton impôt et le prélèvement à la source. Inclut la CSG-CRDS non déductible.</li>
+        <li><strong>Salaire net à payer (ou net versé)</strong> : ce qui arrive sur ton compte. C'est le net imposable moins l'impôt à la source moins quelques cotisations spécifiques.</li>
+      </ul>
+      <p>L'écart entre net imposable et net à payer est généralement de quelques dizaines d'euros par mois, hors impôt.</p>
+
+      <h2>Le SMIC 2026 en chiffres</h2>
+      <p>Depuis le 1er janvier 2026, le <strong>SMIC brut</strong> est à :</p>
+      <ul>
+        <li><strong>SMIC horaire brut</strong> : 12,02 €</li>
+        <li><strong>SMIC mensuel brut</strong> (35h hebdo) : 1 823,03 €</li>
+        <li><strong>SMIC mensuel net estimé</strong> : ~1 443 €</li>
+        <li><strong>SMIC annuel brut</strong> : 21 876 €</li>
+        <li><strong>SMIC annuel net estimé</strong> : ~17 316 €</li>
+      </ul>
+      <p>Source officielle : <a href="https://www.service-public.fr/particuliers/vosdroits/F2300" target="_blank" rel="noopener">Service-Public.fr · SMIC</a></p>
+
+      <h2>Cas particuliers</h2>
+      <h3>Alternance et apprentissage</h3>
+      <p>Les apprentis bénéficient d'une exonération de cotisations sociales jusqu'à 79% du SMIC, ce qui signifie que pour la majorité des contrats, le brut est très proche du net (écart de seulement quelques pourcents). Le salaire d'un apprenti varie de 27% à 100% du SMIC selon l'âge et l'année d'études.</p>
+      <h3>Fonction publique</h3>
+      <p>Dans la fonction publique, l'écart brut/net est plus faible (15-17%) car certaines cotisations sont absorbées par l'employeur public. La grille indiciaire utilise des points (4,92 € l'indice en 2026). Si tu es à l'indice 400, ton brut mensuel est de 1 968 €.</p>
+      <h3>Cadre vs non-cadre</h3>
+      <p>Les cadres cotisent davantage à la retraite complémentaire (AGIRC-ARRCO tranche 2), ce qui explique l'écart de 2 points avec les non-cadres. En contrepartie, leur retraite future sera plus élevée.</p>
+
+      <h2>Sources et méthodologie</h2>
+      <ul>
+        <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2300" target="_blank" rel="noopener">Service-Public · SMIC</a></li>
+        <li><a href="https://www.urssaf.fr/" target="_blank" rel="noopener">URSSAF · barèmes cotisations</a></li>
+        <li><a href="https://www.economie.gouv.fr/particuliers/bulletin-paie" target="_blank" rel="noopener">Ministère de l'Économie · bulletin de paie</a></li>
+        <li><a href="https://www.agirc-arrco.fr/" target="_blank" rel="noopener">AGIRC-ARRCO · cotisations retraite complémentaire</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Estimation basée sur barèmes 2026, écart possible de +/-2% selon convention collective.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le convertisseur précis arrive. En attendant : multiplie le brut par 0,77 (non-cadre) ou 0,75 (cadre) pour avoir une estimation rapide du net.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-center mb-3">Pour aller plus loin</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">3 calculateurs liés</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="/calculateurs/budget-mensuel/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 01</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Budget mensuel</h3><p class="text-sm text-stone-600">Avec ton net en main, calcule ton budget complet.</p></a>
+        <a href="/calculateurs/regle-50-30-20/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 04</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Règle 50/30/20</h3><p class="text-sm text-stone-600">Applique la répartition idéale à ton net.</p></a>
+        <a href="/calculateurs/epargne/" class="ticket p-6 hover-glow group"><p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 06</p><h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Épargne projetée</h3><p class="text-sm text-stone-600">Combien tu auras dans 10 ans avec ce salaire.</p></a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("sn-form") as HTMLFormElement | null;
+  const elMois = document.getElementById("sn-mois");
+  const elMoisDetail = document.getElementById("sn-mois-detail");
+  const elAnnee = document.getElementById("sn-annee");
+  const elAnneeDetail = document.getElementById("sn-annee-detail");
+  const elDetail = document.getElementById("sn-detail");
+
+  // Coefficients estimation (brut → net) basés sur barèmes 2026
+  const COEF: Record<string, { net: number; label: string; cotis: { name: string; pct: number }[] }> = {
+    nonCadre: { net: 0.77, label: "CDI non-cadre privé", cotis: [
+      { name: "Sécurité sociale", pct: 0.75 },
+      { name: "Retraite de base", pct: 6.9 },
+      { name: "Retraite complémentaire", pct: 3.15 },
+      { name: "CSG/CRDS", pct: 9.7 },
+      { name: "Prévoyance/Mutuelle", pct: 1.5 },
+    ]},
+    cadre: { net: 0.75, label: "CDI cadre privé", cotis: [
+      { name: "Sécurité sociale", pct: 0.75 },
+      { name: "Retraite de base", pct: 6.9 },
+      { name: "Retraite AGIRC-ARRCO T1", pct: 3.15 },
+      { name: "Retraite AGIRC-ARRCO T2 (estim.)", pct: 1.5 },
+      { name: "APEC", pct: 0.024 },
+      { name: "CSG/CRDS", pct: 9.7 },
+      { name: "Prévoyance/Mutuelle", pct: 2.0 },
+    ]},
+    fonctionPublique: { net: 0.85, label: "Fonction publique", cotis: [
+      { name: "Pension civile", pct: 11.1 },
+      { name: "RAFP", pct: 5.0 },
+      { name: "CSG/CRDS", pct: 9.7 },
+      { name: "Solidarité", pct: 1.0 },
+    ]},
+    alternance: { net: 0.92, label: "Alternance / apprentissage", cotis: [
+      { name: "Exonération jusqu'à 79% SMIC", pct: 0 },
+      { name: "CSG/CRDS partielle", pct: 7.5 },
+    ]},
+  };
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function getStatut(): string {
+    if (!form) return "nonCadre";
+    const radios = form.querySelectorAll<HTMLInputElement>('input[name="statut"]');
+    for (const r of radios) if (r.checked) return r.value;
+    return "nonCadre";
+  }
+
+  function compute() {
+    let brutMois = getNum("brutMois");
+    let brutAnnee = getNum("brutAnnee");
+
+    // Sync : si l'un des deux est rempli, calcule l'autre
+    if (brutMois > 0 && brutAnnee === 0) brutAnnee = brutMois * 12;
+    else if (brutAnnee > 0 && brutMois === 0) brutMois = brutAnnee / 12;
+
+    if (brutMois <= 0) {
+      [elMois, elAnnee].forEach((e) => { if (e) e.textContent = "- €"; });
+      if (elMoisDetail) elMoisDetail.textContent = "Saisis ton brut pour démarrer.";
+      if (elAnneeDetail) elAnneeDetail.textContent = "Sur 12 mois.";
+      if (elDetail) elDetail.innerHTML = '<li class="text-stone-500 italic">↳ détail apparaîtra ici.</li>';
+      return;
+    }
+
+    const statut = getStatut();
+    const cfg = COEF[statut];
+    const netMois = brutMois * cfg.net;
+    const netAnnee = netMois * 12;
+    const cotisationsMois = brutMois - netMois;
+
+    if (elMois) elMois.textContent = fmt(netMois);
+    if (elMoisDetail) elMoisDetail.textContent = `${cfg.label}, soit ${(cfg.net * 100).toFixed(0)}% du brut net.`;
+    if (elAnnee) elAnnee.textContent = fmt(netAnnee);
+    if (elAnneeDetail) elAnneeDetail.textContent = `Brut annuel : ${fmt(brutMois * 12)}, cotisations : ${fmt(cotisationsMois * 12)}/an.`;
+
+    if (elDetail) {
+      elDetail.innerHTML = cfg.cotis.map((c) => `<li class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span>${c.name}</span><span class="font-mono tabular text-stone-800">~${fmt(brutMois * c.pct / 100)}/mois</span></li>`).join("") + `<li class="flex justify-between items-baseline pt-2 border-t-2 border-[#1a3d2e]"><span class="font-semibold" style="color: #1a3d2e;">Total cotisations</span><span class="font-mono font-bold tabular" style="color: #1a3d2e;">${fmt(cotisationsMois)}/mois</span></li>`;
+    }
+  }
+
+  form?.addEventListener("input", compute);
+  // Visual selection on radio change
+  form?.querySelectorAll<HTMLInputElement>('input[name="statut"]').forEach((r) => {
+    r.addEventListener("change", () => {
+      form.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+        const inp = l.querySelector<HTMLInputElement>('input[name="statut"]');
+        if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+        else { l.style.outline = "none"; }
+      });
+      compute();
+    });
+  });
+  // Initial selection style
+  form?.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+    const inp = l.querySelector<HTMLInputElement>('input[name="statut"]');
+    if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+  });
+  form?.querySelectorAll('input[type="number"]').forEach((i) => {
+    (i as HTMLInputElement).addEventListener("focus", () => ((i as HTMLInputElement).style.borderColor = "#1a3d2e"));
+    (i as HTMLInputElement).addEventListener("blur", () => ((i as HTMLInputElement).style.borderColor = "#e7e5e4"));
+  });
+</script>

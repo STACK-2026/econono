@@ -1,59 +1,326 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Budget étudiant", url: siteConfig.url + "/calculateurs/budget-etudiant/" },
 ]);
+
+const faqItems = [
+  { question: "Quel est le budget moyen d'un étudiant en 2026 ?", answer: "Selon la FAGE et l'UNEF (2026) : 820 €/mois en province, 1 100 €/mois dans les grandes villes (Lyon, Marseille, Bordeaux, Lille), 1 250 €/mois en Île-de-France. Pour un étudiant en alternance hors logement parental : ~700 €/mois (charges réduites)." },
+  { question: "Combien coûte le logement étudiant ?", answer: "Le poste logement représente 50 à 60% du budget étudiant. CROUS : 200-450 €/mois (haute demande, attribution sur critères sociaux). Coloc : 350-600 €/mois en province, 600-900 € à Paris. Studio seul : 400-700 € province, 800-1 200 € Paris." },
+  { question: "À quelles aides un étudiant a droit ?", answer: "Bourse CROUS sur critères sociaux : 1 454 à 6 335 €/an selon échelon (8 niveaux). APL/ALS Caf : 100-300 €/mois selon revenus + loyer + ville. Repas CROUS à 3,30 € (1 € pour boursiers et précaires). Aide spécifique d'urgence (jusqu'à 6 335 €). Carte Étudiante des métiers (alternants). Bourse Erasmus+ pour mobilités." },
+  { question: "Travailler à côté des études ?", answer: "Un job étudiant à mi-temps (~80h/mois) au SMIC rapporte ~960 € brut/mois (~770 € net). Cumulable avec bourse CROUS jusqu'à un certain plafond (vérifier conditions annuelles). Jobs courants : restauration, vente, baby-sitting, soutien scolaire, freelance étudiant. Attention à ne pas saturer ton temps d'études." },
+  { question: "L'alternance permet de mieux vivre ?", answer: "Oui significativement. Salaire alternant 2026 : 27% du SMIC en 1ère année 18-20 ans (~493 €) jusqu'à 100% du SMIC en master 26+ ans (~1 823 €). Faiblement imposé jusqu'à 17 700 €/an. Mais charge de travail élevée : alternance = 35h/semaine entreprise + études en plus." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+
+const calcJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur budget étudiant · Econono",
+  url: siteConfig.url + "/calculateurs/budget-etudiant/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Calcule ton budget étudiant 2026 selon ta ville, ton logement et ton statut (boursier, alternance). Données FAGE/UNEF.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
 ---
 
 <BaseLayout
-  title="Budget étudiant 2026 · calculateur gratuit · Econono"
-  description="Combien il te faut par mois pour vivre étudiant en 2026 selon ta ville."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur budget étudiant 2026 · Paris, province, alternance · Econono"
+  description="Combien il te faut par mois pour vivre étudiant en 2026 selon ta ville, ton type de logement et ton statut. Données FAGE/UNEF, aides CROUS incluses."
+  jsonLd={[breadcrumbs, calcJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
-        <a href="/" class="hover:underline">Accueil</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
-        <span class="mx-2 text-stone-300">›</span>
+        <a href="/" class="hover:underline">Accueil</a><span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a><span class="mx-2 text-stone-300">›</span>
         <span style="color: #1a3d2e;">Budget étudiant</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 10</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Budget étudiant.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 10 · données FAGE 2026</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Budget étudiant.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Combien il te faut vraiment par mois.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Le <strong>budget étudiant moyen 2026</strong> : <strong>820 €/mois en province</strong>, <strong>1 250 €/mois en Île-de-France</strong>, <strong>1 100 €/mois dans les grandes villes</strong> (Lyon, Marseille, Bordeaux, Lille). Le poste <strong>logement représente 50 à 60%</strong> (CROUS : 200-450 €, parc privé : 400-900 € selon la ville). Aides possibles : APL, bourses CROUS, repas CROUS à 3,30 €.`} />
+        <p>Le <strong>budget étudiant moyen 2026</strong> en France (FAGE/UNEF) : <strong>820 €/mois en province</strong>, <strong>1 100 €/mois dans les grandes villes</strong> (Lyon, Marseille, Bordeaux, Lille), <strong>1 250 €/mois en Île-de-France</strong>. Le poste <strong>logement représente 50 à 60%</strong> du budget. Aides : APL CAF (100-300 €/mois), bourse CROUS (1 454-6 335 €/an), repas CROUS à <strong>3,30 €</strong>. Si tu vis chez tes parents : compte 350-450 €/mois pour transport + alimentation hors maison + sorties.</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="be-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · ta ville</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Où tu étudies</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-3 gap-3">
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="ville" value="province" checked class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Province</span><span class="block text-xs text-stone-500 mt-1">Ville moyenne</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="ville" value="grande" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Grande ville</span><span class="block text-xs text-stone-500 mt-1">Lyon, Marseille...</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="ville" value="paris" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Paris/IDF</span><span class="block text-xs text-stone-500 mt-1">Le plus cher</span></label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · ton logement</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Tu vis où</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="logement" value="parents" checked class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Chez parents</span><span class="block text-xs text-stone-500 mt-1">Pas de loyer</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="logement" value="crous" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">CROUS</span><span class="block text-xs text-stone-500 mt-1">200-450 €/mois</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="logement" value="coloc" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Colocation</span><span class="block text-xs text-stone-500 mt-1">350-900 €/mois</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="logement" value="seul" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Studio seul</span><span class="block text-xs text-stone-500 mt-1">400-1 200 €/mois</span></label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 3 · ton statut</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Aides et revenus</h2>
+          </header>
+
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer p-3 rounded-md hover:bg-[#fefcf6]"><input type="checkbox" name="boursier" class="w-4 h-4" /> <span class="text-sm">Boursier CROUS (échelon 0bis à 7)</span></label>
+            <label class="flex items-center gap-3 cursor-pointer p-3 rounded-md hover:bg-[#fefcf6]"><input type="checkbox" name="alternance" class="w-4 h-4" /> <span class="text-sm">En alternance</span></label>
+            <label class="flex items-center gap-3 cursor-pointer p-3 rounded-md hover:bg-[#fefcf6]"><input type="checkbox" name="job" class="w-4 h-4" /> <span class="text-sm">Job étudiant à mi-temps</span></label>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Estimation</div></div>
+              <p class="eyebrow text-xs mb-2">Budget mensuel total</p>
+              <p id="be-total" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="be-detail" class="text-sm text-stone-600">Choisis ton profil pour démarrer.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Détail par poste</p>
+              <ul id="be-detail-list" class="space-y-1 text-sm"></ul>
+            </div>
+
+            <div id="be-aides-block" class="ticket p-7 hidden" style="background: rgba(244, 196, 48, 0.08);">
+              <p class="eyebrow text-xs mb-2" style="color: #c2410c;">Tes revenus/aides estimés</p>
+              <p id="be-aides" class="font-mono font-bold tabular leading-none mb-1" style="color: #15803d; font-size: 1.5rem;">+ - €</p>
+              <p id="be-aides-detail" class="text-sm text-stone-600">-</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="be-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Le vrai budget d'un étudiant en France 2026</h2>
+      <p>Selon les enquêtes annuelles de la <a href="https://www.fage.org/" target="_blank" rel="noopener">FAGE</a> et de l'<a href="https://unef.fr/" target="_blank" rel="noopener">UNEF</a>, le coût de la vie étudiante en France a augmenté de 6 à 9% en 2 ans (2024-2026). Le poste qui pèse le plus : le logement, qui représente 50 à 60% du budget total dans les grandes villes.</p>
+
+      <h2>Coût détaillé par poste (province, en colocation)</h2>
+      <ul>
+        <li><strong>Logement (loyer + charges)</strong> : 380 €</li>
+        <li><strong>Alimentation</strong> : 220 €</li>
+        <li><strong>Transport</strong> : 35 €</li>
+        <li><strong>Téléphone, internet</strong> : 25 €</li>
+        <li><strong>Santé (mutuelle, frais)</strong> : 30 €</li>
+        <li><strong>Loisirs, sorties</strong> : 80 €</li>
+        <li><strong>Vêtements, hygiène</strong> : 40 €</li>
+        <li><strong>Frais scolarité (étalés/12)</strong> : 15-50 € selon filière</li>
+        <li><strong>TOTAL</strong> : ~830 €/mois</li>
+      </ul>
+      <p>À Paris/IDF, comptez +200 à +400 € sur le logement seul, donc <strong>1 200 à 1 300 €/mois</strong>.</p>
+
+      <h2>Les aides à activer absolument</h2>
+      <h3>1. APL/ALS (CAF)</h3>
+      <p>Aide au logement de la <a href="https://www.caf.fr/" target="_blank" rel="noopener">CAF</a>, calculée selon ton loyer, tes revenus et la zone géographique. <strong>100 à 300 €/mois</strong> pour la majorité des étudiants. Demande à faire dès l'emménagement.</p>
+      <h3>2. Bourse CROUS</h3>
+      <p>Sur critères sociaux des parents (revenus N-2). 8 échelons (0bis à 7) : de <strong>1 454 €/an</strong> (échelon 0bis) à <strong>6 335 €/an</strong> (échelon 7). Cumulable avec APL.</p>
+      <h3>3. Repas CROUS à 3,30 €</h3>
+      <p>Pour tous les étudiants. <strong>1 € pour les boursiers</strong> et étudiants précaires depuis 2020. Économie potentielle : 100 €/mois si tu manges midi tous les jours au CROUS au lieu de cuisiner ou d'acheter sandwich.</p>
+      <h3>4. Aide spécifique d'urgence</h3>
+      <p>Jusqu'à <strong>6 335 €</strong> en cas de coup dur (rupture familiale, accident, perte de revenu). Demande au CROUS via assistante sociale.</p>
+      <h3>5. Aides régionales</h3>
+      <p>Beaucoup de régions ont des aides spécifiques : transport gratuit (IDF -25 ans), bourses régionales d'études, aides à la mobilité internationale. Vérifie sur le site de ta région.</p>
+
+      <h2>Faut-il travailler en parallèle ?</h2>
+      <p>Un job étudiant à mi-temps (~80h/mois) au SMIC rapporte environ 770 € net/mois. C'est bienvenu, mais attention : selon les études du <a href="https://www.observatoire-vie-etudiante.education.fr/" target="_blank" rel="noopener">OVE</a>, au-delà de 15h/semaine, les résultats académiques baissent significativement. Vise le job ponctuel intense (vacances, weekends) plutôt que le quotidien dilué.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.fage.org/" target="_blank" rel="noopener">FAGE · indicateur du coût de la vie étudiante 2026</a></li>
+        <li><a href="https://unef.fr/" target="_blank" rel="noopener">UNEF · enquête coût de la rentrée</a></li>
+        <li><a href="https://www.crous-paris.fr/" target="_blank" rel="noopener">CROUS · bourses et aides</a></li>
+        <li><a href="https://www.caf.fr/" target="_blank" rel="noopener">CAF · APL étudiant</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur par ville et type de logement arrive. Pour estimation rapide : compte 800 € en province, 1 200 € à Paris, hors loyer si tu es chez tes parents.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("be-form") as HTMLFormElement | null;
+  const elTotal = document.getElementById("be-total");
+  const elDetail = document.getElementById("be-detail");
+  const elList = document.getElementById("be-detail-list");
+  const elAidesBlock = document.getElementById("be-aides-block");
+  const elAides = document.getElementById("be-aides");
+  const elAidesDetail = document.getElementById("be-aides-detail");
+  const elReco = document.getElementById("be-reco");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  // Coefs par ville (province = 1.0)
+  const VILLE: Record<string, { mult: number; loyer: { crous: number; coloc: number; seul: number }; transport: number }> = {
+    province: { mult: 1.0, loyer: { crous: 230, coloc: 380, seul: 500 }, transport: 35 },
+    grande: { mult: 1.10, loyer: { crous: 290, coloc: 500, seul: 700 }, transport: 50 },
+    paris: { mult: 1.20, loyer: { crous: 380, coloc: 700, seul: 1000 }, transport: 88 },
+  };
+
+  function getRadio(name: string, def: string): string {
+    if (!form) return def;
+    const radios = form.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`);
+    for (const r of radios) if (r.checked) return r.value;
+    return def;
+  }
+  function getCheck(name: string): boolean {
+    if (!form) return false;
+    return (form.elements.namedItem(name) as HTMLInputElement)?.checked || false;
+  }
+
+  function compute() {
+    const ville = getRadio("ville", "province");
+    const logement = getRadio("logement", "parents");
+    const boursier = getCheck("boursier");
+    const alternance = getCheck("alternance");
+    const job = getCheck("job");
+
+    const v = VILLE[ville];
+    const loyer = logement === "parents" ? 0 : (v.loyer as any)[logement] || 0;
+    const alimentation = Math.round(220 * v.mult);
+    const transport = v.transport;
+    const telephone = 25;
+    const sante = 30;
+    const loisirs = Math.round(80 * v.mult);
+    const habillement = 40;
+    const scolarite = 30;
+
+    const total = loyer + alimentation + transport + telephone + sante + loisirs + habillement + scolarite;
+    const items = [
+      { name: "Logement", val: loyer },
+      { name: "Alimentation", val: alimentation },
+      { name: "Transport", val: transport },
+      { name: "Téléphone/internet", val: telephone },
+      { name: "Santé", val: sante },
+      { name: "Loisirs/sorties", val: loisirs },
+      { name: "Vêtements/hygiène", val: habillement },
+      { name: "Scolarité (mensualisée)", val: scolarite },
+    ];
+
+    if (elTotal) elTotal.textContent = fmt(total);
+    if (elDetail) elDetail.textContent = `${ville} · ${logement === "parents" ? "chez parents" : logement}`;
+    if (elList) elList.innerHTML = items.map((i) => `<li class="flex justify-between border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">${i.name}</span><span class="font-mono tabular text-stone-800">${i.val === 0 ? "0 €" : fmt(i.val)}</span></li>`).join("");
+
+    // Aides
+    let aides = 0;
+    const detailAides: string[] = [];
+    if (boursier && logement !== "parents") {
+      const apl = ville === "paris" ? 220 : (ville === "grande" ? 180 : 150);
+      aides += apl;
+      detailAides.push(`APL ~${apl}€/mois`);
+    }
+    if (boursier) {
+      const bourse = 280; // moyenne échelon 4
+      aides += bourse;
+      detailAides.push(`Bourse CROUS ~${bourse}€/mois`);
+    }
+    if (alternance) {
+      aides += 850;
+      detailAides.push("Alternance ~850€/mois (moyenne)");
+    }
+    if (job) {
+      aides += 770;
+      detailAides.push("Job mi-temps ~770€/mois");
+    }
+
+    if (aides > 0 && elAidesBlock && elAides && elAidesDetail) {
+      elAidesBlock.classList.remove("hidden");
+      elAides.textContent = `+${fmt(aides)}/mois`;
+      elAidesDetail.textContent = detailAides.join(" · ");
+    } else if (elAidesBlock) {
+      elAidesBlock.classList.add("hidden");
+    }
+
+    const recos: string[] = [];
+    const aChargeMois = total - aides;
+    if (logement === "seul" && ville === "paris") recos.push("Studio seul à Paris : le plus cher possible. Coloc t'économiserait 300-400 €/mois.");
+    if (logement !== "parents" && !boursier) recos.push("Vérifie ton éligibilité APL CAF (calcul gratuit en ligne) : 100-300 €/mois pour la majorité des étudiants.");
+    if (boursier && !job) recos.push("Bourse CROUS active. Si tu peux ajouter un job d'été (1 200-2 000 €), ça te fait une vraie réserve.");
+    if (alternance) recos.push("Alternance = budget équilibré dès la première année. Pense au LEP (3,5%) pour épargner ce que tu peux.");
+    if (aChargeMois > 0 && !alternance) recos.push(`Reste à charge ${fmt(aChargeMois)}/mois (à compléter par parents ou job d'été).`);
+    if (aChargeMois <= 0) recos.push("Tes aides couvrent ton budget : tu peux épargner. Vise 30-50 €/mois sur livret A pour constituer une réserve.");
+    if (recos.length === 0) recos.push("Saisis ton profil pour des recommandations adaptées.");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll<HTMLInputElement>('input[type="radio"]').forEach((r) => {
+    r.addEventListener("change", () => {
+      form.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+        const inp = l.querySelector<HTMLInputElement>('input[type="radio"]');
+        if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+        else { l.style.outline = "none"; }
+      });
+      compute();
+    });
+  });
+  form?.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+    const inp = l.querySelector<HTMLInputElement>('input[type="radio"]');
+    if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+  });
+  compute();
+</script>

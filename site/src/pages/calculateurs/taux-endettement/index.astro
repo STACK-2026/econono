@@ -1,22 +1,45 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Taux d'endettement", url: siteConfig.url + "/calculateurs/taux-endettement/" },
 ]);
+
+const calculatorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur de taux d'endettement · Econono",
+  url: siteConfig.url + "/calculateurs/taux-endettement/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description:
+    "Calcule ton taux d'endettement avec la formule officielle (mensualités / revenus). Plafond HCSF 35% depuis 2022. Verdict immédiat + capacité d'emprunt restante.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
+
+const faqItems = [
+  { question: "C'est quoi le taux d'endettement ?", answer: "Le taux d'endettement est le rapport entre tes mensualités de crédit et tes revenus nets mensuels, exprimé en pourcentage. Formule : (mensualités) / (revenus nets) × 100. Plus ce taux est élevé, plus la part de tes revenus consacrée au remboursement de tes crédits est importante." },
+  { question: "Pourquoi 35% est-il un plafond ?", answer: "Le HCSF (Haut Conseil de Stabilité Financière) a fixé en janvier 2022 un plafond officiel de 35% pour tout nouveau crédit immobilier. Au-delà, les banques n'ont pas le droit de t'accorder de prêt, sauf 20% de dérogations possibles (primo-accédants, investisseurs locatifs)." },
+  { question: "Quelles mensualités sont prises en compte ?", answer: "Toutes les mensualités de crédit en cours : crédit immobilier, crédit auto, crédit conso, prêt étudiant, location longue durée. La pension alimentaire que tu verses est aussi déductible. Les loyers ne sont PAS comptés dans l'endettement (ils sont dans le 'taux d'effort logement', un autre indicateur)." },
+  { question: "Et si je dépasse 35% ?", answer: "Aucune banque ne t'accordera un nouveau crédit dans cet état. Tu peux essayer 3 leviers : (1) rembourser un crédit en cours plus rapidement, (2) regrouper tes crédits (rachat de crédit) pour étaler la dette, (3) augmenter tes revenus avant ta demande. Le calcul est revu à chaque demande." },
+  { question: "Comment calculer ma capacité d'emprunt restante ?", answer: "Capacité = (35% × revenus) - mensualités actuelles. Exemple : tu gagnes 3 000 € net/mois, tu as 200 € de mensualités, ta capacité d'endettement supplémentaire est de 850 €/mois. Sur 20 ans à 3,5%, ça donne environ 145 000 € empruntables." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
 ---
 
 <BaseLayout
-  title="Taux d'endettement 2026 · calculateur gratuit · Econono"
-  description="Calcule ton taux d'endettement avec la formule officielle Banque de France. Plafond HCSF 35%. Sans inscription, en 1 minute."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur taux d'endettement 2026 · plafond HCSF 35% · Econono"
+  description="Calcule ton taux d'endettement avec la formule officielle Banque de France. Verdict immédiat (sain, à surveiller, refusé) + capacité d'emprunt restante. Sans inscription, en 1 minute."
+  jsonLd={[breadcrumbs, calculatorJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
         <a href="/" class="hover:underline">Accueil</a>
         <span class="mx-2 text-stone-300">›</span>
@@ -25,35 +48,284 @@ const breadcrumbs = jsonLdBreadcrumbs([
         <span style="color: #1a3d2e;">Taux d'endettement</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 03</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Taux d'endettement.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 03 · formule HCSF</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Taux d'endettement.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Formule officielle, verdict direct.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Le taux d'endettement = (mensualités de crédit) / (revenus nets mensuels). Le <strong>HCSF (Haut Conseil de Stabilité Financière)</strong> plafonne ce taux à <strong>35%</strong> depuis janvier 2022 pour tout nouveau crédit immobilier. Au-dessus, aucune banque ne peut plus te prêter (sauf 20% de dérogations).`} />
+        <p>Le <strong>taux d'endettement</strong> est le rapport entre tes mensualités de crédit et tes revenus nets mensuels (en %). Le <strong>plafond officiel HCSF</strong> est fixé à <strong>35%</strong> depuis janvier 2022 pour tout nouveau crédit immobilier en France. Formule : <strong>(mensualités) ÷ (revenus nets) × 100</strong>. Au-delà de 35%, ta banque ne peut plus t'accorder de prêt sauf dérogation (limitée à 20% des dossiers).</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="te-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · revenus nets</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Tes revenus mensuels nets</h2>
+            <p class="text-sm text-stone-500">Salaire(s), pensions, revenus locatifs nets. Hors aides ponctuelles.</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Salaire(s) net(s)</span>
+              <div class="relative"><input type="number" name="salaires" min="0" step="50" placeholder="2 500" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Autres revenus stables</span>
+              <div class="relative"><input type="number" name="autres" min="0" step="50" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · mensualités de crédit</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Tous tes crédits en cours</h2>
+            <p class="text-sm text-stone-500">Immo, auto, conso, étudiant, LOA. Le loyer NON (c'est le taux d'effort, pas l'endettement).</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Crédit immobilier</span>
+              <div class="relative"><input type="number" name="immo" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Crédit auto / LOA</span>
+              <div class="relative"><input type="number" name="auto" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Crédit conso (revolving, perso)</span>
+              <div class="relative"><input type="number" name="conso" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Pension alimentaire versée</span>
+              <div class="relative"><input type="number" name="pension" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+            </label>
+          </div>
+
+          <button type="button" id="te-reset" class="text-sm text-stone-500 underline hover:text-stone-700">Tout effacer</button>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Verdict HCSF</div></div>
+              <p class="eyebrow text-xs mb-2">Ton taux d'endettement</p>
+              <p id="te-result" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.8rem, 6vw, 4rem);">- %</p>
+              <p id="te-verdict" class="text-sm font-semibold mb-4" style="color: #57534e;">Renseigne tes chiffres pour voir le calcul</p>
+
+              <div class="h-4 rounded-full overflow-hidden mb-1 relative" style="background: #f5f5f4;">
+                <div id="te-bar" class="h-full transition-all duration-700" style="width: 0%; background: #15803d;"></div>
+                <div class="absolute top-0 bottom-0" style="left: 35%; width: 2px; background: #b91c1c;"></div>
+              </div>
+              <div class="flex justify-between text-xs text-stone-500 mt-1 font-mono">
+                <span>0 %</span>
+                <span style="color: #b91c1c;">35% HCSF</span>
+                <span>100 %</span>
+              </div>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-2">Capacité d'emprunt restante</p>
+              <p id="te-capacite" class="font-mono font-bold tabular leading-none mb-1" style="color: #0f2419; font-size: 2rem;">- €/mois</p>
+              <p id="te-capacite-detail" class="text-sm text-stone-600 leading-relaxed">Ce que tu pourrais encore emprunter avant d'atteindre le plafond 35%.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="te-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici dès le premier chiffre saisi.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>La formule officielle du taux d'endettement</h2>
+      <p>Le taux d'endettement utilisé par toutes les banques françaises depuis le décret HCSF de janvier 2022 est très simple : <strong>(somme des mensualités de crédit) ÷ (revenus nets mensuels) × 100</strong>. Plafonné à 35% pour tout nouveau crédit immobilier.</p>
+      <p>Ce qui rentre dans les <strong>mensualités</strong> : crédit immobilier (capital + intérêts + assurance), crédit auto, crédit consommation, crédit revolving, prêt étudiant, location avec option d'achat (LOA), location longue durée (LLD), pensions alimentaires versées.</p>
+      <p>Ce qui rentre dans les <strong>revenus nets</strong> : salaires nets, traitements de la fonction publique, pensions de retraite, allocations chômage si stables, BIC/BNC pour les indépendants (sur 3 ans), revenus locatifs (à 70% pour tenir compte de la vacance).</p>
+
+      <h2>Pourquoi le plafond 35% existe</h2>
+      <p>Avant 2022, certaines banques accordaient des crédits avec un endettement supérieur à 40%. Résultat : un nombre croissant de ménages se retrouvaient en surendettement. Le HCSF a instauré ce plafond pour éviter une bulle immobilière et protéger les emprunteurs. Les banques peuvent encore déroger pour 20% de leurs dossiers (priorité aux primo-accédants).</p>
+      <p>À noter : le HCSF a aussi plafonné la durée d'emprunt à 25 ans (27 pour le neuf avec différé). Les deux règles s'appliquent ensemble.</p>
+
+      <h2>Taux d'endettement vs taux d'effort vs reste à vivre</h2>
+      <ul>
+        <li><strong>Taux d'endettement</strong> : (mensualités crédit) / revenus. Le seul plafonné à 35% par la loi.</li>
+        <li><strong>Taux d'effort logement</strong> : (loyer + charges) / revenus. Pas de plafond légal, mais conseillé sous 30%.</li>
+        <li><strong><a href="/calculateurs/reste-a-vivre/">Reste à vivre</a></strong> : ce qu'il te reste après TOUTES tes charges fixes. En valeur absolue. Médiane française : 1 196 €/mois.</li>
+      </ul>
+
+      <h2>Si tu dépasses 35%, que faire</h2>
+      <ol>
+        <li><strong>Rembourser un crédit en cours plus vite</strong> : si tu peux solder un crédit conso de 200 €/mois, tu libères 200 € sur ton taux d'endettement.</li>
+        <li><strong>Faire un rachat de crédit</strong> : regrouper tous tes crédits en un seul, étalé sur une durée plus longue. La mensualité baisse, ton taux passe sous 35%. Attention : le coût total augmente.</li>
+        <li><strong>Augmenter tes revenus</strong> : promotion, second emploi, location d'une chambre. Toute hausse durable améliore le ratio.</li>
+        <li><strong>Demander une dérogation</strong> : si tu es primo-accédant ou que tu achètes ta résidence principale, ta banque a 20% de dossiers où elle peut dépasser le plafond.</li>
+      </ol>
+
+      <h2>Le piège de la pension alimentaire</h2>
+      <p>La pension alimentaire <strong>versée</strong> compte dans les charges (et augmente le taux d'endettement). À l'inverse, la pension alimentaire <strong>reçue</strong> peut être ajoutée aux revenus si elle est documentée par jugement et stable.</p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.hcsf.gouv.fr/" target="_blank" rel="noopener">HCSF · décisions et règles d'octroi des crédits</a></li>
+        <li><a href="https://www.banque-france.fr/" target="_blank" rel="noopener">Banque de France · communiqués de presse HCSF</a></li>
+        <li><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F1875" target="_blank" rel="noopener">Service-Public · prêt immobilier conditions</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026 par l'équipe éditoriale Econono. Prochaine vérification : juillet 2026.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur officiel arrive bientôt. En attendant, voici la formule : (somme des mensualités de crédit) ÷ revenus nets mensuels × 100.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6] transition-colors">
+              <div class="flex items-start gap-3">
+                <span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span>
+                <h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3>
+              </div>
+              <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span>
+            </summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-center mb-3">Pour aller plus loin</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">3 calculateurs liés</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="/calculateurs/budget-mensuel/" class="ticket p-6 hover-glow group">
+          <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 01</p>
+          <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Budget mensuel complet</h3>
+          <p class="text-sm text-stone-600">Score santé sur 100 et reste à vivre détaillé.</p>
+        </a>
+        <a href="/calculateurs/cout-credit/" class="ticket p-6 hover-glow group">
+          <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 08</p>
+          <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Coût total d'un crédit</h3>
+          <p class="text-sm text-stone-600">Capital + intérêts + assurance, le vrai prix.</p>
+        </a>
+        <a href="/calculateurs/reste-a-vivre/" class="ticket p-6 hover-glow group">
+          <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 02</p>
+          <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Reste à vivre</h3>
+          <p class="text-sm text-stone-600">Combien il te reste vraiment chaque mois.</p>
+        </a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("te-form") as HTMLFormElement | null;
+  const elResult = document.getElementById("te-result");
+  const elVerdict = document.getElementById("te-verdict");
+  const elBar = document.getElementById("te-bar");
+  const elCap = document.getElementById("te-capacite");
+  const elCapDetail = document.getElementById("te-capacite-detail");
+  const elReco = document.getElementById("te-reco");
+  const btnReset = document.getElementById("te-reset");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function compute() {
+    const revenus = getNum("salaires") + getNum("autres");
+    const mensualites = getNum("immo") + getNum("auto") + getNum("conso") + getNum("pension");
+
+    if (revenus <= 0) {
+      if (elResult) elResult.textContent = "- %";
+      if (elVerdict) elVerdict.textContent = "Renseigne tes revenus pour démarrer.";
+      if (elBar) (elBar as HTMLElement).style.width = "0%";
+      if (elCap) elCap.textContent = "- €/mois";
+      if (elReco) elReco.innerHTML = '<li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>';
+      return;
+    }
+
+    const taux = (mensualites / revenus) * 100;
+    const capacite = Math.max(0, 0.35 * revenus - mensualites);
+
+    if (elResult) {
+      elResult.textContent = `${taux.toFixed(1)} %`;
+      let color = "#15803d";
+      if (taux > 35) color = "#b91c1c";
+      else if (taux > 30) color = "#ca8a04";
+      else if (taux > 25) color = "#65a30d";
+      (elResult as HTMLElement).style.color = color;
+    }
+
+    let verdict = "", barColor = "#15803d";
+    if (taux === 0) { verdict = "🟢 Aucun endettement, situation idéale."; barColor = "#15803d"; }
+    else if (taux < 25) { verdict = "🟢 Excellente marge. Largement sous le plafond HCSF."; barColor = "#15803d"; }
+    else if (taux < 30) { verdict = "🟢 Sain. Confortable pour ta banque."; barColor = "#15803d"; }
+    else if (taux < 33) { verdict = "🟡 OK mais surveille. Tu approches du plafond."; barColor = "#ca8a04"; }
+    else if (taux <= 35) { verdict = "🟠 À la limite. Plus aucune marge avant le plafond HCSF."; barColor = "#c2410c"; }
+    else { verdict = "🔴 Au-dessus du plafond HCSF. Aucune banque ne te prêtera (sauf 20% dérogations)."; barColor = "#b91c1c"; }
+
+    if (elVerdict) elVerdict.textContent = verdict;
+    if (elBar) {
+      (elBar as HTMLElement).style.width = `${Math.min(100, Math.max(2, taux))}%`;
+      (elBar as HTMLElement).style.background = barColor;
+    }
+
+    if (elCap) elCap.textContent = `${fmt(capacite)}/mois`;
+    if (elCapDetail) {
+      if (capacite <= 0) {
+        elCapDetail.textContent = "Tu es au plafond ou au-dessus. Aucune capacité d'emprunt supplémentaire avant d'avoir réduit tes mensualités actuelles.";
+      } else {
+        const r = 0.035 / 12;
+        const n = 20 * 12;
+        const empruntable = capacite * (1 - Math.pow(1 + r, -n)) / r;
+        elCapDetail.textContent = `Soit environ ${fmt(empruntable)} empruntables sur 20 ans à 3,5% (taux moyen 2026).`;
+      }
+    }
+
+    const recos: string[] = [];
+    if (taux > 35) recos.push(`Tu dépasses le plafond HCSF de ${(taux - 35).toFixed(1)} points. Aucun nouveau crédit possible (sauf dérogation primo-accédant).`);
+    if (taux > 30 && taux <= 35) recos.push("Tu es dans la zone tendue (30-35%). Si tu veux racheter ou financer un projet, libère d'abord de la marge en remboursant un crédit conso.");
+    if (taux > 0 && taux < 25) recos.push("Excellente situation. Tu peux soit accélérer ton épargne, soit envisager un projet immobilier sans risque réglementaire.");
+    if (mensualites > 0 && getNum("conso") > 100) recos.push(`Crédit conso à ${fmt(getNum("conso"))}/mois. Cible de remboursement anticipé : ces crédits ont les pires taux (souvent 8-15%).`);
+    if (capacite > 500 && taux < 25) recos.push(`Capacité de plus de 500 €/mois disponible. Tu peux financer un investissement locatif ou un projet immo.`);
+    if (recos.length === 0) recos.push("Renseigne tes mensualités de crédit pour obtenir des recommandations contextuelles.");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  btnReset?.addEventListener("click", () => { form?.reset(); compute(); });
+  form?.querySelectorAll("input").forEach((i) => {
+    i.addEventListener("focus", () => (i.style.borderColor = "#1a3d2e"));
+    i.addEventListener("blur", () => (i.style.borderColor = "#e7e5e4"));
+  });
+</script>

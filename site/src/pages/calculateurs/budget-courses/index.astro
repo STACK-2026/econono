@@ -1,59 +1,303 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../../site.config";
-import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
   { name: "Budget courses", url: siteConfig.url + "/calculateurs/budget-courses/" },
 ]);
+
+const faqItems = [
+  { question: "Quel est le budget courses moyen d'un Français ?", answer: "Selon l'INSEE 2026 : personne seule 280 €/mois, couple sans enfant 480 €/mois, famille avec 2 enfants 650 €/mois, famille de 4 personnes 720 €/mois. Ces chiffres incluent l'alimentation à domicile uniquement (hors restos)." },
+  { question: "Comment réduire son budget courses ?", answer: "5 leviers à fort impact : (1) faire une liste avant de partir et s'y tenir, (2) acheter en hard discount pour les basiques, (3) cuisiner soi-même au lieu d'acheter des plats préparés (économies 30 à 50%), (4) acheter de saison et local au marché, (5) limiter le gaspillage (1/3 des aliments achetés finissent à la poubelle en moyenne)." },
+  { question: "Le bio coûte-t-il vraiment plus cher ?", answer: "En moyenne +30% sur les fruits et légumes, +50% sur la viande. Mais pas systématique : œufs bio en grande surface souvent au même prix que œufs non bio de qualité. Les marques distributeurs bio sont 20-30% moins chères que les marques nationales bio." },
+  { question: "Je dépense plus que la moyenne, c'est grave ?", answer: "Non, pas en soi. La 'moyenne INSEE' est une statistique, pas un objectif. Si tu manges du poisson frais 3 fois par semaine ou si tu privilégies le bio local, ton budget sera mécaniquement supérieur. Le sujet n'est pas le montant absolu mais la part de tes revenus que ça représente : idéalement sous 15%." },
+  { question: "Combien dépense un étudiant en courses ?", answer: "Pour un étudiant qui cuisine régulièrement : 180 à 250 €/mois selon la ville. Compté hors repas CROUS (3,30 € le repas pour boursiers et non-boursiers depuis 2024). Avec repas CROUS midi quotidien, le budget courses peut tomber à 120-150 €/mois." },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+
+const calcJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur budget courses · Econono",
+  url: siteConfig.url + "/calculateurs/budget-courses/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Calcule ton budget courses optimal selon la composition de ton foyer. Données INSEE 2026.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
 ---
 
 <BaseLayout
-  title="Budget courses 2026 · calculateur gratuit · Econono"
-  description="Combien dépense vraiment un foyer FR comme le tien ? Données INSEE par taille de foyer."
-  jsonLd={[breadcrumbs]}
+  title="Calculateur budget courses 2026 · combien tu devrais dépenser · Econono"
+  description="Combien dépense vraiment un foyer FR en courses alimentaires ? Données INSEE 2026 par taille de foyer + comparateur avec ton budget actuel. Gratuit."
+  jsonLd={[breadcrumbs, calcJsonLd, faqJsonLd]}
 >
   <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
-        <a href="/" class="hover:underline">Accueil</a>
-        <span class="mx-2 text-stone-300">›</span>
-        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
-        <span class="mx-2 text-stone-300">›</span>
+        <a href="/" class="hover:underline">Accueil</a><span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a><span class="mx-2 text-stone-300">›</span>
         <span style="color: #1a3d2e;">Budget courses</span>
       </nav>
 
-      <p class="eyebrow mb-3">Calculateur · 07</p>
-      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
-        Budget courses.
-      </h1>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 07 · données INSEE</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Budget courses.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Combien c'est normal pour ton foyer.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 23 avr. 2026</div>
+        </div>
+      </div>
 
       <aside data-speakable class="mt-8 max-w-3xl">
-        <p set:html={`Le <strong>budget courses moyen</strong> d'un Français en 2026 (selon l'INSEE) : <strong>personne seule : 280 €/mois</strong>, <strong>couple sans enfant : 480 €/mois</strong>, <strong>famille 2 enfants : 650 €/mois</strong>, <strong>famille 4 personnes : 720 €/mois</strong>. Ces moyennes incluent l'alimentation à domicile (hors restos).`} />
+        <p>Le <strong>budget courses moyen</strong> d'un foyer français en 2026 (INSEE) : <strong>personne seule 280 €/mois</strong>, <strong>couple sans enfant 480 €/mois</strong>, <strong>famille 2 enfants 650 €/mois</strong>, <strong>famille 4 personnes 720 €/mois</strong>. Ces moyennes incluent l'alimentation à domicile uniquement (hors restos, hors livraisons). Les variations dépendent de la zone géographique (+15% à Paris), du régime (vegan -20%, bio +30%) et de la qualité (marques nationales vs distributeur).</p>
       </aside>
     </div>
   </section>
 
   <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="bc-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-6" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · ton foyer</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Composition</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Adultes (15+ ans)</span>
+              <div class="relative"><input type="number" name="adultes" min="1" max="6" step="1" placeholder="2" value="2" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">pers.</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Enfants (moins de 15 ans)</span>
+              <div class="relative"><input type="number" name="enfants" min="0" max="6" step="1" placeholder="0" value="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">pers.</span></div>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · ton profil</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Type de courses</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-3 gap-3">
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="profil" value="economique" checked class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Économique</span><span class="block text-xs text-stone-500 mt-1">Hard discount, basiques</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="profil" value="moyen" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Standard</span><span class="block text-xs text-stone-500 mt-1">Supermarché classique</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="profil" value="bio" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Bio / qualité</span><span class="block text-xs text-stone-500 mt-1">Marché, AMAP, primeurs</span></label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 3 · zone géographique</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Où tu vis</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-3 gap-3">
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="zone" value="province" checked class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Province</span><span class="block text-xs text-stone-500 mt-1">Référence</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="zone" value="grande" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Grande ville</span><span class="block text-xs text-stone-500 mt-1">+8% (Lyon, Bordeaux...)</span></label>
+            <label class="ticket p-3 cursor-pointer text-center"><input type="radio" name="zone" value="paris" class="sr-only" /><span class="block text-sm font-semibold" style="color: #0f2419;">Paris/IDF</span><span class="block text-xs text-stone-500 mt-1">+15%</span></label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Optionnel · ton budget actuel</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Pour comparer</h2>
+          </header>
+
+          <label class="block">
+            <div class="relative max-w-xs"><input type="number" name="actuel" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€/mois</span></div>
+          </label>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Estimation</div></div>
+              <p class="eyebrow text-xs mb-2">Budget mensuel estimé</p>
+              <p id="bc-result" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="bc-detail" class="text-sm text-stone-600">Choisis ta composition pour démarrer.</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-2">Sur l'année</p>
+              <p id="bc-annee" class="font-mono font-bold tabular leading-none mb-1" style="color: #0f2419; font-size: 2rem;">- €</p>
+              <p class="text-sm text-stone-500">Soit ~12 mois de courses.</p>
+            </div>
+
+            <div id="bc-compare-block" class="ticket p-7 hidden">
+              <p class="eyebrow text-xs mb-2">vs ton budget actuel</p>
+              <p id="bc-compare" class="font-mono font-bold tabular leading-none mb-1" style="color: #0f2419; font-size: 1.5rem;">-</p>
+              <p id="bc-compare-detail" class="text-sm text-stone-500">-</p>
+            </div>
+
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="bc-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Combien dépensent vraiment les Français en courses</h2>
+      <p>Selon les <a href="https://www.insee.fr/fr/statistiques" target="_blank" rel="noopener">données INSEE Consommation des ménages 2026</a>, le budget alimentation à domicile (hors restos, hors livraisons) représente en moyenne <strong>13% du budget</strong> total des ménages français. Voici les médianes par composition de foyer :</p>
+      <ul>
+        <li><strong>Personne seule</strong> : 280 €/mois (3 360 €/an)</li>
+        <li><strong>Couple sans enfant</strong> : 480 €/mois (5 760 €/an)</li>
+        <li><strong>Famille 2 enfants</strong> : 650 €/mois (7 800 €/an)</li>
+        <li><strong>Famille 4 personnes</strong> : 720 €/mois (8 640 €/an)</li>
+      </ul>
+      <p>Ces chiffres correspondent à un profil 'standard' (supermarché classique). Le bio ajoute 25-35%, l'éco-discount enlève 15-20%.</p>
+
+      <h2>Les 5 leviers les plus efficaces pour réduire</h2>
+      <ol>
+        <li><strong>Liste de courses + planification</strong> : -10 à -20% selon les études. Tu n'achètes pas en plus, tu manges ce qui était prévu.</li>
+        <li><strong>Cuisiner au lieu d'acheter préparé</strong> : -30 à -50%. Une lasagne maison coûte 40% du prix d'une lasagne préparée premium.</li>
+        <li><strong>Hard discount pour les basiques</strong> : -15% à qualité égale (huile, pâtes, riz, conserves, lessive).</li>
+        <li><strong>Acheter de saison + local</strong> : -20 à -30% sur les fruits et légumes vs hors saison.</li>
+        <li><strong>Réduire le gaspillage</strong> : 30% des aliments achetés finissent à la poubelle (ADEME). Congélation, restes en lunchbox, dates DLC vs DDM.</li>
+      </ol>
+
+      <h2>Bio, vegan, sans gluten : impact sur le budget</h2>
+      <p>Les régimes alimentaires modifient significativement le budget courses :</p>
+      <ul>
+        <li><strong>Bio classique</strong> : +25-35% en moyenne. Réductible si tu privilégies les marques distributeurs bio (Carrefour Bio, Auchan Bio) et les paniers AMAP.</li>
+        <li><strong>Vegan/végétarien</strong> : -10 à -25% sur la viande économisée, mais +5-10% si tu achètes substituts industriels (steak végétal, fromage vegan). Net : généralement -10% sur le budget total.</li>
+        <li><strong>Sans gluten</strong> : +30-50% (produits transformés sans gluten très chers). Réductible en cuisinant à partir de bases naturellement sans gluten (riz, quinoa, légumineuses).</li>
+        <li><strong>Régime cétogène</strong> : +20-30% (viandes, poissons, fromages, matières grasses).</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.insee.fr/fr/statistiques" target="_blank" rel="noopener">INSEE · Consommation des ménages 2024-2026</a></li>
+        <li><a href="https://www.ademe.fr/" target="_blank" rel="noopener">ADEME · gaspillage alimentaire</a></li>
+        <li><a href="https://www.ufc-quechoisir.org/" target="_blank" rel="noopener">UFC-Que Choisir · panier de courses comparé</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Données INSEE actualisées annuellement.</p>
+    </article>
+  </section>
+
+  <section class="py-20 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">
-      <div class="ticket p-8 md:p-12 relative text-center">
-        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
-        <p class="eyebrow mb-3">À venir · juin 2026</p>
-        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
-          Le calculateur arrive.
-        </h2>
-        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur personnalisé par profil (enfants, régime, zone géo) arrive. Notre comparateur d'abonnements peut déjà te faire récupérer 30-80 €/mois en attendant.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
-            Essayer le budget mensuel
-          </a>
-          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
-            Être prévenu·e à la sortie
-          </a>
-        </div>
+      <p class="eyebrow text-center mb-3">FAQ</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6]"><div class="flex items-start gap-3"><span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">Q{String(i + 1).padStart(2, "0")}</span><h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">{item.question}</h3></div><span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></span></summary>
+            <div class="px-5 pb-5"><div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200"><p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p></div></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById("bc-form") as HTMLFormElement | null;
+  const elResult = document.getElementById("bc-result");
+  const elDetail = document.getElementById("bc-detail");
+  const elAnnee = document.getElementById("bc-annee");
+  const elCompareBlock = document.getElementById("bc-compare-block");
+  const elCompare = document.getElementById("bc-compare");
+  const elCompareDetail = document.getElementById("bc-compare-detail");
+  const elReco = document.getElementById("bc-reco");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function getRadio(name: string, def: string): string {
+    if (!form) return def;
+    const radios = form.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`);
+    for (const r of radios) if (r.checked) return r.value;
+    return def;
+  }
+
+  // INSEE 2026 base : adulte standard province = 240€/mois, enfant = 130€
+  const COEF_PROFIL: Record<string, number> = { economique: 0.82, moyen: 1.0, bio: 1.30 };
+  const COEF_ZONE: Record<string, number> = { province: 1.0, grande: 1.08, paris: 1.15 };
+
+  function compute() {
+    const adultes = Math.max(1, getNum("adultes"));
+    const enfants = getNum("enfants");
+    const profil = getRadio("profil", "moyen");
+    const zone = getRadio("zone", "province");
+
+    const baseAdulte = 240;
+    const baseEnfant = 130;
+    let budget = (adultes * baseAdulte + enfants * baseEnfant) * COEF_PROFIL[profil] * COEF_ZONE[zone];
+
+    if (elResult) elResult.textContent = fmt(budget);
+    if (elDetail) elDetail.textContent = `${adultes} adulte${adultes > 1 ? "s" : ""}${enfants > 0 ? ` + ${enfants} enfant${enfants > 1 ? "s" : ""}` : ""} · ${profil} · ${zone}`;
+    if (elAnnee) elAnnee.textContent = fmt(budget * 12);
+
+    const actuel = getNum("actuel");
+    if (actuel > 0 && elCompareBlock && elCompare && elCompareDetail) {
+      elCompareBlock.classList.remove("hidden");
+      const diff = actuel - budget;
+      const sign = diff >= 0 ? "+" : "";
+      const pct = budget > 0 ? Math.round((diff / budget) * 100) : 0;
+      elCompare.textContent = `${sign}${fmt(diff)}/mois`;
+      (elCompare as HTMLElement).style.color = diff > 0 ? "#c2410c" : "#15803d";
+      elCompareDetail.textContent = diff > 0 ? `Tu dépenses ${pct}% au-dessus de la moyenne pour ton profil.` : `Tu es ${Math.abs(pct)}% en-dessous de la moyenne. Bonne maîtrise.`;
+    } else if (elCompareBlock) {
+      elCompareBlock.classList.add("hidden");
+    }
+
+    const recos: string[] = [];
+    if (profil === "bio" && actuel < budget) recos.push("Profil bio mais budget contenu : tu dois bien optimiser. Probablement marques distrib bio + AMAP + saison.");
+    if (profil === "economique") recos.push("Profil économique : excellente discipline. Vérifie tout de même que tu ne sacrifies pas les fruits/légumes (vital).");
+    if (zone === "paris") recos.push("À Paris, le supermarché de quartier est ~15% plus cher que la périphérie. Si tu peux, fais grosse course mensuelle hors Paris ou en drive.");
+    if (enfants > 0) recos.push(`Avec ${enfants} enfant(s), pense aux paniers anti-gaspillage Too Good To Go (boulangeries, primeurs) : 5-10 €/semaine récupérables.`);
+    if (actuel > budget * 1.3) recos.push(`Tu dépenses ${Math.round((actuel/budget - 1)*100)}% au-dessus de la moyenne. Top 3 leviers : (1) liste de courses, (2) cuisiner plus, (3) arrêter les courses du soir affamé.`);
+    if (recos.length === 0) recos.push("Pour aller plus loin : audit des prélèvements bancaires sur 3 mois pour repérer les achats impulsifs en livraison/restos.");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll<HTMLInputElement>('input[type="radio"]').forEach((r) => {
+    r.addEventListener("change", () => {
+      form.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+        const inp = l.querySelector<HTMLInputElement>('input[type="radio"]');
+        if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+        else { l.style.outline = "none"; }
+      });
+      compute();
+    });
+  });
+  form?.querySelectorAll<HTMLLabelElement>('label.ticket').forEach((l) => {
+    const inp = l.querySelector<HTMLInputElement>('input[type="radio"]');
+    if (inp?.checked) { l.style.outline = "2px solid #1a3d2e"; l.style.outlineOffset = "-2px"; }
+  });
+  form?.querySelectorAll('input[type="number"]').forEach((i) => {
+    (i as HTMLInputElement).addEventListener("focus", () => ((i as HTMLInputElement).style.borderColor = "#1a3d2e"));
+    (i as HTMLInputElement).addEventListener("blur", () => ((i as HTMLInputElement).style.borderColor = "#e7e5e4"));
+  });
+  compute();
+</script>
