@@ -41,7 +41,7 @@ export const siteConfig = {
   // SEO
   author: "Econono",
   twitterHandle: "",
-  ogImage: "/og-default.png",
+  ogImage: "/og-default.svg",
   keywords: [
     "calculateur budget",
     "reste à vivre",
