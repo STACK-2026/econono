@@ -1,0 +1,89 @@
+---
+// Features · les calculateurs présentés comme un sommaire de carnet
+const calculateurs = [
+  { num: "01", title: "Budget mensuel", desc: "Tes revenus, tes charges, ton reste. Avec un score santé sur 100.", duration: "3 min", href: "/calculateurs/budget-mensuel/", flagship: true },
+  { num: "02", title: "Reste à vivre", desc: "Ce qu'il te reste vraiment, vs la moyenne française.", duration: "1 min", href: "/calculateurs/reste-a-vivre/" },
+  { num: "03", title: "Taux d'endettement", desc: "Formule officielle Banque de France. Sais-tu où tu en es ?", duration: "1 min", href: "/calculateurs/taux-endettement/" },
+  { num: "04", title: "Règle 50/30/20", desc: "Besoins, envies, épargne. Voir comment tu te répartis vraiment.", duration: "2 min", href: "/calculateurs/regle-50-30-20/" },
+  { num: "05", title: "Salaire brut/net", desc: "Conversion 2026 avec barèmes à jour. CDI, cadre, fonction publique.", duration: "30 sec", href: "/calculateurs/salaire-net/" },
+  { num: "06", title: "Épargne projetée", desc: "Combien tu auras dans 10 ans en mettant X €/mois ? Intérêts composés inclus.", duration: "1 min", href: "/calculateurs/epargne/" },
+  { num: "07", title: "Budget courses", desc: "Combien dépense vraiment un foyer FR comme le tien ? Données INSEE.", duration: "1 min", href: "/calculateurs/budget-courses/" },
+  { num: "08", title: "Coût total d'un crédit", desc: "Montant emprunté + intérêts + assurance. Le vrai prix, pas la mensualité.", duration: "1 min", href: "/calculateurs/cout-credit/" },
+  { num: "09", title: "Comparateur d'abonnements", desc: "Combien tu perds chaque mois en abonnements oubliés ?", duration: "2 min", href: "/calculateurs/comparateur-abonnements/" },
+];
+---
+
+<section class="py-24 md:py-32 px-4 relative" style="background: #faf7f2;">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header sommaire -->
+    <div class="grid lg:grid-cols-12 gap-8 mb-14">
+      <div class="lg:col-span-7">
+        <p class="eyebrow mb-4 fade-up">Le sommaire · 12 calculateurs</p>
+        <h2 class="blur-reveal" style="color: #0f2419; max-width: 22ch; font-family: var(--font-display); font-weight: 700;">
+          Tous nos calculateurs.<br/>
+          <span class="italic" style="color: #1a3d2e; font-weight: 500;">Tous gratuits, tous sans inscription.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-4">
+        <p class="text-lg text-stone-700 leading-relaxed fade-up" style="transition-delay: 200ms;">
+          Chaque calculateur utilise la formule officielle (INSEE, Banque de France, Service-Public) et te donne en sortie une <em style="font-family: var(--font-display); font-weight: 500;">recommandation pratique</em>, pas juste un chiffre brut.
+        </p>
+        <p class="margin-note text-base mt-4">
+          ↓ et 3 autres en préparation
+        </p>
+      </div>
+    </div>
+
+    <!-- Grille calculateurs · style sommaire -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
+      {calculateurs.map((calc) => (
+        <a
+          href={calc.href}
+          class={`group block ticket p-6 hover-glow transition-all relative ${calc.flagship ? "ring-2" : ""}`}
+          style={calc.flagship ? "ring-color: #f4c430;" : ""}
+        >
+          {calc.flagship && (
+            <div class="absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style="background: #f4c430; color: #0f2419; font-family: var(--font-mono);">
+              Le flagship
+            </div>
+          )}
+
+          <div class="flex items-start justify-between mb-3">
+            <span class="font-mono text-xs font-bold px-2 py-1 rounded" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;">
+              N° {calc.num}
+            </span>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-stone-400">{calc.duration}</span>
+          </div>
+
+          <h3 class="text-2xl font-bold mb-2 leading-tight transition-colors group-hover:text-[#c2410c]" style="font-family: var(--font-display); color: #0f2419;">
+            {calc.title}
+          </h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-4">
+            {calc.desc}
+          </p>
+
+          <div class="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style="color: #1a3d2e;">
+            Ouvrir le calculateur
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- CTA secondaire -->
+    <div class="mt-12 text-center fade-up">
+      <a
+        href="/calculateurs/"
+        class="inline-flex items-center gap-2 text-sm font-semibold border-b-2 pb-1"
+        style="color: #1a3d2e; border-color: #1a3d2e;"
+      >
+        Voir l'index complet des calculateurs
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

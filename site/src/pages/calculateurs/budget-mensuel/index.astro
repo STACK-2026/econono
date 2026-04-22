@@ -1,0 +1,494 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
+
+const lastReviewed = new Date("2026-04-22");
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
+  { name: "Budget mensuel", url: siteConfig.url + "/calculateurs/budget-mensuel/" },
+]);
+
+const calculatorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Calculateur de budget mensuel · Econono",
+  url: siteConfig.url + "/calculateurs/budget-mensuel/",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description:
+    "Calcule ton budget mensuel : reste à vivre, score santé budgétaire sur 100, répartition idéale selon la règle 50/30/20. Gratuit, sans inscription, formules officielles INSEE et Banque de France. Mis à jour avril 2026.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  inLanguage: "fr-FR",
+  publisher: { "@type": "Organization", name: "Econono", url: siteConfig.url },
+};
+
+const faqItems = [
+  {
+    question: "Combien de temps prend le calcul ?",
+    answer: "Trois minutes maximum. Tu remplis 8 champs simples (revenus, loyer, charges, courses, loisirs, transports, épargne, autres) et tu obtiens immédiatement ton reste à vivre, ton score budgétaire et nos recommandations.",
+  },
+  {
+    question: "Mes données sont-elles sauvegardées ?",
+    answer: "Non, rien n'est envoyé sur nos serveurs. Tout reste dans ton navigateur. Tu peux fermer la page : il n'y a aucune trace. C'est volontaire : on n'a pas besoin de tes données pour faire le calcul.",
+  },
+  {
+    question: "C'est quoi le score santé budgétaire sur 100 ?",
+    answer: "C'est une note qui combine 4 critères : ton reste à vivre rapporté à ton revenu, ton taux d'effort logement (idéal sous 30%), ton taux d'épargne (idéal au-dessus de 10%), et la part de tes dépenses contraintes. Plus le score est haut, plus tu as de marge financière.",
+  },
+  {
+    question: "Vous utilisez la règle 50/30/20 ?",
+    answer: "Oui, on l'utilise comme référence : 50% besoins (logement, courses, transport), 30% envies (loisirs, restos, abonnements), 20% épargne. Mais on sait qu'avec un SMIC à Paris, c'est mathématiquement impossible. Le calculateur te montre ton vrai écart sans te culpabiliser.",
+  },
+  {
+    question: "Mes chiffres sont comparés à quoi ?",
+    answer: "À la médiane française fournie par l'INSEE et la DREES (consommation des ménages 2024-2026 actualisée). Tu vois si ton poste 'logement' est dans la moyenne, ou si ton 'loisirs' est anormalement bas. C'est la comparaison qui rend le calcul utile.",
+  },
+];
+const faqJsonLd = jsonLdFaq(faqItems);
+---
+
+<BaseLayout
+  title="Calculateur budget mensuel 2026 · reste à vivre + score santé · Econono"
+  description="Calcule ton budget mensuel en 3 minutes : reste à vivre, score santé sur 100, comparaison avec la moyenne française. Gratuit, sans inscription. Formule INSEE + Banque de France. Avril 2026."
+  jsonLd={[breadcrumbs, calculatorJsonLd, faqJsonLd]}
+>
+  <!-- Header de la fiche calculateur · style page de carnet -->
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Budget mensuel</span>
+      </nav>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-4">Calculateur · 01 · le flagship</p>
+          <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0; letter-spacing: -0.025em;">
+            Calcule ton budget mensuel.
+            <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">En trois minutes, sans inscription.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <div class="date-stamp">Mis à jour · 22 avr. 2026</div>
+        </div>
+      </div>
+
+      <!-- TL;DR speakable (GEO + AEO) -->
+      <aside data-speakable class="mt-8 max-w-3xl">
+        <p>
+          <strong>Le calculateur de budget mensuel</strong> Econono te donne en moins de 3 minutes ton <strong>reste à vivre</strong>, ton <strong>score de santé budgétaire sur 100</strong> et la comparaison de tes postes de dépense avec la <strong>médiane française 2026</strong> (sources INSEE et DREES). Gratuit, sans inscription, sans connexion bancaire. Toutes les formules sont officielles (Banque de France pour le taux d'endettement, règle 50/30/20 pour la répartition idéale).
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- LE CALCULATEUR · grid form (gauche) + résultat sticky (droite) -->
+  <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <!-- Form (lg:7) -->
+        <form id="budget-form" class="lg:col-span-7 ticket p-7 md:p-10 space-y-7" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 1 · tes revenus</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+              Combien tu touches chaque mois ?
+            </h2>
+            <p class="text-sm text-stone-500">Net, après prélèvements sociaux. Aides comprises (APL, allocs, RSA).</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Salaire net</span>
+              <div class="relative">
+                <input type="number" name="salaire" min="0" step="50" placeholder="2 100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Aides + autres revenus</span>
+              <div class="relative">
+                <input type="number" name="aides" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 2 · tes charges fixes</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+              Ce qui sort tous les mois sans réfléchir.
+            </h2>
+            <p class="text-sm text-stone-500">Loyer, charges, assurances, télécom, transport, crédits.</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Loyer ou crédit immo</span>
+              <div class="relative">
+                <input type="number" name="loyer" min="0" step="10" placeholder="850" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Charges (énergie, eau, télécom)</span>
+              <div class="relative">
+                <input type="number" name="charges" min="0" step="10" placeholder="180" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Assurances (auto, habitation, mutuelle)</span>
+              <div class="relative">
+                <input type="number" name="assurances" min="0" step="5" placeholder="120" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Transport (essence, abo, voiture)</span>
+              <div class="relative">
+                <input type="number" name="transport" min="0" step="5" placeholder="100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Crédits (conso, voiture, etc.)</span>
+              <div class="relative">
+                <input type="number" name="credits" min="0" step="10" placeholder="0" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Abonnements (streaming, salle, etc.)</span>
+              <div class="relative">
+                <input type="number" name="abos" min="0" step="5" placeholder="40" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+          </div>
+
+          <hr style="border-color: #e7e5e4;" />
+
+          <header>
+            <p class="eyebrow text-xs mb-2">Étape 3 · tes dépenses variables</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+              Ce que tu dépenses au quotidien.
+            </h2>
+            <p class="text-sm text-stone-500">Estimations sur le mois, tu peux ajuster ensuite.</p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Courses alimentaires</span>
+              <div class="relative">
+                <input type="number" name="courses" min="0" step="10" placeholder="320" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Loisirs (sorties, restos, cinéma)</span>
+              <div class="relative">
+                <input type="number" name="loisirs" min="0" step="10" placeholder="120" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Vêtements + soins</span>
+              <div class="relative">
+                <input type="number" name="vetements" min="0" step="5" placeholder="50" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Épargne mensuelle</span>
+              <div class="relative">
+                <input type="number" name="epargne" min="0" step="10" placeholder="100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="button" id="btn-reset" class="text-sm text-stone-500 underline hover:text-stone-700">Tout effacer</button>
+        </form>
+
+        <!-- Résultat sticky (lg:5) -->
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 space-y-5">
+            <!-- Résultat principal -->
+            <div class="ticket p-7 relative">
+              <div class="absolute -top-3 -right-3">
+                <div class="wax-seal text-[9px]">Résultat</div>
+              </div>
+              <p class="eyebrow text-xs mb-2">Ton reste à vivre</p>
+              <p class="font-mono font-bold tabular leading-none mb-1" id="result-reste" style="font-family: var(--font-mono); color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">— €</p>
+              <p class="text-sm text-stone-600 mb-4" id="result-pct">Remplis le formulaire pour voir ton calcul</p>
+
+              <div class="h-3 rounded-full overflow-hidden mb-1" style="background: #f5f5f4;">
+                <div id="result-bar" class="h-full transition-all duration-700" style="width: 0%; background: linear-gradient(90deg, #f4c430, #1a3d2e);"></div>
+              </div>
+              <div class="flex justify-between text-xs text-stone-500 mt-1 font-mono">
+                <span>0 %</span>
+                <span>50 %</span>
+                <span>100 %</span>
+              </div>
+            </div>
+
+            <!-- Score santé -->
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-2">Score santé budgétaire</p>
+              <div class="flex items-baseline gap-2 mb-2">
+                <p class="font-bold tabular leading-none" id="result-score" style="font-family: var(--font-display); color: #0f2419; font-size: 3rem;">—</p>
+                <span class="text-stone-400 text-lg font-mono">/ 100</span>
+              </div>
+              <p class="text-sm text-stone-600 leading-relaxed" id="result-score-label">Calculé sur 4 critères : reste à vivre, taux logement, taux épargne, dépenses contraintes.</p>
+            </div>
+
+            <!-- Recommandations -->
+            <div class="ticket p-7">
+              <p class="eyebrow text-xs mb-3">Notre lecture</p>
+              <ul id="result-reco" class="space-y-2 text-sm text-stone-700">
+                <li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici dès le premier chiffre saisi.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu éditorial (1500-2000 mots SEO) -->
+  <section class="py-20 md:py-28 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Comment fonctionne ce calculateur de budget mensuel</h2>
+      <p>
+        Le principe est volontairement simple : tu renseignes tes revenus, tes charges fixes et tes dépenses variables, et le calculateur te donne en sortie ton <strong>reste à vivre</strong> (ce qu'il te reste pour épargner ou imprévus), ton <strong>score santé budgétaire</strong> sur 100, et la <strong>répartition de tes postes</strong> comparée à la médiane française.
+      </p>
+      <p>
+        On utilise les formules officielles. Le reste à vivre = revenus totaux moins l'ensemble des dépenses récurrentes. Le taux d'effort logement = (loyer + charges) / revenus, avec un seuil d'alerte à 30% (au-delà, ta marge se réduit fortement). Le taux d'endettement = mensualités de crédit / revenus, avec un seuil officiel <a href="/calculateurs/taux-endettement/">fixé à 35% par le HCSF</a> depuis 2022. Le taux d'épargne = épargne mensuelle / revenus, avec une cible recommandée de 10% minimum.
+      </p>
+
+      <h2>Pourquoi tes données restent dans ton navigateur</h2>
+      <p>
+        Aucun chiffre que tu saisis n'est envoyé sur nos serveurs. Tout le calcul se fait en JavaScript dans ta page. Tu peux fermer l'onglet : il n'en restera rien. Si tu veux retrouver tes chiffres au prochain calcul, c'est à toi de les noter (on n'a pas de compte utilisateur, c'est volontaire).
+      </p>
+      <p>
+        Cette approche tranche avec les apps de gestion de budget classiques (Bankin, Linxo, Finary) qui demandent l'accès à ton compte bancaire. Ces apps ont leurs avantages (catégorisation automatique, historique long), mais elles posent deux questions : qui voit tes données, et comment l'app se rémunère vraiment ? Notre pari : pour comprendre ton budget, tu n'as pas besoin de tout connecter, tu as besoin d'un outil clair et honnête.
+      </p>
+
+      <h2>La règle 50/30/20 : utile, mais pas dogme</h2>
+      <p>
+        On la mentionne dans la sortie du calculateur car c'est un repère pédagogique reconnu : 50% de tes revenus pour les <strong>besoins</strong> (logement, courses, transport, charges), 30% pour les <strong>envies</strong> (loisirs, restos, abonnements, vêtements), 20% pour l'<strong>épargne</strong> (livret A, LEP, assurance vie...).
+      </p>
+      <p>
+        Mais cette règle a été pensée aux États-Unis dans les années 2000 par Elizabeth Warren. Appliquée mécaniquement à un SMIC francilien, elle est mathématiquement impossible (le seul loyer dépasse souvent 40% du revenu). Le calculateur te montre l'écart entre la règle et ta réalité, sans te culpabiliser : si tu es à 65% de besoins, c'est probablement parce que tu vis dans une grande ville, et c'est une donnée structurelle, pas un échec personnel. Pour aller plus loin, on a un <a href="/calculateurs/regle-50-30-20/">calculateur dédié à la règle 50/30/20</a>.
+      </p>
+
+      <h2>Comparaison avec la moyenne française</h2>
+      <p>
+        Pour chaque poste de dépense, on affiche un repère médian basé sur les <a href="https://www.insee.fr/fr/statistiques?categorie=2&geo=FRANCE-1&taillemin=8&debut=0">données INSEE Consommation des ménages</a> et la DREES (actualisation 2026). Cela permet de voir si tu surconsommes sur un poste précis, sans pour autant juger ton mode de vie. Si tu dépenses 12% de ton revenu en restos, ce n'est pas grave en soi, mais c'est un levier d'optimisation si tu cherches à dégager de la marge.
+      </p>
+
+      <h2>Que faire après ton calcul ?</h2>
+      <p>
+        Trois pistes selon ton score :
+      </p>
+      <ul>
+        <li><strong>Score 70 et plus</strong> : tu es dans une situation saine. L'enjeu devient l'<a href="/calculateurs/epargne/">optimisation de ton épargne</a> (LEP si éligible, livret A complet, puis assurance vie ou PEA selon ton horizon).</li>
+        <li><strong>Score 40 à 70</strong> : tu fonctionnes mais avec peu de marge. Cible deux postes optimisables (souvent : <a href="/comparatifs/">assurances</a>, <a href="/calculateurs/comparateur-abonnements/">abonnements</a>, énergie). 50 à 100 €/mois récupérables sans effort, et ton score bouge vite.</li>
+        <li><strong>Score sous 40</strong> : tu es probablement en tension. Si tu es au découvert chronique, on a un <a href="/guides/sortir-decouvert-bancaire/">guide dédié pour en sortir</a>. Vérifie aussi que tu touches bien <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/N31283">toutes les aides auxquelles tu as droit</a> (<a href="https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-quotidienne/la-prime-d-activite">prime d'activité</a>, <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F12006">APL</a>, LEP), un quart des éligibles ne les réclament pas.</li>
+      </ul>
+
+      <h2>Sources et méthodologie</h2>
+      <ul>
+        <li><a href="https://www.insee.fr/fr/statistiques?categorie=2&geo=FRANCE-1&taillemin=8&debut=0">INSEE · Consommation des ménages 2024-2026</a> · médianes par poste de dépense</li>
+        <li><a href="https://www.banque-france.fr/fr/communiques-de-presse/le-haut-conseil-de-stabilite-financiere-confirme-les-conditions-doctroi-des-credits-immobiliers">Banque de France · HCSF</a> · seuil officiel taux d'endettement 35%</li>
+        <li><a href="https://www.lafinancepourtous.com/2026/03/16/budget-les-depenses-contraintes-des-francais-continuent-daugmenter-en-2026/">La Finance pour Tous · dépenses contraintes</a> · 1 186 €/mois en moyenne (mars 2026)</li>
+        <li><a href="https://drees.solidarites-sante.gouv.fr/sites/default/files/document/dossiers-revenus-et-patrimoine-2026.pdf">DREES · Revenus et patrimoine des ménages 2026</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">
+        Calculateur revu le 22 avril 2026 par l'équipe éditoriale Econono. Prochaine vérification automatique : 22 juillet 2026 (chiffres SMIC, livret A et seuils HCSF).
+      </p>
+    </article>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-4" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <p class="eyebrow text-center mb-3">FAQ · les vraies questions</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">
+        Questions fréquentes sur le calculateur
+      </h2>
+
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group ticket overflow-hidden">
+            <summary class="cursor-pointer p-5 flex items-start justify-between gap-4 list-none hover:bg-[#fefcf6] transition-colors">
+              <div class="flex items-start gap-3">
+                <span class="font-mono text-xs font-bold mt-1 px-2 py-0.5 rounded" style="background: rgba(244, 196, 48, 0.18); color: #1a3d2e;">
+                  Q{String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 class="text-base md:text-lg font-semibold leading-snug" style="font-family: var(--font-display); color: #0f2419;">
+                  {item.question}
+                </h3>
+              </div>
+              <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5">
+              <div class="ml-0 md:ml-11 pt-2 border-t border-dashed border-stone-200">
+                <p class="text-stone-700 leading-relaxed pt-3 text-[15px]">{item.answer}</p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Maillage interne · 3 calculateurs connexes -->
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto">
+      <p class="eyebrow text-center mb-3">Pour aller plus loin</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">
+        Trois calculateurs qui complètent celui-ci
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="/calculateurs/reste-a-vivre/" class="ticket p-6 hover-glow group">
+          <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 02</p>
+          <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Reste à vivre détaillé</h3>
+          <p class="text-sm text-stone-600">Le focus sur ce qu'il te reste après tes seules charges fixes obligatoires.</p>
+        </a>
+        <a href="/calculateurs/regle-50-30-20/" class="ticket p-6 hover-glow group">
+          <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 04</p>
+          <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Règle 50/30/20</h3>
+          <p class="text-sm text-stone-600">Applique la répartition idéale à ton revenu et compare avec ta réalité.</p>
+        </a>
+        <a href="/calculateurs/comparateur-abonnements/" class="ticket p-6 hover-glow group">
+          <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 09</p>
+          <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Comparateur d'abonnements</h3>
+          <p class="text-sm text-stone-600">Le levier le plus rapide pour récupérer 30 à 80 €/mois.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // === Calculateur de budget mensuel · 100% client-side, zéro tracking ===
+  const form = document.getElementById("budget-form") as HTMLFormElement | null;
+  const elReste = document.getElementById("result-reste");
+  const elPct = document.getElementById("result-pct");
+  const elBar = document.getElementById("result-bar");
+  const elScore = document.getElementById("result-score");
+  const elScoreLabel = document.getElementById("result-score-label");
+  const elReco = document.getElementById("result-reco");
+  const btnReset = document.getElementById("btn-reset");
+
+  if (!form) throw new Error("form missing");
+
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+
+  function getNum(name: string): number {
+    const v = (form!.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+
+  function compute() {
+    const salaire = getNum("salaire");
+    const aides = getNum("aides");
+    const revenus = salaire + aides;
+
+    const loyer = getNum("loyer");
+    const charges = getNum("charges");
+    const assurances = getNum("assurances");
+    const transport = getNum("transport");
+    const credits = getNum("credits");
+    const abos = getNum("abos");
+    const courses = getNum("courses");
+    const loisirs = getNum("loisirs");
+    const vetements = getNum("vetements");
+    const epargne = getNum("epargne");
+
+    const chargesFixes = loyer + charges + assurances + transport + credits + abos;
+    const variables = courses + loisirs + vetements;
+    const sortiesTotales = chargesFixes + variables + epargne;
+    const reste = revenus - sortiesTotales;
+
+    if (revenus <= 0) {
+      if (elReste) elReste.textContent = "— €";
+      if (elPct) elPct.textContent = "Remplis tes revenus pour démarrer.";
+      if (elBar) (elBar as HTMLElement).style.width = "0%";
+      if (elScore) elScore.textContent = "—";
+      if (elScoreLabel) elScoreLabel.textContent = "Calculé sur 4 critères : reste à vivre, taux logement, taux épargne, dépenses contraintes.";
+      if (elReco) elReco.innerHTML = '<li class="text-stone-500 italic">↳ tes recommandations apparaîtront ici dès le premier chiffre saisi.</li>';
+      return;
+    }
+
+    const tauxLogement = (loyer + charges) / revenus;
+    const tauxEndettement = credits / revenus;
+    const tauxEpargne = epargne / revenus;
+    const tauxContraintes = chargesFixes / revenus;
+    const restePct = Math.max(0, Math.min(1, reste / revenus));
+
+    // Score sur 100 · 4 sous-scores
+    const sReste = Math.min(40, restePct * 200); // 20% reste -> 40 pts
+    const sLogement = Math.max(0, 25 - Math.max(0, (tauxLogement - 0.30) * 100));
+    const sEpargne = Math.min(20, tauxEpargne * 200);
+    const sEndet = Math.max(0, 15 - Math.max(0, (tauxEndettement - 0.10) * 100));
+    const score = Math.round(Math.max(0, Math.min(100, sReste + sLogement + sEpargne + sEndet)));
+
+    let scoreLabel = "À surveiller";
+    let scoreEmoji = "🟠";
+    if (score >= 75) { scoreLabel = "Très sain"; scoreEmoji = "🟢"; }
+    else if (score >= 55) { scoreLabel = "Correct"; scoreEmoji = "🟡"; }
+    else if (score >= 35) { scoreLabel = "Tendu"; scoreEmoji = "🟠"; }
+    else { scoreLabel = "En alerte"; scoreEmoji = "🔴"; }
+
+    // DOM
+    if (elReste) {
+      elReste.textContent = fmt(reste);
+      (elReste as HTMLElement).style.color = reste < 0 ? "#b91c1c" : "#1a3d2e";
+    }
+    if (elPct) {
+      const pctTxt = restePct >= 0 ? `${Math.round(restePct * 100)}% de tes revenus restent libres après dépenses` : "Tu dépenses plus que tu ne gagnes ce mois";
+      elPct.textContent = pctTxt;
+    }
+    if (elBar) (elBar as HTMLElement).style.width = `${Math.max(2, restePct * 100)}%`;
+    if (elScore) elScore.textContent = String(score);
+    if (elScoreLabel) elScoreLabel.textContent = `${scoreEmoji} ${scoreLabel} · logement ${(tauxLogement * 100).toFixed(0)}% · épargne ${(tauxEpargne * 100).toFixed(0)}% · endettement ${(tauxEndettement * 100).toFixed(0)}%`;
+
+    // Recommandations contextuelles
+    const recos: string[] = [];
+    if (tauxLogement > 0.40) recos.push(`Ton loyer + charges représentent ${(tauxLogement * 100).toFixed(0)}% de tes revenus. C'est élevé (seuil sain : 30%). Si tu vis seul·e en grande ville, peu de marge ici, sinon penser colocation ou déménagement.`);
+    if (tauxEndettement > 0.35) recos.push(`Ton taux d'endettement est à ${(tauxEndettement * 100).toFixed(0)}%, au-dessus du plafond officiel HCSF de 35%. Aucune nouvelle banque ne t'accordera un crédit dans cet état. Cible : passer sous 35% avant tout nouveau projet.`);
+    if (tauxEpargne < 0.05 && reste > 0) recos.push(`Tu épargnes moins de 5% de tes revenus. Vise au moins 50 €/mois sur un livret A ou LEP. C'est l'imprévu qui va te faire couler sinon (panne voiture, dentiste...).`);
+    if (abos > 60) recos.push(`Tu paies ${fmt(abos)} en abonnements. Notre comparateur dédié te dira lesquels sont en doublon ou sous-utilisés (souvent 30 à 50 €/mois récupérables).`);
+    if (loisirs / revenus > 0.18) recos.push(`Tes loisirs représentent ${((loisirs / revenus) * 100).toFixed(0)}% de tes revenus. La médiane FR est à 9%. Aucun jugement, mais c'est un levier si tu cherches à dégager de la marge.`);
+    if (reste < 0) recos.push(`Tu finis le mois en négatif de ${fmt(Math.abs(reste))}. Étape 1 : identifier le poste prioritaire à réduire (souvent abonnements + loisirs). Étape 2 : voir si tu touches toutes tes aides (prime d'activité, APL, LEP).`);
+    if (recos.length === 0) recos.push("Aucun signal d'alerte. Ta situation est équilibrée. Prochain levier : optimiser ton épargne (LEP si éligible, livret A complet, assurance vie).");
+
+    if (elReco) elReco.innerHTML = recos.map((r) => `<li class="flex gap-2"><span style="color:#c2410c;font-weight:bold;">→</span><span>${r}</span></li>`).join("");
+  }
+
+  form.addEventListener("input", compute);
+  btnReset?.addEventListener("click", () => {
+    form.reset();
+    compute();
+  });
+
+  // Focus border style
+  form.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("focus", () => (input.style.borderColor = "#1a3d2e"));
+    input.addEventListener("blur", () => (input.style.borderColor = "#e7e5e4"));
+  });
+</script>

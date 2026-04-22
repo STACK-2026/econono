@@ -1,0 +1,155 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+
+const calculateurs = [
+  { num: "01", title: "Budget mensuel", desc: "Tes revenus, tes charges, ton reste à vivre. Avec un score santé sur 100 et la répartition idéale.", duration: "3 min", href: "/calculateurs/budget-mensuel/", category: "budget", flagship: true },
+  { num: "02", title: "Reste à vivre", desc: "Ce qu'il te reste vraiment après tes charges fixes. Comparé à la médiane française.", duration: "1 min", href: "/calculateurs/reste-a-vivre/", category: "budget" },
+  { num: "03", title: "Taux d'endettement", desc: "Formule officielle de la Banque de France. Tu sais où tu en es ? Et combien tu pourrais encore emprunter ?", duration: "1 min", href: "/calculateurs/taux-endettement/", category: "credit" },
+  { num: "04", title: "Règle 50/30/20", desc: "Besoins, envies, épargne : la répartition idéale appliquée à ton revenu. Et l'écart avec ta réalité.", duration: "2 min", href: "/calculateurs/regle-50-30-20/", category: "budget" },
+  { num: "05", title: "Salaire brut/net", desc: "Convertisseur 2026 avec barèmes à jour. CDI, cadre, fonction publique, alternance.", duration: "30 sec", href: "/calculateurs/salaire-net/", category: "salaire" },
+  { num: "06", title: "Épargne projetée", desc: "Combien tu auras dans 10, 20 ou 30 ans en mettant X €/mois. Intérêts composés inclus.", duration: "1 min", href: "/calculateurs/epargne/", category: "epargne" },
+  { num: "07", title: "Budget courses", desc: "Combien dépense vraiment un foyer FR comme le tien ? Données INSEE par taille de foyer et profil.", duration: "1 min", href: "/calculateurs/budget-courses/", category: "budget" },
+  { num: "08", title: "Coût total d'un crédit", desc: "Le vrai prix d'un crédit conso ou immo : capital + intérêts + assurance, pas juste la mensualité.", duration: "1 min", href: "/calculateurs/cout-credit/", category: "credit" },
+  { num: "09", title: "Comparateur d'abonnements", desc: "Liste tes abonnements (streaming, télécom, salle, presse). On te montre les doublons et le total annuel.", duration: "2 min", href: "/calculateurs/comparateur-abonnements/", category: "comparatif" },
+  { num: "10", title: "Budget étudiant", desc: "Combien il te faut par mois pour vivre étudiant en 2026 selon ta ville (Paris, province, alternance).", duration: "2 min", href: "/calculateurs/budget-etudiant/", category: "situation" },
+  { num: "11", title: "Budget couple", desc: "Comment répartir les charges en couple selon vos revenus ? Calcul équitable + prorata.", duration: "2 min", href: "/calculateurs/budget-couple/", category: "situation" },
+  { num: "12", title: "Budget bébé première année", desc: "Tout ce qu'il faut prévoir : équipement, garde, alimentation, santé. Avec aides CAF déduites.", duration: "3 min", href: "/calculateurs/budget-bebe/", category: "situation" },
+];
+
+const categories = [
+  { id: "budget", label: "Budget & dépenses", emoji: "📒" },
+  { id: "credit", label: "Crédit & endettement", emoji: "🏦" },
+  { id: "epargne", label: "Épargne", emoji: "🪙" },
+  { id: "salaire", label: "Salaire & revenus", emoji: "💼" },
+  { id: "situation", label: "Par situation de vie", emoji: "🎓" },
+  { id: "comparatif", label: "Comparateurs", emoji: "📊" },
+];
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
+]);
+
+const itemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Calculateurs Econono",
+  itemListElement: calculateurs.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: siteConfig.url + c.href,
+    name: c.title,
+  })),
+};
+---
+
+<BaseLayout
+  title="Tous les calculateurs · Econono · gratuits, sans inscription"
+  description="Les 12 calculateurs Econono pour reprendre la main sur ton budget : reste à vivre, taux d'endettement, règle 50/30/20, épargne, budget courses... Gratuits, sans inscription, formules officielles."
+  jsonLd={[breadcrumbs, itemList]}
+>
+  <!-- Header de l'index · style sommaire de carnet -->
+  <section class="pt-12 pb-16 md:pt-16 md:pb-20 px-4 relative" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <!-- Breadcrumbs -->
+      <nav class="text-xs uppercase tracking-widest mb-8" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Calculateurs</span>
+      </nav>
+
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
+        <div class="lg:col-span-7">
+          <p class="eyebrow mb-4 fade-up">Sommaire · 12 outils</p>
+          <h1 class="blur-reveal" style="color: #0f2419; font-family: var(--font-display); font-weight: 700; letter-spacing: -0.025em; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.0;">
+            Les calculateurs<br/>
+            <span class="italic" style="color: #1a3d2e; font-weight: 500;">qui font la différence.</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-5">
+          <p class="text-lg text-stone-700 leading-relaxed fade-up" style="transition-delay: 200ms;">
+            Tous les calculateurs utilisent les <em style="font-family: var(--font-display); font-weight: 500;">formules officielles</em> (INSEE, Banque de France, Service-Public). Mais on ne s'arrête pas au chiffre brut : à chaque sortie, une recommandation pratique adaptée à ta situation.
+          </p>
+          <p class="margin-note text-base mt-4">↓ classés par sujet, choisis le tien</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtres par catégorie · ancres -->
+  <section class="px-4 sticky top-[56px] z-30 backdrop-blur-md border-b border-stone-200" style="background: rgba(250, 247, 242, 0.92);">
+    <div class="max-w-6xl mx-auto py-3 overflow-x-auto">
+      <ul class="flex items-center gap-2 md:gap-3 whitespace-nowrap">
+        <li>
+          <a href="#tous" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all border-2" style="color: #faf7f2; background: #1a3d2e; border-color: #1a3d2e;">
+            Tous · {calculateurs.length}
+          </a>
+        </li>
+        {categories.map((c) => (
+          <li>
+            <a href={`#${c.id}`} class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all border-2" style="color: #1a3d2e; background: transparent; border-color: rgba(26, 61, 46, 0.20);">
+              <span>{c.emoji}</span> {c.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Liste des calculateurs groupés par catégorie -->
+  <section id="tous" class="py-16 md:py-20 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto space-y-16">
+      {categories.map((cat) => {
+        const items = calculateurs.filter((c) => c.category === cat.id);
+        if (items.length === 0) return null;
+        return (
+          <div id={cat.id}>
+            <div class="flex items-baseline gap-3 mb-6 pb-3 border-b border-stone-300">
+              <span class="text-3xl">{cat.emoji}</span>
+              <h2 class="text-2xl md:text-3xl font-bold" style="font-family: var(--font-display); color: #0f2419;">
+                {cat.label}
+              </h2>
+              <span class="font-mono text-xs uppercase tracking-widest text-stone-400 ml-2">{items.length} calculateur{items.length > 1 ? "s" : ""}</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
+              {items.map((calc) => (
+                <a
+                  href={calc.href}
+                  class={`group block ticket p-6 hover-glow transition-all relative ${calc.flagship ? "ring-2" : ""}`}
+                  style={calc.flagship ? "outline: 2px solid #f4c430; outline-offset: -2px;" : ""}
+                >
+                  {calc.flagship && (
+                    <div class="absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style="background: #f4c430; color: #0f2419; font-family: var(--font-mono);">
+                      Le flagship
+                    </div>
+                  )}
+                  <div class="flex items-start justify-between mb-3">
+                    <span class="font-mono text-xs font-bold px-2 py-1 rounded" style="background: rgba(26, 61, 46, 0.08); color: #1a3d2e;">
+                      N° {calc.num}
+                    </span>
+                    <span class="font-mono text-[11px] uppercase tracking-wider text-stone-400">{calc.duration}</span>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2 leading-tight transition-colors group-hover:text-[#c2410c]" style="font-family: var(--font-display); color: #0f2419;">
+                    {calc.title}
+                  </h3>
+                  <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                    {calc.desc}
+                  </p>
+                  <div class="flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3" style="color: #1a3d2e;">
+                    Ouvrir
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

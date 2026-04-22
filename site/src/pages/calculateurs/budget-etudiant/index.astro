@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
+  { name: "Budget étudiant", url: siteConfig.url + "/calculateurs/budget-etudiant/" },
+]);
+---
+
+<BaseLayout
+  title="Budget étudiant 2026 · calculateur gratuit · Econono"
+  description="Combien il te faut par mois pour vivre étudiant en 2026 selon ta ville."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Budget étudiant</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Calculateur · 10</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
+        Budget étudiant.
+      </h1>
+
+      <aside data-speakable class="mt-8 max-w-3xl">
+        <p>Le **budget étudiant moyen 2026** : **820 €/mois en province**, **1 250 €/mois en Île-de-France**, **1 100 €/mois dans les grandes villes** (Lyon, Marseille, Bordeaux, Lille). Le poste **logement représente 50 à 60%** (CROUS : 200-450 €, parc privé : 400-900 € selon la ville). Aides possibles : APL, bourses CROUS, repas CROUS à 3,30 €.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <div class="ticket p-8 md:p-12 relative text-center">
+        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
+        <p class="eyebrow mb-3">À venir · juin 2026</p>
+        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+          Le calculateur arrive.
+        </h2>
+        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur par ville et type de logement arrive. Pour estimation rapide : compte 800 € en province, 1 200 € à Paris, hors loyer si tu es chez tes parents.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
+            Essayer le budget mensuel
+          </a>
+          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
+            Être prévenu·e à la sortie
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

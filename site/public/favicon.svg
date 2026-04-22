@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Econono · tirelire stylisée avec pièce qui tombe -->
+  <defs>
+    <linearGradient id="coin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f4c430"/>
+    </linearGradient>
+    <linearGradient id="pig" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a3d2e"/>
+      <stop offset="100%" stop-color="#0f2419"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crème background round -->
+  <rect width="64" height="64" rx="14" fill="#faf7f2"/>
+
+  <!-- Tirelire body (rounded square) -->
+  <rect x="10" y="26" width="44" height="28" rx="8" fill="url(#pig)"/>
+
+  <!-- Slot (fente du dessus) -->
+  <rect x="22" y="22" width="20" height="4" rx="2" fill="url(#pig)"/>
+
+  <!-- Pieds -->
+  <rect x="14" y="52" width="6" height="8" rx="2" fill="url(#pig)"/>
+  <rect x="44" y="52" width="6" height="8" rx="2" fill="url(#pig)"/>
+
+  <!-- Œil -->
+  <circle cx="44" cy="38" r="2" fill="#faf7f2"/>
+
+  <!-- Pièce qui tombe (au-dessus de la fente) -->
+  <circle cx="32" cy="14" r="6" fill="url(#coin)" stroke="#1a3d2e" stroke-width="1.5">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 4; 0 -2; 0 0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <text x="32" y="17.5" text-anchor="middle" font-family="serif" font-size="8" font-weight="700" fill="#1a3d2e">€</text>
+</svg>

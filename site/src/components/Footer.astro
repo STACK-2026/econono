@@ -1,0 +1,117 @@
+---
+import { siteConfig } from "../../site.config";
+const currentYear = new Date().getFullYear();
+
+const footerColumns = [
+  {
+    title: "Calculateurs",
+    links: [
+      { label: "Budget mensuel", href: "/calculateurs/budget-mensuel/" },
+      { label: "Reste à vivre", href: "/calculateurs/reste-a-vivre/" },
+      { label: "Taux d'endettement", href: "/calculateurs/taux-endettement/" },
+      { label: "Règle 50/30/20", href: "/calculateurs/regle-50-30-20/" },
+      { label: "Salaire brut/net", href: "/calculateurs/salaire-net/" },
+      { label: "Tous les calculateurs", href: "/calculateurs/" },
+    ],
+  },
+  {
+    title: "Le média",
+    links: [
+      { label: "Guides budget", href: "/guides/" },
+      { label: "Comparatifs apps", href: "/comparatifs/" },
+      { label: "Actu pouvoir d'achat", href: "/actu/" },
+      { label: "Le Carnet (newsletter)", href: "/newsletter/" },
+      { label: "Blog", href: "/blog/" },
+      { label: "Glossaire", href: "/glossaire/" },
+    ],
+  },
+  {
+    title: "À savoir",
+    links: [
+      { label: "Qui sommes-nous", href: "/a-propos/" },
+      { label: "Méthodologie", href: "/a-propos/methodologie/" },
+      { label: "Sources et chiffres", href: "/a-propos/sources/" },
+      { label: "Contact", href: "mailto:hello@econono.com" },
+      { label: "Mentions légales", href: "/mentions-legales/" },
+      { label: "Politique cookies", href: "/politique-cookies/" },
+    ],
+  },
+];
+---
+
+<footer class="relative pt-20 pb-10 px-4" style="background: #0f2419; color: #faf7f2;">
+  <!-- Texture lignes ledger très subtiles -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 39px, #f4c430 39px, #f4c430 40px);"></div>
+
+  <div class="max-w-6xl mx-auto relative">
+    <!-- Top : brand + manifesto + colonnes -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+      <!-- Brand block -->
+      <div class="lg:col-span-4">
+        <a href="/" class="inline-flex items-center gap-2.5 text-3xl mb-5" style="font-family: var(--font-display); font-weight: 700; color: #faf7f2;">
+          <span class="relative inline-flex items-center justify-center w-10 h-10 rounded-full" style="background: linear-gradient(135deg, #fde68a, #f4c430); border: 2px solid #faf7f2;">
+            <span class="font-bold text-lg" style="color: #0f2419;">€</span>
+          </span>
+          Econono
+        </a>
+        <p class="text-base leading-relaxed mb-5" style="color: rgba(250, 247, 242, 0.75);">
+          Le média qui t'aide à reprendre la main sur ton budget. Calculateurs gratuits, guides honnêtes, zéro lien avec une banque.
+        </p>
+        <p class="margin-note text-base inline-block" style="color: #f4c430; transform: rotate(-2deg);">
+          ✦ Indépendant. Sans pub déguisée. ✦
+        </p>
+      </div>
+
+      <!-- Colonnes liens -->
+      {footerColumns.map((col) => (
+        <div class="lg:col-span-2 lg:col-start-auto">
+          <h4 class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #f4c430; font-family: var(--font-mono);">
+            {col.title}
+          </h4>
+          <ul class="space-y-2.5">
+            {col.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm hover:text-[#f4c430] transition-colors block"
+                  style="color: rgba(250, 247, 242, 0.75);"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sources stripe · réassurance -->
+    <div class="py-6 border-y border-stone-100/10 mb-8">
+      <p class="text-xs uppercase tracking-widest mb-3" style="color: rgba(244, 196, 48, 0.7); font-family: var(--font-mono);">
+        Sources et données
+      </p>
+      <p class="text-sm leading-relaxed" style="color: rgba(250, 247, 242, 0.7);">
+        Toutes nos données chiffrées proviennent de sources officielles : <strong style="color: #faf7f2;">INSEE</strong>, <strong style="color: #faf7f2;">Banque de France</strong>, <strong style="color: #faf7f2;">Service-Public.fr</strong>, <strong style="color: #faf7f2;">DARES</strong>, <strong style="color: #faf7f2;">ADEME</strong>, <strong style="color: #faf7f2;">CAF</strong>. Chaque calculateur affiche sa date de mise à jour.
+      </p>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="text-xs" style="color: rgba(250, 247, 242, 0.5); font-family: var(--font-mono);">
+        © {currentYear} Econono · Fait avec soin en France.
+      </p>
+      <div class="flex items-center gap-5 text-xs" style="color: rgba(250, 247, 242, 0.5); font-family: var(--font-mono);">
+        <a href="/mentions-legales/" class="hover:text-[#f4c430] transition-colors">Mentions légales</a>
+        <a href="/politique-confidentialite/" class="hover:text-[#f4c430] transition-colors">Confidentialité</a>
+        <button id="footer-cookies-btn" class="hover:text-[#f4c430] transition-colors">Gérer les cookies</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Re-open cookie banner depuis le footer
+  document.getElementById("footer-cookies-btn")?.addEventListener("click", () => {
+    window.dispatchEvent(new CustomEvent("ec:open-cookie-banner"));
+  });
+</script>

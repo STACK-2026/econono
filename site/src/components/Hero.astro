@@ -1,0 +1,168 @@
+---
+// Hero · première page d'un carnet éditorial. Compose magazine + ledger artisan.
+---
+
+<section class="relative pt-10 pb-24 md:pt-16 md:pb-32 overflow-hidden" style="background: #faf7f2;">
+  <!-- Texture papier (grain déjà global, on ajoute un voile chaud) -->
+  <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 20% 0%, rgba(244, 196, 48, 0.10) 0%, transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(26, 61, 46, 0.06) 0%, transparent 55%);"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative">
+    <!-- Masthead éditorial : numéro + date + édition -->
+    <div class="flex items-center justify-between mb-8 pb-4 border-b border-stone-300/70 fade-up">
+      <div class="flex items-center gap-3 text-stone-600 text-xs font-mono uppercase tracking-widest">
+        <span>N° 001</span>
+        <span class="text-stone-300">·</span>
+        <span>Édition fondatrice</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="hidden sm:inline-block text-stone-500 text-xs font-mono uppercase tracking-widest">Le Carnet d'Econono</span>
+        <span class="hidden sm:inline-block text-stone-300">·</span>
+        <span class="handwritten text-base">Édition continue</span>
+      </div>
+    </div>
+
+    <!-- Layout asymétrique : texte gauche + bloc visuel droite -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <!-- Colonne texte (lg:8) -->
+      <div class="lg:col-span-8">
+        <p class="eyebrow mb-5 fade-up">Le numéro un<br/>· budget · pouvoir d'achat ·</p>
+
+        <h1 class="blur-reveal" style="font-family: var(--font-display); font-weight: 700; line-height: 1.0; letter-spacing: -0.025em; color: #0f2419; font-size: clamp(2.6rem, 6.5vw, 5rem);">
+          Reprends la main sur ton budget.
+          <span class="block mt-2 italic" style="color: #1a3d2e; font-weight: 500;">
+            Sans <span class="relative inline-block">
+              <span style="background-image: linear-gradient(transparent 60%, rgba(244, 196, 48, 0.55) 60%); padding: 0 6px;">leçons de morale.</span>
+            </span>
+          </span>
+        </h1>
+
+        <!-- Sub-headline éditoriale -->
+        <p class="mt-7 text-lg md:text-xl text-stone-700 leading-relaxed max-w-xl fade-up" style="transition-delay: 200ms;">
+          Calculateurs gratuits, guides honnêtes, comparatifs sans pub déguisée. Tu sauras enfin <em style="font-family: var(--font-display); font-weight: 500;">ce qu'il te reste vraiment</em>, et quoi en faire.
+        </p>
+
+        <!-- CTA primaire + secondaire -->
+        <div class="mt-9 flex flex-col sm:flex-row items-start gap-4 fade-up" style="transition-delay: 350ms;">
+          <a
+            href="/calculateurs/budget-mensuel/"
+            class="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-white font-semibold text-base hover-shine magnetic"
+            style="background: #1a3d2e; box-shadow: 0 14px 32px -12px rgba(26, 61, 46, 0.55); font-family: var(--font-body);"
+          >
+            Calculer mon budget
+            <span class="font-mono text-xs opacity-70 normal-case">2 min</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a
+            href="/calculateurs/"
+            class="inline-flex items-center gap-2 px-7 py-4 font-semibold text-base border-b-2 transition-all"
+            style="color: #1a3d2e; border-color: #1a3d2e;"
+          >
+            Voir les 12 calculateurs
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Marginalia handwritten · note du fondateur -->
+        <div class="mt-10 max-w-md fade-up" style="transition-delay: 500ms;">
+          <p class="margin-note text-lg leading-snug">
+            Promis, c'est gratuit. Et on ne te demande pas ton numéro de compte.
+            <span class="block mt-1 text-sm text-stone-500" style="font-family: var(--font-body); transform: rotate(0); font-weight: 500; font-style: normal;">, l'équipe Econono</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Colonne visuelle (lg:4) · "billet de calculateur" -->
+      <div class="lg:col-span-4">
+        <div class="relative scale-reveal" style="transition-delay: 300ms;">
+          <!-- Sceau de cire -->
+          <div class="absolute -top-4 -right-4 z-10">
+            <div class="wax-seal">Mis à jour · Avr. 2026</div>
+          </div>
+
+          <!-- Ticket / fiche calculateur -->
+          <div class="ticket p-7 hover-tilt">
+            <div class="flex items-start justify-between mb-5">
+              <div>
+                <p class="eyebrow text-xs">Calculateur · 01</p>
+                <h3 class="mt-1 text-2xl font-bold leading-tight" style="font-family: var(--font-display); color: #0f2419;">Reste à vivre</h3>
+              </div>
+              <span class="font-mono text-xs text-stone-400 mt-1.5">N°&nbsp;01</span>
+            </div>
+
+            <!-- Lignes ledger style -->
+            <div class="space-y-2 mb-5">
+              <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5">
+                <span class="text-sm text-stone-600">Salaire net</span>
+                <span class="font-mono text-sm font-bold text-stone-800 tabular">2 100 €</span>
+              </div>
+              <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5">
+                <span class="text-sm text-stone-600">Loyer</span>
+                <span class="font-mono text-sm font-bold tabular" style="color: #c2410c;">- 850 €</span>
+              </div>
+              <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5">
+                <span class="text-sm text-stone-600">Charges</span>
+                <span class="font-mono text-sm font-bold tabular" style="color: #c2410c;">- 280 €</span>
+              </div>
+              <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5">
+                <span class="text-sm text-stone-600">Crédits</span>
+                <span class="font-mono text-sm font-bold tabular" style="color: #c2410c;">- 190 €</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t-2" style="border-color: #1a3d2e;">
+              <div class="flex justify-between items-baseline">
+                <span class="text-sm font-semibold" style="color: #1a3d2e;">Reste à vivre</span>
+                <span class="font-mono text-2xl font-bold tabular" style="color: #1a3d2e;">780 €</span>
+              </div>
+              <div class="mt-3 h-2 bg-stone-100 rounded-full overflow-hidden">
+                <div class="h-full progress-fill" style="--fill-target: 37%; background: linear-gradient(90deg, #f4c430, #1a3d2e);"></div>
+              </div>
+              <p class="mt-2 text-xs text-stone-500 leading-relaxed">37% de ton revenu te reste pour vivre. <a href="/calculateurs/reste-a-vivre/" class="underline font-semibold" style="color: #1a3d2e;">Voir la moyenne FR &rsaquo;</a></p>
+            </div>
+          </div>
+
+          <!-- Note manuscrite à côté du ticket -->
+          <p class="margin-note absolute -left-2 -bottom-12 text-base hidden lg:block" style="max-width: 180px;">
+            ↑ exemple avec un SMIC, un loyer Lyon et une voiture en crédit
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust bar style éditorial · 4 mini-arguments -->
+    <div class="mt-20 pt-8 border-t border-stone-300/70 grid grid-cols-2 md:grid-cols-4 gap-6 stagger-children">
+      <div class="flex items-start gap-3">
+        <div class="text-2xl leading-none mt-0.5">🔓</div>
+        <div>
+          <p class="text-sm font-semibold text-stone-800">Sans inscription</p>
+          <p class="text-xs text-stone-500 mt-0.5">Aucun email demandé</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <div class="text-2xl leading-none mt-0.5">🏦</div>
+        <div>
+          <p class="text-sm font-semibold text-stone-800">Indépendant</p>
+          <p class="text-xs text-stone-500 mt-0.5">Zéro lien bancaire</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <div class="text-2xl leading-none mt-0.5">📊</div>
+        <div>
+          <p class="text-sm font-semibold text-stone-800">Sources officielles</p>
+          <p class="text-xs text-stone-500 mt-0.5">INSEE · Banque de France</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <div class="text-2xl leading-none mt-0.5">🇫🇷</div>
+        <div>
+          <p class="text-sm font-semibold text-stone-800">Chiffres 2026</p>
+          <p class="text-xs text-stone-500 mt-0.5">À jour chaque mois</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

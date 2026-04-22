@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
+  { name: "Reste à vivre", url: siteConfig.url + "/calculateurs/reste-a-vivre/" },
+]);
+---
+
+<BaseLayout
+  title="Calculateur reste à vivre · combien il te reste après tes charges · Econono"
+  description="Calcule ton reste à vivre en 1 minute : revenus moins charges fixes. Comparé au reste à vivre médian français (1 196 €/mois selon l'INSEE 2026). Gratuit, sans inscription."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Reste à vivre</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Calculateur · 02</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0;">
+        Reste à vivre.
+        <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Ce qu'il te reste, vraiment.</span>
+      </h1>
+
+      <aside data-speakable class="mt-8 max-w-3xl">
+        <p>Le <strong>reste à vivre</strong> = revenus mensuels moins charges fixes obligatoires (loyer, charges, assurances, transports, crédits). Il représente ce dont tu disposes vraiment pour manger, te distraire, t'habiller et épargner. La <strong>médiane française est à 1 196 €/mois</strong> selon les dernières données INSEE (2026). En dessous, tu as peu de marge.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <form id="rav-form" class="lg:col-span-7 ticket p-7 space-y-5" novalidate>
+          <header>
+            <p class="eyebrow text-xs mb-1">Tes données</p>
+            <h2 class="text-2xl mb-1" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">Renseigne tes chiffres mensuels</h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Revenus nets totaux</span>
+              <div class="relative"><input type="number" name="revenus" min="0" step="50" placeholder="2 100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Loyer + charges</span>
+              <div class="relative"><input type="number" name="loyer" min="0" step="10" placeholder="850" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Assurances</span>
+              <div class="relative"><input type="number" name="assurances" min="0" step="5" placeholder="120" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+            <label class="block">
+              <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Transports + crédits</span>
+              <div class="relative"><input type="number" name="autres" min="0" step="10" placeholder="190" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono text-right" style="border-color: #e7e5e4; background: #fffefb;" /><span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span></div>
+            </label>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5">
+          <div class="lg:sticky lg:top-24 ticket p-7 relative">
+            <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Ton chiffre</div></div>
+            <p class="eyebrow text-xs mb-2">Reste à vivre</p>
+            <p id="rav-result" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">— €</p>
+            <p id="rav-label" class="text-sm text-stone-600 mb-5">Remplis le formulaire pour voir ton calcul.</p>
+            <div class="pt-4 border-t border-stone-200">
+              <p class="text-xs font-mono uppercase tracking-wider text-stone-400 mb-1">Médiane française</p>
+              <p class="font-mono font-bold text-stone-700 text-2xl tabular">1 196 €</p>
+              <p id="rav-vs" class="text-sm text-stone-500 mt-1">— vs médiane</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>À quoi sert le reste à vivre ?</h2>
+      <p>Le reste à vivre est l'indicateur le plus parlant de ta marge de manœuvre financière. Une banque le calcule avant de t'accorder un crédit (avec des barèmes minimaux : environ 700 €/mois pour une personne seule, 1 100 €/mois pour un couple, plus 200-400 €/mois par enfant). Mais tu peux et dois le calculer toi-même pour savoir si tu peux supporter une nouvelle dépense récurrente (déménagement, voiture, abonnement).</p>
+
+      <h2>Comment on calcule</h2>
+      <p>Reste à vivre = Revenus mensuels nets , Charges fixes obligatoires. On compte dans les charges fixes : loyer + charges locatives, assurances (habitation, auto, mutuelle), abonnements télécom et énergie (électricité, gaz, internet, mobile), transport (carte transport ou essence + entretien voiture), mensualités de crédit en cours.</p>
+      <p>On ne compte pas : courses alimentaires, loisirs, vêtements, restos, épargne. Ces postes-là sont précisément ce que ton reste à vivre va payer.</p>
+
+      <h2>Reste à vivre vs taux d'effort vs taux d'endettement</h2>
+      <p>Trois indicateurs proches à ne pas confondre :</p>
+      <ul>
+        <li><strong>Reste à vivre</strong> : un chiffre absolu (en euros) après charges fixes.</li>
+        <li><strong>Taux d'effort logement</strong> : (loyer + charges) / revenus, en %. Idéalement sous 30%.</li>
+        <li><strong><a href="/calculateurs/taux-endettement/">Taux d'endettement</a></strong> : mensualités de crédit / revenus. Plafonné officiellement à 35% par le HCSF.</li>
+      </ul>
+
+      <h2>Les sources</h2>
+      <ul>
+        <li><a href="https://www.insee.fr/fr/statistiques">INSEE · Niveau de vie des ménages 2026</a></li>
+        <li><a href="https://drees.solidarites-sante.gouv.fr/">DREES · Revenus et patrimoine 2026</a></li>
+      </ul>
+    </article>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById("rav-form") as HTMLFormElement | null;
+  const elResult = document.getElementById("rav-result");
+  const elLabel = document.getElementById("rav-label");
+  const elVs = document.getElementById("rav-vs");
+  const fmt = (n: number) => new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(n) + " €";
+  function getNum(name: string): number {
+    if (!form) return 0;
+    const v = (form.elements.namedItem(name) as HTMLInputElement)?.value || "0";
+    const n = parseFloat(v.replace(/\s/g, "").replace(",", "."));
+    return isNaN(n) || n < 0 ? 0 : n;
+  }
+  function compute() {
+    const r = getNum("revenus");
+    const charges = getNum("loyer") + getNum("assurances") + getNum("autres");
+    if (r <= 0) {
+      if (elResult) elResult.textContent = "— €";
+      if (elLabel) elLabel.textContent = "Remplis le formulaire pour voir ton calcul.";
+      if (elVs) elVs.textContent = "— vs médiane";
+      return;
+    }
+    const rav = r - charges;
+    if (elResult) {
+      elResult.textContent = fmt(rav);
+      (elResult as HTMLElement).style.color = rav < 0 ? "#b91c1c" : "#1a3d2e";
+    }
+    if (elLabel) elLabel.textContent = `${((rav / r) * 100).toFixed(0)}% de tes revenus te restent pour vivre.`;
+    if (elVs) {
+      const diff = rav - 1196;
+      const sign = diff >= 0 ? "+" : "";
+      elVs.textContent = `${sign}${fmt(diff)} ${diff >= 0 ? "au-dessus" : "en dessous"} de la médiane FR`;
+    }
+  }
+  form?.addEventListener("input", compute);
+  form?.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("focus", () => (input.style.borderColor = "#1a3d2e"));
+    input.addEventListener("blur", () => (input.style.borderColor = "#e7e5e4"));
+  });
+</script>

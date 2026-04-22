@@ -1,0 +1,462 @@
+@import "tailwindcss";
+
+/* === Design Tokens · econono.com === */
+:root {
+  --color-primary: #1a3d2e;        /* vert forêt mature */
+  --color-primary-dark: #0f2419;
+  --color-secondary: #f4c430;      /* jaune doré · la pièce qui brille */
+  --color-secondary-soft: #fde68a;
+  --color-accent: #c2410c;         /* terracotta brûlée · alerte douce */
+  --color-bg: #faf7f2;             /* crème chaude */
+  --color-surface: #ffffff;
+  --color-text: #1c1917;
+  --color-text-muted: #57534e;
+  --color-border: #e7e5e4;
+  --color-success: #15803d;
+  --color-warning: #ca8a04;
+  --color-danger: #b91c1c;
+
+  --font-display: "Fraunces", "EB Garamond", Georgia, serif;
+  --font-body: "Figtree", -apple-system, system-ui, sans-serif;
+  --font-hand: "Caveat", "Comic Sans MS", cursive;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* === Base === */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  position: relative;
+  overflow-x: clip;
+  max-width: 100vw;
+}
+
+@supports (scrollbar-gutter: stable) {
+  html { scrollbar-gutter: stable; }
+}
+
+/* === Accessibility === */
+nav a, .prose a, footer a { min-height: 44px; }
+
+.prose a, article a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Mobile readability */
+@media (max-width: 640px) {
+  body { font-size: 16px; line-height: 1.65; }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.45rem; }
+  h3 { font-size: 1.2rem; }
+  section { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+/* === Typography · serif chaleureux pour les titres === */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-dark);
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3.8vw, 2.6rem); }
+h3 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); }
+
+/* Tabular numerals partout où on affiche des chiffres */
+.tabular { font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+
+/* === Prose (articles blog/guide) === */
+.prose h2 { margin-top: 2.75rem; margin-bottom: 1rem; color: var(--color-primary); }
+.prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
+.prose p { margin-bottom: 1.25rem; }
+.prose a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { color: var(--color-accent); }
+.prose img { border-radius: 0.75rem; margin: 2rem auto; box-shadow: 0 10px 30px -10px rgba(26, 61, 46, 0.15); }
+.prose blockquote {
+  border-left: 4px solid var(--color-secondary);
+  padding-left: 1.5rem;
+  margin: 1.75rem 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+  background: rgba(244, 196, 48, 0.06);
+  padding: 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.prose li { margin-bottom: 0.5rem; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: 0.95rem; }
+.prose th, .prose td { border: 1px solid var(--color-border); padding: 0.75rem 1rem; text-align: left; }
+.prose th { background: var(--color-bg); font-weight: 600; color: var(--color-primary); }
+.prose td.numeric { font-variant-numeric: tabular-nums; text-align: right; font-family: var(--font-mono); }
+
+/* === TL;DR speakable block (E-E-A-T + GEO) === */
+aside[data-speakable] {
+  background: linear-gradient(135deg, rgba(244, 196, 48, 0.10), rgba(244, 196, 48, 0.04));
+  border-left: 4px solid var(--color-secondary);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  margin: 1.5rem 0 2rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+aside[data-speakable] strong { color: var(--color-primary); font-weight: 600; }
+
+/* === Grain overlay (texture papier, desktop) === */
+@media (min-width: 768px) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+}
+
+/* ============================================
+   ANIMATIONS · scroll-triggered (UX kit STACK-2026)
+   ============================================ */
+.fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.blur-reveal { opacity: 0; filter: blur(10px); transform: translateY(20px); transition: opacity 0.9s var(--ease-out-expo), filter 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.blur-reveal.visible { opacity: 1; filter: blur(0); transform: translateY(0); }
+
+.scale-reveal { opacity: 0; transform: scale(0.92); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.scale-reveal.visible { opacity: 1; transform: scale(1); }
+
+.clip-reveal { clip-path: inset(100% 0 0 0); transition: clip-path 0.8s var(--ease-out-expo); }
+.clip-reveal.visible { clip-path: inset(0 0 0 0); }
+
+.slide-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.slide-left.visible { opacity: 1; transform: translateX(0); }
+
+.slide-right { opacity: 0; transform: translateX(60px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.slide-right.visible { opacity: 1; transform: translateX(0); }
+
+.stagger-children > * { opacity: 0; transform: translateY(24px); transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo); }
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+
+.split-words > .word { display: inline-block; opacity: 0; transform: translateY(100%); transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo); }
+.split-words.visible > .word { opacity: 1; transform: translateY(0); }
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-animated { background-size: 200% 200%; animation: gradient-shift 12s ease infinite; }
+
+/* ============================================
+   ANIMATIONS · signature Econono (univers brand)
+   ============================================ */
+
+/* Coin glint · la pièce qui brille (équivalent du pulse-signal d'adapte-toi) */
+@keyframes coin-glint {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244, 196, 48, 0.45); transform: scale(1); }
+  50% { box-shadow: 0 0 0 18px rgba(244, 196, 48, 0); transform: scale(1.04); }
+}
+.coin-glint { animation: coin-glint 2.4s ease-out infinite; }
+
+/* Coin drop · la pièce qui tombe dans la tirelire (action réussie) */
+@keyframes coin-drop {
+  0% { transform: translateY(-30px) rotate(-15deg); opacity: 0; }
+  60% { transform: translateY(4px) rotate(8deg); opacity: 1; }
+  80% { transform: translateY(-2px) rotate(-3deg); }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+.coin-drop { animation: coin-drop 0.7s var(--ease-spring) both; }
+
+/* Snowball roll · le compteur qui grandit (effet boule de neige sur scores/stats) */
+@keyframes snowball-roll {
+  0% { transform: scale(0.6) rotate(-180deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.snowball-roll { animation: snowball-roll 0.9s var(--ease-out-expo) both; }
+
+/* Progress fill · barre qui se remplit doucement (calculateurs en sortie) */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: var(--fill-target, 100%); }
+}
+.progress-fill { animation: progress-fill 1.4s var(--ease-out-expo) both; }
+
+/* Number tick · compteur qui s'incrémente (stats homepage) */
+.counter { display: inline-block; font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+
+/* === Hover effects === */
+.hover-shine { position: relative; overflow: hidden; }
+.hover-shine::after {
+  content: ""; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(to bottom right, transparent 40%, rgba(244, 196, 48, 0.20) 50%, transparent 60%);
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.7s ease; pointer-events: none;
+}
+.hover-shine:hover::after { transform: rotate(30deg) translateX(100%); }
+
+.hover-glow { transition: box-shadow 0.4s ease, transform 0.4s var(--ease-out-expo); }
+.hover-glow:hover {
+  box-shadow: 0 0 50px -8px rgba(244, 196, 48, 0.25), 0 25px 50px -20px rgba(26, 61, 46, 0.18);
+  transform: translateY(-3px);
+}
+
+.hover-tilt { transition: transform 0.3s ease; transform-style: preserve-3d; }
+.hover-tilt:hover { transform: perspective(800px) rotateX(-2deg) rotateY(2deg) translateY(-4px); }
+
+.magnetic { transition: transform 0.25s var(--ease-out-expo); }
+
+/* === Expand/collapse (FAQ accordion) === */
+.expand-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s var(--ease-out-expo); }
+.expand-content.expanded { grid-template-rows: 1fr; }
+.expand-content > div { overflow: hidden; }
+
+/* === Parallax helper === */
+[data-parallax] { will-change: transform; transition: transform 0.1s linear; }
+
+/* === Section transitions === */
+section + section { position: relative; }
+section + section::before {
+  content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+  background: linear-gradient(to bottom, var(--section-prev-bg, transparent), transparent);
+  pointer-events: none; z-index: 1;
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  .coin-glint, .coin-drop, .snowball-roll, .progress-fill { animation: none; }
+  .fade-up, .blur-reveal, .scale-reveal, .slide-left, .slide-right {
+    opacity: 1; transform: none; filter: none; transition: none;
+  }
+  .clip-reveal { clip-path: none; transition: none; }
+  .stagger-children > * { opacity: 1; transform: none; transition: none; }
+  .split-words > .word { opacity: 1; transform: none; transition: none; }
+  .gradient-animated { animation: none; }
+  .hover-tilt:hover { transform: none; }
+  body::before { display: none; }
+}
+
+/* ============================================
+   "LE CARNET" · signatures éditoriales artisan
+   ============================================ */
+
+/* Small caps éditorial · pour les eyebrows et labels */
+.eyebrow {
+  font-family: var(--font-display);
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  text-transform: lowercase;
+}
+
+/* Handwritten accent · pour les notes en marge */
+.handwritten {
+  font-family: var(--font-hand);
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* Lignes de cahier (subtil) · pour fonds de section qui rappellent le papier ligné */
+.ledger-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgba(26, 61, 46, 0.06) 31px,
+    rgba(26, 61, 46, 0.06) 32px
+  );
+}
+
+/* Trait d'union manuscrit · séparateur entre sections */
+.flourish {
+  display: block;
+  margin: 2rem auto;
+  width: 60px;
+  height: 12px;
+  opacity: 0.5;
+}
+
+/* Sceau de cire · pour les badges "vérifié", "mis à jour le X" */
+.wax-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  background: linear-gradient(135deg, #c2410c, #9a3412);
+  color: #faf7f2;
+  font-family: var(--font-display);
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  border-radius: 50% / 60%;
+  box-shadow:
+    inset 0 -4px 8px rgba(0,0,0,0.2),
+    inset 0 2px 4px rgba(255,255,255,0.15),
+    0 4px 12px -4px rgba(154, 52, 18, 0.5);
+  transform: rotate(-4deg);
+  position: relative;
+}
+.wax-seal::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(250, 247, 242, 0.35);
+  border-radius: 50% / 60%;
+  pointer-events: none;
+}
+
+/* Ticket / receipt style · pour cards calculateurs */
+.ticket {
+  position: relative;
+  background: #fffefb;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 8px 24px -16px rgba(26, 61, 46, 0.18);
+}
+.ticket::before, .ticket::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ticket::before { left: -7px; box-shadow: inset -2px 0 4px -2px rgba(0,0,0,0.08); }
+.ticket::after { right: -7px; box-shadow: inset 2px 0 4px -2px rgba(0,0,0,0.08); }
+
+/* Punch hole · pour effet "feuille de cahier perforée" */
+.holes {
+  background-image:
+    radial-gradient(circle at 18px 20px, rgba(0,0,0,0.08) 0, rgba(0,0,0,0.08) 4px, transparent 5px),
+    radial-gradient(circle at 18px 70px, rgba(0,0,0,0.08) 0, rgba(0,0,0,0.08) 4px, transparent 5px),
+    radial-gradient(circle at 18px 120px, rgba(0,0,0,0.08) 0, rgba(0,0,0,0.08) 4px, transparent 5px);
+}
+
+/* Margin note · style "annotation manuscrite à côté du texte" */
+.margin-note {
+  position: relative;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--color-accent);
+  line-height: 1.3;
+  transform: rotate(-2deg);
+}
+
+/* Stamp date · pour "Mis à jour le X" inline */
+.date-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.7rem;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transform: rotate(-1.2deg);
+  background: rgba(244, 196, 48, 0.08);
+}
+
+/* Paper tear · bord déchiré pour fin de section éditoriale */
+.paper-tear-bottom {
+  position: relative;
+}
+.paper-tear-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14' preserveAspectRatio='none'><path d='M0,0 Q60,14 120,4 T240,8 T360,2 T480,10 T600,4 T720,12 T840,3 T960,9 T1080,5 T1200,7 L1200,14 L0,14 Z' fill='%23faf7f2'/></svg>");
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+/* Drop cap · première lettre éditoriale */
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 0.85;
+  float: left;
+  padding: 0.4rem 0.8rem 0 0;
+  color: var(--color-primary);
+}
+
+/* Pull quote · citation détachée éditoriale */
+.pull-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.4;
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-secondary);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+.pull-quote::before { content: "« "; opacity: 0.5; }
+.pull-quote::after { content: " »"; opacity: 0.5; }
+
+/* === Tailwind theme tokens === */
+@theme {
+  --color-primary: #1a3d2e;
+  --color-primary-dark: #0f2419;
+  --color-secondary: #f4c430;
+  --color-secondary-soft: #fde68a;
+  --color-accent: #c2410c;
+  --color-bg: #faf7f2;
+  --color-paper: #fffefb;
+  --color-text: #1c1917;
+  --color-text-muted: #57534e;
+  --color-border: #e7e5e4;
+  --color-success: #15803d;
+  --color-warning: #ca8a04;
+  --color-danger: #b91c1c;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}

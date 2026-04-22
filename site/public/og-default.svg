@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf7f2"/>
+      <stop offset="100%" stop-color="#f4ecd8"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f4c430"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grain subtle -->
+  <rect width="1200" height="630" fill="#1a3d2e" opacity="0.02"/>
+
+  <!-- Logo + nom (gauche) -->
+  <g transform="translate(80, 220)">
+    <circle cx="60" cy="60" r="60" fill="#1a3d2e"/>
+    <circle cx="60" cy="60" r="28" fill="url(#coin)" stroke="#1a3d2e" stroke-width="3"/>
+    <text x="60" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#1a3d2e">€</text>
+  </g>
+
+  <!-- Nom -->
+  <text x="220" y="305" font-family="Georgia, serif" font-size="78" font-weight="700" fill="#1a3d2e" letter-spacing="-2">Econono</text>
+
+  <!-- Tagline -->
+  <text x="80" y="430" font-family="Georgia, serif" font-size="42" font-weight="600" fill="#0f2419">Dépense moins, vis mieux.</text>
+
+  <!-- Description courte -->
+  <text x="80" y="490" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#57534e">Le média qui t'aide à reprendre la main sur ton budget.</text>
+  <text x="80" y="525" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#57534e">Calculateurs gratuits · guides honnêtes · actu pouvoir d'achat.</text>
+
+  <!-- URL -->
+  <text x="80" y="585" font-family="JetBrains Mono, monospace" font-size="18" font-weight="500" fill="#1a3d2e">econono.com</text>
+
+  <!-- Bordure jaune en bas (signature brand) -->
+  <rect x="0" y="612" width="1200" height="18" fill="#f4c430"/>
+</svg>

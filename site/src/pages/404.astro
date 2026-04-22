@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../../site.config";
+
+const suggestions = [
+  { title: "Calculateur budget mensuel", desc: "Le flagship · 3 minutes pour voir où passe ton argent.", href: "/calculateurs/budget-mensuel/" },
+  { title: "Reste à vivre", desc: "Combien il te reste vraiment après tes charges fixes.", href: "/calculateurs/reste-a-vivre/" },
+  { title: "Comparateur d'abonnements", desc: "Trouve les abonnements qui te coûtent sans servir.", href: "/calculateurs/comparateur-abonnements/" },
+];
+---
+
+<BaseLayout
+  title={`Page introuvable · ${siteConfig.name}`}
+  description="Cette page n'existe pas, mais on a d'autres bons trucs à te proposer."
+  noIndex
+>
+  <section class="py-20 md:py-28 px-4 relative" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Numéro de page éditorial 404 -->
+      <p class="font-bold leading-none mb-4 select-none" style="font-family: var(--font-display); color: rgba(26, 61, 46, 0.10); font-size: clamp(8rem, 22vw, 16rem); letter-spacing: -0.05em;">404</p>
+
+      <p class="eyebrow mb-4 fade-up" style="margin-top: -3rem;">Page introuvable</p>
+
+      <h1 class="blur-reveal" style="color: #0f2419; font-family: var(--font-display); font-weight: 700; max-width: 22ch; margin: 0 auto;">
+        Cette page n'est pas dans le carnet.
+      </h1>
+
+      <p class="mt-5 text-lg text-stone-600 max-w-md mx-auto leading-relaxed fade-up" style="transition-delay: 200ms;">
+        Soit elle n'a jamais existé, soit on l'a archivée. Mais on a beaucoup mieux à te proposer juste en dessous.
+      </p>
+
+      <p class="margin-note text-base mt-6 inline-block">
+        ↓ trois trucs utiles pour repartir du bon pied
+      </p>
+
+      <!-- Suggestions calculateurs -->
+      <div class="grid md:grid-cols-3 gap-4 mt-12 stagger-children text-left">
+        {suggestions.map((s) => (
+          <a
+            href={s.href}
+            class="group block ticket p-6 hover-glow"
+          >
+            <p class="font-mono text-xs font-bold mb-2 uppercase tracking-wider" style="color: #c2410c;">Calculateur</p>
+            <h3 class="text-lg font-bold mb-2 leading-tight transition-colors group-hover:text-[#c2410c]" style="font-family: var(--font-display); color: #0f2419;">
+              {s.title}
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              {s.desc}
+            </p>
+            <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold" style="color: #1a3d2e;">
+              Y aller
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Nav links -->
+      <div class="mt-12 flex flex-col sm:flex-row gap-3 justify-center fade-up">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center gap-2 text-white font-semibold px-7 py-3 rounded-full hover-shine"
+          style="background: #1a3d2e;"
+        >
+          Retour à l'accueil
+        </a>
+        <a
+          href="/calculateurs/"
+          class="inline-flex items-center justify-center gap-2 font-semibold px-7 py-3 rounded-full border-2"
+          style="color: #1a3d2e; border-color: #1a3d2e;"
+        >
+          Voir tous les calculateurs
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

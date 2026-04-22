@@ -1,0 +1,109 @@
+---
+// CookieBanner · CNIL-compliant, 3 boutons équilibrés, univers brand carnet
+---
+
+<div
+  id="cookie-banner"
+  class="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md z-[9990] hidden"
+  role="dialog"
+  aria-label="Consentement cookies"
+  aria-describedby="cookie-banner-text"
+>
+  <div class="ticket p-5 md:p-6 shadow-2xl" style="background: #fffefb;">
+    <!-- Sceau cire -->
+    <div class="absolute -top-3 -right-3">
+      <div class="wax-seal text-[9px]">RGPD</div>
+    </div>
+
+    <p class="eyebrow mb-3 text-[10px]" style="color: #c2410c;">Cookies · à toi de choisir</p>
+    <h3 class="text-lg font-bold mb-3 leading-tight" style="font-family: var(--font-display); color: #0f2419;">
+      On t'explique ce qu'on utilise.
+    </h3>
+    <p id="cookie-banner-text" class="text-sm text-stone-600 leading-relaxed mb-5">
+      Rien de louche : un cookie pour mesurer l'audience anonyme du site (sans Google Analytics), et un autre qui retient ta langue préférée. Aucun tracking publicitaire, aucune revente.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-2.5">
+      <button
+        id="cookie-decline"
+        class="text-sm font-semibold px-4 py-2.5 rounded-md border-2 transition-colors flex-1"
+        style="color: #1a3d2e; border-color: #1a3d2e;"
+      >
+        Refuser
+      </button>
+      <button
+        id="cookie-accept"
+        class="text-sm font-semibold text-white px-4 py-2.5 rounded-md hover-shine transition-colors flex-1"
+        style="background: #1a3d2e;"
+      >
+        Accepter
+      </button>
+    </div>
+    <a
+      href="/politique-cookies/"
+      class="block mt-3 text-xs underline font-medium text-center"
+      style="color: #57534e;"
+    >
+      En savoir plus sur notre usage des cookies
+    </a>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("cookie-accept");
+  const decline = document.getElementById("cookie-decline");
+
+  const KEY = "ec_cookie_consent";
+  const TTL_DAYS = 395; // CNIL : 13 mois max
+
+  function getConsent() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      const obj = JSON.parse(raw);
+      if (obj.expiresAt && Date.now() > obj.expiresAt) return null;
+      return obj;
+    } catch { return null; }
+  }
+
+  function setConsent(value: "accepted" | "declined") {
+    const obj = {
+      value,
+      acceptedAt: Date.now(),
+      expiresAt: Date.now() + TTL_DAYS * 86400 * 1000,
+    };
+    localStorage.setItem(KEY, JSON.stringify(obj));
+    window.dispatchEvent(new CustomEvent(value === "accepted" ? "ec:consent-accepted" : "ec:consent-rejected"));
+  }
+
+  function showBanner() {
+    banner?.classList.remove("hidden");
+    requestAnimationFrame(() => banner?.classList.add("slide-in-top"));
+  }
+  function hideBanner() {
+    banner?.classList.add("hidden");
+  }
+
+  if (!getConsent()) showBanner();
+
+  accept?.addEventListener("click", () => {
+    setConsent("accepted");
+    hideBanner();
+  });
+  decline?.addEventListener("click", () => {
+    setConsent("declined");
+    hideBanner();
+  });
+
+  // Re-open from footer
+  window.addEventListener("ec:open-cookie-banner", () => {
+    showBanner();
+  });
+
+  // Expose helper for Analytics gating
+  (window as any).hasValidConsent = () => {
+    const c = getConsent();
+    return c?.value === "accepted";
+  };
+</script>

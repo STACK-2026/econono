@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "À propos", url: siteConfig.url + "/a-propos/" },
+]);
+---
+
+<BaseLayout
+  title="À propos · qui sommes-nous · Econono"
+  description="Econono est un média français indépendant sur la gestion de budget personnel. Aucun lien avec une banque. Notre méthode, notre équipe, notre manifeste."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">À propos</span>
+      </nav>
+
+      <p class="eyebrow mb-4">Le manifeste · édition fondatrice</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1.0;">
+        On parle d'argent.
+        <span class="block italic mt-2" style="color: #1a3d2e; font-weight: 500;">Comme à des adultes.</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <p class="drop-cap text-lg leading-relaxed">
+        Econono est un média français indépendant qui aide les Français à reprendre la main sur leur budget. On publie des calculateurs gratuits, des guides honnêtes, des comparatifs sans pub déguisée, et l'actualité du pouvoir d'achat décryptée.
+      </p>
+
+      <h2>Pourquoi Econono existe</h2>
+      <p>
+        Six Français sur dix estiment que leur pouvoir d'achat a baissé en 2026. La majorité des contenus sur le budget en France sortent soit d'institutions (qui parlent un français de bureaucrate), soit de banques et courtiers (qui ont des choses à te vendre). Très peu de médias indépendants traitent le budget personnel avec un ton humain et des chiffres à jour.
+      </p>
+      <p>
+        On a fait le pari simple : un site éditorial, des outils gratuits qui marchent dans le navigateur, des chiffres datés, et un ton qui ne te prend pas de haut. Pas d'app qui se connecte à ton compte. Pas de revente de leads. Pas de pub déguisée en article.
+      </p>
+
+      <h2>Notre indépendance</h2>
+      <p>
+        Econono ne reçoit aucune commission obligatoire d'aucune banque, aucun courtier, aucun assureur. On vit de trois sources :
+      </p>
+      <ul>
+        <li><strong>Pub display</strong> standard sur les pages, désactivable si tu refuses les cookies.</li>
+        <li><strong>Affiliations transparentes</strong>, signalées à chaque fois (un lien vers Boursorama est marqué "lien partenaire" si on touche une commission).</li>
+        <li><strong>Partenariats éditoriaux</strong> clairement identifiés (jamais déguisés en article).</li>
+      </ul>
+      <p>
+        Concrètement : si on t'écrit "le LEP rapporte 3,5% en 2026", c'est parce que c'est le taux officiel, pas parce que la banque qui le distribue nous paie.
+      </p>
+
+      <h2>Notre méthode</h2>
+      <p>
+        Pour les <strong>calculateurs</strong>, on utilise les formules officielles : le taux d'endettement vient de la <a href="https://www.banque-france.fr/">Banque de France</a>, le seuil HCSF de 35% est officiel, le SMIC est sourcé Service-Public.fr, les médianes de consommation viennent de l'<a href="https://www.insee.fr/">INSEE</a>.
+      </p>
+      <p>
+        Pour les <strong>articles</strong>, chaque chiffre est sourcé et daté. On a une révision automatique trimestrielle pour les chiffres qui bougent (SMIC, livret A, LEP, barèmes fiscaux). La date de dernière vérification apparaît en bas de chaque article.
+      </p>
+      <p>
+        Pour les <strong>comparatifs</strong>, on teste vraiment ce qu'on recommande. Les apps de budget (Bankin, Linxo, Finary, YNAB) sont testées dans la durée, pas sur une démo de 5 minutes.
+      </p>
+
+      <h2>Tes données</h2>
+      <p>
+        Tu peux utiliser tous les calculateurs sans inscription. Aucune des données que tu saisis (salaire, loyer, charges) n'est envoyée sur nos serveurs : tout reste dans ton navigateur. Si tu fermes la page, il n'en reste rien. C'est volontaire : on n'a pas besoin de ces données pour faire le calcul.
+      </p>
+      <p>
+        On collecte des statistiques anonymes d'audience (pages vues, durée), gérées en interne sans Google Analytics. Tu peux refuser ce suivi via le bandeau cookies (il est gardé 13 mois, conforme CNIL).
+      </p>
+
+      <h2>L'équipe</h2>
+      <p>
+        Econono est porté par une petite équipe basée en France, avec des contributions ponctuelles d'experts (économistes, conseillers en gestion de patrimoine indépendants, enseignants en finance personnelle). Les auteurs principaux signent leurs articles avec leur vraie identité (pen name + bio courte vérifiable).
+      </p>
+
+      <h2>Ce qu'on te promet</h2>
+      <ul>
+        <li>Aucun calculateur ne te demandera ton numéro de compte.</li>
+        <li>Aucun article ne te dira "épargne 20%" sans regarder ce que tu peux vraiment épargner.</li>
+        <li>Aucun chiffre ne sortira d'un chapeau : sources sous chaque donnée.</li>
+        <li>Aucun lien partenaire ne sera caché.</li>
+      </ul>
+
+      <h2>Te parler</h2>
+      <p>
+        Si tu veux nous écrire (suggestion d'article, calculateur manquant, erreur, partenariat éditorial) : <a href="mailto:hello@econono.com">hello@econono.com</a>. On lit tout, on répond à tout.
+      </p>
+
+      <p class="text-sm text-stone-500 mt-12 pt-6 border-t border-stone-200">
+        Page mise à jour le 22 avril 2026.
+      </p>
+    </article>
+  </section>
+</BaseLayout>

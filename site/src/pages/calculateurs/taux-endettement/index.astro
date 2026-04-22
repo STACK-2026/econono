@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
+  { name: "Taux d'endettement", url: siteConfig.url + "/calculateurs/taux-endettement/" },
+]);
+---
+
+<BaseLayout
+  title="Taux d'endettement 2026 · calculateur gratuit · Econono"
+  description="Calcule ton taux d'endettement avec la formule officielle Banque de France. Plafond HCSF 35%. Sans inscription, en 1 minute."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Taux d'endettement</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Calculateur · 03</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
+        Taux d'endettement.
+      </h1>
+
+      <aside data-speakable class="mt-8 max-w-3xl">
+        <p>Le taux d'endettement = (mensualités de crédit) / (revenus nets mensuels). Le **HCSF (Haut Conseil de Stabilité Financière)** plafonne ce taux à **35%** depuis janvier 2022 pour tout nouveau crédit immobilier. Au-dessus, aucune banque ne peut plus te prêter (sauf 20% de dérogations).</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <div class="ticket p-8 md:p-12 relative text-center">
+        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
+        <p class="eyebrow mb-3">À venir · juin 2026</p>
+        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+          Le calculateur arrive.
+        </h2>
+        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le calculateur officiel arrive bientôt. En attendant, voici la formule : (somme des mensualités de crédit) ÷ revenus nets mensuels × 100.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
+            Essayer le budget mensuel
+          </a>
+          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
+            Être prévenu·e à la sortie
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

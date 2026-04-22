@@ -1,0 +1,257 @@
+---
+import { siteConfig } from "../../site.config";
+import { fontsUrl } from "../utils/config";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import Analytics from "../components/Analytics.astro";
+import EasterEggs from "../components/EasterEggs.astro";
+import AutoGlossaire from "../components/AutoGlossaire.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: "website" | "article";
+  publishedTime?: string;
+  jsonLd?: object | object[];
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.url.href,
+  ogImage = siteConfig.ogImage,
+  ogType = "website",
+  publishedTime,
+  jsonLd,
+  noIndex = false,
+} = Astro.props;
+
+const imageUrl = ogImage?.startsWith("http") ? ogImage : `${siteConfig.url}${ogImage}`;
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+
+<!doctype html>
+<html lang={siteConfig.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a3d2e" />
+
+    <!-- Fonts · "Le Carnet" : Fraunces (display serif éditorial) + Figtree (body humanist warm) + Caveat (handwritten accents) + JetBrains Mono (chiffres tabulaires) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Figtree:wght@400;500;600;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap"
+    />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="author" content={siteConfig.author} />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang={siteConfig.locale} href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={siteConfig.locale} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- RSS auto-discovery -->
+    <link rel="alternate" type="application/rss+xml" title="Econono · le carnet" href="/rss.xml" />
+
+    <!-- JSON-LD -->
+    {jsonLdArray.map((ld) => (
+      <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+    ))}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Cursor glow (desktop only) -->
+    <div id="cursor-glow"></div>
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <CookieBanner />
+    <Analytics />
+    <EasterEggs />
+    <AutoGlossaire />
+
+    <!-- Animation engine -->
+    <script>
+      // 1. Intersection Observer for all reveal animations
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: window.innerWidth < 640 ? 0.2 : 0.1, rootMargin: window.innerWidth < 640 ? "0px 0px -120px 0px" : "0px 0px -60px 0px" }
+      );
+      document.querySelectorAll(
+        ".fade-up, .blur-reveal, .scale-reveal, .clip-reveal, .slide-left, .slide-right, .stagger-children, .split-words"
+      ).forEach((el) => revealObserver.observe(el));
+
+      // 2. Split text into words (wrap each word in a span.word)
+      document.querySelectorAll("[data-split-words]").forEach((el) => {
+        const text = el.textContent || "";
+        el.innerHTML = text
+          .split(/\s+/)
+          .map((word, i) => `<span class="word" style="transition-delay:${i * 50}ms">${word}</span>`)
+          .join(" ");
+        el.classList.add("split-words");
+        revealObserver.observe(el);
+      });
+
+      // 3. Counter animation (animate numbers from 0)
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              const target = el.dataset.count || el.textContent || "0";
+              const match = target.match(/([+-]?)(\d+)/);
+              if (!match) return;
+              const prefix = target.replace(/[0-9]/g, "").replace(/(\d)/g, "");
+              const sign = match[1];
+              const num = parseInt(match[2]);
+              const suffix = target.replace(/^[+-]?\d+/, "");
+              const pre = target.replace(/\d+.*$/, "");
+              let start = 0;
+              const duration = 1500;
+              const startTime = performance.now();
+              function tick(now: number) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 4);
+                const current = Math.round(eased * num);
+                el.textContent = `${pre}${current}${suffix}`;
+                if (progress < 1) requestAnimationFrame(tick);
+              }
+              requestAnimationFrame(tick);
+              counterObserver.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      document.querySelectorAll("[data-count]").forEach((el) => counterObserver.observe(el));
+
+      // 4. Parallax on scroll (subtle, performance-safe)
+      const parallaxEls = document.querySelectorAll("[data-parallax]");
+      if (parallaxEls.length > 0) {
+        let ticking = false;
+        window.addEventListener("scroll", () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const scrollY = window.scrollY;
+              parallaxEls.forEach((el) => {
+                const speed = parseFloat((el as HTMLElement).dataset.parallax || "0.1");
+                const rect = el.getBoundingClientRect();
+                const offset = (rect.top + scrollY - window.innerHeight / 2) * speed;
+                (el as HTMLElement).style.transform = `translateY(${offset}px)`;
+              });
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+      }
+
+      // 5. Cursor glow (desktop only, follows mouse)
+      const glow = document.getElementById("cursor-glow");
+      if (glow && window.matchMedia("(pointer: fine)").matches) {
+        let glowX = 0, glowY = 0, targetX = 0, targetY = 0;
+        let glowVisible = false;
+
+        document.addEventListener("mousemove", (e) => {
+          targetX = e.clientX;
+          targetY = e.clientY;
+          if (!glowVisible) {
+            glow.style.opacity = "1";
+            glowVisible = true;
+          }
+        });
+
+        document.addEventListener("mouseleave", () => {
+          glow.style.opacity = "0";
+          glowVisible = false;
+        });
+
+        // Smooth follow (lerp)
+        function animateGlow() {
+          glowX += (targetX - glowX) * 0.08;
+          glowY += (targetY - glowY) * 0.08;
+          glow.style.left = glowX + "px";
+          glow.style.top = glowY + "px";
+          requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
+      }
+
+      // 6. Magnetic effect on buttons/links with .magnetic class
+      if (window.matchMedia("(pointer: fine)").matches) {
+        document.querySelectorAll(".magnetic, a[class*='rounded-full']").forEach((el) => {
+          const elem = el as HTMLElement;
+          const strength = 0.3;
+
+          elem.addEventListener("mousemove", (e: MouseEvent) => {
+            const rect = elem.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = (e.clientX - cx) * strength;
+            const dy = (e.clientY - cy) * strength;
+            elem.style.transform = `translate(${dx}px, ${dy}px)`;
+          });
+
+          elem.addEventListener("mouseleave", () => {
+            elem.style.transform = "translate(0, 0)";
+            elem.style.transition = "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
+            setTimeout(() => { elem.style.transition = ""; }, 400);
+          });
+        });
+      }
+
+      // 7. Smooth scroll with easing (Lenis-like, lightweight)
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          const href = (anchor as HTMLAnchorElement).getAttribute("href");
+          if (!href || href === "#") return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>

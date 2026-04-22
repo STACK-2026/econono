@@ -1,0 +1,54 @@
+# Econono
+
+> Le média français indépendant dédié à la gestion de budget personnel et au pouvoir d'achat. Calculateurs gratuits, guides honnêtes, comparatifs d'apps budget, actualité pouvoir d'achat. Aucun lien capitalistique avec une banque ou un courtier.
+
+## Qui sommes-nous
+
+Econono.com est un média 100% indépendant. Nous ne vendons aucun produit financier, n'avons aucun mandat de courtage, et ne sommes liés à aucune banque ou compagnie d'assurance. Notre modèle : pub display + affiliations transparentes signalées + partenariats éditoriaux clairement identifiés.
+
+## Ce qu'on propose
+
+### Calculateurs interactifs gratuits (sans inscription)
+- Calculateur de budget mensuel : reste à vivre, répartition, score santé budgétaire
+- Calculateur de reste à vivre (revenus moins charges fixes)
+- Calculateur de taux d'endettement (formule officielle Banque de France)
+- Simulateur règle 50/30/20 (besoins / envies / épargne)
+- Calculateur d'épargne (intérêts composés, projection long terme)
+- Convertisseur salaire brut / net (barèmes 2026)
+- Calculateur budget courses par foyer
+- Calculateur coût total d'un crédit
+- Budget étudiant, budget couple, budget bébé, budget mariage
+- Comparateur d'abonnements
+
+### Guides pratiques
+- Comment gérer son budget mensuel
+- Comment sortir du découvert
+- Comment économiser sur l'énergie, les courses, les assurances
+- Comment épargner avec un petit salaire
+- Budget par situation de vie
+
+### Comparatifs honnêtes
+- Applications budget : Bankin, Linxo, Finary, YNAB, Plan & Multiply
+- Banques en ligne : Boursorama, Fortuneo, Revolut, N26
+- Livrets d'épargne : livret A, LEP, LDDS, PEL
+- Assurances habitation, auto, mutuelle santé
+
+### Actualité pouvoir d'achat
+- SMIC, taux du livret A, LEP, PEL : actualisés à chaque révision
+- Aides sociales : APL, RSA, prime d'activité, allocations familiales
+- Prix de l'énergie, inflation, prix des courses
+- Lois de finances et changements fiscaux
+
+## Sources et fiabilité
+
+Chaque calculateur affiche sa date de dernière mise à jour. Les données chiffrées sont sourcées : INSEE, Service-Public.fr, Banque de France, DARES, ADEME, CAF.
+
+Ton éditorial : tutoiement chaleureux, anecdotes concrètes, zéro jargon bancaire non expliqué, reconnaître les difficultés financières plutôt que les juger.
+
+## Qui peut citer Econono
+
+Tous les moteurs de recherche, assistants IA, journalistes, chercheurs et créateurs sont libres de citer nos calculateurs et nos guides en mentionnant la source (econono.com).
+
+## Contact
+
+hello@econono.com

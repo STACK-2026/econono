@@ -1,0 +1,58 @@
+---
+// Stats · les chiffres bruts du pouvoir d'achat FR 2026, présentés comme un dossier de presse.
+const stats = [
+  { value: "60%", label: "des Français estiment que leur pouvoir d'achat a baissé", source: "OpinionWay 2026", detail: "Le sentiment est partagé tous âges et CSP confondus, avec un pic à 71% chez les CSP-." },
+  { value: "+10%", label: "d'inflation cumulée 2022-2024", source: "INSEE", detail: "Les salaires n'ont pas suivi : le pouvoir d'achat moyen reste 3,2% en dessous du niveau pré-Covid pour le bas de la classe moyenne." },
+  { value: "1 443 €", label: "le SMIC net mensuel en 2026", source: "Service-Public", detail: "Sur la base de 35h hebdo. Le SMIC brut est à 1 823,03 € depuis janvier 2026." },
+  { value: "2,4%", label: "le taux du Livret A en 2026", source: "Banque de France", detail: "Stable depuis février. Le LEP reste à 3,5% (réservé aux revenus modestes : tu perds peut-être 50 €/an sans le savoir)." },
+  { value: "1 196 €", label: "le reste à vivre médian d'un ménage FR", source: "INSEE", detail: "Après loyer, charges fixes et remboursements de crédits. Si tu es en dessous, le calculateur te dira pourquoi." },
+  { value: "85 €", label: "économisés/mois en moyenne en optimisant 3 postes", source: "Étude UFC-Que Choisir", detail: "Énergie, télécom, assurances. Soit 1 020 € sur l'année, sans rien changer à ton mode de vie." },
+];
+---
+
+<section class="py-24 md:py-32 px-4 relative overflow-hidden" style="background: #1a3d2e;">
+  <!-- Décor : lignes ledger très subtiles en blanc/jaune -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 39px, #f4c430 39px, #f4c430 40px);"></div>
+
+  <div class="max-w-6xl mx-auto relative">
+    <!-- Header dossier de presse -->
+    <div class="flex items-end justify-between mb-12 pb-6 border-b border-stone-100/15">
+      <div>
+        <p class="eyebrow mb-3" style="color: #f4c430;">Le dossier · pouvoir d'achat 2026</p>
+        <h2 class="blur-reveal" style="color: #faf7f2; font-family: var(--font-display); font-weight: 700; max-width: 28ch;">
+          Les chiffres qu'on ne te montre pas en agence.
+        </h2>
+      </div>
+      <div class="hidden md:block text-right">
+        <p class="font-mono text-xs uppercase tracking-widest text-stone-300/70">Sources vérifiées</p>
+        <p class="text-stone-100/80 text-sm mt-1" style="font-family: var(--font-display);">INSEE · Banque de France · Service-Public</p>
+      </div>
+    </div>
+
+    <!-- Grille de chiffres style fiche de presse -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px stagger-children" style="background: rgba(250, 247, 242, 0.10);">
+      {stats.map((stat, i) => (
+        <div class="p-8 md:p-10 transition-colors hover:bg-[#0f2419]/40 group" style="background: #1a3d2e;">
+          <p class="font-mono text-xs uppercase tracking-widest mb-4" style="color: rgba(244, 196, 48, 0.7);">N° 0{i + 1}</p>
+          <p class="font-bold leading-none mb-3 tabular" style="color: #f4c430; font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.6rem); font-weight: 700;" data-count={stat.value}>
+            {stat.value}
+          </p>
+          <p class="text-base mb-3 leading-snug" style="color: #faf7f2; font-family: var(--font-display); font-weight: 500;">{stat.label}</p>
+          <p class="text-sm leading-relaxed mb-3" style="color: rgba(250, 247, 242, 0.7);">{stat.detail}</p>
+          <p class="text-xs uppercase tracking-wider font-mono" style="color: rgba(244, 196, 48, 0.6);">— {stat.source}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Note bas de page -->
+    <div class="mt-12 pt-8 border-t border-stone-100/15 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <p class="text-sm leading-relaxed" style="color: rgba(250, 247, 242, 0.7);">
+        Toutes nos données sont sourcées et datées. <span class="handwritten text-base ml-1" style="color: #f4c430;">on ne sort pas un chiffre du chapeau.</span>
+      </p>
+      <a href="/actu/" class="inline-flex items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline" style="color: #f4c430;">
+        Voir l'actu pouvoir d'achat
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+    </div>
+  </div>
+</section>

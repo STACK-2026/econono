@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
+  { name: "Règle 50/30/20", url: siteConfig.url + "/calculateurs/regle-50-30-20/" },
+]);
+---
+
+<BaseLayout
+  title="Règle 50/30/20 2026 · calculateur gratuit · Econono"
+  description="Applique la règle 50/30/20 à ton revenu : 50% besoins, 30% envies, 20% épargne. Et compare avec ta vraie répartition."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/calculateurs/" class="hover:underline">Calculateurs</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Règle 50/30/20</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Calculateur · 04</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0; letter-spacing: -0.02em;">
+        Règle 50/30/20.
+      </h1>
+
+      <aside data-speakable class="mt-8 max-w-3xl">
+        <p>La **règle 50/30/20** est une méthode de gestion de budget popularisée par la sénatrice américaine Elizabeth Warren : **50% des revenus aux besoins** (logement, alimentation, transport, charges, santé), **30% aux envies** (loisirs, restos, abonnements, vêtements), **20% à l'épargne et au remboursement de dettes**.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="px-4 pb-20" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <div class="ticket p-8 md:p-12 relative text-center">
+        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Bientôt</div></div>
+        <p class="eyebrow mb-3">À venir · juin 2026</p>
+        <h2 class="text-3xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+          Le calculateur arrive.
+        </h2>
+        <p class="text-stone-600 leading-relaxed mb-6 max-w-xl mx-auto">Le simulateur dédié arrive. En attendant, on a intégré la règle 50/30/20 directement dans le calculateur de budget mensuel.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/calculateurs/budget-mensuel/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
+            Essayer le budget mensuel
+          </a>
+          <a href="/newsletter/" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
+            Être prévenu·e à la sortie
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
