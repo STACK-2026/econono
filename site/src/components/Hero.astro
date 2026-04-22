@@ -1,10 +1,28 @@
 ---
-// Hero · première page d'un carnet éditorial. Compose magazine + ledger artisan.
+import TextMorph from "./TextMorph.astro";
+import ScrambleText from "./ScrambleText.astro";
+
+const promesseAlternatives = [
+  "leçons de morale.",
+  "jargon bancaire.",
+  "pub déguisée.",
+  "te culpabiliser.",
+  "rien te demander.",
+];
+const ctaAlternatives = [
+  "Calcule mon budget",
+  "Vois mon reste à vivre",
+  "Trouve mon score santé",
+];
 ---
 
 <section class="relative pt-10 pb-24 md:pt-16 md:pb-32 overflow-hidden" style="background: #faf7f2;">
+  <!-- Gradient animé subtil en fond (chaleureux, mouvement permanent) -->
+  <div class="absolute inset-0 gradient-animated opacity-[0.07] pointer-events-none" style="background: linear-gradient(135deg, #f4c430, #1a3d2e, #c2410c, #f4c430); background-size: 300% 300%;"></div>
   <!-- Texture papier (grain déjà global, on ajoute un voile chaud) -->
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 20% 0%, rgba(244, 196, 48, 0.10) 0%, transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(26, 61, 46, 0.06) 0%, transparent 55%);"></div>
+  <!-- Pluie de pièces très subtile -->
+  <div class="coin-rain-container" data-coin-count="4" aria-hidden="true"></div>
 
   <div class="max-w-6xl mx-auto px-6 relative">
     <!-- Masthead éditorial : numéro + date + édition + salut contextuel -->
@@ -40,13 +58,21 @@
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
       <!-- Colonne texte (lg:8) -->
       <div class="lg:col-span-8">
-        <p class="eyebrow mb-5 fade-up">Le numéro un<br/>· budget · pouvoir d'achat ·</p>
+        <p class="eyebrow mb-5 fade-up">
+          <span class="inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full pulse-signal" style="background: #c2410c;"></span>
+            Le numéro un · budget · pouvoir d'achat
+          </span>
+        </p>
 
-        <h1 class="blur-reveal" style="font-family: var(--font-display); font-weight: 700; line-height: 1.0; letter-spacing: -0.025em; color: #0f2419; font-size: clamp(2.6rem, 6.5vw, 5rem);">
-          Reprends la main sur ton budget.
+        <h1 style="font-family: var(--font-display); font-weight: 700; line-height: 1.0; letter-spacing: -0.025em; color: #0f2419; font-size: clamp(2.6rem, 6.5vw, 5rem);">
+          <span data-split-words class="block">Reprends la main sur ton budget.</span>
           <span class="block mt-2 italic" style="color: #1a3d2e; font-weight: 500;">
-            Sans <span class="relative inline-block">
-              <span style="background-image: linear-gradient(transparent 60%, rgba(244, 196, 48, 0.55) 60%); padding: 0 6px;">leçons de morale.</span>
+            Sans
+            <span class="relative inline-block">
+              <span style="background-image: linear-gradient(transparent 60%, rgba(244, 196, 48, 0.55) 60%); padding: 0 6px;">
+                <TextMorph phrases={promesseAlternatives} interval={2800} class="font-display italic" />
+              </span>
             </span>
           </span>
         </h1>
@@ -60,10 +86,10 @@
         <div class="mt-9 flex flex-col sm:flex-row items-start gap-4 fade-up" style="transition-delay: 350ms;">
           <a
             href="/calculateurs/budget-mensuel/"
-            class="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-white font-semibold text-base hover-shine magnetic"
+            class="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-white font-semibold text-base hover-shine magnetic glow-pulse"
             style="background: #1a3d2e; box-shadow: 0 14px 32px -12px rgba(26, 61, 46, 0.55); font-family: var(--font-body);"
           >
-            Calculer mon budget
+            <TextMorph phrases={ctaAlternatives} interval={3500} class="font-semibold" />
             <span class="font-mono text-xs opacity-70 normal-case">2 min</span>
             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

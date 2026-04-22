@@ -644,16 +644,138 @@ section + section::before {
   box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 18px 40px -16px rgba(26, 61, 46, 0.22);
 }
 
+/* ============================================
+   TEXTE VIVANT · animations char-by-char et continues
+   ============================================ */
+
+/* === Split chars · chaque lettre apparait avec stagger === */
+.split-chars > .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60%) rotate(8deg);
+  transition: opacity 0.5s var(--ease-out-expo), transform 0.6s var(--ease-spring);
+}
+.split-chars.visible > .char {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+/* === Typewriter effect (marginalia caveat) === */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid currentColor;
+}
+.typewriter.visible {
+  animation: typewriter 2.2s steps(40, end) forwards, blink-caret 0.75s step-end 4 forwards;
+  animation-delay: 0.3s, 2.5s;
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: currentColor; }
+}
+
+/* === Breathing pulse · respiration douce sur éléments clés === */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+.breathe { animation: breathe 5s ease-in-out infinite; }
+
+/* === Word highlight cycle · mots-clés qui changent d'accent === */
+@keyframes highlight-cycle {
+  0%, 100% { background-image: linear-gradient(transparent 60%, rgba(244, 196, 48, 0.55) 60%); }
+  33% { background-image: linear-gradient(transparent 60%, rgba(194, 65, 12, 0.45) 60%); }
+  66% { background-image: linear-gradient(transparent 60%, rgba(21, 128, 61, 0.45) 60%); }
+}
+.highlight-cycle {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  padding: 0 6px;
+  animation: highlight-cycle 9s ease-in-out infinite;
+}
+
+/* === Scale-on-scroll · gros chiffres qui grandissent en defilant === */
+.scale-on-scroll {
+  transform: scale(0.85);
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.scale-on-scroll.visible { transform: scale(1); }
+
+/* === Big number odometer (chiffres qui rebobinent au scroll) === */
+@keyframes odometer-spin {
+  0% { transform: translateY(-50%); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.odometer.visible {
+  display: inline-block;
+  animation: odometer-spin 1.2s var(--ease-out-expo) both;
+}
+
+/* === Marquee ticker permanent (bandeau d'actu) === */
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee-slide 45s linear infinite;
+  width: max-content;
+  white-space: nowrap;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* === Background grain pulse (texture qui respire) === */
+@keyframes grain-pulse {
+  0%, 100% { opacity: 0.025; }
+  50% { opacity: 0.045; }
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  body::before { animation: grain-pulse 8s ease-in-out infinite; }
+}
+
+/* === Letters wave (mots qui ondulent comme du papier) === */
+@keyframes letters-wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.letters-wave > .char {
+  display: inline-block;
+  animation: letters-wave 3s ease-in-out infinite;
+}
+.letters-wave > .char:nth-child(2n) { animation-delay: 0.15s; }
+.letters-wave > .char:nth-child(3n) { animation-delay: 0.3s; }
+.letters-wave > .char:nth-child(5n) { animation-delay: 0.45s; }
+
+/* === Glow pulse on key call-to-actions === */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 14px 32px -12px rgba(26, 61, 46, 0.55), 0 0 0 0 rgba(244, 196, 48, 0); }
+  50% { box-shadow: 0 14px 32px -12px rgba(26, 61, 46, 0.55), 0 0 0 8px rgba(244, 196, 48, 0.18); }
+}
+.glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+
 /* === Reduced motion fallback === */
 @media (prefers-reduced-motion: reduce) {
   #scroll-progress { display: none; }
   .coin-rain-container { display: none; }
   .ticket-peel::before, .ticket:hover { transform: none; }
-  .float-soft { animation: none; }
+  .float-soft, .breathe, .highlight-cycle, .letters-wave > .char, .glow-pulse { animation: none; }
   .ticker-digit, .drop-cap.visible::first-letter, .num-flip.visible { animation: none; transform: none; }
   .pull-quote-anim::after, .border-draw-top::before { transition: none; }
   .handwritten-reveal { clip-path: none; }
   .cursor-trail-dot { display: none; }
+  .split-chars > .char { opacity: 1; transform: none; transition: none; }
+  .typewriter { animation: none; width: 100%; border-right: none; }
+  .scale-on-scroll { transform: none; transition: none; }
+  body::before { animation: none; }
 }
 
 /* === Tailwind theme tokens === */

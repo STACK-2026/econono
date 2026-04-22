@@ -20,9 +20,14 @@ const stats = [
     <!-- Header dossier de presse -->
     <div class="flex items-end justify-between mb-12 pb-6 border-b border-stone-100/15">
       <div>
-        <p class="eyebrow mb-3" style="color: #f4c430;">Le dossier · pouvoir d'achat 2026</p>
-        <h2 class="blur-reveal" style="color: #faf7f2; font-family: var(--font-display); font-weight: 700; max-width: 28ch;">
-          Les chiffres qu'on ne te montre pas en agence.
+        <p class="eyebrow mb-3" style="color: #f4c430;">
+          <span class="inline-flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full pulse-signal" style="background: #f4c430;"></span>
+            Le dossier · pouvoir d'achat 2026
+          </span>
+        </p>
+        <h2 style="color: #faf7f2; font-family: var(--font-display); font-weight: 700; max-width: 28ch;">
+          <span data-split-words class="block">Les chiffres qu'on ne te montre pas en agence.</span>
         </h2>
       </div>
       <div class="hidden md:block text-right">
@@ -36,7 +41,7 @@ const stats = [
       {stats.map((stat, i) => (
         <div class="p-8 md:p-10 transition-colors hover:bg-[#0f2419]/40 group" style="background: #1a3d2e;">
           <p class="font-mono text-xs uppercase tracking-widest mb-4" style="color: rgba(244, 196, 48, 0.7);">N° 0{i + 1}</p>
-          <p class="font-bold leading-none mb-3 tabular" style="color: #f4c430; font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.6rem); font-weight: 700;" data-count={stat.value}>
+          <p class="font-bold leading-none mb-3 tabular scale-on-scroll breathe" style="color: #f4c430; font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.6rem); font-weight: 700;" data-count={stat.value}>
             {stat.value}
           </p>
           <p class="text-base mb-3 leading-snug" style="color: #faf7f2; font-family: var(--font-display); font-weight: 500;">{stat.label}</p>
