@@ -440,6 +440,222 @@ section + section::before {
 .pull-quote::before { content: "« "; opacity: 0.5; }
 .pull-quote::after { content: " »"; opacity: 0.5; }
 
+/* ============================================
+   MICRO-INTERACTIONS · "Le Carnet" vivant au scroll
+   ============================================ */
+
+/* === Scroll progress bar (top) · jauge dorée qui se remplit === */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #f4c430, #c2410c);
+  z-index: 9999;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* === Tilt-on-scroll · wax-seals tournent légèrement au scroll === */
+[data-tilt-on-scroll] {
+  transition: transform 0.4s var(--ease-out-expo);
+  will-change: transform;
+}
+
+/* === Coin-rain · pluie de pièces très subtile sur sections clés === */
+@keyframes coin-fall {
+  0% { transform: translateY(-30px) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.5; }
+  100% { transform: translateY(80px) rotate(360deg); opacity: 0; }
+}
+.coin-rain-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.coin-rain-container .coin {
+  position: absolute;
+  top: -20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fde68a, #f4c430);
+  border: 1px solid rgba(26, 61, 46, 0.3);
+  animation: coin-fall 4s linear infinite;
+  opacity: 0;
+}
+
+/* === Page corner peel · effet "coin de page écorné" sur les tickets au hover === */
+.ticket-peel {
+  position: relative;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.ticket-peel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background: linear-gradient(225deg, rgba(26, 61, 46, 0) 0%, rgba(26, 61, 46, 0) 50%, rgba(244, 196, 48, 0.25) 50%, rgba(244, 196, 48, 0.25) 100%);
+  transition: width 0.35s var(--ease-out-expo), height 0.35s var(--ease-out-expo);
+  border-bottom-left-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+.ticket-peel:hover::before {
+  width: 28px;
+  height: 28px;
+}
+
+/* === Number ticker · les chiffres défilent doucement === */
+@keyframes ticker-up {
+  0% { transform: translateY(100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.ticker {
+  display: inline-block;
+  overflow: hidden;
+}
+.ticker.visible .ticker-digit {
+  animation: ticker-up 0.6s var(--ease-out-expo) both;
+}
+.ticker.visible .ticker-digit:nth-child(2) { animation-delay: 80ms; }
+.ticker.visible .ticker-digit:nth-child(3) { animation-delay: 160ms; }
+.ticker.visible .ticker-digit:nth-child(4) { animation-delay: 240ms; }
+
+/* === Drop cap reveal · première lettre qui s'étire à l'arrivée === */
+@keyframes drop-cap-grow {
+  0% { transform: scale(0.4) rotate(-10deg); opacity: 0; }
+  60% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.drop-cap.visible::first-letter {
+  display: inline-block;
+  animation: drop-cap-grow 0.9s var(--ease-spring) both;
+}
+
+/* === Pull-quote underline · barre dorée qui se trace sous la citation === */
+.pull-quote-anim {
+  position: relative;
+}
+.pull-quote-anim::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 3px;
+  margin-top: 0.75rem;
+  background: linear-gradient(90deg, #f4c430, #c2410c);
+  transition: width 1.2s var(--ease-out-expo) 0.3s;
+}
+.pull-quote-anim.visible::after { width: 60%; }
+
+/* === Marginalia "écrite à la volée" · clip-path qui révèle de gauche à droite === */
+.handwritten-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.5s var(--ease-out-expo);
+}
+.handwritten-reveal.visible {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* === Section number ticker (N° 001) qui s'incrémente en defilant === */
+@keyframes num-flip {
+  0% { transform: rotateX(90deg); opacity: 0; }
+  100% { transform: rotateX(0); opacity: 1; }
+}
+.num-flip.visible { animation: num-flip 0.6s var(--ease-out-expo) both; }
+
+/* === Magnetic float pour les CTA principaux · léger soulèvement permanent === */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.float-soft { animation: float-soft 3s ease-in-out infinite; }
+
+/* === Section reveal · entire section bg fades in differently === */
+.section-reveal {
+  background-size: 100% 100%;
+  transition: background-position 1s var(--ease-out-expo);
+}
+
+/* === Scroll-triggered SVG path drawing (wax-seal halo) === */
+@keyframes path-draw {
+  to { stroke-dashoffset: 0; }
+}
+.path-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.path-draw.visible {
+  animation: path-draw 2s var(--ease-out-expo) forwards;
+}
+
+/* === Cursor trail subtle · trace dorée qui suit le curseur (desktop only) === */
+@media (min-width: 1024px) and (pointer: fine) {
+  .cursor-trail-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 196, 48, 0.6), transparent);
+    pointer-events: none;
+    z-index: 9996;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+/* === Calculateur result celebration · petit halo qui pulse au calcul réussi === */
+@keyframes celebrate {
+  0% { box-shadow: 0 0 0 0 rgba(244, 196, 48, 0.6); }
+  100% { box-shadow: 0 0 0 24px rgba(244, 196, 48, 0); }
+}
+.celebrate { animation: celebrate 1.2s ease-out; }
+
+/* === Scroll-triggered border draw on sections (top border qui apparaît) === */
+.border-draw-top {
+  position: relative;
+}
+.border-draw-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(26, 61, 46, 0.4), transparent);
+  transform: translateX(-50%);
+  transition: width 1.4s var(--ease-out-expo);
+}
+.border-draw-top.visible::before { width: 80%; }
+
+/* === Ticket card · subtle lift + tilt on hover === */
+.ticket {
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+.ticket:hover:not(.no-lift) {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 18px 40px -16px rgba(26, 61, 46, 0.22);
+}
+
+/* === Reduced motion fallback === */
+@media (prefers-reduced-motion: reduce) {
+  #scroll-progress { display: none; }
+  .coin-rain-container { display: none; }
+  .ticket-peel::before, .ticket:hover { transform: none; }
+  .float-soft { animation: none; }
+  .ticker-digit, .drop-cap.visible::first-letter, .num-flip.visible { animation: none; transform: none; }
+  .pull-quote-anim::after, .border-draw-top::before { transition: none; }
+  .handwritten-reveal { clip-path: none; }
+  .cursor-trail-dot { display: none; }
+}
+
 /* === Tailwind theme tokens === */
 @theme {
   --color-primary: #1a3d2e;

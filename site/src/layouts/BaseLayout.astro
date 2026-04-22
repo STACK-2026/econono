@@ -90,6 +90,8 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     ))}
   </head>
   <body class="min-h-screen flex flex-col">
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress"></div>
     <!-- Cursor glow (desktop only) -->
     <div id="cursor-glow"></div>
     <Header />
@@ -117,7 +119,7 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         { threshold: window.innerWidth < 640 ? 0.2 : 0.1, rootMargin: window.innerWidth < 640 ? "0px 0px -120px 0px" : "0px 0px -60px 0px" }
       );
       document.querySelectorAll(
-        ".fade-up, .blur-reveal, .scale-reveal, .clip-reveal, .slide-left, .slide-right, .stagger-children, .split-words"
+        ".fade-up, .blur-reveal, .scale-reveal, .clip-reveal, .slide-left, .slide-right, .stagger-children, .split-words, .ticker, .drop-cap, .pull-quote-anim, .handwritten-reveal, .num-flip, .path-draw, .border-draw-top, .section-reveal"
       ).forEach((el) => revealObserver.observe(el));
 
       // 2. Split text into words (wrap each word in a span.word)
@@ -164,6 +166,94 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         { threshold: 0.3 }
       );
       document.querySelectorAll("[data-count]").forEach((el) => counterObserver.observe(el));
+
+      // 3.5. Scroll progress bar (top of page, gold-to-terracotta gradient)
+      const scrollProgressEl = document.getElementById("scroll-progress");
+      if (scrollProgressEl) {
+        let progressTicking = false;
+        function updateScrollProgress() {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          (scrollProgressEl as HTMLElement).style.width = `${Math.min(100, percent)}%`;
+          progressTicking = false;
+        }
+        window.addEventListener("scroll", () => {
+          if (!progressTicking) {
+            requestAnimationFrame(updateScrollProgress);
+            progressTicking = true;
+          }
+        }, { passive: true });
+        updateScrollProgress();
+      }
+
+      // 3.6. Tilt-on-scroll (wax-seals tournent légèrement)
+      const tiltEls = document.querySelectorAll<HTMLElement>("[data-tilt-on-scroll]");
+      if (tiltEls.length > 0) {
+        let tiltTicking = false;
+        window.addEventListener("scroll", () => {
+          if (!tiltTicking) {
+            requestAnimationFrame(() => {
+              const scrollY = window.scrollY;
+              tiltEls.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+                const tilt = Math.max(-12, Math.min(12, center / 50));
+                const baseRotation = parseFloat(el.dataset.baseRotation || "-4");
+                el.style.transform = `rotate(${baseRotation + tilt * 0.3}deg)`;
+              });
+              tiltTicking = false;
+            });
+            tiltTicking = true;
+          }
+        }, { passive: true });
+      }
+
+      // 3.7. Coin rain · injecte 6-10 pièces aléatoires dans .coin-rain-container
+      document.querySelectorAll<HTMLElement>(".coin-rain-container").forEach((container) => {
+        const count = parseInt(container.dataset.coinCount || "8");
+        for (let i = 0; i < count; i++) {
+          const coin = document.createElement("div");
+          coin.className = "coin";
+          coin.style.left = `${Math.random() * 100}%`;
+          coin.style.animationDelay = `${Math.random() * 4}s`;
+          coin.style.animationDuration = `${3.5 + Math.random() * 2}s`;
+          coin.style.opacity = "1";
+          container.appendChild(coin);
+        }
+      });
+
+      // 3.8. Cursor trail subtle (desktop only) · 8 dots qui suivent le curseur
+      if (window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const trailDots: HTMLDivElement[] = [];
+        for (let i = 0; i < 8; i++) {
+          const dot = document.createElement("div");
+          dot.className = "cursor-trail-dot";
+          dot.style.opacity = `${0.6 - i * 0.07}`;
+          dot.style.transform = `translate(-50%, -50%) scale(${1 - i * 0.08})`;
+          document.body.appendChild(dot);
+          trailDots.push(dot);
+        }
+        const trailPositions = trailDots.map(() => ({ x: 0, y: 0 }));
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX; mouseY = e.clientY;
+          trailDots.forEach((d) => (d.style.opacity = ""));
+        });
+        function animateTrail() {
+          let prevX = mouseX, prevY = mouseY;
+          trailPositions.forEach((pos, i) => {
+            pos.x += (prevX - pos.x) * 0.35;
+            pos.y += (prevY - pos.y) * 0.35;
+            const d = trailDots[i];
+            d.style.left = pos.x + "px";
+            d.style.top = pos.y + "px";
+            prevX = pos.x; prevY = pos.y;
+          });
+          requestAnimationFrame(animateTrail);
+        }
+        animateTrail();
+      }
 
       // 4. Parallax on scroll (subtle, performance-safe)
       const parallaxEls = document.querySelectorAll("[data-parallax]");

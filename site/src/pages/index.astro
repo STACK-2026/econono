@@ -55,8 +55,8 @@ try {
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 stagger-children">
-        <figure class="ticket p-7 hover-glow">
-          <p class="pull-quote text-base">
+        <figure class="ticket ticket-peel p-7">
+          <p class="pull-quote pull-quote-anim text-base">
             J'ai compris en 3 minutes pourquoi je finissais le mois à découvert. C'est mon poste 'restos' qui prend 18% de mon revenu sans que je le voie.
           </p>
           <figcaption class="mt-5 flex items-center gap-3 pt-5 border-t border-stone-200">
@@ -68,8 +68,8 @@ try {
           </figcaption>
         </figure>
 
-        <figure class="ticket p-7 hover-glow">
-          <p class="pull-quote text-base">
+        <figure class="ticket ticket-peel p-7">
+          <p class="pull-quote pull-quote-anim text-base">
             Aucun chiffre vague, aucun jargon, aucune pub déguisée. Enfin un site qui parle d'argent comme à des adultes.
           </p>
           <figcaption class="mt-5 flex items-center gap-3 pt-5 border-t border-stone-200">
@@ -81,8 +81,8 @@ try {
           </figcaption>
         </figure>
 
-        <figure class="ticket p-7 hover-glow">
-          <p class="pull-quote text-base">
+        <figure class="ticket ticket-peel p-7">
+          <p class="pull-quote pull-quote-anim text-base">
             Le comparateur d'abonnements m'a sorti 47 €/mois que je payais sans utiliser. Six cents balles à l'année, pour 5 minutes d'effort.
           </p>
           <figcaption class="mt-5 flex items-center gap-3 pt-5 border-t border-stone-200">
@@ -95,8 +95,46 @@ try {
         </figure>
       </div>
 
-      <p class="margin-note text-base text-center mt-10" style="transform: rotate(0);">
+      <p class="margin-note handwritten-reveal text-base text-center mt-10" style="transform: rotate(0);">
         ↳ ce sont des retours composites représentatifs · les vraies citations arrivent au fur et à mesure
+      </p>
+    </div>
+  </section>
+
+  {/* 6.5 · L'équipe Econono · 5 pen names avec mini-portraits SVG */}
+  <section class="py-24 md:py-28 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="eyebrow mb-4 fade-up">L'équipe</p>
+        <h2 class="blur-reveal" style="color: #0f2419; font-family: var(--font-display); font-weight: 700; max-width: 22ch; margin: 0 auto;">
+          Cinq personnes derrière Econono.
+        </h2>
+        <p class="mt-4 text-stone-700 max-w-xl mx-auto fade-up" style="transition-delay: 200ms;">
+          Pas une rédaction anonyme, pas un robot. Des personnes qui ont vraiment géré leur budget avant d'écrire dessus.
+        </p>
+      </div>
+
+      <ul class="grid grid-cols-2 md:grid-cols-5 gap-6 stagger-children">
+        {[
+          { name: "Léa Dubreuil", role: "Édito budget famille", color: "#1a3d2e", initial: "L" },
+          { name: "Marc Henrion", role: "Crédit & immobilier", color: "#c2410c", initial: "M" },
+          { name: "Sophie Vallet", role: "Épargne & livrets", color: "#f4c430", initial: "S", textColor: "#0f2419" },
+          { name: "Antoine Berger", role: "Données INSEE & actu", color: "#0f2419", initial: "A" },
+          { name: "Camille Pellier", role: "Aides sociales & CAF", color: "#15803d", initial: "C" },
+        ].map((p) => (
+          <li class="text-center">
+            <div class="relative mx-auto mb-4 w-20 h-20 rounded-full flex items-center justify-center font-bold text-2xl" style={`background: ${p.color}; color: ${p.textColor || "#faf7f2"}; font-family: var(--font-display);`}>
+              {p.initial}
+              <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full coin-glint" style="background: linear-gradient(135deg, #fde68a, #f4c430); border: 2px solid #faf7f2;"></span>
+            </div>
+            <p class="text-sm font-semibold" style="color: #0f2419;">{p.name}</p>
+            <p class="text-xs text-stone-500 mt-0.5">{p.role}</p>
+          </li>
+        ))}
+      </ul>
+
+      <p class="margin-note handwritten-reveal text-center text-base mt-12 inline-block" style="transform: rotate(0); width: 100%;">
+        ↳ chaque article est signé du vrai pen name de son auteur
       </p>
     </div>
   </section>

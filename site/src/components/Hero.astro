@@ -7,12 +7,12 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 20% 0%, rgba(244, 196, 48, 0.10) 0%, transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(26, 61, 46, 0.06) 0%, transparent 55%);"></div>
 
   <div class="max-w-6xl mx-auto px-6 relative">
-    <!-- Masthead éditorial : numéro + date + édition -->
-    <div class="flex items-center justify-between mb-8 pb-4 border-b border-stone-300/70 fade-up">
+    <!-- Masthead éditorial : numéro + date + édition + salut contextuel -->
+    <div class="flex items-center justify-between mb-8 pb-4 border-b border-stone-300/70 fade-up flex-wrap gap-3">
       <div class="flex items-center gap-3 text-stone-600 text-xs font-mono uppercase tracking-widest">
         <span>N° 001</span>
         <span class="text-stone-300">·</span>
-        <span>Édition fondatrice</span>
+        <span id="greeting-econono">Bienvenue</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="hidden sm:inline-block text-stone-500 text-xs font-mono uppercase tracking-widest">Le Carnet d'Econono</span>
@@ -20,6 +20,21 @@
         <span class="handwritten text-base">Édition continue</span>
       </div>
     </div>
+
+    <script is:inline>
+      (function () {
+        const el = document.getElementById("greeting-econono");
+        if (!el) return;
+        const h = new Date().getHours();
+        let g = "Bienvenue";
+        if (h >= 5 && h < 11) g = "Bonjour, prends ton café";
+        else if (h >= 11 && h < 14) g = "Bon midi";
+        else if (h >= 14 && h < 18) g = "Bel après-midi";
+        else if (h >= 18 && h < 22) g = "Bonsoir";
+        else g = "C'est tard, on est là quand même";
+        el.textContent = g;
+      })();
+    </script>
 
     <!-- Layout asymétrique : texte gauche + bloc visuel droite -->
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -68,7 +83,7 @@
 
         <!-- Marginalia handwritten · note du fondateur -->
         <div class="mt-10 max-w-md fade-up" style="transition-delay: 500ms;">
-          <p class="margin-note text-lg leading-snug">
+          <p class="margin-note handwritten-reveal text-lg leading-snug">
             Promis, c'est gratuit. Et on ne te demande pas ton numéro de compte.
             <span class="block mt-1 text-sm text-stone-500" style="font-family: var(--font-body); transform: rotate(0); font-weight: 500; font-style: normal;">, l'équipe Econono</span>
           </p>
@@ -78,13 +93,13 @@
       <!-- Colonne visuelle (lg:4) · "billet de calculateur" -->
       <div class="lg:col-span-4">
         <div class="relative scale-reveal" style="transition-delay: 300ms;">
-          <!-- Sceau de cire -->
-          <div class="absolute -top-4 -right-4 z-10">
+          <!-- Sceau de cire (tilt au scroll) -->
+          <div class="absolute -top-4 -right-4 z-10" data-tilt-on-scroll data-base-rotation="-4">
             <div class="wax-seal">Mis à jour · Avr. 2026</div>
           </div>
 
           <!-- Ticket / fiche calculateur -->
-          <div class="ticket p-7 hover-tilt">
+          <div class="ticket ticket-peel p-7">
             <div class="flex items-start justify-between mb-5">
               <div>
                 <p class="eyebrow text-xs">Calculateur · 01</p>
@@ -126,7 +141,7 @@
           </div>
 
           <!-- Note manuscrite à côté du ticket -->
-          <p class="margin-note absolute -left-2 -bottom-12 text-base hidden lg:block" style="max-width: 180px;">
+          <p class="margin-note handwritten-reveal absolute -left-2 -bottom-12 text-base hidden lg:block" style="max-width: 180px;">
             ↑ exemple avec un SMIC, un loyer Lyon et une voiture en crédit
           </p>
         </div>
