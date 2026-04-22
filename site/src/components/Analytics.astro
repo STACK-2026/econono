@@ -1,39 +1,93 @@
 ---
-// Analytics tracker - Supabase page_views + bot detection
-// Inlined in BaseLayout, no external dependencies
-const SB_URL = "https://commbksqnwhpsyenjzuf.supabase.co";
-const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbW1ia3NxbndocHN5ZW5qenVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM3MjUsImV4cCI6MjA5MTY0OTcyNX0.6igBrd7TAiC5CamU5hmHfEd-JBb4MJuvGAyGHo6tJpU";
+// Analytics tracker · Supabase page_views + bot detection.
+// Pas de Google Analytics, pas de Facebook Pixel, RGPD-friendly.
+// Tracking conditionné au consentement cookies (helper hasValidConsent).
+const SB_URL = "https://rxdcejlofnhjicupzikx.supabase.co";
+const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZGNlamxvZm5oamljdXB6aWt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4OTc2MDUsImV4cCI6MjA5MjQ3MzYwNX0.uG3WBUQ6LBnUxYBzo9LGoxRKU4oSzNlggixjNVSoJIY";
 ---
 
 <script define:vars={{ SB_URL, SB_ANON }}>
-(function() {
-  // Bot detection
-  function isBot() {
-    const ua = navigator.userAgent || "";
-    const bots = /bot|crawl|spider|slurp|facebookexternalhit|linkedinbot|twitterbot|whatsapp|telegram|googlebot|bingbot|yandex|baidu|duckduckbot|sogou|exabot|ia_archiver|semrush|ahrefs|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|perplexitybot|amazonbot|applebot|ccbot|Nexus 5X Build\/MMB29P/i;
-    return bots.test(ua);
+(function () {
+  function detectBotFamily(ua) {
+    const u = (ua || "").toLowerCase();
+    if (/gptbot|chatgpt|oai-searchbot/.test(u)) return { bot: true, family: "gpt" };
+    if (/claude|anthropic/.test(u)) return { bot: true, family: "claude" };
+    if (/perplexity/.test(u)) return { bot: true, family: "perplexity" };
+    if (/google-extended|googlebot|googleother|google-inspectiontool/.test(u)) return { bot: true, family: "google" };
+    if (/bingbot|bing-webmaster|copilot/.test(u)) return { bot: true, family: "bing" };
+    if (/applebot/.test(u)) return { bot: true, family: "apple" };
+    if (/yandex/.test(u)) return { bot: true, family: "yandex" };
+    if (/duckduckbot|duckassist/.test(u)) return { bot: true, family: "duckduckgo" };
+    if (/baiduspider/.test(u)) return { bot: true, family: "baidu" };
+    if (/bytespider/.test(u)) return { bot: true, family: "bytedance" };
+    if (/meta-externalagent|facebookexternalhit/.test(u)) return { bot: true, family: "meta" };
+    if (/cohere/.test(u)) return { bot: true, family: "cohere" };
+    if (/amazonbot/.test(u)) return { bot: true, family: "amazon" };
+    if (/youbot/.test(u)) return { bot: true, family: "you" };
+    if (/bot|crawl|spider|slurp|semrush|ahrefs|mj12|dotbot|petalbot|ccbot|ia_archiver/.test(u)) return { bot: true, family: "other" };
+    return { bot: false, family: null };
   }
 
-  // Only track if consent given or not yet asked (first visit)
-  const consent = document.cookie.match(/adaptetoi_consent=([^;]+)/);
-  if (consent && consent[1] === "declined") return;
+  // Visit ID rotation 30 min (anonymous, in localStorage)
+  function getOrRotateVisitId() {
+    try {
+      const raw = localStorage.getItem("ec_visit_id");
+      if (raw) {
+        const obj = JSON.parse(raw);
+        if (obj.expiresAt && Date.now() < obj.expiresAt) return obj.id;
+      }
+    } catch {}
+    const id = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now();
+    try {
+      localStorage.setItem("ec_visit_id", JSON.stringify({ id, expiresAt: Date.now() + 30 * 60 * 1000 }));
+    } catch {}
+    return id;
+  }
 
-  const bot = isBot();
+  function track() {
+    const ua = navigator.userAgent || "";
+    const det = detectBotFamily(ua);
 
-  fetch(SB_URL + "/rest/v1/page_views", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": SB_ANON,
-      "Authorization": "Bearer " + SB_ANON,
-      "Prefer": "return=minimal",
-    },
-    body: JSON.stringify({
-      path: window.location.pathname,
-      referrer: document.referrer || null,
-      user_agent: navigator.userAgent,
-      is_bot: bot,
-    }),
-  }).catch(function() {});
+    // Bots toujours trackés (utile pour comprendre la crawl coverage)
+    // Humains : seulement si consentement valide
+    if (!det.bot) {
+      const hasConsent = typeof window.hasValidConsent === "function" ? window.hasValidConsent() : false;
+      if (!hasConsent) return;
+    }
+
+    const visitId = getOrRotateVisitId();
+
+    fetch(SB_URL + "/rest/v1/page_views", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SB_ANON,
+        "Authorization": "Bearer " + SB_ANON,
+        "Prefer": "return=minimal",
+      },
+      body: JSON.stringify({
+        visit_id: visitId,
+        path: window.location.pathname,
+        referrer: document.referrer || null,
+        user_agent: ua,
+        is_bot: det.bot,
+        bot_family: det.family,
+        locale: navigator.language || "fr-FR",
+        viewport_w: window.innerWidth,
+        viewport_h: window.innerHeight,
+      }),
+      keepalive: true,
+    }).catch(() => {});
+  }
+
+  // Track on DOM ready
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    track();
+  } else {
+    document.addEventListener("DOMContentLoaded", track, { once: true });
+  }
+
+  // Re-track on consent acceptance (so first-visit human gets counted)
+  window.addEventListener("ec:consent-accepted", track);
 })();
 </script>

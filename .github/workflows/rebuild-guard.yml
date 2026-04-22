@@ -1,0 +1,41 @@
+name: rebuild-guard
+
+# Cron daily : commit un marker file pour forcer un rebuild Cloudflare Pages.
+# Permet aux articles programmés (date future) d'apparaître quand leur date arrive.
+# Heure aléatoire 7h-9h Paris (memory rule).
+
+on:
+  schedule:
+    - cron: "23 6 * * *" # 06:23 UTC = 08:23 Paris (été) / 07:23 Paris (hiver)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-guard
+  cancel-in-progress: true
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update marker
+        run: |
+          mkdir -p site/src/data
+          DATE_ISO=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "{\"lastRebuild\":\"$DATE_ISO\",\"trigger\":\"daily-cron\"}" > site/src/data/rebuild-marker.json
+
+      - name: Commit marker
+        run: |
+          git config user.name "rebuild-guard-bot"
+          git config user.email "noreply@econono.com"
+          git add site/src/data/rebuild-marker.json
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "chore(rebuild): daily marker $(date -u +%Y-%m-%d)"
+          git push origin main
