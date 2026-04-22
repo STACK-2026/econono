@@ -4,51 +4,79 @@ import BlogCard from "../../components/BlogCard.astro";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../../../site.config";
 import { jsonLdBreadcrumbs } from "../../utils/seo";
-import { fullUrl } from "../../utils/config";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+let posts: Awaited<ReturnType<typeof getCollection>> = [];
+try {
+  posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+} catch (e) {
+  posts = [];
+}
 
-const breadcrumbs = [
-  { name: "Accueil", url: siteConfig.url },
-  { name: siteConfig.blog.name, url: fullUrl("/blog") },
-];
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Le Carnet", url: siteConfig.url + "/blog/" },
+]);
 ---
 
 <BaseLayout
-  title={`${siteConfig.blog.name} | ${siteConfig.name}`}
-  description={`${siteConfig.blog.name} : tous les articles d'Adapte-toi sur la reconversion professionnelle, l'IA et l'emploi.`}
-  jsonLd={[
-    { "@context": "https://schema.org", "@type": "CollectionPage", name: `${siteConfig.blog.name} - ${siteConfig.name}`, url: fullUrl("/blog") },
-    jsonLdBreadcrumbs(breadcrumbs),
-  ]}
+  title={`Le Carnet · tous nos articles · ${siteConfig.name}`}
+  description="Le Carnet d'Econono : nos guides budget, astuces économies, comparatifs apps, et l'actu pouvoir d'achat décryptée. Tous nos articles, sans pub déguisée."
+  jsonLd={[breadcrumbs]}
 >
-  <div class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="mb-2">{siteConfig.blog.name}</h1>
-    <p class="text-gray-500 mb-8">L'essentiel de l'impact de l'IA sur le marche du travail. Analyses, guides et décryptages.</p>
+  <section class="pt-12 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Le Carnet</span>
+      </nav>
 
-    {posts.length === 0 ? (
-      <div class="text-center py-20">
-        <p class="text-gray-400 text-lg mb-4">Aucun article pour l'instant.</p>
-        <p class="text-gray-500">Les premiers articles arrivent bientot. Abonne-toi à la newsletter pour ne rien rater.</p>
-        <a href="/newsletter" class="inline-block mt-6 text-primary font-semibold hover:underline">
-          S'abonner au Signal &rarr;
-        </a>
-      </div>
-    ) : (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <BlogCard
-            title={post.data.title}
-            description={post.data.description}
-            date={post.data.date}
-            slug={post.id}
-            image={post.data.image}
-            imageAlt={post.data.imageAlt}
-            category={post.data.category}
-          />
-        ))}
-      </div>
-    )}
-  </div>
+      <p class="eyebrow mb-3">Le Carnet · tous nos articles</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0;">
+        Le Carnet d'Econono.
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-2xl leading-relaxed">
+        Guides budget, astuces économies, comparatifs honnêtes d'apps, et l'actu pouvoir d'achat décryptée pour de vrai. Tutoiement, chiffres datés, zéro pub déguisée.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      {posts.length === 0 ? (
+        <div class="ticket p-12 text-center max-w-2xl mx-auto">
+          <p class="eyebrow mb-3">Bientôt</p>
+          <h2 class="text-2xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+            Le premier article arrive très bientôt.
+          </h2>
+          <p class="text-stone-600 mb-6 leading-relaxed max-w-md mx-auto">
+            On lance le carnet avec 50 articles fondation : guides budget, astuces économies, comparatifs apps, actu pouvoir d'achat. Premier publié dans les 24 heures.
+          </p>
+          <p class="margin-note text-base mb-6 inline-block" style="transform: rotate(-1deg);">
+            ↳ pour ne rien rater
+          </p>
+          <div>
+            <a href="/newsletter/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
+              S'abonner au Carnet
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              slug={post.id}
+              image={post.data.image}
+              imageAlt={post.data.imageAlt}
+              category={post.data.category}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
 </BaseLayout>

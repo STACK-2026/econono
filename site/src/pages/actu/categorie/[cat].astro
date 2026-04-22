@@ -1,92 +1,89 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../../../../site.config";
-import { fullUrl } from "../../../utils/config";
 import { jsonLdBreadcrumbs } from "../../../utils/seo";
 
 const CATEGORY_META: Record<string, { label: string; description: string }> = {
-  menace: { label: "Menace", description: "Licenciements, gels d'embauche, annonces de substitution. Les signaux qui indiquent que la vague IA touche ton secteur." },
-  etude: { label: "Étude", description: "Rapports OCDE, Anthropic, McKinsey, Ipsos, France Travail. Les données qui permettent de lire vraiment le marché du travail." },
-  annonce: { label: "Annonce", description: "Sorties de modèles, produits, partenariats, plans gouvernementaux. Les news qui vont changer le paysage dans les 12 mois." },
-  politique: { label: "Politique", description: "Régulation, fiscalité IA, plans de formation, débats parlementaires. Ce qui va contraindre ou protéger ton métier." },
-  outil: { label: "Outil", description: "Lancements d'outils IA pertinents pour un métier, usages nouveaux, tests." },
-  voix: { label: "Voix", description: "Livres, tribunes, interviews, prises de position qui structurent le débat IA × emploi." },
-  chiffre: { label: "Chiffre", description: "Une donnée isolée, bien sourcée, qui mérite d'être retenue." },
+  smic: { label: "SMIC", description: "Revalorisation, calcul net, comparaison annuelle. Tout sur le SMIC français et son impact sur ta paye." },
+  livret: { label: "Livrets épargne", description: "Livret A, LEP, LDDS, PEL : taux, plafonds, conditions, stratégie d'allocation." },
+  aide: { label: "Aides sociales", description: "Prime d'activité, RSA, APL, allocations familiales : éligibilité, calcul, démarches." },
+  fiscalite: { label: "Fiscalité", description: "Impôt sur le revenu, prélèvement à la source, niches, lois de finances." },
+  energie: { label: "Énergie", description: "Prix électricité et gaz, MaPrimeRénov, chèques énergie, comparateurs fournisseurs." },
+  inflation: { label: "Inflation", description: "Indice INSEE, prix des courses, panier moyen, érosion du pouvoir d'achat." },
+  logement: { label: "Logement", description: "Loyers, prix immobilier, encadrement, taxes, droits du locataire." },
+  alerte: { label: "Alerte", description: "Mises en garde sur arnaques, démarchages, scams financiers." },
 };
 
 export async function getStaticPaths() {
-  return [
-    { params: { cat: "menace" } },
-    { params: { cat: "etude" } },
-    { params: { cat: "annonce" } },
-    { params: { cat: "politique" } },
-    { params: { cat: "outil" } },
-    { params: { cat: "voix" } },
-    { params: { cat: "chiffre" } },
-  ];
+  return Object.keys({
+    smic: 1, livret: 1, aide: 1, fiscalite: 1, energie: 1, inflation: 1, logement: 1, alerte: 1,
+  }).map((cat) => ({ params: { cat } }));
 }
 
 const { cat } = Astro.params;
-const meta = CATEGORY_META[cat as string];
+const meta = CATEGORY_META[cat as string] || { label: cat, description: "" };
 
-const posts = (await getCollection("actu", ({ data }) => !data.draft && data.category === cat))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+let posts: Awaited<ReturnType<typeof getCollection>> = [];
+try {
+  posts = (await getCollection("actu", ({ data }) => !data.draft && data.category === cat)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+} catch {
+  posts = [];
+}
 
-const breadcrumbs = [
-  { name: "Accueil", url: siteConfig.url },
-  { name: "Actualités", url: fullUrl("/actu") },
-  { name: meta?.label ?? cat, url: fullUrl(`/actu/categorie/${cat}`) },
-];
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Actu pouvoir d'achat", url: siteConfig.url + "/actu/" },
+  { name: meta.label, url: siteConfig.url + `/actu/categorie/${cat}/` },
+]);
 ---
 
 <BaseLayout
-  title={`Décryptages ${meta?.label ?? cat} | Adapte-toi`}
-  description={meta?.description ?? ""}
-  jsonLd={jsonLdBreadcrumbs(breadcrumbs)}
+  title={`Actu ${meta.label.toLowerCase()} · décryptages 2026 · ${siteConfig.name}`}
+  description={meta.description || `Toute l'actualité ${meta.label} décryptée par Econono.`}
+  jsonLd={[breadcrumbs]}
 >
-  <div class="max-w-6xl mx-auto px-4 py-10 sm:py-14">
-    <Breadcrumbs items={breadcrumbs} />
+  <section class="pt-12 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/actu/" class="hover:underline">Actu</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">{meta.label}</span>
+      </nav>
 
-    <header class="mb-10 border-b border-gray-200 pb-6">
-      <div class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Catégorie</div>
-      <h1 class="mb-3">Décryptages {meta?.label ?? cat}</h1>
-      {meta && <p class="text-gray-600 text-lg max-w-3xl leading-relaxed">{meta.description}</p>}
-    </header>
-
-    {posts.length === 0 ? (
-      <p class="text-gray-400 text-lg py-10">Pas encore de décryptage dans cette catégorie.</p>
-    ) : (
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <article class="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
-            <a href={`/actu/${post.id}`} class="block">
-              {post.data.image && (
-                <img src={post.data.image} alt={post.data.imageAlt || post.data.title} class="w-full h-44 object-cover" loading="lazy" width="400" height="225" />
-              )}
-              <div class="p-5">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="flex items-center gap-0.5" title={`Impact ${post.data.impactLevel}/5`}>
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <span class={`block w-1.5 h-1.5 rounded-full ${i < post.data.impactLevel ? "bg-primary" : "bg-gray-200"}`}></span>
-                    ))}
-                  </span>
-                </div>
-                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-3 leading-snug">{post.data.title}</h3>
-                <p class="text-gray-600 text-sm line-clamp-2 mb-3">{post.data.description}</p>
-                <time class="text-xs text-gray-400" datetime={post.data.date.toISOString().split("T")[0]}>
-                  {post.data.date.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
-                </time>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-    )}
-
-    <div class="mt-12">
-      <a href="/actu" class="inline-flex items-center gap-2 text-secondary font-semibold hover:text-primary">← Tous les décryptages</a>
+      <p class="eyebrow mb-3">Catégorie · {posts.length} article{posts.length > 1 ? "s" : ""}</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0;">
+        {meta.label}.
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-2xl leading-relaxed">{meta.description}</p>
     </div>
-  </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      {posts.length === 0 ? (
+        <div class="ticket p-10 text-center max-w-xl mx-auto">
+          <p class="eyebrow mb-2">Bientôt</p>
+          <p class="text-stone-600">Pas encore d'article dans cette catégorie. Reviens bientôt.</p>
+          <a href="/actu/" class="inline-block mt-4 text-sm font-semibold underline" style="color: #1a3d2e;">← Retour à l'index actu</a>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <a href={`/actu/${post.id}/`} class="ticket p-6 hover-glow group">
+              <h3 class="text-lg font-bold mb-2 leading-snug transition-colors group-hover:text-[#c2410c]" style="font-family: var(--font-display); color: #0f2419;">
+                {post.data.title}
+              </h3>
+              <p class="text-stone-600 text-sm line-clamp-3 mb-3 leading-relaxed">{post.data.description}</p>
+              <time class="text-xs uppercase tracking-wider" style="font-family: var(--font-mono); color: #57534e;">
+                {post.data.date.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+              </time>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
 </BaseLayout>

@@ -4,90 +4,145 @@ import { siteConfig } from "../../../site.config";
 ---
 
 <BaseLayout
-  title={`Le Signal - Newsletter | ${siteConfig.name}`}
-  description="Chaque lundi, l'essentiel de l'impact de l'IA sur l'emploi. Les chiffres, les tendances, les actions concrètes. En 5 minutes."
+  title={`Le Carnet · newsletter du dimanche · ${siteConfig.name}`}
+  description="Le Carnet d'Econono : la newsletter du dimanche matin. Les chiffres budget de la semaine, l'astuce qu'on a testée, le calculateur à essayer. Sans spam, sans pub."
 >
-  <div class="max-w-2xl mx-auto px-4 sm:px-6 py-12 sm:py-20 text-center">
-    <h1 class="mb-3 sm:mb-4">Le Signal</h1>
-    <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-      Chaque lundi matin, l'essentiel de ce que l'IA change dans le monde du travail. Les études, les chiffres, les tendances, et ce que tu peux faire concrètement. En 5 minutes.
-    </p>
+  <section class="pt-12 pb-12 px-4" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Le Carnet</span>
+      </nav>
 
-    <form id="newsletter-form-page" class="max-w-md mx-auto">
-      <div class="flex flex-col sm:flex-row gap-3">
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="ton@email.com"
-          class="flex-1 px-5 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-        />
-        <button
-          type="submit"
-          class="font-semibold px-6 py-3 rounded-xl text-white transition-all hover:scale-105"
-          style={`background: ${siteConfig.colors.primary};`}
-        >
-          S'abonner
-        </button>
-      </div>
-      <p id="newsletter-page-msg" class="text-xs mt-4 text-gray-500"></p>
-      <p class="text-gray-400 text-xs mt-2">
-        Pas de spam, pas de revente. Désinscription en un clic.
+      <p class="eyebrow mb-4">Newsletter · une fois par semaine</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0;">
+        Le Carnet d'Econono.
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-xl leading-relaxed">
+        Une lettre courte, le dimanche matin avec ton café. Les chiffres budget de la semaine, l'astuce qu'on a vraiment testée, et un calculateur à essayer. Pas de pub, pas de revente d'email, désabonnement en un clic.
       </p>
-    </form>
-
-    <script>
-      const form = document.getElementById("newsletter-form-page");
-      const msg = document.getElementById("newsletter-page-msg");
-      form?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const email = new FormData(form as HTMLFormElement).get("email");
-        if (!email) return;
-        try {
-          const r = await fetch("https://commbksqnwhpsyenjzuf.supabase.co/rest/v1/newsletter_subscribers", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbW1ia3NxbndocHN5ZW5qenVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM3MjUsImV4cCI6MjA5MTY0OTcyNX0.6igBrd7TAiC5CamU5hmHfEd-JBb4MJuvGAyGHo6tJpU",
-              "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvbW1ia3NxbndocHN5ZW5qenVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM3MjUsImV4cCI6MjA5MTY0OTcyNX0.6igBrd7TAiC5CamU5hmHfEd-JBb4MJuvGAyGHo6tJpU",
-              "Prefer": "return=minimal",
-            },
-            body: JSON.stringify({ email, source: "newsletter-page" }),
-          });
-          if (r.ok) {
-            if (msg) { msg.textContent = "Bienvenue à bord. Tu recevras Le Signal dès lundi prochain."; msg.style.color = "#16a34a"; }
-            (form as HTMLFormElement).reset();
-          } else if (r.status === 409) {
-            if (msg) { msg.textContent = "Tu es déjà inscrit. On se retrouve lundi."; msg.style.color = "#f59e0b"; }
-          } else {
-            if (msg) { msg.textContent = "Erreur. Réessaie dans quelques instants."; msg.style.color = "#ef4444"; }
-          }
-        } catch {
-          if (msg) { msg.textContent = "Erreur réseau. Réessaie."; msg.style.color = "#ef4444"; }
-        }
-      });
-    </script>
-
-    <div class="mt-10 sm:mt-16 text-left space-y-4 sm:space-y-6">
-      <h2 class="text-lg sm:text-xl font-bold">Ce que tu reçois chaque semaine</h2>
-      <ul class="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base">
-        <li class="flex gap-3">
-          <span class="text-primary font-bold">1.</span>
-          <span>Le chiffre de la semaine : une donnée clé sur l'impact de l'IA sur l'emploi, sourcee et contextualisée.</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-primary font-bold">2.</span>
-          <span>L'actu qui compte : les études, les annonces, les tendances que tu ne dois pas rater.</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-primary font-bold">3.</span>
-          <span>L'action de la semaine : un conseil concret et actionnable pour avancer dans ta reconversion ou ta montee en compétences.</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-primary font-bold">4.</span>
-          <span>L'outil de la semaine : un outil IA teste et recommande pour ton quotidien professionnel.</span>
-        </li>
-      </ul>
     </div>
-  </div>
+  </section>
+
+  <section class="py-12 px-4" style="background: #fffefb;">
+    <div class="max-w-2xl mx-auto">
+      <div class="ticket p-8 md:p-10 relative">
+        <div class="absolute -top-3 -right-3"><div class="wax-seal text-[10px]">Gratuit</div></div>
+
+        <p class="eyebrow mb-3 text-xs">Inscription</p>
+        <h2 class="text-2xl mb-5 leading-tight" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+          Reçois la prochaine lettre.
+        </h2>
+
+        <form id="nl-page-form" class="space-y-3">
+          <label for="nl-page-email" class="sr-only">Email</label>
+          <input
+            id="nl-page-email"
+            name="email"
+            type="email"
+            required
+            placeholder="ton.email@exemple.fr"
+            class="w-full px-4 py-3 rounded-md border-2 text-base transition-colors focus:outline-none"
+            style="border-color: #e7e5e4; background: #faf7f2; font-family: var(--font-mono); font-size: 14px;"
+            onfocus="this.style.borderColor='#1a3d2e'"
+            onblur="this.style.borderColor='#e7e5e4'"
+          />
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md text-white font-semibold text-sm hover-shine transition-all"
+            style="background: #1a3d2e;"
+          >
+            S'abonner au Carnet
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </button>
+        </form>
+        <p id="nl-page-msg" class="text-xs mt-3 text-center" style="color: #57534e;"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto">
+      <p class="eyebrow text-center mb-3">Au programme</p>
+      <h2 class="text-center mb-10" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">
+        Ce que tu reçois chaque dimanche
+      </h2>
+
+      <ol class="space-y-6">
+        <li class="flex gap-5 items-start">
+          <span class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold" style="background: #1a3d2e; color: #f4c430; font-family: var(--font-display);">I</span>
+          <div>
+            <h3 class="text-xl font-bold mb-1" style="font-family: var(--font-display); color: #0f2419;">Le chiffre de la semaine</h3>
+            <p class="text-stone-700 leading-relaxed">Une donnée clé sur le budget des Français, sourcée (INSEE, Banque de France, Service-Public) et contextualisée pour ta vraie vie.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold" style="background: #1a3d2e; color: #f4c430; font-family: var(--font-display);">II</span>
+          <div>
+            <h3 class="text-xl font-bold mb-1" style="font-family: var(--font-display); color: #0f2419;">L'astuce qu'on a testée</h3>
+            <p class="text-stone-700 leading-relaxed">Une vraie astuce économies validée par notre rédaction. Pas un truc copié sur Reddit, un truc qui a marché sur un de nos budgets.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold" style="background: #1a3d2e; color: #f4c430; font-family: var(--font-display);">III</span>
+          <div>
+            <h3 class="text-xl font-bold mb-1" style="font-family: var(--font-display); color: #0f2419;">Un calculateur à essayer</h3>
+            <p class="text-stone-700 leading-relaxed">On te recommande l'un de nos 12 calculateurs adapté à un thème de la semaine (rentrée, vacances, fin d'année fiscale, hausse du livret A...).</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold" style="background: #1a3d2e; color: #f4c430; font-family: var(--font-display);">IV</span>
+          <div>
+            <h3 class="text-xl font-bold mb-1" style="font-family: var(--font-display); color: #0f2419;">L'actu pouvoir d'achat</h3>
+            <p class="text-stone-700 leading-relaxed">Si quelque chose de concret a bougé cette semaine (revalorisation du SMIC, taux livret A, nouvelle aide CAF), on te le résume en 3 lignes.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="margin-note text-center mt-12 inline-block" style="transform: rotate(0); width: 100%;">
+        ✦ 3 minutes de lecture, le dimanche matin, avec ton café ✦
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("nl-page-form") as HTMLFormElement | null;
+    const msg = document.getElementById("nl-page-msg");
+    const SB_URL = "https://rxdcejlofnhjicupzikx.supabase.co";
+    const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZGNlamxvZm5oamljdXB6aWt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4OTc2MDUsImV4cCI6MjA5MjQ3MzYwNX0.uG3WBUQ6LBnUxYBzo9LGoxRKU4oSzNlggixjNVSoJIY";
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = (form.elements.namedItem("email") as HTMLInputElement)?.value?.trim();
+      if (!email) return;
+      try {
+        const r = await fetch(SB_URL + "/rest/v1/newsletter_subscribers", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SB_ANON,
+            "Authorization": "Bearer " + SB_ANON,
+            "Prefer": "return=minimal",
+          },
+          body: JSON.stringify({
+            email,
+            source: "newsletter-page",
+            user_agent: navigator.userAgent,
+            referrer: document.referrer || null,
+          }),
+        });
+        if (r.ok) {
+          if (msg) { msg.textContent = "C'est noté. Premier Carnet dimanche matin."; msg.style.color = "#15803d"; }
+          form.reset();
+        } else if (r.status === 409) {
+          if (msg) { msg.textContent = "Tu es déjà inscrit·e. On se retrouve dimanche."; msg.style.color = "#ca8a04"; }
+        } else {
+          if (msg) { msg.textContent = "Erreur réseau. Réessaie dans quelques instants."; msg.style.color = "#b91c1c"; }
+        }
+      } catch {
+        if (msg) { msg.textContent = "Erreur réseau. Réessaie."; msg.style.color = "#b91c1c"; }
+      }
+    });
+  </script>
 </BaseLayout>

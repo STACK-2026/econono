@@ -87,11 +87,11 @@ export const glossaireAliases: Record<string, string> = Object.entries(glossaire
   return acc;
 }, {} as Record<string, string>);
 
-export const glossaireCategories: Array<{ id: GlossaireEntry["category"]; label: string; emoji: string }> = [
-  { id: "budget", label: "Budget", emoji: "📒" },
-  { id: "credit", label: "Crédit & endettement", emoji: "🏦" },
-  { id: "epargne", label: "Épargne", emoji: "🪙" },
-  { id: "fiscalite", label: "Fiscalité", emoji: "📑" },
-  { id: "social", label: "Social", emoji: "🤝" },
-  { id: "bancaire", label: "Bancaire", emoji: "💳" },
+export const glossaireCategories: Array<{ id: GlossaireEntry["category"]; label: string; emoji: string; description: string }> = [
+  { id: "budget", label: "Budget", emoji: "📒", description: "Tout ce qui touche à la gestion mensuelle : reste à vivre, méthodes de répartition, dépenses contraintes." },
+  { id: "credit", label: "Crédit & endettement", emoji: "🏦", description: "Les notions à connaître quand on emprunte ou qu'on cherche à éviter le découvert : taux, plafonds, formules officielles." },
+  { id: "epargne", label: "Épargne", emoji: "🪙", description: "Les produits d'épargne réglementés français et les mécanismes utiles : livrets, intérêts composés, plafonds." },
+  { id: "fiscalite", label: "Fiscalité", emoji: "📑", description: "Les notions fiscales utiles pour comprendre ta feuille de paie, ta déclaration et tes droits." },
+  { id: "social", label: "Social", emoji: "🤝", description: "Les aides sociales et minima auxquels tu as droit : SMIC, prime d'activité, RSA, APL." },
+  { id: "bancaire", label: "Bancaire", emoji: "💳", description: "Les pratiques bancaires : agios, frais, conventions, droits du consommateur." },
 ];
