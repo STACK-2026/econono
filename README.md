@@ -3,7 +3,7 @@
 > Le média qui aide les Français à reprendre la main sur leur budget. 12 calculateurs gratuits, guides honnêtes, comparatifs sans pub déguisée, actu pouvoir d'achat.
 
 **Live :** https://econono.com
-**État :** Phase 0 livrée le 23/04/2026 · Audit 23/23 (100%)
+**État :** Phase 0 + v0.2.0 hardening standards STACK-2026 livrés le 23/04/2026 · Audit 23/23 (100%)
 
 ---
 
@@ -13,10 +13,10 @@
 |---|---|
 | [STATE.md](STATE.md) | **Snapshot précis pour reprise immédiate** (IDs, état, bugs résolus) |
 | [CLAUDE.md](CLAUDE.md) | Guide complet pour Claude Code (règles, architecture, commandes) |
-| [CHANGELOG.md](CHANGELOG.md) | Historique des versions |
+| [CHANGELOG.md](CHANGELOG.md) | Historique des versions (v0.1.0 + v0.2.0) |
 | [ROADMAP.md](ROADMAP.md) | V1.5 améliorations possibles |
-| [AUDIT-SEO.md](AUDIT-SEO.md) | Audit SEO complet (88/100 + quick wins) |
-| [AUDIT-GEO.md](AUDIT-GEO.md) | Audit GEO/AI complet (86/100 + 10 requêtes LLM cibles) |
+| [AUDIT-SEO.md](AUDIT-SEO.md) | Audit SEO complet (98/100 post-v0.2.0) |
+| [AUDIT-GEO.md](AUDIT-GEO.md) | Audit GEO/AI complet (96/100 post-v0.2.0 + 10 requêtes LLM cibles) |
 | [SEO-CLUSTER-ARCHITECTURE.md](SEO-CLUSTER-ARCHITECTURE.md) | Plan content cluster (6 pillars + 60+ spokes) |
 
 ---

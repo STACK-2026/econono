@@ -1,6 +1,8 @@
 # Roadmap · Econono · V1.5 et au-delà
 
 > Améliorations possibles après Phase 0. Liste priorisée par impact estimé.
+>
+> **Note v0.2.0 (23/04/2026 après-midi)** : les items "Page authors avec vrais portraits", "OG image PNG", "headers durcis (CSP/HSTS/X-Frame)", "favicon multi-size + PWA", "schema NewsMediaOrganization + Person", "ai-sitemap", "security.txt/humans.txt/rsl.txt" sont **faits** dans v0.2.0 (voir CHANGELOG).
 
 ---
 
