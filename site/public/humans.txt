@@ -1,0 +1,32 @@
+/* TEAM */
+  Éditrice en chef famille & CAF : Léa Dubreuil
+  Rédacteur crédit & immobilier  : Marc Henrion
+  Rédactrice épargne & livrets   : Sophie Vallet
+  Fact-checker / data INSEE      : Antoine Berger
+  Rédactrice aides sociales      : Camille Pellier
+
+  Contact : hello@econono.com
+  Site    : https://econono.com/auteurs/
+
+/* SITE */
+  Nom       : Econono
+  Tagline   : Dépense moins, vis mieux.
+  Univers   : Le Carnet · ledger artisan · cream paper
+  Fait en   : France · Bourgogne
+  Démarré   : Avril 2026
+  Dernière mise à jour : 2026-04-23
+
+/* TECH */
+  Framework : Astro SSG
+  Styles    : Tailwind CSS v4
+  Hosting   : Cloudflare Pages
+  Data      : Supabase (eu-west-3)
+  Analytics : custom anonyme (pas de GA, pas de Meta Pixel)
+  Fonts     : Fraunces · Figtree · Caveat · JetBrains Mono
+
+/* VALEURS */
+  Indépendant des banques.
+  Zéro placement caché.
+  Chiffres sourcés et datés (INSEE · Banque de France · Service-Public).
+  Tutoiement partout (sauf légal).
+  Si on peut pas sourcer, ça sort pas.

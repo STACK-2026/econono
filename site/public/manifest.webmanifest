@@ -1,0 +1,44 @@
+{
+  "name": "Econono · Le Carnet",
+  "short_name": "Econono",
+  "description": "Le média qui t'aide à reprendre la main sur ton budget. Calculateurs gratuits, guides honnêtes, zéro lien avec une banque.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#1a3d2e",
+  "orientation": "portrait-primary",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "categories": ["finance", "lifestyle", "education"],
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/maskable-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Budget mensuel",
+      "short_name": "Budget",
+      "description": "Calcule ton budget en 3 minutes",
+      "url": "/calculateurs/budget-mensuel/",
+      "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Reste à vivre",
+      "short_name": "Reste",
+      "description": "Combien il te reste après charges fixes",
+      "url": "/calculateurs/reste-a-vivre/",
+      "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Taux d'endettement",
+      "short_name": "Endettement",
+      "description": "Calcul HCSF officiel",
+      "url": "/calculateurs/taux-endettement/",
+      "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

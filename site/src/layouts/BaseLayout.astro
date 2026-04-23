@@ -14,8 +14,13 @@ interface Props {
   description: string;
   canonicalUrl?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: "website" | "article";
   publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  articleSection?: string;
+  articleTags?: string[];
   jsonLd?: object | object[];
   noIndex?: boolean;
 }
@@ -25,8 +30,13 @@ const {
   description,
   canonicalUrl = Astro.url.href,
   ogImage = siteConfig.ogImage,
+  ogImageAlt = `${siteConfig.name} · ${siteConfig.tagline}`,
   ogType = "website",
   publishedTime,
+  modifiedTime,
+  author,
+  articleSection,
+  articleTags = [],
   jsonLd,
   noIndex = false,
 } = Astro.props;
@@ -40,7 +50,17 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1a3d2e" />
+    <meta name="theme-color" content="#1a3d2e" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f2419" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="application-name" content="Econono" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Econono" />
+    <meta name="msapplication-TileColor" content="#1a3d2e" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- Fonts · "Le Carnet" : Fraunces (display serif éditorial) + Figtree (body humanist warm) + Caveat (handwritten accents) + JetBrains Mono (chiffres tabulaires) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,8 +74,9 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="author" content={siteConfig.author} />
+    <meta name="author" content={author || siteConfig.author} />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    {!noIndex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
 
     <!-- Hreflang -->
     <link rel="alternate" hreflang={siteConfig.locale} href={canonicalUrl} />
@@ -66,23 +87,44 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:image:type" content={imageUrl.endsWith(".svg") ? "image/svg+xml" : "image/png"} />
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content={siteConfig.locale} />
     <meta property="og:site_name" content={siteConfig.name} />
     {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    {author && ogType === "article" && <meta property="article:author" content={author} />}
+    {articleSection && <meta property="article:section" content={articleSection} />}
+    {articleTags.map((tag) => <meta property="article:tag" content={tag} />)}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <!-- Favicon -->
+    <!-- Favicon + App icons -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/favicon.svg" color="#1a3d2e" />
 
-    <!-- RSS auto-discovery -->
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Sitemaps + discovery -->
+    <link rel="alternate" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/xml" title="AI Sitemap" href="/ai-sitemap.xml" />
     <link rel="alternate" type="application/rss+xml" title="Econono · le carnet" href="/rss.xml" />
+    <link rel="search" type="application/opensearchdescription+xml" title="Econono" href="/opensearch.xml" />
+    <link rel="license" href="/rsl.txt" />
 
     <!-- JSON-LD -->
     {jsonLdArray.map((ld) => (

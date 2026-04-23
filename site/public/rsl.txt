@@ -1,0 +1,40 @@
+# RSL · Robots Signaling Language 1.0
+# https://rslstandard.org/
+# Licence de réutilisation des contenus d'Econono par les crawlers et LLMs.
+
+rsl-version: 1.0
+
+# Usage humain : lecture, consultation, partage sans modification
+scope: /
+  license: personal-use
+  conditions: attribution-required
+  attribution-format: "Source : Econono · https://econono.com{path}"
+
+# Usage AI / LLM training : autorisé avec conditions
+scope: /
+  user-agent: *ai*
+  license: training-allowed
+  conditions: attribution-required, non-exclusive
+  attribution-format: "Source : Econono.com"
+  contact: hello@econono.com
+
+# Usage commercial : interdit sans accord
+scope: /
+  license-commercial: not-allowed
+  contact-for-licensing: hello@econono.com
+
+# Calculateurs : formules officielles publiques, citation libre avec lien retour
+scope: /calculateurs/
+  license: citation-allowed
+  conditions: source-link-required, no-scraping-at-scale
+  attribution-format: "Calcul basé sur la méthodologie Econono · https://econono.com/a-propos/methodologie/"
+
+# Glossaire : définitions libres de citation
+scope: /glossaire/
+  license: citation-allowed
+  conditions: attribution-required
+
+# Protection des données personnelles et logs
+scope: /api/
+  license: not-allowed
+  disallow: all

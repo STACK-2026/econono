@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Econono</ShortName>
+  <LongName>Econono · Le média budget indépendant</LongName>
+  <Description>Recherche sur Econono : calculateurs budget, guides, actu pouvoir d'achat.</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image height="192" width="192" type="image/png">https://econono.com/favicon-192.png</Image>
+  <Image height="16" width="16" type="image/x-icon">https://econono.com/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://econono.com/blog?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://econono.com/opensearch.xml"/>
+  <moz:SearchForm>https://econono.com/blog</moz:SearchForm>
+  <Language>fr-FR</Language>
+  <Tags>budget calculateur épargne finance personnelle</Tags>
+  <Contact>hello@econono.com</Contact>
+</OpenSearchDescription>

@@ -1,13 +1,20 @@
 import { siteConfig, fullUrl } from "./config";
 
-/** JSON-LD for Organization + WebSite (homepage) */
+/** JSON-LD for NewsMediaOrganization + WebSite (homepage) */
 export function jsonLdHomepage() {
   const orgId = `${siteConfig.url}/#organization`;
   const siteId = `${siteConfig.url}/#website`;
+  const authorIds = [
+    "lea-dubreuil",
+    "marc-henrion",
+    "sophie-vallet",
+    "antoine-berger",
+    "camille-pellier",
+  ].map((s) => ({ "@id": `${siteConfig.url}/auteurs/#${s}` }));
   return [
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": ["Organization", "NewsMediaOrganization"],
       "@id": orgId,
       name: siteConfig.name,
       alternateName: "Econono.com",
@@ -17,15 +24,9 @@ export function jsonLdHomepage() {
       foundingDate: "2026-04",
       foundingLocation: {
         "@type": "Place",
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "FR",
-        },
+        address: { "@type": "PostalAddress", addressCountry: "FR" },
       },
-      areaServed: {
-        "@type": "Country",
-        name: "France",
-      },
+      areaServed: { "@type": "Country", name: "France" },
       knowsAbout: [
         "gestion de budget personnel",
         "pouvoir d'achat",
@@ -43,11 +44,31 @@ export function jsonLdHomepage() {
       knowsLanguage: ["fr-FR"],
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/favicon.svg`,
+        "@id": `${siteConfig.url}/#logo`,
+        url: `${siteConfig.url}/favicon-512.png`,
+        contentUrl: `${siteConfig.url}/favicon-512.png`,
         width: 512,
         height: 512,
+        caption: siteConfig.name,
       },
-      image: `${siteConfig.url}/og-default.png`,
+      image: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/og-default.png`,
+        width: 1200,
+        height: 630,
+      },
+      publishingPrinciples: `${siteConfig.url}/a-propos/methodologie/`,
+      actionableFeedbackPolicy: `${siteConfig.url}/a-propos/`,
+      ethicsPolicy: `${siteConfig.url}/a-propos/methodologie/`,
+      ownershipFundingInfo: `${siteConfig.url}/a-propos/`,
+      correctionsPolicy: `${siteConfig.url}/a-propos/methodologie/`,
+      missionCoveragePrioritiesPolicy: `${siteConfig.url}/a-propos/`,
+      unnamedSourcesPolicy: `${siteConfig.url}/a-propos/methodologie/`,
+      verificationFactCheckingPolicy: `${siteConfig.url}/a-propos/methodologie/`,
+      diversityPolicy: `${siteConfig.url}/a-propos/`,
+      masthead: `${siteConfig.url}/auteurs/`,
+      employee: authorIds,
+      member: authorIds,
       ...(siteConfig.legal.email && {
         contactPoint: {
           "@type": "ContactPoint",
@@ -63,18 +84,29 @@ export function jsonLdHomepage() {
       "@type": "WebSite",
       "@id": siteId,
       name: siteConfig.name,
+      alternateName: siteConfig.tagline,
       url: siteConfig.url,
-      description: siteConfig.tagline,
+      description: siteConfig.description,
       inLanguage: siteConfig.locale,
       publisher: { "@id": orgId },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+      copyrightHolder: { "@id": orgId },
+      copyrightYear: 2026,
+      license: `${siteConfig.url}/rsl.txt`,
+      potentialAction: [
+        {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
         },
-        "query-input": "required name=search_term_string",
-      },
+        {
+          "@type": "SubscribeAction",
+          target: `${siteConfig.url}/newsletter/`,
+          name: "S'abonner à la newsletter Le Carnet",
+        },
+      ],
     },
   ];
 }

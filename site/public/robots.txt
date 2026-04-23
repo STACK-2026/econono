@@ -65,3 +65,6 @@ Allow: /
 # Sitemaps
 Sitemap: https://econono.com/sitemap-index.xml
 Sitemap: https://econono.com/ai-sitemap.xml
+
+# RSL · Robots Signaling Language 1.0 · conditions de réutilisation
+License: https://econono.com/rsl.txt
