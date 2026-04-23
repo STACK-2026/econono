@@ -265,6 +265,11 @@ def generate_with_mistral_audit(system_prompt, user_prompt,
         log.info("[3/3] Mistral-large fix issues...")
         fixed = _fix_issues(draft, audit)
         fixed = _strip_md_fence(fixed)
+        # Safety net: if the fix pass corrupted the frontmatter markers, fall back to the draft
+        if ("TITLE_TAG:" not in fixed or "META_DESCRIPTION:" not in fixed) \
+                and "TITLE_TAG:" in draft and "META_DESCRIPTION:" in draft:
+            log.warning("  fix pass stripped TITLE_TAG/META_DESCRIPTION, falling back to audited draft")
+            return draft
         return fixed
     elif verdict == "MINOR":
         log.info(f"  MINOR issues kept (not worth re-running):")
