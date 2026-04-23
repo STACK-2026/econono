@@ -92,7 +92,7 @@ export function linkifyDefinition(
     .map((t) => {
       if (t.kind === "text") return escapeHtml(t.value);
       const slug = slugifyTerm(t.key!);
-      return `<a href="/glossaire#${slug}" class="${linkClass}">${escapeHtml(t.display!)}</a>`;
+      return `<a href="/glossaire/#${slug}" class="${linkClass}">${escapeHtml(t.display!)}</a>`;
     })
     .join("");
 }
