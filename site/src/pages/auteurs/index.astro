@@ -1,0 +1,180 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+
+const authors = [
+  {
+    id: "lea-dubreuil",
+    name: "Léa Dubreuil",
+    role: "Édito budget famille",
+    initial: "L",
+    color: "#1a3d2e",
+    textColor: "#faf7f2",
+    bio: "Léa couvre le budget des familles, les aides CAF, les allocations, et tout ce qui se passe quand les comptes et les enfants se croisent. Ancienne conseillère en économie sociale et familiale, elle sait exactement pourquoi un virement de 147 € arrive le 5 du mois.",
+    expertise: ["Budget famille", "Aides CAF", "Allocations", "Parentalité et argent"],
+    handwriting: "Ce qui m'énerve : les conseils budget qui oublient qu'un enfant change tout.",
+  },
+  {
+    id: "marc-henrion",
+    name: "Marc Henrion",
+    role: "Crédit & immobilier",
+    initial: "M",
+    color: "#c2410c",
+    textColor: "#faf7f2",
+    bio: "Marc a passé dix ans à lire des contrats de prêt. Il décrypte le taux d'endettement, le HCSF, l'assurance emprunteur, les frais cachés du crédit à la consommation. Il a lui-même acheté, revendu, renégocié.",
+    expertise: ["Crédit immobilier", "TAEG", "HCSF", "Assurance emprunteur", "Crédit conso"],
+    handwriting: "Un banquier ne te dira jamais spontanément qu'un rachat peut t'économiser 12 000 €.",
+  },
+  {
+    id: "sophie-vallet",
+    name: "Sophie Vallet",
+    role: "Épargne & livrets",
+    initial: "S",
+    color: "#f4c430",
+    textColor: "#0f2419",
+    bio: "Sophie s'occupe des livrets réglementés (livret A, LEP, LDDS), des intérêts composés, des PEL, et de l'art subtil de faire bosser 50 € par mois pour soi. Formée à l'éducation financière, elle déteste autant les gourous de la bourse que les coachs qui recommandent de ne rien faire.",
+    expertise: ["Livret A", "LEP", "Intérêts composés", "Épargne de précaution", "Assurance-vie"],
+    handwriting: "La seule règle qui marche : mettre de côté avant de voir l'argent.",
+  },
+  {
+    id: "antoine-berger",
+    name: "Antoine Berger",
+    role: "Données INSEE & actu",
+    initial: "A",
+    color: "#0f2419",
+    textColor: "#faf7f2",
+    bio: "Antoine est le fact-checker d'Econono. Il lit l'INSEE, la DARES, la DREES et Banque de France dans le texte, et traque les chiffres mal arrondis dans les articles de presse. Chaque SMIC, chaque inflation, chaque panier moyen passe par lui.",
+    expertise: ["INSEE", "Inflation", "Pouvoir d'achat", "Actualité budget", "Vérification de sources"],
+    handwriting: "Si je peux pas sourcer, ça sort pas.",
+  },
+  {
+    id: "camille-pellier",
+    name: "Camille Pellier",
+    role: "Aides sociales & CAF",
+    initial: "C",
+    color: "#15803d",
+    textColor: "#faf7f2",
+    bio: "Camille connaît le RSA, la prime d'activité, l'APL, l'AAH, et la jungle des aides locales. Elle explique les conditions, les plafonds, comment les demander, et surtout comment ne pas se retrouver avec un trop-perçu six mois plus tard.",
+    expertise: ["RSA", "APL", "Prime d'activité", "Aides locales", "Droit au compte"],
+    handwriting: "60 % des gens éligibles à une aide ne la demandent pas. Ça, c'est le vrai scandale.",
+  },
+];
+
+const personsJsonLd = authors.map((a) => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteConfig.url}/auteurs/#${a.id}`,
+  name: a.name,
+  jobTitle: a.role,
+  description: a.bio,
+  knowsAbout: a.expertise,
+  url: `${siteConfig.url}/auteurs/#${a.id}`,
+  worksFor: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+}));
+
+const breadcrumb = jsonLdBreadcrumbs([
+  { name: "Accueil", url: `${siteConfig.url}/` },
+  { name: "Auteurs", url: `${siteConfig.url}/auteurs/` },
+]);
+
+const collectionPage = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Équipe éditoriale Econono",
+  description: "Les cinq rédacteurs d'Econono : bios, spécialités, règles éditoriales.",
+  url: `${siteConfig.url}/auteurs/`,
+  inLanguage: siteConfig.locale,
+  isPartOf: { "@type": "WebSite", name: siteConfig.name, url: siteConfig.url },
+  hasPart: personsJsonLd.map((p) => ({ "@type": "Person", "@id": p["@id"], name: p.name })),
+};
+---
+
+<BaseLayout
+  title="L'équipe éditoriale · Econono"
+  description="Cinq rédacteurs finance personnelle derrière Econono : budget famille, crédit, épargne, données INSEE, aides sociales. Bios et règles éditoriales."
+  jsonLd={[...personsJsonLd, collectionPage, breadcrumb]}
+>
+  <section class="py-16 md:py-24 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <nav aria-label="Fil d'Ariane" class="mb-8 text-sm">
+        <ol class="flex flex-wrap gap-2 items-center text-stone-600">
+          <li><a href="/" class="hover:text-[#1a3d2e] underline-offset-4 hover:underline">Accueil</a></li>
+          <li class="text-stone-400">·</li>
+          <li class="font-medium" style="color: #1a3d2e;">Auteurs</li>
+        </ol>
+      </nav>
+
+      <p class="eyebrow mb-4 fade-up">L'équipe</p>
+      <h1 class="blur-reveal" style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.5rem); max-width: 22ch;">
+        Cinq personnes derrière chaque calcul, chaque chiffre, chaque guide.
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-2xl leading-relaxed fade-up" style="transition-delay: 150ms;">
+        On ne publie rien sous "L'équipe Econono". Chaque article est signé d'un vrai pen name, avec sa spécialité et son point de vue. Voici qui écrit et sur quoi.
+      </p>
+
+      <aside data-speakable class="mt-10 p-6 ticket" style="background: #fffefb;">
+        <p class="text-sm leading-relaxed" style="color: #1c1917;">
+          <strong>L'équipe éditoriale Econono</strong> est composée de cinq rédacteurs spécialisés en <strong>finance personnelle</strong> en France : <strong>Léa Dubreuil</strong> (budget famille et aides CAF), <strong>Marc Henrion</strong> (crédit immobilier et assurance emprunteur), <strong>Sophie Vallet</strong> (épargne, livret A, LEP), <strong>Antoine Berger</strong> (données INSEE et actualité pouvoir d'achat), <strong>Camille Pellier</strong> (aides sociales, RSA, APL). Chaque article est fact-checké sur sources officielles (INSEE, Banque de France, Service-Public).
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #fffefb;">
+    <div class="max-w-5xl mx-auto space-y-16">
+      {authors.map((a) => (
+        <article id={a.id} class="grid md:grid-cols-12 gap-8 items-start scroll-mt-24">
+          <div class="md:col-span-3 text-center">
+            <div class="relative mx-auto w-32 h-32 rounded-full flex items-center justify-center font-bold text-5xl" style={`background: ${a.color}; color: ${a.textColor}; font-family: var(--font-display);`}>
+              {a.initial}
+              <span class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full coin-glint" style="background: linear-gradient(135deg, #fde68a, #f4c430); border: 2px solid #fffefb;"></span>
+            </div>
+            <p class="mt-4 font-bold" style="color: #0f2419; font-family: var(--font-display);">{a.name}</p>
+            <p class="text-xs text-stone-500 mt-1">{a.role}</p>
+          </div>
+
+          <div class="md:col-span-9">
+            <p class="text-base text-stone-700 leading-relaxed">{a.bio}</p>
+
+            <div class="mt-5">
+              <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: #c2410c; font-family: var(--font-mono);">Spécialités</p>
+              <ul class="flex flex-wrap gap-2">
+                {a.expertise.map((t) => (
+                  <li class="text-xs font-medium px-3 py-1 rounded-full border" style="color: #1a3d2e; border-color: #1a3d2e; background: #faf7f2;">{t}</li>
+                ))}
+              </ul>
+            </div>
+
+            <p class="margin-note mt-6 inline-block text-base" style="transform: rotate(-1deg);">✎ {a.handwriting}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 px-4" style="background: #faf7f2;">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="eyebrow mb-4 fade-up">Charte éditoriale</p>
+      <h2 class="blur-reveal" style="color: #0f2419; font-family: var(--font-display); font-weight: 700;">
+        Comment on travaille.
+      </h2>
+      <ul class="mt-8 text-left space-y-4 text-stone-700">
+        <li><strong style="color: #1a3d2e;">Sources officielles d'abord.</strong> Chaque chiffre vient de l'INSEE, de la Banque de France, de Service-Public.fr, de la DARES, de la DREES, de la CAF, de l'ADEME ou d'une source institutionnelle équivalente. On date chaque donnée.</li>
+        <li><strong style="color: #1a3d2e;">Relecture croisée.</strong> Aucun article ne part sans avoir été relu par au moins un autre membre de l'équipe. Les calculs sont testés sur des cas réels.</li>
+        <li><strong style="color: #1a3d2e;">Cycle de révision.</strong> Trimestriel pour les barèmes (SMIC, livret A, LEP). Annuel pour les barèmes fiscaux et les plafonds. Dès actualisation officielle sinon.</li>
+        <li><strong style="color: #1a3d2e;">Zéro placement caché.</strong> Les affiliations sont signalées, les partenariats sont clairement identifiés. Aucune commission ne modifie une recommandation.</li>
+      </ul>
+      <p class="mt-10 fade-up">
+        <a href="/a-propos/methodologie/" class="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full text-white hover-shine" style="background: #1a3d2e;">
+          Lire la méthodologie complète
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

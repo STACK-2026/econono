@@ -62,6 +62,6 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://econono.com/sitemap-index.xml
-Sitemap: https://econono.com/sitemap.xml
+Sitemap: https://econono.com/ai-sitemap.xml

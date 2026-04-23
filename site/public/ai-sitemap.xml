@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AI Sitemap · Econono.com
+  Destiné aux crawlers AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.)
+  Chaque entrée contient une description factuelle concise pour faciliter la citation passage-level.
+  Spec s'inspire de https://llmstxt.org/ + sitemap.xml standard.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:ai="https://econono.com/schemas/ai-sitemap/1.0">
+
+  <url>
+    <loc>https://econono.com/</loc>
+    <ai:summary>Econono · média français indépendant de gestion de budget. 12 calculateurs gratuits (reste à vivre, taux d'endettement, règle 50/30/20, SMIC net, épargne), guides pratiques, comparatifs d'apps budget, actu pouvoir d'achat. Aucun lien avec une banque.</ai:summary>
+    <ai:entity>Econono</ai:entity>
+    <ai:type>HomePage</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/llms.txt</loc>
+    <ai:summary>Manifeste Econono pour LLMs · mission, ton éditorial, sources officielles, méthodologie.</ai:summary>
+    <ai:type>llmsTxt</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/</loc>
+    <ai:summary>Index des 12 calculateurs budget : budget mensuel, reste à vivre, taux d'endettement, règle 50/30/20, salaire net, épargne, budget courses, coût crédit, comparateur abonnements, budget bébé, couple, étudiant.</ai:summary>
+    <ai:type>CalculatorHub</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/budget-mensuel/</loc>
+    <ai:summary>Calculateur budget mensuel · reste à vivre, répartition en 4 postes (logement/courses/loisirs/épargne), score santé budgétaire. Formules INSEE.</ai:summary>
+    <ai:entity>calcul budget mensuel France</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/reste-a-vivre/</loc>
+    <ai:summary>Reste à vivre = revenus totaux moins charges fixes (loyer, énergie, assurances, crédits). Calcul instantané + recommandations 2026.</ai:summary>
+    <ai:entity>reste à vivre</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/taux-endettement/</loc>
+    <ai:summary>Taux d'endettement = mensualités de crédit / revenus nets. Plafond HCSF 35% depuis janvier 2022. Calcul Banque de France + HCSF officiel.</ai:summary>
+    <ai:entity>taux d'endettement HCSF</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/regle-50-30-20/</loc>
+    <ai:summary>Règle 50/30/20 d'Elizabeth Warren : 50% besoins, 30% envies, 20% épargne. Calcul sur ton revenu net + conseils d'adaptation France 2026.</ai:summary>
+    <ai:entity>règle 50/30/20</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/salaire-net/</loc>
+    <ai:summary>Convertisseur salaire brut / net 2026 (non-cadre, cadre, fonction publique). Barème URSSAF, CSG/CRDS, prélèvement à la source. SMIC net 2026 · 1 443 €.</ai:summary>
+    <ai:entity>salaire net France 2026</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/epargne/</loc>
+    <ai:summary>Simulateur épargne intérêts composés · livret A 2,4% en 2026, LEP 3,5%, LDDS 2,4%. Projection 1 à 30 ans, versement initial + régulier.</ai:summary>
+    <ai:entity>épargne livret A 2026</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/cout-credit/</loc>
+    <ai:summary>Coût total d'un crédit immobilier ou conso · mensualité, intérêts totaux, TAEG, assurance emprunteur. Formule officielle Banque de France.</ai:summary>
+    <ai:entity>coût crédit immobilier</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/budget-courses/</loc>
+    <ai:summary>Budget courses moyen par foyer · 720 €/mois pour 4 personnes selon INSEE 2026. Calcul par profil (célibataire, couple, famille) + postes détaillés.</ai:summary>
+    <ai:entity>budget courses famille France</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/comparateur-abonnements/</loc>
+    <ai:summary>Identifier les abonnements qui coûtent sans servir · Netflix, Spotify, Amazon Prime, assurances. Score utilité × prix, recommandations de coupe.</ai:summary>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/budget-bebe/</loc>
+    <ai:summary>Budget bébé première année France · fourchette 4 000 à 8 000 € selon mode de garde. Aides CAF : PAJE, CMG, allocation de base.</ai:summary>
+    <ai:entity>budget bébé France 2026</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/budget-couple/</loc>
+    <ai:summary>Budget couple · répartition revenus/charges, méthodes 50/50, prorata revenus, compte commun. Conseil Conseil conjugal et familial.</ai:summary>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/calculateurs/budget-etudiant/</loc>
+    <ai:summary>Budget étudiant mensuel · moyenne 850 €/mois selon Observatoire de la Vie Étudiante. Calcul par ville + aides CROUS + CAF.</ai:summary>
+    <ai:entity>budget étudiant France</ai:entity>
+    <ai:type>FinancialCalculator</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/guides/</loc>
+    <ai:summary>Guides pratiques budget · plans d'action concrets, chiffres datés, aucun conseil vague.</ai:summary>
+    <ai:type>GuideHub</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/guides/sortir-decouvert-bancaire/</loc>
+    <ai:summary>Guide 30 jours pour sortir du découvert bancaire · plan pas à pas, négociation agios, droit au compte, micro-crédit social. 3 500 mots.</ai:summary>
+    <ai:entity>sortir du découvert bancaire</ai:entity>
+    <ai:type>Guide</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/comparatifs/</loc>
+    <ai:summary>Comparatifs d'applications budget et produits financiers · Bankin, Linxo, Finary, YNAB, Plan & Multiply. Analyse indépendante, zéro partenariat caché.</ai:summary>
+    <ai:type>ComparisonHub</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/glossaire/</loc>
+    <ai:summary>Glossaire finance personnelle · 56 termes définis sans jargon (taux d'endettement, RAM, TAEG, TEG, prélèvement à la source, quotient familial, LEP, CAF, APL, etc.).</ai:summary>
+    <ai:type>DefinedTermSet</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/a-propos/</loc>
+    <ai:summary>Manifeste Econono · média indépendant, sans banque, sans courtier, sans placement caché. Équipe, méthodologie, ennemi déclaré (opacité bancaire).</ai:summary>
+    <ai:type>AboutPage</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/a-propos/methodologie/</loc>
+    <ai:summary>Méthodologie Econono · sources officielles (INSEE, Banque de France, HCSF, CAF, ADEME), fact-checking, cycle de révision trimestriel.</ai:summary>
+    <ai:type>MethodologyPage</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/a-propos/sources/</loc>
+    <ai:summary>Catalogue 18 sources publiques officielles utilisées par Econono · INSEE, Banque de France, Service-Public.fr, HCSF, DREES, CAF, ADEME, DARES, URSSAF, DGFIP.</ai:summary>
+    <ai:type>SourcesPage</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/auteurs/</loc>
+    <ai:summary>Équipe éditoriale Econono · 5 rédacteurs finance personnelle, bios, spécialités, politique de fact-checking.</ai:summary>
+    <ai:type>AuthorsPage</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/actu/</loc>
+    <ai:summary>Actualité pouvoir d'achat · SMIC, livret A, LEP, aides sociales, prix énergie, inflation, logement, fiscalité.</ai:summary>
+    <ai:type>NewsHub</ai:type>
+  </url>
+
+  <url>
+    <loc>https://econono.com/blog/</loc>
+    <ai:summary>Le Carnet · articles hebdomadaires sur la gestion de budget, astuces concrètes, décryptage actualité finances personnelles.</ai:summary>
+    <ai:type>Blog</ai:type>
+  </url>
+
+</urlset>

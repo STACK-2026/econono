@@ -116,25 +116,27 @@ try {
 
       <ul class="grid grid-cols-2 md:grid-cols-5 gap-6 stagger-children">
         {[
-          { name: "Léa Dubreuil", role: "Édito budget famille", color: "#1a3d2e", initial: "L" },
-          { name: "Marc Henrion", role: "Crédit & immobilier", color: "#c2410c", initial: "M" },
-          { name: "Sophie Vallet", role: "Épargne & livrets", color: "#f4c430", initial: "S", textColor: "#0f2419" },
-          { name: "Antoine Berger", role: "Données INSEE & actu", color: "#0f2419", initial: "A" },
-          { name: "Camille Pellier", role: "Aides sociales & CAF", color: "#15803d", initial: "C" },
+          { name: "Léa Dubreuil", role: "Édito budget famille", color: "#1a3d2e", initial: "L", slug: "lea-dubreuil" },
+          { name: "Marc Henrion", role: "Crédit & immobilier", color: "#c2410c", initial: "M", slug: "marc-henrion" },
+          { name: "Sophie Vallet", role: "Épargne & livrets", color: "#f4c430", initial: "S", textColor: "#0f2419", slug: "sophie-vallet" },
+          { name: "Antoine Berger", role: "Données INSEE & actu", color: "#0f2419", initial: "A", slug: "antoine-berger" },
+          { name: "Camille Pellier", role: "Aides sociales & CAF", color: "#15803d", initial: "C", slug: "camille-pellier" },
         ].map((p) => (
           <li class="text-center">
-            <div class="relative mx-auto mb-4 w-20 h-20 rounded-full flex items-center justify-center font-bold text-2xl" style={`background: ${p.color}; color: ${p.textColor || "#faf7f2"}; font-family: var(--font-display);`}>
-              {p.initial}
-              <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full coin-glint" style="background: linear-gradient(135deg, #fde68a, #f4c430); border: 2px solid #faf7f2;"></span>
-            </div>
-            <p class="text-sm font-semibold" style="color: #0f2419;">{p.name}</p>
-            <p class="text-xs text-stone-500 mt-0.5">{p.role}</p>
+            <a href={`/auteurs/#${p.slug}`} class="group block hover:-translate-y-1 transition-transform" aria-label={`Voir la bio de ${p.name}`}>
+              <div class="relative mx-auto mb-4 w-20 h-20 rounded-full flex items-center justify-center font-bold text-2xl group-hover:shadow-lg transition-shadow" style={`background: ${p.color}; color: ${p.textColor || "#faf7f2"}; font-family: var(--font-display);`}>
+                {p.initial}
+                <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full coin-glint" style="background: linear-gradient(135deg, #fde68a, #f4c430); border: 2px solid #faf7f2;"></span>
+              </div>
+              <p class="text-sm font-semibold group-hover:text-[#c2410c] transition-colors" style="color: #0f2419;">{p.name}</p>
+              <p class="text-xs text-stone-500 mt-0.5">{p.role}</p>
+            </a>
           </li>
         ))}
       </ul>
 
       <p class="margin-note handwritten-reveal text-center text-base mt-12 inline-block" style="transform: rotate(0); width: 100%;">
-        ↳ chaque article est signé du vrai pen name de son auteur
+        ↳ <a href="/auteurs/" class="underline decoration-[#f4c430] decoration-2 underline-offset-4 hover:text-[#c2410c] transition-colors">voir toutes les bios de l'équipe</a>
       </p>
     </div>
   </section>

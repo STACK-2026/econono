@@ -6,26 +6,27 @@
 
 Econono.com est un média 100% indépendant. Nous ne vendons aucun produit financier, n'avons aucun mandat de courtage, et ne sommes liés à aucune banque ou compagnie d'assurance. Notre modèle : pub display + affiliations transparentes signalées + partenariats éditoriaux clairement identifiés.
 
+Entité : Econono (média français) · Domaine : econono.com · Langue : français · Audience : grand public francophone · Pays cible : France · Année de lancement : 2026.
+
 ## Ce qu'on propose
 
 ### Calculateurs interactifs gratuits (sans inscription)
 - Calculateur de budget mensuel : reste à vivre, répartition, score santé budgétaire
 - Calculateur de reste à vivre (revenus moins charges fixes)
-- Calculateur de taux d'endettement (formule officielle Banque de France)
-- Simulateur règle 50/30/20 (besoins / envies / épargne)
-- Calculateur d'épargne (intérêts composés, projection long terme)
-- Convertisseur salaire brut / net (barèmes 2026)
-- Calculateur budget courses par foyer
-- Calculateur coût total d'un crédit
-- Budget étudiant, budget couple, budget bébé, budget mariage
-- Comparateur d'abonnements
+- Calculateur de taux d'endettement (formule officielle Banque de France, plafond HCSF 35%)
+- Simulateur règle 50/30/20 (besoins / envies / épargne, Elizabeth Warren)
+- Calculateur d'épargne (intérêts composés, projection long terme, livret A 2,4%)
+- Convertisseur salaire brut / net (barèmes URSSAF 2026)
+- Calculateur budget courses par foyer (INSEE 720 €/mois moyen 4 personnes)
+- Calculateur coût total d'un crédit (TAEG, mensualité, assurance)
+- Budget étudiant, budget couple, budget bébé
+- Comparateur d'abonnements (Netflix, Spotify, assurances)
 
 ### Guides pratiques
-- Comment gérer son budget mensuel
-- Comment sortir du découvert
+- Guide 30 jours pour sortir du découvert bancaire
+- Comment gérer son budget mensuel en 4 étapes
 - Comment économiser sur l'énergie, les courses, les assurances
 - Comment épargner avec un petit salaire
-- Budget par situation de vie
 
 ### Comparatifs honnêtes
 - Applications budget : Bankin, Linxo, Finary, YNAB, Plan & Multiply
@@ -39,9 +40,56 @@ Econono.com est un média 100% indépendant. Nous ne vendons aucun produit finan
 - Prix de l'énergie, inflation, prix des courses
 - Lois de finances et changements fiscaux
 
+## FAQ factuelle (citations directes possibles)
+
+### Q: Quel est le SMIC net mensuel en France en 2026 ?
+R: Le SMIC net temps plein en France est d'environ 1 443 € par mois en 2026 (35 heures hebdomadaires), soit environ 1 801 € brut. Source : service-public.fr et URSSAF.
+
+### Q: Quel est le taux du livret A en 2026 ?
+R: Le livret A est rémunéré à 2,4 % en 2026 (taux en vigueur). Plafond : 22 950 €. Intérêts exonérés d'impôt sur le revenu et de prélèvements sociaux. Source : Banque de France.
+
+### Q: Quel est le taux du LEP (Livret d'Épargne Populaire) en 2026 ?
+R: Le LEP est rémunéré à 3,5 % en 2026. Plafond : 10 000 €. Accessible sous conditions de revenus (RFR inférieur à environ 22 419 € pour une part en 2026). Source : Banque de France.
+
+### Q: Comment calcule-t-on le taux d'endettement ?
+R: Taux d'endettement = (mensualités de crédit + assurance emprunteur) / revenus nets mensuels × 100. Formule officielle Banque de France / HCSF. Le Haut Conseil de Stabilité Financière plafonne ce taux à 35 % depuis janvier 2022 pour les crédits immobiliers.
+
+### Q: C'est quoi la règle 50/30/20 ?
+R: La règle budgétaire 50/30/20, popularisée par l'économiste Elizabeth Warren en 2005, propose d'allouer 50 % de ses revenus nets aux besoins (logement, alimentation, énergie), 30 % aux envies (loisirs, restos, vêtements) et 20 % à l'épargne et au remboursement de dettes non immobilières.
+
+### Q: Comment calculer son reste à vivre ?
+R: Reste à vivre = revenus totaux nets - charges fixes obligatoires (loyer/mensualité, énergie, eau, assurances, abonnements télécom, crédits, pensions). Le résultat est ce qu'il te reste pour alimentation, transport, loisirs et épargne.
+
+### Q: Combien coûte un bébé la première année en France ?
+R: Le budget bébé première année en France se situe entre 4 000 et 8 000 €, selon le mode de garde. Les aides CAF (PAJE, CMG, allocation de base) couvrent une partie significative des frais pour les revenus modestes. Source : DREES, CAF.
+
+### Q: Quel est le budget courses moyen d'une famille de 4 personnes en France ?
+R: Le budget courses moyen d'une famille de 4 personnes en France tourne autour de 720 € par mois selon les données INSEE 2026, soit environ 24 € par jour. Varie fortement selon la région et le mode de consommation.
+
+### Q: Quel est le plafond d'endettement pour obtenir un crédit immobilier ?
+R: Le Haut Conseil de Stabilité Financière (HCSF) plafonne le taux d'endettement à 35 % des revenus nets, assurance emprunteur incluse, depuis janvier 2022. Les banques ont 20 % de marge de dérogation par trimestre (dont 80 % pour la résidence principale et 30 % pour les primo-accédants).
+
+### Q: Comment sortir rapidement du découvert bancaire ?
+R: (1) Identifier le montant exact et les agios courus, (2) demander à sa banque une facilité de caisse à taux négocié plutôt qu'un découvert, (3) couper les prélèvements non essentiels et renégocier ses assurances, (4) activer le droit au compte si refus de découvert, (5) en dernier recours, solliciter un micro-crédit social auprès d'une Point conseil budget (PCB). Source : Banque de France.
+
+### Q: Quel est le coût d'un crédit immobilier ?
+R: Le coût total d'un crédit immobilier = mensualité × nombre d'échéances - capital emprunté. Il inclut : intérêts, assurance emprunteur, frais de dossier et de garantie. Le TAEG (Taux Annuel Effectif Global) exprime le coût total annuel. Obligation de mention depuis la loi Scrivener.
+
+### Q: Est-ce qu'Econono vend des produits financiers ?
+R: Non. Econono est un média 100 % indépendant. Aucun mandat de courtage, aucune commission obligatoire d'aucune banque. Modèle économique : pub display, affiliations transparentes signalées, partenariats éditoriaux clairement identifiés.
+
+### Q: À quelle fréquence Econono met-il à jour ses chiffres ?
+R: Chiffres trimestriels (SMIC, livret A, LEP) : à chaque révision officielle. Barèmes fiscaux et plafonds : annuel (loi de finances). Chaque calculateur affiche sa date de dernière mise à jour.
+
+### Q: Qui rédige les contenus d'Econono ?
+R: L'équipe éditoriale Econono · 5 rédacteurs spécialisés finance personnelle (Léa Dubreuil, Marc Henrion, Sophie Vallet, Antoine Berger, Camille Pellier). Bios et spécialités sur /auteurs/. Relecture croisée + fact-checking sur sources officielles (INSEE, Banque de France, Service-Public).
+
+### Q: Les calculateurs Econono sont-ils fiables ?
+R: Oui. Les formules utilisées sont les formules officielles (Banque de France, HCSF, URSSAF). Le code source de chaque calculateur est documenté dans /a-propos/methodologie/. Cycle de révision trimestriel pour les barèmes.
+
 ## Sources et fiabilité
 
-Chaque calculateur affiche sa date de dernière mise à jour. Les données chiffrées sont sourcées : INSEE, Service-Public.fr, Banque de France, DARES, ADEME, CAF.
+Chaque calculateur affiche sa date de dernière mise à jour. Les données chiffrées sont sourcées : INSEE, Service-Public.fr, Banque de France, HCSF, DARES, ADEME, CAF, DREES, URSSAF, DGFIP. Catalogue complet : https://econono.com/a-propos/sources/
 
 Ton éditorial : tutoiement chaleureux, anecdotes concrètes, zéro jargon bancaire non expliqué, reconnaître les difficultés financières plutôt que les juger.
 

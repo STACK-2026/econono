@@ -39,6 +39,16 @@ const {
 const articleUrl = fullUrl(`/blog/${slug}`);
 const dateStr = date.toISOString().split("T")[0];
 
+const authorSlugMap: Record<string, string> = {
+  "Léa Dubreuil": "lea-dubreuil",
+  "Marc Henrion": "marc-henrion",
+  "Sophie Vallet": "sophie-vallet",
+  "Antoine Berger": "antoine-berger",
+  "Camille Pellier": "camille-pellier",
+};
+const authorSlug = authorSlugMap[author];
+const authorUrl = authorSlug ? `/auteurs/#${authorSlug}` : null;
+
 const breadcrumbs = [
   { name: "Accueil", url: siteConfig.url },
   { name: siteConfig.blog.name, url: fullUrl("/blog") },
@@ -82,7 +92,11 @@ const jsonLd = [
       )}
       <h1 class="mb-4">{title}</h1>
       <div class="flex flex-wrap items-center gap-4 text-gray-500 text-sm">
-        <span>{author}</span>
+        {authorUrl ? (
+          <a href={authorUrl} rel="author" class="underline decoration-dotted decoration-stone-400 underline-offset-4 hover:text-[#1a3d2e] hover:decoration-[#f4c430] transition-colors">{author}</a>
+        ) : (
+          <span>{author}</span>
+        )}
         <span>·</span>
         <time datetime={dateStr}>
           {date.toLocaleDateString("fr-FR", {
