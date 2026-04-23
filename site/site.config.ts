@@ -9,7 +9,7 @@ export const siteConfig = {
   name: "Econono",
   tagline: "Dépense moins, vis mieux.",
   description:
-    "Econono est le média qui t'aide à reprendre la main sur ton budget sans culpabilisation ni jargon. Des calculateurs gratuits (reste à vivre, taux d'endettement, règle 50/30/20...), des guides écrits par des gens qui ont vraiment géré leurs galères, et l'actu pouvoir d'achat décryptée pour de vrai.",
+    "Le média qui t'aide à reprendre la main sur ton budget. Calculateurs gratuits, guides honnêtes, actu pouvoir d'achat décryptée. Indépendant des banques.",
   url: "https://econono.com",
   appUrl: "",
   locale: "fr-FR",

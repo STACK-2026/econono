@@ -1,11 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Le Carnet", url: siteConfig.url + "/newsletter/" },
+]);
 ---
 
 <BaseLayout
   title={`Le Carnet · newsletter du dimanche · ${siteConfig.name}`}
-  description="Le Carnet d'Econono : la newsletter du dimanche matin. Les chiffres budget de la semaine, l'astuce qu'on a testée, le calculateur à essayer. Sans spam, sans pub."
+  description="Le Carnet d'Econono : newsletter du dimanche matin. Chiffres budget, astuce testée, calculateur à essayer. Sans spam."
+  jsonLd={[breadcrumbs]}
 >
   <section class="pt-12 pb-12 px-4" style="background: #faf7f2;">
     <div class="max-w-3xl mx-auto">

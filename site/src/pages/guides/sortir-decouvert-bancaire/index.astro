@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Guides", url: siteConfig.url + "/guides/" },
+  { name: "Sortir du découvert", url: siteConfig.url + "/guides/sortir-decouvert-bancaire/" },
+]);
+---
+
+<BaseLayout
+  title="Sortir du découvert bancaire 2026 · plan 30 jours · Econono"
+  description="Plan d'action concret pour sortir du découvert bancaire. Sans morale, ton solidaire. Audit, négo banque, aides oubliées, abonnements à couper."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/guides/" class="hover:underline">Guides</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Sortir du découvert</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Guide pillar · plan 30 jours</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.0;">
+        <span data-split-words class="block">Sortir du découvert.</span>
+        <span data-split-words class="block italic" style="color: #1a3d2e; font-weight: 500;">Plan d'action en 30 jours.</span>
+      </h1>
+
+      <aside data-speakable class="mt-8 max-w-3xl">
+        <p>Sortir du <strong>découvert bancaire</strong> demande un plan structuré sur <strong>30 jours</strong> : (1) audit reste à vivre + identification des agios, (2) négociation avec la banque (suppression frais), (3) activation des aides oubliées (prime d'activité, LEP, APL), (4) coupure des abonnements doublons (économie moyenne 30 à 80 €/mois), (5) cible un découvert progressivement réduit. Sans morale ni jugement : le découvert chronique touche <strong>~25% des Français</strong>, c'est un problème structurel autant que personnel.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-12 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Le constat sans jugement</h2>
+      <p>Si tu lis cette page, tu n'es probablement pas seul·e : selon les enquêtes Banque de France 2024-2026, <strong>environ 25% des Français se retrouvent en découvert au moins une fois par an</strong>, et 8% chroniquement (chaque mois). Ce n'est pas un échec personnel, c'est souvent une combinaison de revenus tendus + dépenses contraintes en hausse + agios qui creusent le trou.</p>
+      <p>Notre approche : on te donne le plan, sans culpabilisation. Tu décides quoi appliquer.</p>
+
+      <h2>Jour 1-7 · Diagnostic et audit</h2>
+      <p>Connecte-toi à ta banque. Sors les <strong>3 derniers relevés</strong>. Calcule :</p>
+      <ul>
+        <li>Ton vrai <a href="/calculateurs/reste-a-vivre/">reste à vivre</a> (revenus moins charges fixes)</li>
+        <li>Le total des agios et frais bancaires perçus en 3 mois</li>
+        <li>La liste de tous les prélèvements récurrents (notre <a href="/calculateurs/comparateur-abonnements/">comparateur d'abonnements</a> aide)</li>
+        <li>Le découvert moyen sur le mois</li>
+      </ul>
+      <p>Avec ces 4 chiffres en main, tu sais exactement où tu en es.</p>
+
+      <h2>Jour 8-14 · Négociation banque</h2>
+      <p>Prends RDV avec ton conseiller (ou écris via la messagerie sécurisée). Demande explicitement :</p>
+      <ul>
+        <li><strong>Remboursement des frais d'incident</strong> (commission d'intervention, lettre d'information). Plafonné légalement à 8 €/incident, 80 €/mois.</li>
+        <li><strong>Augmentation autorisée du découvert</strong> temporaire (pour éviter de basculer en facilité de caisse plus chère)</li>
+        <li><strong>Suppression frais de tenue de compte</strong> si tu es en difficulté</li>
+        <li><strong>Mise en place d'alertes SMS gratuites</strong> avant chaque débit</li>
+      </ul>
+      <p>Banque récalcitrante ? La <a href="https://www.banque-france.fr/fr/particuliers/saisir-banque-france/saisir-mediateur-bancaire" target="_blank" rel="noopener">médiation bancaire</a> est gratuite et obligatoire pour les banques.</p>
+
+      <h2>Jour 15-21 · Activer toutes les aides</h2>
+      <p>Selon la <a href="https://www.ccomptes.fr/" target="_blank" rel="noopener">Cour des comptes 2024</a>, environ un quart des éligibles ne demandent pas leurs aides. À vérifier <strong>impérativement</strong> :</p>
+      <ul>
+        <li><strong>Prime d'activité</strong> : si tu travailles, simulation sur <a href="https://www.caf.fr/" target="_blank" rel="noopener">caf.fr</a>. Versement immédiat à demande.</li>
+        <li><strong>LEP (Livret d'Épargne Populaire)</strong> à 3,5% défiscalisé. Si éligible, tu perds 100-200 €/an d'intérêts à ne pas l'ouvrir. Plafond 10 000 €. Conditions sur ton avis d'imposition.</li>
+        <li><strong>APL/ALS</strong> : si locataire, simulation gratuite CAF.</li>
+        <li><strong>Chèque énergie</strong> : 48-277 €/an selon revenus, automatique.</li>
+        <li><strong>Tarification sociale</strong> énergie (TSP), eau, transports.</li>
+      </ul>
+
+      <h2>Jour 22-28 · Couper les fuites</h2>
+      <p>Audit de tous tes abonnements récurrents avec notre <a href="/calculateurs/comparateur-abonnements/">comparateur dédié</a>. Cible prioritaire :</p>
+      <ol>
+        <li>Doublons streaming (Netflix + Disney+ + Prime → garde 1)</li>
+        <li>Salle de sport non fréquentée</li>
+        <li>Apps premium oubliées (essais devenus payants)</li>
+        <li>Forfait mobile + box surdimensionnés (Free 2€, RED Box couvrent l'essentiel)</li>
+      </ol>
+      <p>Économie moyenne post-audit : <strong>30 à 80 €/mois</strong>. Soit potentiellement la moitié de ton agios annuel.</p>
+
+      <h2>Jour 29-30 · Le plan de remontée</h2>
+      <p>Calcul ton <a href="/calculateurs/budget-mensuel/">nouveau budget mensuel</a> avec les économies débloquées + aides activées. Fixe une cible réaliste : ramener le découvert à zéro en 2-6 mois (pas en 1 mois si ton revenu est tendu).</p>
+      <p>Mets en place un <strong>virement automatique</strong> de remboursement vers le compte courant le 5 de chaque mois, juste après ton salaire. Même 50 €/mois fait reculer mécaniquement le découvert.</p>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="/calculateurs/budget-mensuel/">Calculateur de budget mensuel</a> · pour avoir le panorama complet</li>
+        <li><a href="/calculateurs/reste-a-vivre/">Calculateur reste à vivre</a> · le chiffre clé à connaître</li>
+        <li><a href="/calculateurs/taux-endettement/">Calculateur taux d'endettement</a> · vérifier où tu en es</li>
+        <li><a href="/calculateurs/comparateur-abonnements/">Comparateur d'abonnements</a> · le levier le plus rapide</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.banque-france.fr/" target="_blank" rel="noopener">Banque de France · enquêtes ménages</a></li>
+        <li><a href="https://www.caf.fr/" target="_blank" rel="noopener">CAF · prime d'activité, APL</a></li>
+        <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2367" target="_blank" rel="noopener">Service-Public · LEP</a></li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">
+        Page mise à jour le 23 avril 2026. Plan inspiré des conseils CCAS et associations type Crésus.
+      </p>
+    </article>
+  </section>
+</BaseLayout>

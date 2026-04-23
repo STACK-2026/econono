@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+import { getCollection } from "astro:content";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Comparatifs", url: siteConfig.url + "/comparatifs/" },
+]);
+
+let comparatifs: Awaited<ReturnType<typeof getCollection>> = [];
+try {
+  comparatifs = (await getCollection("comparatifs", ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+} catch (e) {
+  comparatifs = [];
+}
+
+const categories = [
+  { id: "app-budget", label: "Apps de budget", icon: "📱" },
+  { id: "banque", label: "Banques en ligne", icon: "🏦" },
+  { id: "livret", label: "Livrets d'épargne", icon: "🪙" },
+  { id: "assurance", label: "Assurances", icon: "🛡️" },
+  { id: "credit", label: "Crédits", icon: "💸" },
+  { id: "energie", label: "Fournisseurs énergie", icon: "⚡" },
+  { id: "telecom", label: "Forfaits télécom", icon: "📞" },
+];
+---
+
+<BaseLayout
+  title="Comparatifs honnêtes 2026 · apps, banques, livrets · Econono"
+  description="Tous nos comparatifs : apps budget (Bankin, Linxo, Finary), banques en ligne, livrets d'épargne, assurances. Tests réels, sans pub déguisée."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-12 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Comparatifs</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Comparatifs · sans pub déguisée</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0;">
+        <span data-split-words class="block">Comparatifs honnêtes.</span>
+        <span data-split-words class="block italic" style="color: #1a3d2e; font-weight: 500;">On teste, on dit ce qui en est.</span>
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-2xl leading-relaxed">
+        Apps budget, banques en ligne, livrets d'épargne, assurances. Chaque comparatif est testé en conditions réelles, pas sur une démo de 5 minutes. Liens affiliés signalés explicitement.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 pb-8" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      <ul class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+        {categories.map((cat) => (
+          <li>
+            <a href={`#${cat.id}`} class="ticket p-3 text-center block hover-glow">
+              <div class="text-2xl mb-1">{cat.icon}</div>
+              <div class="text-xs font-semibold" style="color: #0f2419;">{cat.label}</div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #faf7f2;">
+    <div class="max-w-6xl mx-auto">
+      {comparatifs.length === 0 ? (
+        <div class="ticket p-12 text-center max-w-2xl mx-auto">
+          <p class="eyebrow mb-3">Bientôt</p>
+          <h2 class="text-2xl mb-4" style="font-family: var(--font-display); font-weight: 700; color: #0f2419;">
+            Premier comparatif dans les 7 jours.
+          </h2>
+          <p class="text-stone-600 mb-6 leading-relaxed max-w-md mx-auto">
+            On commence par les apps budget : Bankin, Linxo, Finary, YNAB, Plan & Multiply. Tests réels en conditions de vie.
+          </p>
+          <a href="/newsletter/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm" style="background: #1a3d2e;">
+            Être prévenu·e à la sortie
+          </a>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+          {comparatifs.map((c) => (
+            <a href={`/comparatifs/${c.id}/`} class="ticket ticket-peel p-6 hover-glow group">
+              <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">{c.data.category}</p>
+              <h3 class="text-lg font-bold mb-2 leading-snug group-hover:text-[#c2410c]" style="font-family: var(--font-display); color: #0f2419;">
+                {c.data.title}
+              </h3>
+              <p class="text-sm text-stone-600 line-clamp-3 leading-relaxed">{c.data.description}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

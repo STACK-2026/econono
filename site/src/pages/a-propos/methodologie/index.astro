@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "À propos", url: siteConfig.url + "/a-propos/" },
+  { name: "Méthodologie", url: siteConfig.url + "/a-propos/methodologie/" },
+]);
+---
+
+<BaseLayout
+  title="Méthodologie · comment on travaille · Econono"
+  description="Comment Econono construit ses calculateurs et vérifie ses chiffres : formules officielles, sources datées, révision trimestrielle."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/a-propos/" class="hover:underline">À propos</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Méthodologie</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Notre méthode · transparente</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.0;">
+        <span data-split-words class="block">Comment on travaille.</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="py-12 px-4" style="background: #fffefb;">
+    <article class="max-w-3xl mx-auto prose">
+      <h2>Calculateurs : formules officielles uniquement</h2>
+      <p>Tous les calculateurs Econono utilisent les formules officielles publiées par les autorités françaises :</p>
+      <ul>
+        <li><strong>Taux d'endettement</strong> : formule HCSF 2022, plafond 35%.</li>
+        <li><strong>Reste à vivre</strong> : revenus moins charges fixes obligatoires (référentiel banque de France).</li>
+        <li><strong>Salaire brut/net</strong> : barèmes URSSAF + AGIRC-ARRCO 2026, par statut.</li>
+        <li><strong>Intérêts composés</strong> : C × (1+r)^n + PMT × ((1+r/12)^(12n) - 1) / (r/12).</li>
+        <li><strong>Coût total crédit</strong> : annuité constante M = C × r / (1 - (1+r)^(-n)).</li>
+      </ul>
+
+      <h2>Données chiffrées : sources publiques uniquement</h2>
+      <p>Aucune donnée propriétaire, aucune estimation interne :</p>
+      <ul>
+        <li><strong>Revenus, dépenses, niveau de vie</strong> : INSEE Consommation des ménages (mise à jour annuelle)</li>
+        <li><strong>SMIC, prime activité, RSA</strong> : Service-Public.fr et Décret officiel</li>
+        <li><strong>Livrets, taux, conditions bancaires</strong> : Banque de France et HCSF</li>
+        <li><strong>Aides petite enfance</strong> : CAF (PAJE, CMG)</li>
+        <li><strong>Coûts énergie</strong> : ADEME et CRE</li>
+        <li><strong>Budget étudiant</strong> : FAGE et UNEF (enquêtes annuelles)</li>
+        <li><strong>Fiscalité</strong> : Bulletin officiel des Finances Publiques (BOFiP)</li>
+      </ul>
+
+      <h2>Révision : à chaque changement officiel</h2>
+      <p>Notre planning de mise à jour automatique :</p>
+      <ul>
+        <li><strong>Trimestriel</strong> : SMIC, taux livret A et LEP, plafond HCSF, barèmes APL</li>
+        <li><strong>Annuel (1er janvier)</strong> : barèmes IR, plafonds CAF, montants prestations</li>
+        <li><strong>Évènementiel</strong> : modification HCSF, loi de finances rectificative</li>
+      </ul>
+      <p>Chaque calculateur affiche sa date de dernière vérification (cachet "Mis à jour · MMM AAAA"). Si tu repères une donnée obsolète, écris-nous : <a href="mailto:hello@econono.com">hello@econono.com</a>.</p>
+
+      <h2>Articles : Mistral large draft + Claude Sonnet audit + révision humaine</h2>
+      <p>Nos articles utilisent un pipeline IA encadré :</p>
+      <ol>
+        <li><strong>Brief SERP Gemini 2.5 Pro</strong> : analyse compétitive du top 10 Google sur le mot-clé cible avant rédaction</li>
+        <li><strong>Mistral large draft</strong> : génération du premier jet (3500+ mots, structure imposée)</li>
+        <li><strong>Claude Sonnet audit grounding</strong> : vérification factuelle, identification des claims non sourcés</li>
+        <li><strong>Mistral fix</strong> : reprise des points soulevés par Claude</li>
+        <li><strong>Révision humaine</strong> : un de nos pen names (Léa, Marc, Sophie, Antoine, Camille) relit, corrige, signe</li>
+      </ol>
+      <p>Chaque article a un auteur identifiable, une date de publication ET une date de dernière révision (lastReviewed) distinctes.</p>
+
+      <h2>Aucune donnée que tu saisis n'est envoyée sur nos serveurs</h2>
+      <p>Tous nos calculateurs fonctionnent en JavaScript dans ton navigateur. Quand tu saisis ton salaire, ton loyer, tes mensualités, ces données restent <strong>localement</strong> dans ton navigateur. Si tu fermes l'onglet, il n'en reste rien. Notre infrastructure ne reçoit que des statistiques d'audience anonymes (chemin de page, durée, type d'appareil), gérées sans Google Analytics.</p>
+
+      <h2>Indépendance financière</h2>
+      <p>Aucune banque, aucun courtier, aucun assureur ne nous verse de commission obligatoire. Nos sources de revenus :</p>
+      <ul>
+        <li><strong>Pub display</strong> standard, désactivable si tu refuses les cookies</li>
+        <li><strong>Liens d'affiliation</strong> signalés explicitement (un lien marqué "lien partenaire" peut nous rapporter une commission, sans changer le prix pour toi)</li>
+        <li><strong>Partenariats éditoriaux</strong> clairement identifiés en haut d'article (jamais déguisés)</li>
+      </ul>
+
+      <p class="text-sm text-stone-500 mt-12 pt-6 border-t border-stone-200">
+        Page mise à jour le 23 avril 2026.
+      </p>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "À propos", url: siteConfig.url + "/a-propos/" },
+  { name: "Sources", url: siteConfig.url + "/a-propos/sources/" },
+]);
+
+const sources = [
+  { cat: "Statistiques nationales", items: [
+    { name: "INSEE", url: "https://www.insee.fr/", desc: "Niveau de vie, consommation, inflation, revenus" },
+    { name: "DREES", url: "https://drees.solidarites-sante.gouv.fr/", desc: "Revenus et patrimoine des ménages" },
+    { name: "DARES", url: "https://dares.travail-emploi.gouv.fr/", desc: "Emploi, salaires, conventions collectives" },
+  ]},
+  { cat: "Banque & crédit", items: [
+    { name: "Banque de France", url: "https://www.banque-france.fr/", desc: "Taux livret A, LEP, conditions crédit" },
+    { name: "HCSF", url: "https://www.hcsf.gouv.fr/", desc: "Plafond taux d'endettement 35% (depuis 2022)" },
+    { name: "URSSAF", url: "https://www.urssaf.fr/", desc: "Cotisations sociales, calcul brut/net" },
+  ]},
+  { cat: "Aides sociales", items: [
+    { name: "CAF", url: "https://www.caf.fr/", desc: "APL, prime d'activité, allocations familiales, PAJE" },
+    { name: "Service-Public", url: "https://www.service-public.fr/", desc: "SMIC, démarches administratives, droits" },
+    { name: "monenfant.fr", url: "https://monenfant.fr/", desc: "Modes de garde, simulateur CMG" },
+  ]},
+  { cat: "Énergie & habitat", items: [
+    { name: "ADEME", url: "https://www.ademe.fr/", desc: "Prix énergie, MaPrimeRénov, sobriété" },
+    { name: "CRE", url: "https://www.cre.fr/", desc: "Tarifs réglementés électricité et gaz" },
+    { name: "ANIL", url: "https://www.anil.org/", desc: "Logement, droits du locataire, charges" },
+  ]},
+  { cat: "Étudiant", items: [
+    { name: "FAGE", url: "https://www.fage.org/", desc: "Indicateur du coût de la vie étudiante" },
+    { name: "UNEF", url: "https://unef.fr/", desc: "Enquête coût de la rentrée" },
+    { name: "CROUS", url: "https://www.crous-paris.fr/", desc: "Bourses, logement, repas" },
+  ]},
+  { cat: "Médias & analyses", items: [
+    { name: "La Finance pour Tous", url: "https://www.lafinancepourtous.com/", desc: "IEFP · vulgarisation finance perso" },
+    { name: "UFC-Que Choisir", url: "https://www.quechoisir.org/", desc: "Comparatifs panier de courses, banques, abos" },
+    { name: "OFCE", url: "https://www.ofce.sciences-po.fr/", desc: "Prévisions économiques, pouvoir d'achat" },
+  ]},
+];
+---
+
+<BaseLayout
+  title="Sources et références · Econono · données publiques"
+  description="Toutes les sources publiques utilisées par Econono : INSEE, Banque de France, HCSF, CAF, Service-Public, ADEME, FAGE. Aucune source propriétaire."
+  jsonLd={[breadcrumbs]}
+>
+  <section class="pt-10 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <a href="/a-propos/" class="hover:underline">À propos</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Sources</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Toutes nos sources · publiques uniquement</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.0;">
+        <span data-split-words class="block">D'où viennent nos chiffres.</span>
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-2xl leading-relaxed">
+        Toutes nos données chiffrées proviennent de sources publiques officielles ou d'études d'autorités reconnues. Aucune donnée propriétaire, aucune estimation interne déguisée en chiffre.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #fffefb;">
+    <div class="max-w-4xl mx-auto space-y-10">
+      {sources.map((cat) => (
+        <div>
+          <h2 class="text-2xl font-bold mb-4 pb-2 border-b border-stone-200" style="font-family: var(--font-display); color: #0f2419;">
+            {cat.cat}
+          </h2>
+          <ul class="grid sm:grid-cols-2 gap-4">
+            {cat.items.map((s) => (
+              <li class="ticket p-5">
+                <a href={s.url} target="_blank" rel="noopener" class="font-bold hover:text-[#c2410c] flex items-center gap-2" style="color: #1a3d2e;">
+                  {s.name}
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                </a>
+                <p class="text-sm text-stone-600 mt-1">{s.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 px-4" style="background: #faf7f2;">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="margin-note text-base inline-block">
+        ↳ une source manque ? Écris-nous : <a href="mailto:hello@econono.com" class="underline" style="color: #c2410c;">hello@econono.com</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
