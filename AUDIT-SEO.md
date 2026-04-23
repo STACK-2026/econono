@@ -1,23 +1,38 @@
-# Audit SEO · econono.com · 23 avril 2026
+# Audit SEO · econono.com · 23 avril 2026 (MàJ v0.2.0 après-midi)
 
-Site : Astro 6 SSG sur Cloudflare Pages · 32 pages · domaine fresh (DNS propagé depuis 2h).
+Site : Astro 6 SSG sur Cloudflare Pages · 37 pages · audit exhaustif vs standards STACK-2026 + fix global.
 
 ---
 
-## Score global · 88/100
+## Score global · 98/100 (v0.2.0) · versus 88/100 (v0.1.0)
 
-| Catégorie | Score | Statut |
-|---|---|---|
-| Crawlabilité | 100/100 | ✅ |
-| Indexabilité | 95/100 | ✅ |
-| Sécurité | 85/100 | ✅ |
-| URL structure | 100/100 | ✅ |
-| Mobile | 95/100 | ✅ |
-| Core Web Vitals | 90/100 (estimé) | ✅ |
-| Structured data | 92/100 | ✅ |
-| JavaScript rendering | 100/100 | ✅ |
-| Internal linking | 75/100 | 🟡 (vide blog) |
-| IndexNow | 100/100 | ✅ |
+| Catégorie | v0.1 | v0.2 | Statut |
+|---|---|---|---|
+| Crawlabilité | 100 | 100 | ✅ |
+| Indexabilité | 95 | 100 | ✅ (maillage auteur lié, breadcrumbs partout) |
+| Sécurité | 85 | 100 | ✅ (CSP + COOP/CORP/COEP + HSTS 2 ans + X-Frame-Options DENY + X-Permitted-Cross-Domain-Policies none) |
+| URL structure | 100 | 100 | ✅ |
+| Mobile | 95 | 100 | ✅ (PWA manifest + shortcuts + theme-color dual) |
+| Core Web Vitals | 90 | 90 (estimé) | ✅ (à valider PageSpeed) |
+| Structured data | 92 | 100 | ✅ (NewsMediaOrganization + Person + publishingPrinciples + masthead + employee[]) |
+| JavaScript rendering | 100 | 100 | ✅ |
+| Internal linking | 75 | 92 | ✅ (page /auteurs/ liée, BlogLayout author rel=author, home équipe cliquable, footer enrichi) |
+| IndexNow | 100 | 100 | ✅ |
+
+### Quick wins v0.1 réglés en v0.2
+
+- [x] ~~CSP basique dans `_headers`~~ → CSP complet avec `frame-ancestors 'none'`, `manifest-src`, `worker-src`, `upgrade-insecure-requests`
+- [x] ~~Person JSON-LD dès 1er article~~ → 5 Person JSON-LD live sur `/auteurs/` + `author @id` dans Article schema
+- [x] ~~Page `/auteurs/` listant les 5 pen names~~ → `/auteurs/` publiée avec bios, spécialités, charte éditoriale
+- [x] ~~OG image PNG 1200x630~~ → `og-default.png` généré (PIL), fallback SVG conservé
+- [x] Headers durcis au-delà du CSP : COOP + CORP + COEP unsafe-none + X-Frame DENY + HSTS 2 ans
+- [x] Schéma Organization passé en `["Organization", "NewsMediaOrganization"]` avec publishingPrinciples/ethicsPolicy/correctionsPolicy/diversityPolicy/masthead/employee[]
+
+### Encore à faire (cycle suivant)
+
+- [ ] Tester PageSpeed Insights sur 5 pages clés (LCP < 2.5s, INP < 200ms, CLS < 0.1)
+- [ ] Confirmer que IndexNow batch a bien été soumis post v0.2.0 (37 URLs)
+- [ ] Vérifier dans Bing Webmaster Tools si l'ai-sitemap.xml est accepté
 
 ---
 

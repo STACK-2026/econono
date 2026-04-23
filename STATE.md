@@ -1,15 +1,17 @@
 # STATE · Econono
 
-> Snapshot précis de l'état du projet pour reprise immédiate sans contexte. Dernière update : 23/04/2026 02h CET (post-audit 23/23 + email handover envoyé).
+> Snapshot précis de l'état du projet pour reprise immédiate sans contexte. Dernière update : 23/04/2026 20h CET (post v0.2.0 hardening STACK-2026).
 
 ---
 
 ## TL;DR · ce qui est en ligne
 
-**Live :** https://econono.com (36 pages HTML, audit 23/23 = 100%)
+**Live :** https://econono.com (37 pages HTML, audit 23/23 = 100%, v0.2.0)
 **Repo :** https://github.com/STACK-2026/econono (public, ubuntu-latest deploy)
-**Dernier commit :** `25fd6f4` "glossaire · 8 → 56 termes" (23/04/2026 02h)
-**Dernier deploy :** Cloudflare Pages preview `https://3071b4e0.econono.pages.dev` aliasé sur econono.com
+**Dernier commit :** `6bd7fe4` "durcir aux standards STACK-2026 · 16 ajouts + hardening" (23/04/2026 20h)
+**Dernier deploy :** Cloudflare Pages · tous URLs 200
+
+**v0.2.0 (23/04 aprem) ajoute :** page `/auteurs/` + 5 Person JSON-LD · favicon.ico + 6 PNG + apple-touch + maskable + mstile · manifest.webmanifest · security.txt + humans.txt + rsl.txt · opensearch.xml · browserconfig.xml · ai-sitemap.xml · og-default.png · NewsMediaOrganization complète · `_headers` durci HSTS 2 ans + X-Frame-Options DENY. Voir `CHANGELOG.md` pour le détail.
 
 ---
 
@@ -44,7 +46,9 @@ ECONONO_CF_ZONE_ID=03dce5a47d304b0e8754db8bfa5ad148
 
 ---
 
-## Pages live (36)
+## Pages live (37)
+
++1 nouvelle page v0.2.0 : `/auteurs/` (5 bios + Person JSON-LD)
 
 ### Homepage et hubs
 - `/` homepage 10 sections (Hero TextMorph, Problem, Features, HowItWorks, Stats, Témoignages composites, Équipe 5 portraits, Newsletter, FAQ, CTA)
@@ -187,7 +191,14 @@ Run : `cd site && npm run build && python3 ../scripts/full_audit.py`
 - [ ] Vérifier propriété GSC `sc-domain:econono.com` (validation DNS TXT déjà OK via CF, juste valider dans Search Console)
 - [ ] Soumettre sitemap GSC + Bing Webmaster Tools (https://econono.com/sitemap-index.xml)
 - [ ] Tester réception mail vers `hello@econono.com` (CF Email Routing → ton gmail)
-- [ ] Optionnel : générer une OG image PNG 1200x630 (on a SVG actuellement, OK mais PNG mieux pour Facebook/LinkedIn)
+- [x] ~~OG image PNG 1200x630~~ · fait v0.2.0 (23/04 aprem)
+- [x] ~~Page /auteurs/ + Person JSON-LD~~ · fait v0.2.0
+- [x] ~~Favicon multi-size + apple-touch + manifest PWA~~ · fait v0.2.0
+- [x] ~~security.txt + humans.txt + rsl.txt~~ · fait v0.2.0
+
+### Décisions utilisateur actées
+
+- **Pas de réseaux sociaux Econono** (confirmé 23/04 après-midi). `Organization.sameAs` volontairement absent. Ne pas en créer ni en suggérer dans le JSON-LD.
 
 ---
 

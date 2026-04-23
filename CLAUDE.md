@@ -33,18 +33,24 @@ Le média Econono : 12 calculateurs budget interactifs + guides + comparatifs + 
 9. **Push via GitHub Contents API** dans publish.py (pas `git push`).
 10. **`<strong>HTML</strong>` au lieu de `**markdown**`** dans les pages Astro non-`.md`.
 
-## État actuel (23/04/2026 02h, audit 23/23)
+## État actuel (23/04/2026 20h, v0.2.0 hardening STACK-2026, audit 23/23)
 
-**Live** https://econono.com · 36 pages HTML · Phase 0 clôturée.
+**Live** https://econono.com · 37 pages HTML · Phase 0 + v0.2.0 clôturées.
 
 - 12 calculateurs **TOUS interactifs** (full implementation, formules officielles)
 - 56 termes glossaire (vs 8 initial)
-- 4 pages éditoriales spécifiques : `/comparatifs/`, `/a-propos/methodologie/`, `/a-propos/sources/`, `/guides/sortir-decouvert-bancaire/`
+- 5 pages éditoriales : `/comparatifs/`, `/a-propos/methodologie/`, `/a-propos/sources/`, `/guides/sortir-decouvert-bancaire/`, **`/auteurs/`** (v0.2.0)
+- 5 Person JSON-LD publics (Léa, Marc, Sophie, Antoine, Camille)
+- NewsMediaOrganization schema complet (publishingPrinciples, ethicsPolicy, correctionsPolicy, diversityPolicy, masthead, employee[], member[])
+- PWA complet : favicon.ico + 6 PNG sizes + apple-touch + maskable + mstile + manifest.webmanifest + browserconfig.xml
+- Discovery assets : opensearch.xml, security.txt (RFC 9116), humans.txt, rsl.txt (RSL 1.0), ai-sitemap.xml (25 URLs enrichies)
+- `_headers` durci : HSTS 2 ans, X-Frame-Options DENY, frame-ancestors none, CSP strict, COOP/CORP/COEP, Permissions-Policy étendue
 - 3 workflows GH Actions : `deploy-site` (push main + workflow_run), `blog-auto` (cron 7-9h Paris × 3/jour), `rebuild-guard` (cron daily 8h23 Paris)
 - 13 GH secrets configurés
 - Intel DB augustinfoucheres : Econono inséré (id=15)
 - Audit script `scripts/full_audit.py` : 23/23 pass
 - Email handover envoyé via Resend (id `2cd0b243-b362-40f0-b6e4-267250b03695`)
+- **Pas de réseaux sociaux** (confirmé user 23/04) : `Organization.sameAs` volontairement vide. Ne pas en fabriquer.
 
 ## Architecture des pages
 

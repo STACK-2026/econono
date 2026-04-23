@@ -1,6 +1,118 @@
 # Changelog · Econono
 
-## 0.1.0 · 2026-04-23 · Phase 0 livrée
+## 0.2.0 · 2026-04-23 (après-midi) · Hardening standards STACK-2026
+
+Audit exhaustif vs standards STACK-2026 (karmastro / decryptebot / expert-menuiserie) + fix de tous les gaps identifiés. 4 commits push : `54f09c6` `ffe2efe` `ff75c9b` `6bd7fe4`.
+
+### Ajouté · 10 assets web standards
+
+- `favicon.ico` multi-résolution (16/32/48) + `favicon-{16,32,48,96,192,512}.png`
+- `apple-touch-icon.png` 180×180 (fond crème)
+- `maskable-icon-512.png` (PWA Android adaptive icon)
+- `mstile-144x144.png` (Windows tiles)
+- `og-default.png` 1200×630 (remplace le SVG, meilleure compat Facebook/LinkedIn)
+- `manifest.webmanifest` (PWA complet + 3 shortcuts calculateurs)
+- `browserconfig.xml` (Microsoft tiles)
+- `opensearch.xml` (moteur de recherche navigateur)
+- `security.txt` + `.well-known/security.txt` (RFC 9116)
+- `humans.txt` (signal équipe/tech)
+- `rsl.txt` (Robots Signaling Language 1.0, conditions de réutilisation AI)
+- `ai-sitemap.xml` (25 URLs enrichies `ai:summary` + `ai:entity` + `ai:type`)
+
+### Ajouté · page `/auteurs/`
+
+- 5 bios détaillées (Léa Dubreuil, Marc Henrion, Sophie Vallet, Antoine Berger, Camille Pellier)
+- 5 `Person` JSON-LD avec `@id` `knowsAbout` `jobTitle` `worksFor`
+- 1 `CollectionPage` JSON-LD + `BreadcrumbList`
+- TL;DR speakable
+- Charte éditoriale (sources officielles, relecture croisée, cycle révision, zéro placement caché)
+- Lien depuis grid équipe home (HOME TOUT CLICKABLE) + footer + BlogLayout auteur cliquable `rel=author`
+
+### Ajouté · BaseLayout head tags
+
+- `theme-color` dual (`prefers-color-scheme: light|dark`)
+- `color-scheme`, `generator`, `format-detection`, `application-name`
+- `apple-mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style`, `apple-mobile-web-app-title`
+- `msapplication-TileColor`, `msapplication-config`
+- `og:image:width=1200`, `og:image:height=630`, `og:image:alt`, `og:image:type`
+- `article:modified_time`, `article:author`, `article:section`, `article:tag` (via BlogLayout)
+- `twitter:image:alt`
+- `rel=alternate icon` multi-sizes (16/32/192)
+- `rel=apple-touch-icon sizes=180x180`
+- `rel=mask-icon` (Safari pinned tab)
+- `rel=manifest`
+- `rel=alternate` sitemap + ai-sitemap + RSS
+- `rel=search` opensearch
+- `rel=license` rsl.txt
+
+### Ajouté · enrichissements JSON-LD
+
+Organization → `["Organization", "NewsMediaOrganization"]` avec :
+- `@id` stable, `alternateName`, `slogan`, `foundingDate`, `foundingLocation`, `areaServed`
+- `knowsAbout` (12 sujets), `knowsLanguage`
+- `logo` ImageObject 512×512 + `image` 1200×630 (ImageObject)
+- `publishingPrinciples`, `actionableFeedbackPolicy`, `ethicsPolicy`
+- `ownershipFundingInfo`, `correctionsPolicy`, `missionCoveragePrioritiesPolicy`
+- `unnamedSourcesPolicy`, `verificationFactCheckingPolicy`, `diversityPolicy`
+- `masthead` → `/auteurs/`
+- `employee[]` + `member[]` → 5 Person `@id` des pen names
+- `contactPoint` avec `areaServed`
+
+WebSite : `@id`, `publisher @id`, `copyrightHolder @id`, `copyrightYear`, `license` rsl.txt, `SubscribeAction` vers newsletter + SearchAction.
+
+Article (BlogLayout) : `author @id` lié au Person de `/auteurs/`, `publisher @id` + `logo`, `isPartOf` WebSite, fallback image `og-default.png`.
+
+### Modifié · `_headers` durci
+
+- HSTS `max-age` passé à 2 ans (63072000)
+- `X-Frame-Options: DENY` (était SAMEORIGIN)
+- CSP `frame-ancestors 'none'` + `manifest-src 'self'` + `worker-src 'self'`
+- `Permissions-Policy` étendue (+payment, usb, magnetometer, gyroscope, accelerometer)
+- `Cross-Origin-Opener-Policy: same-origin`
+- `Cross-Origin-Resource-Policy: same-origin`
+- `Cross-Origin-Embedder-Policy: unsafe-none`
+- `X-Permitted-Cross-Domain-Policies: none`
+- `X-Robots-Tag` global `index, follow, max-image-preview:large, max-snippet:-1`
+- `Content-Type` explicite pour manifest/security/humans/rsl/llms/ai-sitemap/opensearch/browserconfig
+- Cache long-term pour `.ico` et `.png`
+
+### Modifié · `llms.txt` enrichi
+
++15 Q/R factuelles citables : SMIC net 2026, livret A 2026, LEP 2026, taux d'endettement HCSF, règle 50/30/20, reste à vivre, budget bébé, budget courses famille, plafond endettement, sortir du découvert, coût crédit, modèle éco Econono, fréquence MAJ chiffres, équipe éditoriale, fiabilité calculateurs.
+
+### Modifié · `robots.txt`
+
+Remplacement `Sitemap: /sitemap.xml` par `Sitemap: /ai-sitemap.xml` (le standard sitemap reste sous `/sitemap-index.xml`, `/sitemap.xml` redirect 301 via `_redirects`). Ajout directive `License: https://econono.com/rsl.txt`.
+
+### Modifié · `_redirects`
+
+Nettoyage résidus projet autre (métiers/témoignages). Ajout :
+- `/sitemap.xml` → `/sitemap-index.xml` 301
+- `/feed` + `/feed.xml` → `/rss.xml` 301
+
+### Fixes
+
+- `/guides/[slug].astro` : maillage interne "Pour aller plus loin" totalement refait (résidu copier-coller d'un autre projet : "25 fiches métier IA", "20 outils IA", `/guides/se-former-ia-gratuitement` remplacé par calculateurs/comparatifs/glossaire/newsletter Econono)
+- `/guides/index.astro` : `/newsletter` → `/newsletter/` + "S'abonner au Signal" → "S'abonner au Carnet" (résidu)
+- `utils/glossaire.ts` + `AutoGlossaire.astro` : `/glossaire#slug` → `/glossaire/#slug` (cohérent `trailingSlash: always`)
+- Nouvelle page `/auteurs/` ajoutée au nav footer
+
+### Résultats vérifiés live
+
+- 16/16 URLs strategies live en 200 avec Content-Type correct
+- 0 lien interne cassé sur 40 URLs crawlées
+- `full_audit.py` : 23/23 pass (100%)
+- 10 `Person` JSON-LD live sur `/auteurs/`
+- NewsMediaOrganization live sur `/`
+- manifest.webmanifest JSON valide
+
+### Décisions confirmées user
+
+- **Pas de réseaux sociaux Econono** (confirmé 23/04 après-midi) : `Organization.sameAs` volontairement absent. Aligné règle memory `feedback_sameas_owned_only.md`.
+
+---
+
+## 0.1.0 · 2026-04-23 (nuit) · Phase 0 livrée
 
 Initial release. Site complet en ligne, audit 23/23 (100%).
 

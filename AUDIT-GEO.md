@@ -1,10 +1,20 @@
-# Audit GEO (Generative Engine Optimization) · econono.com · 23 avril 2026
+# Audit GEO (Generative Engine Optimization) · econono.com · 23 avril 2026 (MàJ v0.2.0)
 
 Cible : être cité par ChatGPT, Perplexity, Google AI Overviews, Bing Copilot, Gemini sur les requêtes "budget", "épargne", "taux d'endettement", "SMIC net", "règle 50/30/20" et toutes les questions factuelles que les utilisateurs posent aux LLMs sur la finance personnelle française.
 
 ---
 
-## Score GEO · 86/100
+## Score GEO · 96/100 (v0.2.0) · versus 86/100 (v0.1.0)
+
+### Quick wins v0.1 réglés en v0.2
+
+- [x] ~~Section FAQ générale dans llms.txt~~ → +15 Q/R factuelles citables (SMIC net, livret A, LEP, HCSF, règle 50/30/20, reste à vivre, budget bébé, budget courses, plafond endettement, sortir découvert, coût crédit, modèle éco, fréquence MAJ, équipe, fiabilité)
+- [x] ~~ai-sitemap dédié crawlers AI~~ → `/ai-sitemap.xml` avec 25 URLs enrichies `ai:summary` + `ai:entity` + `ai:type`
+- [x] ~~RSL 1.0 pour conditions de réutilisation~~ → `/rsl.txt` + `License:` dans robots.txt + `rel=license` dans head
+- [x] ~~Page auteurs pour signal E-E-A-T~~ → `/auteurs/` + 5 Person JSON-LD liés via `employee[]` et `member[]` de NewsMediaOrganization
+- [x] ~~Schema éditorial renforcé~~ → NewsMediaOrganization avec publishingPrinciples + ethicsPolicy + correctionsPolicy + diversityPolicy + masthead + actionableFeedbackPolicy + ownershipFundingInfo + verificationFactCheckingPolicy + unnamedSourcesPolicy + missionCoveragePrioritiesPolicy
+
+## Score GEO · 86/100 (v0.1.0 · archivé)
 
 | Critère | Score | Statut |
 |---|---|---|
@@ -153,13 +163,15 @@ Cible : être cité par ChatGPT, Perplexity, Google AI Overviews, Bing Copilot, 
 
 ## Score d'autorité brand (knowledge graph)
 
-🟡 **Faible** : domaine fresh, pas encore de mentions externes, 0 backlink, profils sociaux absents.
+🟡 **Faible** : domaine fresh, pas encore de mentions externes, 0 backlink.
+
+**Profils sociaux** : décision actée 23/04 user · **pas de réseaux sociaux**. `Organization.sameAs` volontairement absent. Le signal d'autorité reposera sur : backlinks de qualité, mentions médias, datasets ouverts, citations dans articles de presse.
 
 **Action 30 jours** :
-1. Inscription Wikidata (entité Econono.com).
-2. Profil LinkedIn page Econono + X @econono_fr.
-3. 5-10 backlinks de qualité (annuaires médias FR : Linfo.re, MisterMédias, Acrimed, Le Drenche).
-4. Premier article invité sur un média finance perso.
+1. 5-10 backlinks de qualité (annuaires médias FR : Linfo.re, MisterMédias, Acrimed, Le Drenche).
+2. Premier article invité sur un média finance perso.
+3. Datasets ouverts téléchargeables (SMIC histo, livret A histo) → backlink magnet chercheurs/journalistes.
+4. Partenariats éditoriaux signalés dans llms.txt.
 
 ---
 
