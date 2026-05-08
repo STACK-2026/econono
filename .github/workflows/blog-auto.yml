@@ -44,12 +44,6 @@ jobs:
         working-directory: blog-auto
         run: pip install -r requirements.txt
 
-      - name: Random delay 0-30 min (anti-pattern bot)
-        run: |
-          DELAY=$((RANDOM % 1800))
-          echo "Sleeping ${DELAY}s before publish (mimic editorial cadence)..."
-          sleep $DELAY
-
       - name: Publish next due article
         working-directory: blog-auto
         env:
