@@ -1,5 +1,5 @@
 ---
-title: "SMIC net 2026 : 1 443 € par mois, combien tu gardes vraiment ?"
+title: "SMIC net 2026 : 1 443 € par mois, ce qui te reste"
 description: "En 2026, le SMIC net atteint 1 443 €/mois pour un temps plein. Découvre combien il te reste après loyer, courses et factures selon ta ville et ton profil."
 date: 2026-04-24T06:35:00+00:00
 lastReviewed: 2026-04-24
@@ -223,7 +223,7 @@ Certaines banques facturent des **frais de découvert** ou des **commissions d�
 - Choisis une **banque en ligne gratuite** (comme Boursorama, Fortuneo ou Revolut).
 - Si tu es souvent à découvert, demande un **découvert autorisé** à ta banque (moins cher que les frais de rejet).
 
-*Compare les banques* avec notre [comparateur de banques](/comparatifs/meilleures-banques-2026/).
+*Compare les banques* avec notre [comparateur de banques](/blog/comparatif-applications-budget-2026-bankin-linxo-finary-ynab/).
 
 ### 3. Les crédits à la consommation
 Les **crédits à la conso** (pour une voiture, un électroménager, etc.) peuvent sembler tentants, mais leurs taux d’intérêt sont souvent **très élevés** (jusqu’à 20% par an !).
@@ -319,7 +319,7 @@ Heureusement, des **aides existent** pour améliorer ton pouvoir d’achat : pri
 
 Pour aller plus loin :
 - Utilise notre [calculateur de budget mensuel](/calculateurs/budget-mensuel/) pour voir où tu en es.
-- Découvre nos [guides pour gérer ton budget](/guides/comment-gerer-son-budget-mensuel/) et [sortir du découvert](/guides/sortir-decouvert-bancaire/).
+- Découvre nos [guides pour gérer ton budget](/calculateurs/budget-mensuel/) et [sortir du découvert](/guides/sortir-decouvert-bancaire/).
 - Abonne-toi à notre [newsletter Le Carnet](https://econono.com/newsletter/) pour recevoir nos meilleurs conseils chaque semaine.
 
 Tu n’es pas seul·e dans cette galère. Avec les bons outils et les bonnes infos, tu peux reprendre le contrôle de ton budget. 💪

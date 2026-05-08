@@ -1,5 +1,5 @@
 ---
-title: "Budget courses couple 2026 : 480 €/mois en moyenne, comment économiser ?"
+title: "Budget courses couple 2026 : 480 €/mois en moyenne"
 description: "En 2026, un couple dépense 480 €/mois en courses (INSEE). Découvrez comment réduire votre budget courses sans renoncer à la qualité, avec nos astuces, comparati"
 date: 2026-05-05T05:36:30+00:00
 lastReviewed: 2026-05-05
@@ -652,13 +652,13 @@ Tu veux **calculer ton budget courses personnalisé** ? Utilise notre **[calcula
 ---
 
 **Liens internes utiles** :
-- [Comment réduire son budget alimentaire sans se priver ?](/blog/reduire-budget-alimentaire/)
-- [Les meilleures apps pour économiser sur ses courses](/blog/apps-economiser-courses/)
-- [Guide complet pour éviter le gaspillage alimentaire](/blog/eviter-gaspillage-alimentaire/)
-- [Comparatif des supermarchés : lequel choisir pour économiser ?](/blog/comparatif-supermarches/)
-- [Manger bio sans se ruiner : nos astuces](/blog/manger-bio-pas-cher/)
-- [Planifier ses repas : le guide ultime](/blog/planifier-repas/)
-- [Les légumineuses : des protéines pas chères et nutritives](/blog/legumineuses-proteines-pas-cheres/)
-- [Batch cooking : comment préparer ses repas à l’avance ?](/blog/batch-cooking/)
-- [Les marques distributeurs sont-elles vraiment moins chères ?](/blog/marques-distributeurs-moins-cheres/)
-- [Comment congeler ses aliments pour éviter le gaspillage ?](/blog/congelation-aliments/)
+- [Comment réduire son budget alimentaire sans se priver ?](/calculateurs/budget-courses/)
+- [Les meilleures apps pour économiser sur ses courses](/calculateurs/budget-courses/)
+- [Guide complet pour éviter le gaspillage alimentaire](/calculateurs/budget-courses/)
+- [Comparatif des supermarchés : lequel choisir pour économiser ?](/calculateurs/budget-courses/)
+- [Manger bio sans se ruiner : nos astuces](/calculateurs/budget-courses/)
+- [Planifier ses repas : le guide ultime](/calculateurs/budget-courses/)
+- [Les légumineuses : des protéines pas chères et nutritives](/calculateurs/budget-courses/)
+- [Batch cooking : comment préparer ses repas à l’avance ?](/calculateurs/budget-courses/)
+- [Les marques distributeurs sont-elles vraiment moins chères ?](/calculateurs/budget-courses/)
+- [Comment congeler ses aliments pour éviter le gaspillage ?](/calculateurs/budget-courses/)

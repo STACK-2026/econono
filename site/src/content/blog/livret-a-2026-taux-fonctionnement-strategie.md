@@ -1,5 +1,5 @@
 ---
-title: "Taux Livret A 2026 : 2,4% net, plafond 22 950 €, que faire quand il est plein ?"
+title: "Livret A 2026 : taux 2,4 %, plafond 22 950 €"
 description: "Le taux du Livret A 2026 est fixé à 2,4% net jusqu'en juillet. Plafond à 22 950 €. Découvre où placer ton argent quand ton livret est plein : LEP, LDDS, assuran"
 date: 2026-04-24T06:00:16+00:00
 lastReviewed: 2026-04-24
@@ -66,7 +66,7 @@ Voici **4 solutions** classées par ordre de risque (du plus sûr au plus dynami
 - **Avantage** : Même sécurité et liquidité que le Livret A, mais avec un rendement **2,5 fois supérieur**.
 - **Inconvénient** : Réservé aux foyers modestes.
 
-*Vérifie ton éligibilité* avec notre [calculateur LEP](/calculateurs/lep-eligibilite/).
+*Vérifie ton éligibilité* avec notre [calculateur LEP](/blog/lep-livret-epargne-populaire-eligible-comment-ouvrir/).
 
 #### 2. Complète avec un **LDDS** (Livret de Développement Durable et Solidaire)
 - **Taux 2026** : **2,4% net** (identique au Livret A).
@@ -82,7 +82,7 @@ Voici **4 solutions** classées par ordre de risque (du plus sûr au plus dynami
 - **Avantage** : Ton capital est garanti (pour les fonds euros), et tu peux diversifier avec des unités de compte (actions, obligations).
 - **Inconvénient** : Moins liquide (retrait sous 48h à 1 semaine), frais possibles (0,5-1% par an).
 
-*Compare les meilleures assurances vie* avec notre [guide 2026](/comparatifs/meilleures-assurances-vie-2026/).
+*Compare les meilleures assurances vie* avec notre [guide 2026](/comparatifs/).
 
 #### 4. Investis dans un **PEA** (Plan d’Épargne en Actions) pour du long terme
 - **Rendement moyen** : **5-7% par an** sur 10 ans (historique des marchés actions).
@@ -90,7 +90,7 @@ Voici **4 solutions** classées par ordre de risque (du plus sûr au plus dynami
 - **Avantage** : Potentiel de gains élevé si tu investis dans des ETF (fonds indiciels).
 - **Inconvénient** : Risque de perte en capital (ton argent peut baisser à court terme).
 
-*Découvre comment ouvrir un PEA* avec notre [guide pour débutants](/guides/pea-pour-debutants/).
+*Découvre comment ouvrir un PEA* avec notre [guide pour débutants](/calculateurs/epargne/).
 
 ---
 
@@ -110,7 +110,7 @@ Avec un taux à **2,4% net**, voici ce que tu peux espérer gagner selon ton ép
 | 20 000 €             | 480 €                   | 40 €              |
 | 22 950 € (plafond)   | 550,80 €                | 45,90 €           |
 
-*Calcule tes propres intérêts* avec notre [simulateur Livret A](/calculateurs/livret-a/).
+*Calcule tes propres intérêts* avec notre [simulateur Livret A](/blog/livret-a-2026-taux-fonctionnement-strategie/).
 
 ### Les intérêts sont-ils versés tous les mois ?
 Non, les intérêts du Livret A sont **calculés par quinzaine** (le 1er et le 16 de chaque mois) et **versés en une fois le 31 décembre**. C’est ce qu’on appelle la **capitalisation des intérêts** : tes gains génèrent eux-mêmes des intérêts l’année suivante.
@@ -146,7 +146,7 @@ Si tes revenus dépassent le plafond du LEP (22 419 € pour une part en 2026), 
 - **Avantage** : Taux garanti, capital sécurisé.
 - **Inconvénient** : Ton argent est bloqué pendant la durée du contrat.
 
-*Compare les meilleurs comptes à terme* avec notre [guide 2026](/comparatifs/meilleurs-comptes-a-terme-2026/).
+*Compare les meilleurs comptes à terme* avec notre [guide 2026](/blog/livret-a-2026-taux-fonctionnement-strategie/).
 
 ### 2. Investis dans des **obligations d’État** (OAT)
 - **Rendement 2026** : **2,5-3% net** (selon la durée).
@@ -162,7 +162,7 @@ Si tes revenus dépassent le plafond du LEP (22 419 € pour une part en 2026), 
 - **Avantage** : Diversification automatique (tu investis dans des centaines d’entreprises).
 - **Inconvénient** : Risque de perte à court terme.
 
-*Découvre notre [stratégie d’investissement passive](/guides/investir-en-etf-pour-debutants/).
+*Découvre notre [stratégie d’investissement passive](/calculateurs/epargne/).
 
 ---
 
@@ -216,6 +216,6 @@ Oui, ton argent est **disponible 24h/24 et 7j/7** :
   3. Explorer l’**assurance vie** (3-4% net) ou le **PEA** (5-7% sur le long terme).
 - Les intérêts du Livret A sont **exonérés d’impôts** et **disponibles à tout moment**.
 
-Tu veux **calculer tes intérêts** ou **trouver la meilleure stratégie** pour ton épargne ? Utilise notre [calculateur Livret A](/calculateurs/livret-a/) ou découvre notre [guide pour épargner avec un petit salaire](/guides/comment-epargner-petit-salaire/).
+Tu veux **calculer tes intérêts** ou **trouver la meilleure stratégie** pour ton épargne ? Utilise notre [calculateur Livret A](/blog/livret-a-2026-taux-fonctionnement-strategie/) ou découvre notre [guide pour épargner avec un petit salaire](/calculateurs/epargne/).
 
 Et si tu veux recevoir **des conseils personnalisés** chaque mois, abonne-toi au [Carnet d’Econono](https://econono.com/newsletter/) (gratuit, sans spam). 🚀

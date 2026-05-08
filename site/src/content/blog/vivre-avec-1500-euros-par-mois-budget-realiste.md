@@ -1,5 +1,5 @@
 ---
-title: "Vivre avec 1 500 € par mois en 2026 : budget type et astuces réalistes"
+title: "Vivre avec 1 500 € par mois 2026 : budget type"
 description: "Avec 1 500 € par mois en 2026, comment boucler ton budget ? Découvre un budget type poste par poste, les aides à activer (APL, prime d'activité) et des astuces "
 date: 2026-04-25T06:08:05+00:00
 lastReviewed: 2026-04-25
@@ -79,7 +79,7 @@ La localisation change **tout**. Voici ce à quoi tu peux t’attendre selon où
 - Énergie : 100 €
 - **Reste à vivre** : **630 €** pour le reste (loisirs, épargne, imprévus).
 
-👉 *Tu veux savoir si ta ville est "budget-friendly" ? Consulte notre [guide des villes où vivre avec un petit salaire](/guides/villes-petit-salaire/).*
+👉 *Tu veux savoir si ta ville est "budget-friendly" ? Consulte notre [guide des villes où vivre avec un petit salaire](/actu/categorie/logement/).*
 
 ### 2.2. Dans une grande ville (Lyon, Bordeaux, Toulouse)
 **Exemple : Lyon, Bordeaux, Nantes**
@@ -148,7 +148,7 @@ Tu ne profites pas de toutes les aides auxquelles tu as droit ? Voici celles qui
   - Sur [le site de la CAF](https://www.caf.fr/) ou [MSA](https://www.msa.fr/) (pour les agriculteurs).
   - Délai de traitement : **1 mois**.
 
-👉 *Tu veux estimer ton éligibilité ? Utilise notre [calculateur de prime d’activité](/calculateurs/prime-activite/).*
+👉 *Tu veux estimer ton éligibilité ? Utilise notre [calculateur de prime d’activité](/calculateurs/salaire-net/).*
 
 ### 3.3. Le LEP (Livret d’Épargne Populaire) : l’épargne qui rapporte sans risque
 - **Taux en 2026** : **5%** (contre 3% pour le Livret A).
@@ -192,7 +192,7 @@ Avec 1 500 € par mois, chaque euro compte. Voici **10 astuces testées et appr
 - **Utilise les applis anti-gaspi** (Too Good To Go, Phenix) : des paniers de produits invendus à **3-5 €**.
 - **Cuisine en grande quantité** et congèle : un plat maison coûte **1-2 €/portion** contre 5-10 € pour un plat préparé.
 
-👉 *Tu veux un exemple de menu à 250 €/mois ? Consulte notre [guide pour manger à petit prix](/guides/manger-pas-cher/).*
+👉 *Tu veux un exemple de menu à 250 €/mois ? Consulte notre [guide pour manger à petit prix](/calculateurs/budget-courses/).*
 
 ### 4.2. Le logement : comment payer moins de loyer
 - **La colocation** : un T3 à 900 €/mois revient à **300-450 €/personne**.
@@ -208,7 +208,7 @@ Avec 1 500 € par mois, chaque euro compte. Voici **10 astuces testées et appr
 - **Les abonnements réduits** : si tu as moins de 26 ans ou que tu es en situation précaire, tu peux bénéficier de **50% de réduction** sur les abonnements transports.
 - **La marche** : pour les trajets < 3 km, c’est **gratuit et bon pour la santé** !
 
-👉 *Tu veux comparer les coûts ? Utilise notre [calculateur de budget transport](/calculateurs/budget-transport/).*
+👉 *Tu veux comparer les coûts ? Utilise notre [calculateur de budget transport](/calculateurs/budget-mensuel/).*
 
 ### 4.4. Les loisirs : comment s’amuser sans se ruiner
 - **Les bibliothèques** : livres, DVD, jeux vidéo, **gratuit**.
@@ -223,7 +223,7 @@ Avec 1 500 € par mois, chaque euro compte. Voici **10 astuces testées et appr
 - **Regroupe tes assurances** (habitation + voiture) chez le même assureur pour avoir une réduction.
 - **Opte pour une mutuelle solidaire** (ex : Harmonie Mutuelle) si tes revenus sont faibles.
 
-👉 *Tu veux un comparatif des mutuelles pas chères ? Consulte notre [guide des mutuelles low-cost](/guides/mutuelles-pas-cheres/).*
+👉 *Tu veux un comparatif des mutuelles pas chères ? Consulte notre [guide des mutuelles low-cost](/calculateurs/budget-mensuel/).*
 
 ---
 
@@ -270,7 +270,7 @@ Même avec un budget ultra-serré, certains postes sont **difficiles à réduire
 3. **Déménage** dans une zone moins chère (même si c’est en banlieue).
 4. **Augmente tes revenus** avec un job complémentaire (livraison, baby-sitting, etc.).
 
-👉 *Tu veux des idées pour gagner un peu plus ? Lis notre [guide des jobs complémentaires](/guides/jobs-complementaires/).*
+👉 *Tu veux des idées pour gagner un peu plus ? Lis notre [guide des jobs complémentaires](/calculateurs/salaire-net/).*
 
 ### Q3 : Quelles sont les aides pour les courses alimentaires ?
 **Plusieurs options existent** :
@@ -287,7 +287,7 @@ Même avec un budget ultra-serré, certains postes sont **difficiles à réduire
 4. **Demande le chèque énergie** (automatique si tu es éligible).
 5. **Compare les fournisseurs** (Engie, EDF, TotalEnergies) pour trouver le moins cher.
 
-👉 *Tu veux un guide complet ? Consulte notre [article sur les économies d’énergie](/guides/economies-energie/).*
+👉 *Tu veux un guide complet ? Consulte notre [article sur les économies d’énergie](/actu/categorie/energie/).*
 
 ### Q5 : Est-ce que je peux partir en vacances avec 1 500 €/mois ?
 **Oui, mais il faut être malin** :

@@ -1,5 +1,5 @@
 ---
-title: "Sortir du découvert en 30 jours : plan concret 2026 (sans morale)"
+title: "Sortir du découvert en 30 jours : plan concret"
 description: "Découvert bancaire ? Voici un plan étape par étape pour sortir des agios, négocier ta banque et activer 5 aides méconnues. Données 2026 + calculateurs gratuits."
 date: 2026-04-28T05:55:06+00:00
 lastReviewed: 2026-04-28
@@ -159,7 +159,7 @@ Si ta banque refuse de t’aider, **tu as le droit de changer**. Voici les banqu
 | Boursorama      | 0                               | Oui (jusqu’à 1 000 €)         | 7%                  |
 | Crédit Mutuel   | 60                              | Oui (jusqu’à 1 500 €)         | 12%                 |
 
-*→ Compare les offres avec notre [comparateur de banques](/comparatifs/meilleures-banques-2026/).*
+*→ Compare les offres avec notre [comparateur de banques](/blog/comparatif-applications-budget-2026-bankin-linxo-finary-ynab/).*
 
 ---
 
@@ -197,7 +197,7 @@ Un livret d’épargne **réservé aux ménages modestes**, avec un taux à **5%
 - **Exemple** : si tu places 1 000 €, tu gagnes **50 €/an** (sans risque et sans impôts).
 
 **Comment l’ouvrir ?**
-1. Vérifie ton éligibilité avec notre [calculateur LEP](/calculateurs/le-livret-epargne-populaire/).
+1. Vérifie ton éligibilité avec notre [calculateur LEP](/blog/lep-livret-epargne-populaire-eligible-comment-ouvrir/).
 2. Présente-toi en agence avec :
    - Ta pièce d’identité.
    - Ton dernier avis d’imposition.
@@ -289,7 +289,7 @@ Même après avoir négocié avec ta banque, **il reste des frais que tu peux é
 - **Les cartes premium** : 10 €/mois pour une carte Gold (alors qu’une carte classique est gratuite).
   *→ Solution* : demande une carte classique (Visa Classic ou Mastercard Standard).
 
-*→ Compare les frais bancaires avec notre [comparateur de banques](/comparatifs/meilleures-banques-2026/).*
+*→ Compare les frais bancaires avec notre [comparateur de banques](/blog/comparatif-applications-budget-2026-bankin-linxo-finary-ynab/).*
 
 ### 4 · Vends ce que tu n’utilises plus
 **1 Français sur 2 a des objets inutilisés chez lui** (ADEME 2025). Voici comment les vendre rapidement :
@@ -371,7 +371,7 @@ Pour **éviter de retomber dans le découvert**, applique ces 3 règles :
 2. **Utilise la règle des 50/30/20** : 50% pour les besoins, 30% pour les envies, 20% pour l’épargne.
 3. **Suis ton budget** avec une appli gratuite comme [Bankin’](https://www.bankin.com/) ou [Linxo](https://www.linxo.com/).
 
-*→ Notre [guide pour gérer son budget mensuel](/guides/comment-gerer-son-budget-mensuel/) t’explique comment faire.*
+*→ Notre [guide pour gérer son budget mensuel](/calculateurs/budget-mensuel/) t’explique comment faire.*
 
 ### 5 · Que faire si je ne peux vraiment pas payer mes factures ?
 Si tu ne peux **vraiment pas payer tes factures** (électricité, loyer, crédit), voici les étapes à suivre :

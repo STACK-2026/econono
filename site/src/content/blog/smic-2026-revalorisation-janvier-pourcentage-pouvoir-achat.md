@@ -1,5 +1,5 @@
 ---
-title: "SMIC 2026 : revalorisation, gain net mensuel et impact sur ton budget"
+title: "SMIC 2026 : revalorisation et gain net mensuel"
 description: "Le SMIC 2026 augmente de +2,2% au 1er janvier. Découvre ton gain net mensuel (+32€/mois), le nouveau montant brut/net, et comment cette hausse affecte tes aides"
 date: 2026-05-02T07:18:12+00:00
 lastReviewed: 2026-05-02
@@ -118,7 +118,7 @@ Voici comment le SMIC 2026 se compare à l’inflation sur les principaux postes
 
 **Conclusion** : Sur presque tous les postes, le SMIC 2026 **ne compense pas** l’inflation 2025. Sauf si tu dépenses surtout en loisirs ou transports, tu risques de **perdre du pouvoir d’achat** malgré la hausse.
 
-👉 *Tu veux savoir comment **protéger ton budget** face à l’inflation ? Lis notre guide [Comment épargner avec un petit salaire](/guides/comment-epargner-petit-salaire/).*
+👉 *Tu veux savoir comment **protéger ton budget** face à l’inflation ? Lis notre guide [Comment épargner avec un petit salaire](/calculateurs/epargne/).*
 
 ---
 
@@ -215,7 +215,7 @@ Si tu as déjà un matelas de sécurité, tu peux utiliser ces 32 € pour :
 - **Te former** (MOOC gratuits, livres, formations en ligne) pour augmenter tes revenus à long terme.
 - **Aider un proche** (famille, ami·e dans le besoin).
 
-👉 *Tu veux en savoir plus sur l’investissement avec un petit budget ? Lis notre guide [Investir quand on a un petit salaire](/guides/investir-petit-salaire/).*
+👉 *Tu veux en savoir plus sur l’investissement avec un petit budget ? Lis notre guide [Investir quand on a un petit salaire](/calculateurs/epargne/).*
 
 ---
 

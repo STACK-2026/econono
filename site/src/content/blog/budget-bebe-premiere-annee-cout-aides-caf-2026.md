@@ -1,5 +1,5 @@
 ---
-title: "Budget bébé première année 2026 : coût réel entre 8 000 € et 12 000 €"
+title: "Budget bébé première année 2026 : 8 000 à 12 000 €"
 description: "Un bébé coûte entre 8 000 € et 12 000 € la première année en 2026, aides CAF déduites. Découvre le détail par poste + aides 2026 pour anticiper ton budget."
 date: 2026-05-06T06:32:02+00:00
 lastReviewed: 2026-05-06

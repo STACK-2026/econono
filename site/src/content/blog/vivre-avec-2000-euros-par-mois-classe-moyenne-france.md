@@ -1,5 +1,5 @@
 ---
-title: "Vivre avec 2000 € par mois en 2026 : budget type, épargne, immobilier"
+title: "Vivre avec 2000 € par mois : budget type 2026"
 description: "Avec 2000 € net/mois en 2026, combien peux-tu épargner, louer ou acheter ? Budget détaillé, postes de dépenses, et astuces pour optimiser ton pouvoir d'achat."
 date: 2026-04-26T07:40:58+00:00
 lastReviewed: 2026-04-26
@@ -41,8 +41,8 @@ Avec **2000 € net par mois**, tu te situes dans le **4ème décile** des reven
 En 2026, avec l’inflation et les revalorisations du SMIC, **2000 € net/mois reste un salaire confortable**, mais pas suffisant pour vivre sans compter dans les grandes villes.
 
 👉 *Tu veux comparer avec d’autres budgets ?*
-- [Vivre avec 1500 € net/mois : le guide complet](/guides/budget-1500-euros/)
-- [Vivre avec 2500 € net/mois : épargne, immobilier, loisirs](/guides/budget-2500-euros/)
+- [Vivre avec 1500 € net/mois : le guide complet](/blog/vivre-avec-1500-euros-par-mois-budget-realiste/)
+- [Vivre avec 2500 € net/mois : épargne, immobilier, loisirs](/blog/vivre-avec-2000-euros-par-mois-classe-moyenne-france/)
 
 ---
 
@@ -222,7 +222,7 @@ Avec 2000 € net, **chaque euro compte**. Voici **5 astuces concrètes** pour o
 - **Découvert** : négocie ton autorisation de découvert ou utilise une carte à débit différé.
 
 👉 *Compare les banques ici* :
-→ [Comparatif des meilleures banques en ligne 2026](/comparatifs/meilleures-banques-en-ligne/)
+→ [Comparatif des meilleures banques en ligne 2026](/blog/comparatif-applications-budget-2026-bankin-linxo-finary-ynab/)
 
 ### 5️⃣ **Gagne de l’argent avec tes loisirs**
 - **Cashback** : utilise des apps comme **iGraal** ou **Shopmium** pour récupérer 5-10 % sur tes achats.
@@ -337,7 +337,7 @@ Privilégie une **banque en ligne** (0 € de frais) ou une **néobanque** (Revo
 - **Revolut** : idéal pour les voyages (pas de frais à l’étranger).
 
 👉 *Compare les banques ici* :
-→ [Comparatif des meilleures banques en ligne 2026](/comparatifs/meilleures-banques-en-ligne/)
+→ [Comparatif des meilleures banques en ligne 2026](/blog/comparatif-applications-budget-2026-bankin-linxo-finary-ynab/)
 
 ---
 

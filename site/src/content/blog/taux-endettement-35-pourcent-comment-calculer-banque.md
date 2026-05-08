@@ -1,5 +1,5 @@
 ---
-title: "Calcul taux d'endettement 2026 : la règle des 35% expliquée (calcul officiel HCSF)"
+title: "Taux d'endettement 2026 : la règle des 35 % HCSF"
 description: "Ton taux d'endettement (35% max) détermine si tu peux emprunter. Calcul officiel HCSF, dérogations, conséquences si dépassé. Exemples concrets pour 8k-15k€/mois"
 date: 2026-05-04T07:09:01+00:00
 lastReviewed: 2026-05-04
@@ -126,7 +126,7 @@ C’est la question que tout le monde se pose : **"Est-ce que je peux encore emp
 
 → **Verdict** : tu peux emprunter pour un T4 à 100 000 € (mensualité ~550 €/mois), mais ton reste à vivre sera serré. La banque peut refuser si tes charges fixes (loyer, assurances, etc.) sont élevées.
 
-👉 *Tu veux simuler ton cas précis ? Utilise notre [calculateur de capacité d’emprunt](/calculateurs/capacite-emprunt/) (il prend en compte tes crédits en cours).*
+👉 *Tu veux simuler ton cas précis ? Utilise notre [calculateur de capacité d’emprunt](/calculateurs/cout-credit/) (il prend en compte tes crédits en cours).*
 
 ---
 
@@ -188,7 +188,7 @@ Si tu as plusieurs crédits en cours (auto, conso, immobilier), tu peux les regr
 - La durée du prêt s’allonge (donc le coût total augmente).
 - Les taux sont souvent plus élevés que pour un prêt immobilier classique.
 
-👉 *Tu veux savoir si un rachat de crédit est intéressant pour toi ? Utilise notre [simulateur de rachat de crédit](/calculateurs/rachat-credit/).*
+👉 *Tu veux savoir si un rachat de crédit est intéressant pour toi ? Utilise notre [simulateur de rachat de crédit](/calculateurs/cout-credit/).*
 
 ### 4. Tu peux augmenter ton apport
 Plus ton apport est élevé, moins tu as besoin d’emprunter, donc ton taux d’endettement baisse. **Exemple** :
@@ -246,7 +246,7 @@ Parfois, la solution la plus simple est de revoir ses ambitions à la baisse :
 - Choisir un quartier moins cher.
 - Attendre quelques années pour épargner plus.
 
-👉 *Tu veux savoir quel budget immobilier est réaliste pour toi ? Utilise notre [calculateur de budget immobilier](/calculateurs/budget-immobilier/).*
+👉 *Tu veux savoir quel budget immobilier est réaliste pour toi ? Utilise notre [calculateur de budget immobilier](/actu/categorie/logement/).*
 
 ---
 

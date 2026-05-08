@@ -1,5 +1,5 @@
 ---
-title: "Reste à vivre 2026 : calcul officiel, barèmes bancaires et pièges à éviter"
+title: "Reste à vivre 2026 : calcul officiel et pièges"
 description: "Découvre comment calculer ton reste à vivre avec la formule officielle, les barèmes des banques (700€/pers, 1100€/couple) et les pièges à éviter. Outils gratuit"
 date: 2026-05-01T05:04:01+00:00
 lastReviewed: 2026-05-01
@@ -343,7 +343,7 @@ Ton **reste à vivre**, c’est ce qu’il te reste après avoir payé tes charg
 
 👉 **Pour aller plus loin** :
 - Utilise [notre calculateur de reste à vivre](/calculateurs/reste-a-vivre/) pour avoir une estimation personnalisée.
-- Télécharge [notre guide "Comment gérer son budget mensuel"](/guides/comment-gerer-son-budget-mensuel/) pour des conseils pas à pas.
+- Télécharge [notre guide "Comment gérer son budget mensuel"](/calculateurs/budget-mensuel/) pour des conseils pas à pas.
 - Abonne-toi à [notre newsletter Le Carnet](https://econono.com/newsletter/) pour recevoir des astuces budget chaque semaine.
 
 Et rappelle-toi : **tu n’es pas seul·e**. Des millions de Français·es gèrent un budget serré chaque mois. L’important, c’est d’avoir les bons outils et les bonnes infos pour reprendre le contrôle.

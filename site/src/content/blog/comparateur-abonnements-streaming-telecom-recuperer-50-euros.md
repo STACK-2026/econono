@@ -1,5 +1,5 @@
 ---
-title: "Réduire tes abonnements mensuels : méthode 30 min pour économiser 50 €/mois"
+title: "Réduire tes abonnements : 50 €/mois récupérés"
 description: "Découvre comment auditer tes abonnements en 30 min, identifier les doublons et récupérer 50 €/mois. Outils gratuits, étapes claires et astuces de négociation."
 date: 2026-05-07T06:39:31+00:00
 lastReviewed: 2026-05-07

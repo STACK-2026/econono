@@ -1,5 +1,5 @@
 ---
-title: "Meilleur coach budget France 2026 : qui suivre vraiment ? Comparatif"
+title: "Meilleur coach budget France 2026 : qui suivre"
 description: "Découvre les 7 meilleurs coachs budget et créateurs finances perso en France en 2026 : méthodes, tarifs, public idéal et pièges à éviter. Tableau comparatif + a"
 date: 2026-04-30T06:25:24+00:00
 lastReviewed: 2026-04-30

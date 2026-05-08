@@ -1,5 +1,5 @@
 ---
-title: "Règle 50/30/20 : la méthode budget qui marche en France ? (2026)"
+title: "Règle 50/30/20 : la méthode budget en France 2026"
 description: "La règle 50/30/20 expliquée simplement : comment l'appliquer avec un SMIC, 2 000 € ou 4 000 €/mois ? Calculs concrets, limites en France et alternatives."
 date: 2026-04-27T07:37:02+00:00
 lastReviewed: 2026-04-27
@@ -87,7 +87,7 @@ Pour chaque cas, on a calculé :
 **Solution** :
 - **Réduis tes besoins** : colocation, logement social, aides (APL, chèque énergie).
 - **Augmente tes revenus** : heures sup, job étudiant, freelance.
-- **Oublie la règle 50/30/20** et passe à une méthode plus flexible, comme les **enveloppes** ([lien vers notre guide](/guides/methode-enveloppes-budget/)).
+- **Oublie la règle 50/30/20** et passe à une méthode plus flexible, comme les **enveloppes** ([lien vers notre guide](/calculateurs/regle-50-30-20/)).
 
 ---
 
@@ -164,7 +164,7 @@ Pour chaque cas, on a calculé :
 **Solutions** :
 - **Réduis ta consommation** : ampoules LED, chauffage à 19°C, douches courtes.
 - **Aides** : chèque énergie (jusqu’à 277 €/an, Service-Public 2024), prime rénovation (ADEME).
-- **Compare les fournisseurs** : [notre comparateur d’énergie](/comparatifs/meilleurs-fournisseurs-energie-2026/).
+- **Compare les fournisseurs** : [notre comparateur d’énergie](/actu/categorie/energie/).
 
 ### 3. Les imprévus (voiture, santé) bousculent tout
 **Problème** :
@@ -174,15 +174,15 @@ Pour chaque cas, on a calculé :
 **Solutions** :
 - **Fonds d’urgence** : 3 à 6 mois de dépenses de côté (ex : 3 000 € pour un SMIC).
 - **Assurances** : complémentaire santé (mutuelle), assurance auto tous risques si tu roules beaucoup.
-- **Crédit à la consommation** : à éviter, mais si c’est urgent, compare les taux ([notre guide](/guides/credit-conso-risques/)).
+- **Crédit à la consommation** : à éviter, mais si c’est urgent, compare les taux ([notre guide](/blog/sortir-decouvert-bancaire-plan-30-jours/)).
 
 ### 4. La règle ne marche pas pour les petits budgets
 **Problème** :
 - Avec un **SMIC ou 1 500 €/mois**, tu n’as pas assez pour couvrir tes besoins (50%) + épargner (20%).
 
 **Solutions** :
-- **Méthode des enveloppes** : tu répartis ton argent en cash ou comptes séparés ([notre guide](/guides/methode-enveloppes-budget/)).
-- **Kakebo** : un carnet de budget japonais pour suivre tes dépenses au jour le jour ([lien vers notre article](/guides/kakebo-budget/)).
+- **Méthode des enveloppes** : tu répartis ton argent en cash ou comptes séparés ([notre guide](/calculateurs/regle-50-30-20/)).
+- **Kakebo** : un carnet de budget japonais pour suivre tes dépenses au jour le jour ([lien vers notre article](/blog/regle-50-30-20-budget-explication-france-2026/)).
 - **Aides sociales** : RSA, prime d’activité, allocations logement (CAF).
 
 ---
@@ -208,7 +208,7 @@ Si la règle 50/30/20 ne te convient pas, voici 3 autres méthodes testées et a
 - Les personnes qui ont du mal à suivre leurs dépenses.
 - Les petits budgets (SMIC, étudiants).
 
-**Lien utile** : [Notre guide complet sur la méthode des enveloppes](/guides/methode-enveloppes-budget/).
+**Lien utile** : [Notre guide complet sur la méthode des enveloppes](/calculateurs/regle-50-30-20/).
 
 ---
 
@@ -251,7 +251,7 @@ Si la règle 50/30/20 ne te convient pas, voici 3 autres méthodes testées et a
 - Les personnes qui aiment écrire et suivre leurs dépenses au jour le jour.
 - Les budgets serrés (étudiants, freelances).
 
-**Lien utile** : [Notre article sur le Kakebo](/guides/kakebo-budget/).
+**Lien utile** : [Notre article sur le Kakebo](/blog/regle-50-30-20-budget-explication-france-2026/).
 
 ---
 
