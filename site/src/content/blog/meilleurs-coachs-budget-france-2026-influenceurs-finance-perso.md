@@ -110,8 +110,6 @@ Voici un **tableau récapitulatif** pour comparer en un clin d’œil. Les déta
 ## Portrait détaillé : qui sont ces coachs budget ?
 
 ### 1. Heu?reka · Le prof qui rend la finance fun
-![ALT Heu?reka explique la finance avec des exemples concrets](IMAGE_1)
-
 **Qui c’est ?**
 Heu?reka, c’est **Thibault**, un ancien prof de maths qui a troqué les équations contre des vidéos YouTube. Son objectif ? Te faire comprendre la finance **sans t’endormir**.
 

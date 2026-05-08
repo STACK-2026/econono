@@ -42,8 +42,6 @@ Le **LEP (Livret d’Épargne Populaire)** est un **livret d’épargne régleme
 **Exemple concret** :
 Si tu places **5 000 €** sur un LEP à 3,5%, tu gagnes **175 € par an** (5 000 × 3,5%). Sur **10 000 €**, c’est **350 €/an** - soit **29 € par mois** sans rien faire.
 
-![Un couple regarde un relevé bancaire avec un taux à 3,5% et sourit](IMAGE_1)
-
 ---
 
 ## Es-tu éligible au LEP en 2026 ? · Vérifie ton revenu fiscal de référence (RFR)
@@ -133,8 +131,6 @@ Si tu transfères tout sur un LEP à 3,5% :
 → **+50 € de gains en plus** (soit **350 €/an**).
 
 👉 **Calcule tes gains exacts** avec notre [simulateur LEP](/calculateurs/lep-gains/).
-
-![Un graphique comparant les gains du LEP (3,5%) vs Livret A (3%) sur 10 000 €](IMAGE_2)
 
 ---
 

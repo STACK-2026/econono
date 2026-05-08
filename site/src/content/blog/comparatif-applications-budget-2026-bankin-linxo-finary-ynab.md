@@ -45,8 +45,6 @@ Tu te dis peut-être : *"Pourquoi payer pour une appli alors que je peux noter m
 
 3. **Tu épargnes sans y penser** · Certaines applis arrondissent tes dépenses à l’euro supérieur et mettent la différence de côté. D’autres te proposent des défis d’épargne (ex : "Épargne 50 € ce mois-ci"). En moyenne, les utilisateurs épargnent **12% de plus** que ceux qui gèrent leur budget à la main (source : DREES, 2025).
 
-![ALT application budget interface claire et graphiques dépenses](IMAGE_1)
-
 ---
 
 ## Comment on a testé les 7 applications ?
@@ -366,8 +364,6 @@ Tu es perdu·e parmi toutes ces applis ? Voici notre **résumé ultra-rapide** p
 | **Étudiant·e**        | Plan & Multiply         | Bankin’              |
 | **Freelance**         | Origin                  | -                    |
 | **Voyageur·se**       | Spendee                 | Bankin’              |
-
-![ALT tableau comparatif applications budget 2026](IMAGE_2)
 
 ---
 

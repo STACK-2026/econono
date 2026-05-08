@@ -79,8 +79,6 @@ C’est le poste le plus impressionnant, mais aussi celui où tu peux économise
 
 **Astuce** : Beaucoup de parents vendent leur équipement de bébé à prix réduit après 1 an (Leboncoin, groupes Facebook "Bébé occasion [ta ville]"). Tu peux aussi emprunter à des amis ou à la famille.
 
-![ALT liste équipement bébé essentiel et superflu](IMAGE_1)
-
 ---
 
 ## Garde d’enfant : 4 000 € à 7 000 €, le poste le plus cher

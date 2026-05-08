@@ -70,8 +70,6 @@ Pour chaque cas, on a calculé :
 - Assurances : **30 €/mois** (habitation + santé).
 - Téléphone/internet : **30 €/mois**.
 
-![ALT exemple budget 50 30 20 SMIC 2000 3000 4000 euros](IMAGE_1)
-
 ### 1. SMIC net (1 443 €/mois) : la règle 50/30/20 est-elle réaliste ?
 | Catégorie       | Budget théorique (50/30/20) | Budget réel (exemple) | Différence |
 |-----------------|----------------------------|-----------------------|------------|

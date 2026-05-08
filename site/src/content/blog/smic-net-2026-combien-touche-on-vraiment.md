@@ -43,8 +43,6 @@ Voici les chiffres officiels pour 2026, selon [Service-Public.fr](https://www.se
 
 *Petit rappel* : Le **SMIC brut** est le salaire avant cotisations sociales, tandis que le **SMIC net** est ce que tu touches réellement sur ton compte. Les cotisations sociales représentent environ **18,5%** du brut (soit 323,92 € en 2026).
 
-![SMIC net 2026 en France par mois pour un temps plein](IMAGE_1)
-
 ---
 
 ## SMIC net 2026 selon ton profil : CDI, alternance, fonction publique, temps partiel
