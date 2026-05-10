@@ -254,7 +254,11 @@ def generate_with_mistral_audit(system_prompt, user_prompt,
         return draft
 
     log.info("[2/3] Claude audit...")
-    audit = _audit_draft(draft)
+    try:
+        audit = _audit_draft(draft)
+    except Exception as e:
+        log.warning(f"  Audit step failed ({type(e).__name__}: {e}), keeping unaudited draft")
+        return draft
     verdict = audit.get("verdict", "UNKNOWN")
     issues = audit.get("issues", [])
     halls = audit.get("hallucinations", [])

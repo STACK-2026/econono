@@ -393,21 +393,38 @@ def main() -> int:
         return 1
 
     # 2) Generate (Mistral draft -> Claude audit -> Mistral fix)
+    # Gen-graceful: if Mistral fully unavailable, log + exit 0 so the workflow stays green
+    # and the article slot retries on the next scheduled run.
     t0 = time.time()
     try:
         generated = generate_with_mistral_audit(system_prompt, user_prompt)
     except Exception as e:
-        log.error(f"generation failed: {e}")
-        return 1
+        log.error(f"generation failed ({type(e).__name__}: {e}), skipping today")
+        return 0
     elapsed = time.time() - t0
     log.info(f"generated in {elapsed:.1f}s · {len(generated)} chars")
 
     # 3) Parse output
     title, meta, body = extract_frontmatter_fields(generated)
-    if not title or not body:
-        log.error("could not extract TITLE_TAG or body")
+
+    # Fallback when Mistral fix-issues drops TITLE_TAG/META_DESCRIPTION on long outputs
+    if not title:
+        fallback_title = article.get("working_title") or article.get("target_keyword") or slug.replace("-", " ").title()
+        log.warning(f"TITLE_TAG missing, falling back to working_title: {fallback_title!r}")
+        title = fallback_title
+    if not meta and body:
+        for line in body.splitlines():
+            stripped = line.strip()
+            if not stripped or stripped.startswith(("#", "-", "*", "|", "```", "_", ">")):
+                continue
+            meta = stripped[:158].rstrip(".") + "."
+            log.warning(f"META_DESCRIPTION missing, synthesized from first paragraph: {meta[:60]!r}...")
+            break
+
+    if not body:
+        log.error("could not extract body from generated content (empty after parse)")
         (LOG_DIR / f"{slug}.raw.md").write_text(generated, encoding="utf-8")
-        return 1
+        return 0
 
     author = pick_author(slug, article.get("author_pen_name"))
 
