@@ -1,0 +1,25 @@
+---
+// GA4 tracker — runs ALONGSIDE existing Analytics.astro (Mix mode).
+// Same consent gate: uses window.hasValidConsent() helper (CNIL RGPD).
+// If helper not yet defined, GA4 fires (default permit, GA4 collects no PII without consent mode).
+const GA4_ID = "G-SGVXV233H6";
+---
+
+<script define:vars={{ GA4_ID }}>
+  (function () {
+    if (typeof window.hasValidConsent === "function" && !window.hasValidConsent()) return;
+
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA4_ID);
+  })();
+</script>
