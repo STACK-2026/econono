@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs } from "../../../utils/seo";
 
@@ -107,6 +108,8 @@ const breadcrumbs = jsonLdBreadcrumbs([
       </ul>
     </article>
   </section>
+
+  <RelatedBlogsByKeywords keywords={["reste a vivre", "reste à vivre", "vivre avec"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
 </BaseLayout>
 
 <script>

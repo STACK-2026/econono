@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  keywords: string[];
+  max?: number;
+  eyebrow?: string;
+}
+
+const { keywords, max = 4, eyebrow = "Pour creuser" } = Astro.props;
+
+let allPosts: Awaited<ReturnType<typeof getCollection>> = [];
+try {
+  allPosts = await getCollection("blog", ({ data }) => !data.draft);
+} catch {
+  allPosts = [];
+}
+
+const needleSet = new Set(keywords.map((k) => k.toLowerCase().trim()).filter(Boolean));
+
+const scored = allPosts.map((p) => {
+  const haystack = [
+    p.data.title,
+    p.data.description,
+    (p.data.keywords || ""),
+    (p.data.tags || []).join(" "),
+    p.id,
+  ]
+    .join(" ")
+    .toLowerCase();
+  let score = 0;
+  for (const n of needleSet) {
+    if (haystack.includes(n)) score += 1;
+  }
+  return { post: p, score };
+});
+
+const ranked = scored
+  .filter((s) => s.score > 0)
+  .sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.post.data.date.valueOf() - a.post.data.date.valueOf();
+  })
+  .slice(0, max)
+  .map((s) => s.post);
+---
+
+{ranked.length > 0 && (
+  <aside class="mt-6 pt-5 border-t border-dashed border-stone-300" aria-label={eyebrow}>
+    <p class="font-mono text-[10px] uppercase tracking-widest mb-3" style="color: #c2410c;">{eyebrow}</p>
+    <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 list-none p-0 m-0">
+      {ranked.map((post) => (
+        <li class="m-0">
+          <a href={`/blog/${post.id}/`} class="text-sm hover:underline leading-snug" style="color: #1a3d2e;">
+            → {post.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

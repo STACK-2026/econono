@@ -1,0 +1,100 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  currentSlug: string;
+  currentTags?: string[];
+  currentCategory?: string;
+  currentKeywords?: string;
+  max?: number;
+}
+
+const { currentSlug, currentTags = [], currentCategory, currentKeywords = "", max = 3 } = Astro.props;
+
+let allPosts: Awaited<ReturnType<typeof getCollection>> = [];
+try {
+  allPosts = await getCollection("blog", ({ data }) => !data.draft);
+} catch {
+  allPosts = [];
+}
+
+const currentKwSet = new Set(
+  currentKeywords.split(",").map((k) => k.trim().toLowerCase()).filter(Boolean)
+);
+const currentTagsLc = currentTags.map((t) => t.toLowerCase());
+
+const scored = allPosts
+  .filter((p) => p.id !== currentSlug)
+  .map((p) => {
+    const tags = (p.data.tags || []).map((t) => t.toLowerCase());
+    const kws = new Set(
+      (p.data.keywords || "").split(",").map((k) => k.trim().toLowerCase()).filter(Boolean)
+    );
+    const tagOverlap = tags.filter((t) => currentTagsLc.includes(t)).length;
+    const kwOverlap = [...kws].filter((k) => currentKwSet.has(k)).length;
+    const sameCat = p.data.category === currentCategory ? 1 : 0;
+    const score = tagOverlap * 3 + kwOverlap * 2 + sameCat * 1;
+    return { post: p, score };
+  });
+
+const ranked = scored
+  .sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.post.data.date.valueOf() - a.post.data.date.valueOf();
+  })
+  .slice(0, max)
+  .map((s) => s.post);
+
+const categoryLabels: Record<string, string> = {
+  guide: "Guide",
+  astuce: "Astuce",
+  comparatif: "Comparatif",
+  temoignage: "Témoignage",
+  actu: "Actualité",
+  decryptage: "Décryptage",
+};
+---
+
+{ranked.length > 0 && (
+  <aside class="not-prose max-w-3xl mx-auto mt-16 pt-12 border-t-2 border-dashed" style="border-color: #1a3d2e33;" aria-label="Articles similaires">
+    <p class="eyebrow mb-3" style="color: #c2410c;">À lire ensuite</p>
+    <h2 class="mb-8" style="font-family: var(--font-display); color: #0f2419; font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.2rem); line-height: 1.1;">
+      Sur le même sujet.
+    </h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none p-0 m-0">
+      {ranked.map((post) => {
+        const catLabel = post.data.category ? (categoryLabels[post.data.category] || post.data.category) : null;
+        return (
+          <li class="m-0">
+            <a href={`/blog/${post.id}/`} class="block group ticket overflow-hidden hover-glow transition-all h-full">
+              {post.data.image ? (
+                <div class="aspect-[16/10] overflow-hidden bg-stone-100">
+                  <img
+                    src={post.data.image}
+                    alt={post.data.imageAlt || post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                </div>
+              ) : (
+                <div class="aspect-[16/10] flex items-center justify-center" style="background: linear-gradient(135deg, #faf7f2, #f4ecd8);">
+                  <span class="font-bold text-4xl opacity-30" style="font-family: var(--font-display); color: #1a3d2e;">€</span>
+                </div>
+              )}
+              <div class="p-4">
+                {catLabel && (
+                  <p class="font-mono text-[10px] uppercase tracking-widest mb-2" style="color: #c2410c;">{catLabel}</p>
+                )}
+                <h3 class="text-base font-bold leading-snug transition-colors group-hover:text-[#c2410c] line-clamp-3" style="font-family: var(--font-display); color: #0f2419;">
+                  {post.data.title}
+                </h3>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </aside>
+)}

@@ -18,7 +18,7 @@ let recentPosts: Awaited<ReturnType<typeof getCollection>> = [];
 try {
   recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-    .slice(0, 3);
+    .slice(0, 9);
 } catch (e) {
   recentPosts = [];
 }
@@ -147,9 +147,9 @@ try {
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-12 gap-8 mb-12">
           <div class="md:col-span-7">
-            <p class="eyebrow mb-4 fade-up">Le Carnet · derniers articles</p>
+            <p class="eyebrow mb-4 fade-up">Le Carnet · {recentPosts.length} articles publiés</p>
             <h2 class="blur-reveal" style="color: #0f2419; font-family: var(--font-display); font-weight: 700; max-width: 18ch;">
-              Ce qu'on a publié cette semaine.
+              Nos derniers décryptages budget.
             </h2>
           </div>
           <div class="md:col-span-5 md:pt-8 md:text-right">

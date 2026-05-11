@@ -1,9 +1,20 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogLinksDense from "../../components/BlogLinksDense.astro";
+import RelatedBlogsByKeywords from "../../components/RelatedBlogsByKeywords.astro";
 import { glossaire, glossaireAliases, glossaireCategories, type GlossaireEntry } from "../../data/glossaire";
 import { linkifyDefinition, slugifyTerm } from "../../utils/glossaire";
 import { siteConfig } from "../../../site.config";
 import { jsonLdBreadcrumbs } from "../../utils/seo";
+
+const categoryKeywords: Record<string, string[]> = {
+  budget: ["budget", "vivre avec", "depenses", "regle 50", "decouvert", "reste à vivre", "reste a vivre"],
+  credit: ["credit", "endettement", "taeg", "hcsf", "emprunt", "rachat"],
+  epargne: ["epargne", "livret a", "lep", "pel", "interets composes", "assurance vie"],
+  fiscalite: ["impot", "fiscalite", "tmi", "csg", "abattement", "niche fiscale"],
+  social: ["smic", "rsa", "apl", "prime activite", "caf", "aide", "allocation"],
+  bancaire: ["banque", "decouvert", "agios", "frais bancaires", "ficp", "interdiction bancaire"],
+};
 
 const entries = Object.entries(glossaire) as Array<[string, GlossaireEntry]>;
 const total = entries.length;
@@ -108,7 +119,10 @@ const definedTermSet = {
               <span class="font-mono text-xs uppercase tracking-widest text-stone-400 ml-2">{byCategory[cat.id].length} terme{byCategory[cat.id].length > 1 ? "s" : ""}</span>
             </div>
             <p class="text-stone-600 mb-6 leading-relaxed max-w-3xl">{cat.description}</p>
-            <div class="grid sm:grid-cols-2 gap-5">
+            {categoryKeywords[cat.id] && (
+              <BlogLinksDense keywords={categoryKeywords[cat.id]} max={4} eyebrow={`Le Carnet · ${cat.label.toLowerCase()}`} />
+            )}
+            <div class="grid sm:grid-cols-2 gap-5 mt-6">
               {byCategory[cat.id].map(([key, entry]) => (
                 <article id={slugify(key)} class="ticket p-6 scroll-mt-24 hover-glow">
                   <h3 class="text-xl font-bold capitalize mb-2 leading-snug" style="font-family: var(--font-display); color: #0f2419;">
@@ -134,6 +148,13 @@ const definedTermSet = {
       ))}
     </div>
   </section>
+
+  <RelatedBlogsByKeywords
+    keywords={["smic", "livret a", "budget", "credit", "epargne", "endettement", "caf"]}
+    max={6}
+    eyebrow="Le Carnet"
+    title="Approfondis avec nos derniers articles"
+  />
 
   <section id="alphabetique" class="py-16 px-4 scroll-mt-24" style="background: #fffefb;">
     <div class="max-w-5xl mx-auto">

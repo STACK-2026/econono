@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -199,6 +200,8 @@ const calcJsonLd = {
       </div>
     </div>
   </section>
+
+  <RelatedBlogsByKeywords keywords={["etudiant", "vie etudiante", "logement etudiant"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
 </BaseLayout>
 
 <script>
