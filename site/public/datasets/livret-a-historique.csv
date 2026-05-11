@@ -1,0 +1,18 @@
+date_application,taux_pct,plafond_eur,evolution_pp,source
+2009-02-01,2.5,15300,-1.5,Banque de France
+2009-05-01,1.75,15300,-0.75,Banque de France
+2009-08-01,1.25,15300,-0.5,Banque de France
+2010-02-01,1.25,15300,0,Banque de France
+2011-02-01,2.0,15300,0.75,Banque de France
+2011-08-01,2.25,15300,0.25,Banque de France
+2013-02-01,1.75,22950,-0.5,Banque de France
+2013-08-01,1.25,22950,-0.5,Banque de France
+2014-08-01,1.0,22950,-0.25,Banque de France
+2015-08-01,0.75,22950,-0.25,Banque de France
+2020-02-01,0.5,22950,-0.25,Banque de France
+2022-02-01,1.0,22950,0.5,Banque de France
+2022-08-01,2.0,22950,1.0,Banque de France
+2023-02-01,3.0,22950,1.0,Banque de France
+2023-08-01,3.0,22950,0.0,Banque de France
+2025-02-01,2.4,22950,-0.6,Banque de France
+2026-02-01,2.4,22950,0.0,Banque de France

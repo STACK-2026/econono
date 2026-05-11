@@ -1,0 +1,18 @@
+aide,composition_foyer,plafond_revenus_eur_annuel,montant_max_eur_mensuel,source
+LEP,celibataire,22823,,Service-Public.fr 2026
+LEP,couple,35043,,Service-Public.fr 2026
+LEP,couple_1enfant,40556,,Service-Public.fr 2026
+LEP,couple_2enfants,46068,,Service-Public.fr 2026
+LEP,couple_3enfants,53191,,Service-Public.fr 2026
+RSA,celibataire,7621,635.71,CAF 2026
+RSA,couple,11432,953.56,CAF 2026
+RSA,couple_2enfants,16004,1334.99,CAF 2026
+APL_etudiant_paris,celibataire,plafond_revenu_etudiant,355.0,CAF 2026
+APL_etudiant_province,celibataire,plafond_revenu_etudiant,217.0,CAF 2026
+PrimeNaissance,couple_premier_enfant,52345,1019.43,CAF 2026 PAJE
+AllocationBase,couple_1enfant,plafond_paje,181.27,CAF 2026 PAJE
+AllocFamilial,couple_2enfants,69933,141.99,CAF 2026
+AllocFamilial,couple_3enfants,69933,323.99,CAF 2026
+AAH,celibataire_handicape,11724,978.0,CAF 2026
+CSS_gratuite,celibataire,9719,gratuite,Ameli 2026
+CSS_participative,celibataire,13127,modulaire,Ameli 2026

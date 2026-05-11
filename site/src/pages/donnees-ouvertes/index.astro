@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+
+const breadcrumbs = jsonLdBreadcrumbs([
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Données ouvertes", url: siteConfig.url + "/donnees-ouvertes/" },
+]);
+
+const datasets = [
+  {
+    slug: "smic-france-historique",
+    title: "SMIC France · historique 2010-2026",
+    description: "Évolution annuelle du SMIC en France de 2010 à 2026 : horaire brut, mensuel brut, mensuel net (35h), pourcentage d'évolution, date de revalorisation. 17 années couvertes.",
+    rows: 17,
+    cols: 7,
+    period: "2010-01-01 / 2026-01-01",
+    sources: ["Insee", "info.gouv.fr"],
+    keywords: ["SMIC", "salaire minimum", "France", "historique", "revalorisation"],
+    wikidata: [
+      { name: "Salaire minimum interprofessionnel de croissance", q: "Q1248994" },
+      { name: "Insee", q: "Q156621" },
+    ],
+  },
+  {
+    slug: "livret-a-historique",
+    title: "Taux du Livret A · historique 2009-2026",
+    description: "Évolution du taux du Livret A en France de 2009 à 2026 : taux applicable, plafond de versement, variation en points de pourcentage. 17 changements de taux couverts.",
+    rows: 17,
+    cols: 5,
+    period: "2009-02-01 / 2026-02-01",
+    sources: ["Banque de France"],
+    keywords: ["Livret A", "épargne", "taux", "France", "Banque de France"],
+    wikidata: [
+      { name: "Livret A", q: "Q3247108" },
+      { name: "Banque de France", q: "Q806643" },
+    ],
+  },
+  {
+    slug: "plafonds-caf-2026",
+    title: "Plafonds CAF 2026 · LEP, RSA, APL, PAJE, AAH",
+    description: "Plafonds de revenus 2026 pour les principales aides françaises (LEP, RSA, APL, allocations familiales, AAH, CSS) par composition de foyer. 17 lignes de référence officielle.",
+    rows: 17,
+    cols: 5,
+    period: "2026",
+    sources: ["CAF", "Service-Public.fr", "Ameli"],
+    keywords: ["CAF", "plafonds", "aides sociales", "RSA", "APL", "LEP", "France 2026"],
+    wikidata: [
+      { name: "Caisse des allocations familiales", q: "Q2937129" },
+      { name: "Revenu de solidarité active", q: "Q1356927" },
+    ],
+  },
+];
+
+const datasetCollectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  name: `Données ouvertes finances perso France · ${siteConfig.name}`,
+  description: "Catalogue de datasets ouverts CC-BY sur les finances personnelles françaises : SMIC, Livret A, plafonds CAF. Sources officielles, format CSV téléchargeable libre.",
+  url: siteConfig.url + "/donnees-ouvertes/",
+  publisher: {
+    "@type": "Organization",
+    "@id": siteConfig.url + "/#organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  inLanguage: "fr-FR",
+  isAccessibleForFree: true,
+  dataset: datasets.map((d) => ({
+    "@type": "Dataset",
+    name: d.title,
+    description: d.description,
+    url: siteConfig.url + `/donnees-ouvertes/${d.slug}/`,
+    identifier: siteConfig.url + `/datasets/${d.slug}.csv`,
+    keywords: d.keywords,
+    inLanguage: "fr-FR",
+    isAccessibleForFree: true,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    creator: { "@type": "Organization", "@id": siteConfig.url + "/#organization" },
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: siteConfig.url + `/datasets/${d.slug}.csv`,
+        name: `${d.title} (CSV)`,
+      },
+    ],
+    about: d.wikidata.map((w) => ({
+      "@type": "Thing",
+      name: w.name,
+      sameAs: `https://www.wikidata.org/wiki/${w.q}`,
+    })),
+  })),
+};
+---
+
+<BaseLayout
+  title={`Données ouvertes finances perso France · ${siteConfig.name}`}
+  description="Datasets ouverts CC-BY sur finances perso France : SMIC histo 2010-2026, Livret A 2009-2026, plafonds CAF 2026. CSV libres pour chercheurs et journalistes."
+  jsonLd={[breadcrumbs, datasetCollectionSchema]}
+>
+  <section class="pt-12 pb-10 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <nav class="text-xs uppercase tracking-widest mb-6" style="font-family: var(--font-mono); color: #57534e;">
+        <a href="/" class="hover:underline">Accueil</a>
+        <span class="mx-2 text-stone-300">›</span>
+        <span style="color: #1a3d2e;">Données ouvertes</span>
+      </nav>
+
+      <p class="eyebrow mb-3">Open data · CC-BY 4.0</p>
+      <h1 style="color: #0f2419; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.0;">
+        Nos données, ouvertes à tous.
+      </h1>
+      <p class="mt-5 text-lg text-stone-700 max-w-2xl leading-relaxed">
+        On compile les chiffres officiels sur les finances perso en France et on les ouvre. CSV libre, licence Creative Commons. Sources publiques (Insee, Banque de France, CAF). À utiliser dans tes articles, mémoires, recherches.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-4" style="background: #faf7f2;">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid gap-6">
+        {datasets.map((d) => (
+          <article class="ticket p-7 hover-glow" id={d.slug}>
+            <div class="flex flex-wrap items-baseline gap-3 mb-3">
+              <h2 class="text-2xl font-bold m-0" style="font-family: var(--font-display); color: #0f2419;">{d.title}</h2>
+              <span class="font-mono text-xs uppercase tracking-widest" style="color: #57534e;">{d.rows} lignes · {d.cols} colonnes</span>
+            </div>
+            <p class="text-stone-700 leading-relaxed mb-4">{d.description}</p>
+            <dl class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm mb-5">
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-widest" style="color: #57534e;">Période</dt>
+                <dd class="text-stone-800 font-semibold m-0">{d.period}</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-widest" style="color: #57534e;">Sources</dt>
+                <dd class="text-stone-800 font-semibold m-0">{d.sources.join(", ")}</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-widest" style="color: #57534e;">Format</dt>
+                <dd class="text-stone-800 font-semibold m-0">CSV (UTF-8)</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-widest" style="color: #57534e;">Licence</dt>
+                <dd class="text-stone-800 font-semibold m-0">CC-BY 4.0</dd>
+              </div>
+            </dl>
+            <div class="flex flex-wrap gap-3">
+              <a href={`/datasets/${d.slug}.csv`} download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm" style="background: #1a3d2e; color: #faf7f2;">
+                Télécharger le CSV
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
+              </a>
+              <a href={`/datasets/${d.slug}.csv`} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm border-2" style="color: #1a3d2e; border-color: #1a3d2e;">
+                Aperçu raw
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4" style="background: #1a3d2e;">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="mb-4" style="color: #faf7f2; font-family: var(--font-display); font-weight: 700;">Tu utilises nos données ?</h2>
+      <p class="mb-7 max-w-xl mx-auto" style="color: rgba(250, 247, 242, 0.85);">
+        Mentionne juste "Econono · CC-BY 4.0" et un lien vers cette page. Si tu veux nous prévenir on est curieux : hello@econono.com. Et si une donnée te manque, dis-nous, on l'ajoute.
+      </p>
+      <a
+        href={`mailto:${siteConfig.legal.email}?subject=Open%20data%20%3A%20demande%20ou%20mention`}
+        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm"
+        style="background: #f4c430; color: #0f2419;"
+      >
+        Nous contacter
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

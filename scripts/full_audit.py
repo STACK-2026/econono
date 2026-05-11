@@ -163,7 +163,7 @@ for f in DIST.rglob("*.html"):
         # Skip assets (CSS, JS, images, fonts, etc.)
         if h.startswith("/_astro/") or h.startswith("/fonts/") or h.startswith("/logos/"):
             continue
-        if re.search(r'\.(css|js|svg|png|jpg|jpeg|webp|woff|woff2|ttf|ico|xml|txt|json|pdf)$', h):
+        if re.search(r'\.(css|js|svg|png|jpg|jpeg|webp|woff|woff2|ttf|ico|xml|txt|json|pdf|csv)$', h):
             continue
         if h in ["/", "/sitemap.xml", "/sitemap-index.xml", "/rss.xml"]:
             continue
