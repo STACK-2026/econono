@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
+import WikidataAbout from "../../../components/WikidataAbout.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -228,6 +229,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
   </section>
 
   <RelatedBlogsByKeywords keywords={["epargne", "livret a", "lep", "interets composes"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Livret A", wikidata: "Q3247108" }, { name: "Livret d'épargne populaire", wikidata: "Q3247109" }, { name: "Intérêts composés", wikidata: "Q179310" }]} pageUrl="https://econono.com/calculateurs/epargne/" pageName="Calculateur épargne intérêts composés Livret A LEP" />
 </BaseLayout>
 
 <script>

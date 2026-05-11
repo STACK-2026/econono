@@ -1,0 +1,34 @@
+---
+interface Entity {
+  name: string;
+  wikidata: string;
+}
+
+interface Props {
+  entities: Entity[];
+  pageUrl: string;
+  pageName: string;
+}
+
+const { entities, pageUrl, pageName } = Astro.props;
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": pageUrl,
+  url: pageUrl,
+  name: pageName,
+  about: entities.map((e) => ({
+    "@type": "Thing",
+    name: e.name,
+    sameAs: `https://www.wikidata.org/wiki/${e.wikidata}`,
+  })),
+  mainEntity: entities.map((e) => ({
+    "@type": "Thing",
+    name: e.name,
+    sameAs: `https://www.wikidata.org/wiki/${e.wikidata}`,
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />

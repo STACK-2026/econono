@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
+import WikidataAbout from "../../../components/WikidataAbout.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -383,6 +384,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
   </section>
 
   <RelatedBlogsByKeywords keywords={["budget mensuel", "vivre avec", "depenses", "decouvert"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Budget personnel", wikidata: "Q26840" }, { name: "INSEE", wikidata: "Q156621" }, { name: "Pouvoir d'achat", wikidata: "Q1067815" }]} pageUrl="https://econono.com/calculateurs/budget-mensuel/" pageName="Calculateur budget mensuel France" />
 </BaseLayout>
 
 <script>

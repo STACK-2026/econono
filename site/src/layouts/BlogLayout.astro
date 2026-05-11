@@ -20,6 +20,7 @@ interface Props {
   keywords?: string;
   lastReviewed?: Date;
   reviewedBy?: string;
+  tldr?: string[];
 }
 
 const {
@@ -35,6 +36,7 @@ const {
   keywords,
   lastReviewed,
   reviewedBy,
+  tldr,
 } = Astro.props;
 
 const articleUrl = fullUrl(`/blog/${slug}`);
@@ -150,6 +152,23 @@ const jsonLd = [
         <BrandHero title={title} category={category || siteConfig.blog.name} />
       )}
     </figure>
+
+    <aside data-speakable class="not-prose mb-10 p-5 rounded-r-lg" style="background: linear-gradient(to right, rgba(244,196,48,0.10), transparent); border-left: 4px solid #f4c430;" aria-label="L'essentiel">
+      <p class="font-mono text-[11px] uppercase tracking-widest mb-2" style="color: #c2410c;">
+        ⚡ L'essentiel
+      </p>
+      {tldr && tldr.length > 0 ? (
+        <ul class="text-stone-800 leading-relaxed text-base m-0 p-0 list-none space-y-1.5">
+          {tldr.map((point) => (
+            <li class="flex gap-2 m-0"><span style="color: #1a3d2e;">·</span><span>{point}</span></li>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-stone-800 leading-relaxed text-base m-0">
+          {description}
+        </p>
+      )}
+    </aside>
 
     <div class="prose max-w-none">
       <slot />

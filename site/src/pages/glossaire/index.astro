@@ -50,12 +50,50 @@ const definedTermSet = {
     inDefinedTermSet: siteConfig.url + "/glossaire/",
   })),
 };
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: `Glossaire finances perso France 2026 · ${siteConfig.name}`,
+  description: `Corpus de ${total} définitions de termes finances perso français (budget, crédit, épargne, fiscalité, aides sociales). Chaque terme vient avec une définition vulgarisée, un exemple chiffré, un lien vers un calculateur, et une source officielle.`,
+  url: siteConfig.url + "/glossaire/",
+  identifier: siteConfig.url + "/glossaire/",
+  keywords: ["finance personnelle", "budget", "France", "glossaire", "définitions", "vulgarisation"],
+  inLanguage: "fr-FR",
+  isAccessibleForFree: true,
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  variableMeasured: glossaireCategories.map((c) => c.label).filter(Boolean),
+  creator: {
+    "@type": "Organization",
+    "@id": siteConfig.url + "/#organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": siteConfig.url + "/#organization",
+  },
+  datePublished: "2026-04-23",
+  dateModified: new Date().toISOString().split("T")[0],
+  distribution: [
+    {
+      "@type": "DataDownload",
+      encodingFormat: "text/html",
+      contentUrl: siteConfig.url + "/glossaire/",
+    },
+  ],
+  about: [
+    { "@type": "Thing", name: "Finance personnelle", sameAs: "https://www.wikidata.org/wiki/Q1166072" },
+    { "@type": "Thing", name: "Budget", sameAs: "https://www.wikidata.org/wiki/Q26840" },
+    { "@type": "Thing", name: "France", sameAs: "https://www.wikidata.org/wiki/Q142" },
+  ],
+};
 ---
 
 <BaseLayout
   title={`Glossaire budget et finances perso · ${siteConfig.name}`}
   description={`${total} termes finance/budget vulgarisés : reste à vivre, taux endettement, livret A, LEP. Sources officielles.`}
-  jsonLd={[breadcrumbs, definedTermSet]}
+  jsonLd={[breadcrumbs, definedTermSet, datasetSchema]}
 >
   <section class="pt-12 pb-12 px-4" style="background: #faf7f2;">
     <div class="max-w-5xl mx-auto">

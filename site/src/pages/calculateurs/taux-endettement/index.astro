@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
+import WikidataAbout from "../../../components/WikidataAbout.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -242,6 +243,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
   </section>
 
   <RelatedBlogsByKeywords keywords={["endettement", "credit", "hcsf", "emprunt"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Haut Conseil de stabilité financière", wikidata: "Q3128944" }, { name: "Banque de France", wikidata: "Q806643" }, { name: "Crédit immobilier", wikidata: "Q1190554" }]} pageUrl="https://econono.com/calculateurs/taux-endettement/" pageName="Calculateur taux endettement HCSF" />
 </BaseLayout>
 
 <script>

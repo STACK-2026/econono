@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
+import WikidataAbout from "../../../components/WikidataAbout.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -271,6 +272,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
   </section>
 
   <RelatedBlogsByKeywords keywords={["regle 50/30/20", "regle 50 30 20", "budget"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Elizabeth Warren", wikidata: "Q34973" }, { name: "Budget personnel", wikidata: "Q26840" }]} pageUrl="https://econono.com/calculateurs/regle-50-30-20/" pageName="Simulateur règle 50/30/20 Elizabeth Warren" />
 </BaseLayout>
 
 <script>

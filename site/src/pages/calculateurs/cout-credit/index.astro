@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
+import WikidataAbout from "../../../components/WikidataAbout.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -191,6 +192,7 @@ const calcJsonLd = {
   </section>
 
   <RelatedBlogsByKeywords keywords={["credit", "taeg", "emprunt", "rachat"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Taux annuel effectif global", wikidata: "Q3520881" }, { name: "Crédit à la consommation", wikidata: "Q1185906" }]} pageUrl="https://econono.com/calculateurs/cout-credit/" pageName="Calculateur coût total crédit TAEG" />
 </BaseLayout>
 
 <script>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import RelatedBlogsByKeywords from "../../../components/RelatedBlogsByKeywords.astro";
+import WikidataAbout from "../../../components/WikidataAbout.astro";
 import { siteConfig } from "../../../../site.config";
 import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 
@@ -229,6 +230,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
   </section>
 
   <RelatedBlogsByKeywords keywords={["smic", "salaire net", "salaire brut", "net imposable"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Salaire minimum interprofessionnel de croissance (SMIC)", wikidata: "Q1248994" }, { name: "URSSAF", wikidata: "Q3553801" }, { name: "Cotisations sociales en France", wikidata: "Q3008961" }]} pageUrl="https://econono.com/calculateurs/salaire-net/" pageName="Calculateur salaire brut/net France 2026" />
 </BaseLayout>
 
 <script>
