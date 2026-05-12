@@ -273,3 +273,26 @@ Vivre avec **1 800 € net par mois** en France, c’est **possible**, mais ça 
 - Abonne-toi à notre [newsletter Le Carnet](https://econono.com/newsletter/) pour recevoir nos meilleurs conseils budget chaque mois.
 
 *Tu n’es pas seul·e dans cette galère. Avec un peu de méthode, tu peux reprendre le contrôle de ton argent.* 💪
+
+## FAQ
+
+### Peut-on vraiment épargner avec un salaire de 1800€ nets par mois en France ?
+
+Oui, il est possible d'épargner environ 5 à 10% de ses revenus, soit 90 à 180€ mensuels. Cela nécessite une gestion rigoureuse : logement à 600€ maximum (33%), alimentation à 300€, transport à 150€. L'astuce consiste à automatiser l'épargne dès réception du salaire et privilégier un livret A ou PEL. En province, cette épargne est plus réalisable qu'en région parisienne où les coûts sont supérieurs de 20 à 30%.
+
+### Quel pourcentage du budget consacrer au logement avec 1800€ nets ?
+
+Le logement ne devrait pas dépasser 33% des revenus, soit 594€ charges comprises. En pratique, visez 550-600€ maximum. En province, cela permet un T2 décent ou une colocation qualitative. En région parisienne, orientez-vous vers un studio ou une colocation. Cette règle garantit un équilibre budgétaire sain en conservant 1200€ pour les autres postes de dépenses essentiels.
+
+### Comment gérer l'alimentation pour une famille avec 1800€ de revenus ?
+
+Pour une personne seule, comptez 250-300€ mensuels, soit 60-70€ par semaine. Pour un couple, prévoyez 400-450€. Privilégiez les marchés en fin de matinée, marques distributeur (économie de 30%), achats en vrac, et cuisinez maison. Planifiez vos menus hebdomadaires pour éviter le gaspillage. Les hard-discounters permettent d'économiser 15-20% sur le budget alimentaire comparé aux grandes surfaces traditionnelles.
+
+### Quels loisirs sont accessibles avec un budget serré de 1800€ nets ?
+
+Allouez 100-150€ mensuels aux loisirs. Profitez des activités gratuites : médiathèques, randonnées, musées gratuits le premier dimanche. Les abonnements streaming (10-15€) sont plus rentables que les sorties cinéma. Recherchez les tarifs réduits : places de théâtre à 10€, cours municipaux (20-40€/an), associations sportives locales. Les bons plans étudiants restent parfois accessibles selon l'âge. Budgetez les vacances sur l'année entière.
+
+### Dans quelles villes peut-on vivre décemment avec 1800€ par mois ?
+
+Les villes moyennes offrent le meilleur rapport qualité-prix : Tours, Poitiers, Limoges, Clermont-Ferrand, Nancy. Évitez Paris, Lyon, Nice, Bordeaux où les loyers consomment 40-50% du budget. Toulouse, Nantes, Rennes restent limites mais faisables en colocation. Les villes de 50 000 à 200 000 habitants combinent services urbains et coûts modérés. Comptez 200-300€ d'économies mensuelles en choisissant une ville moyenne plutôt qu'une métropole.
+
