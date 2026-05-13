@@ -21,6 +21,7 @@ interface Props {
   lastReviewed?: Date;
   reviewedBy?: string;
   tldr?: string[];
+  body?: string;
 }
 
 const {
@@ -37,7 +38,28 @@ const {
   lastReviewed,
   reviewedBy,
   tldr,
+  body,
 } = Astro.props;
+
+// Extract FAQ pairs from markdown body (## FAQ / ## Foire aux questions / ## Questions frequentes)
+function extractFaq(md: string | undefined): { q: string; a: string }[] {
+  if (!md) return [];
+  const m = md.match(/^##\s+(FAQ|Foire aux questions|Questions fr[ée]quentes)[^\n]*$/im);
+  if (!m || m.index === undefined) return [];
+  let section = md.slice(m.index + m[0].length);
+  const nextH2 = section.match(/^##\s+/m);
+  if (nextH2 && nextH2.index !== undefined) section = section.slice(0, nextH2.index);
+  const pairs: { q: string; a: string }[] = [];
+  const re = /^###\s+([^\n]+)\n+([\s\S]*?)(?=^###\s+|$)/gm;
+  let m2: RegExpExecArray | null;
+  while ((m2 = re.exec(section)) !== null) {
+    const q = m2[1].replace(/\s*\{#[^}]+\}\s*$/, '').replace(/\*\*/g, '').trim();
+    const a = m2[2].replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
+    if (q && a) pairs.push({ q, a });
+  }
+  return pairs;
+}
+const faqPairs = extractFaq(body);
 
 const articleUrl = fullUrl(`/blog/${slug}`);
 const dateStr = date.toISOString().split("T")[0];
@@ -58,7 +80,7 @@ const breadcrumbs = [
   { name: title, url: articleUrl },
 ];
 
-const jsonLd = [
+const jsonLd: any[] = [
   jsonLdArticle({
     title,
     description,
@@ -70,6 +92,18 @@ const jsonLd = [
   }),
   jsonLdBreadcrumbs(breadcrumbs),
 ];
+
+if (faqPairs.length > 0) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqPairs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  });
+}
 ---
 
 <BaseLayout
