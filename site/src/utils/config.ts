@@ -10,9 +10,4 @@ export function fullUrl(path: string): string {
   return `${base}${withSlash}`;
 }
 
-/** Get Google Fonts URL */
-export function fontsUrl(): string {
-  const display = siteConfig.fonts.display.replace(/ /g, "+");
-  const body = siteConfig.fonts.body.replace(/ /g, "+");
-  return `https://fonts.googleapis.com/css2?family=${display}:wght@600;700;800&family=${body}:wght@400;500;600&display=swap`;
-}
+// fontsUrl() removed: fonts are now self-hosted via @fontsource (see BaseLayout.astro imports)
