@@ -1,5 +1,6 @@
 /*
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Vary: Accept-Encoding
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -9,7 +10,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
-  X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
   X-Permitted-Cross-Domain-Policies: none
 
 /_astro/*
