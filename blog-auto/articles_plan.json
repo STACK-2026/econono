@@ -501,6 +501,406 @@
       "working_title": "Indemnité de rupture conventionnelle 2026 : montant, calcul, fiscalité",
       "intent": "informational",
       "angle": "Formule officielle (1/4 mois × années, puis 1/3 au-delà de 10 ans). Plancher légal. Fiscalité (exonération partielle). Articulation chômage. Volume 30-60k/mois."
+    },
+    {
+      "vertical": "reparation-electromenager",
+      "topic": "Bonus reparation 2026 : electromenager eligibles, montants et demarches",
+      "intent": "informational",
+      "done": false,
+      "slug": "bonus-reparation-2026-electromenager-eligibles-montants-et-demarches",
+      "working_title": "Bonus reparation 2026 : electromenager eligibles, montants et demarches"
+    },
+    {
+      "vertical": "reparation-electromenager",
+      "topic": "Indice de reparabilite 2026 : comment le lire et bien choisir",
+      "intent": "informational",
+      "done": false,
+      "slug": "indice-de-reparabilite-2026-comment-le-lire-et-bien-choisir",
+      "working_title": "Indice de reparabilite 2026 : comment le lire et bien choisir"
+    },
+    {
+      "vertical": "reparation-electromenager",
+      "topic": "Top 10 electromenager les plus reparables en 2026 (indice + retours)",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "top-10-electromenager-les-plus-reparables-en-2026-indice-retours",
+      "working_title": "Top 10 electromenager les plus reparables en 2026 (indice + retours)"
+    },
+    {
+      "vertical": "reparation-electromenager",
+      "topic": "Lave-linge en panne : 7 reparations possibles avant de racheter",
+      "intent": "informational",
+      "done": false,
+      "slug": "lave-linge-en-panne-7-reparations-possibles-avant-de-racheter",
+      "working_title": "Lave-linge en panne : 7 reparations possibles avant de racheter"
+    },
+    {
+      "vertical": "reparation-electromenager",
+      "topic": "Frigo : compresseur HS, joints, fuite, ce qui se repare vraiment",
+      "intent": "informational",
+      "done": false,
+      "slug": "frigo-compresseur-hs-joints-fuite-ce-qui-se-repare-vraiment",
+      "working_title": "Frigo : compresseur HS, joints, fuite, ce qui se repare vraiment"
+    },
+    {
+      "vertical": "reparation-electromenager",
+      "topic": "Lave-vaisselle : pompe, resistance, filtres, les vraies pannes 2026",
+      "intent": "informational",
+      "done": false,
+      "slug": "lave-vaisselle-pompe-resistance-filtres-les-vraies-pannes-2026",
+      "working_title": "Lave-vaisselle : pompe, resistance, filtres, les vraies pannes 2026"
+    },
+    {
+      "vertical": "seconde-main",
+      "topic": "Top 10 plateformes seconde main 2026 (Vinted, Leboncoin, Backmarket)",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "top-10-plateformes-seconde-main-2026-vinted-leboncoin-backmarket",
+      "working_title": "Top 10 plateformes seconde main 2026 (Vinted, Leboncoin, Backmarket)"
+    },
+    {
+      "vertical": "seconde-main",
+      "topic": "Acheter un appareil reconditionne : garantie, grades et pieges",
+      "intent": "commercial",
+      "done": false,
+      "slug": "acheter-un-appareil-reconditionne-garantie-grades-et-pieges",
+      "working_title": "Acheter un appareil reconditionne : garantie, grades et pieges"
+    },
+    {
+      "vertical": "seconde-main",
+      "topic": "Vendre sur Vinted ou Leboncoin : frais, visibilite, gains compares",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "vendre-sur-vinted-ou-leboncoin-frais-visibilite-gains-compares",
+      "working_title": "Vendre sur Vinted ou Leboncoin : frais, visibilite, gains compares"
+    },
+    {
+      "vertical": "seconde-main",
+      "topic": "Expedier en seconde main sans se faire arnaquer : guide pratique 2026",
+      "intent": "informational",
+      "done": false,
+      "slug": "expedier-en-seconde-main-sans-se-faire-arnaquer-guide-pratique-2026",
+      "working_title": "Expedier en seconde main sans se faire arnaquer : guide pratique 2026"
+    },
+    {
+      "vertical": "seconde-main",
+      "topic": "Arnaques Vinted, Leboncoin, Vestiaire : 12 signaux a reperer",
+      "intent": "informational",
+      "done": false,
+      "slug": "arnaques-vinted-leboncoin-vestiaire-12-signaux-a-reperer",
+      "working_title": "Arnaques Vinted, Leboncoin, Vestiaire : 12 signaux a reperer"
+    },
+    {
+      "vertical": "seconde-main",
+      "topic": "Retour SAV reconditionne : droits, delais et recours 2026",
+      "intent": "informational",
+      "done": false,
+      "slug": "retour-sav-reconditionne-droits-delais-et-recours-2026",
+      "working_title": "Retour SAV reconditionne : droits, delais et recours 2026"
+    },
+    {
+      "vertical": "textile-mode",
+      "topic": "Fast fashion : l'impact reel sur ton portefeuille et la planete 2026",
+      "intent": "informational",
+      "done": false,
+      "slug": "fast-fashion-l-impact-reel-sur-ton-portefeuille-et-la-planete-2026",
+      "working_title": "Fast fashion : l'impact reel sur ton portefeuille et la planete 2026"
+    },
+    {
+      "vertical": "textile-mode",
+      "topic": "Marques de mode eco-responsables 2026 : notre selection FR honnete",
+      "intent": "commercial",
+      "done": false,
+      "slug": "marques-de-mode-eco-responsables-2026-notre-selection-fr-honnete",
+      "working_title": "Marques de mode eco-responsables 2026 : notre selection FR honnete"
+    },
+    {
+      "vertical": "textile-mode",
+      "topic": "Friperies en ligne 2026 : Vinted, Vestiaire, Rebelle, qui choisir",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "friperies-en-ligne-2026-vinted-vestiaire-rebelle-qui-choisir",
+      "working_title": "Friperies en ligne 2026 : Vinted, Vestiaire, Rebelle, qui choisir"
+    },
+    {
+      "vertical": "textile-mode",
+      "topic": "Upcycling vetements : 10 idees pour transformer ta garde-robe",
+      "intent": "informational",
+      "done": false,
+      "slug": "upcycling-vetements-10-idees-pour-transformer-ta-garde-robe",
+      "working_title": "Upcycling vetements : 10 idees pour transformer ta garde-robe"
+    },
+    {
+      "vertical": "textile-mode",
+      "topic": "Lessives ecologiques 2026 : le comparatif efficacite vs prix",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "lessives-ecologiques-2026-le-comparatif-efficacite-vs-prix",
+      "working_title": "Lessives ecologiques 2026 : le comparatif efficacite vs prix"
+    },
+    {
+      "vertical": "antigaspi",
+      "topic": "Too Good To Go : combien tu economises vraiment chaque mois ?",
+      "intent": "commercial",
+      "done": false,
+      "slug": "too-good-to-go-combien-tu-economises-vraiment-chaque-mois",
+      "working_title": "Too Good To Go : combien tu economises vraiment chaque mois ?"
+    },
+    {
+      "vertical": "antigaspi",
+      "topic": "Phenix, Karma, Hop Hop Food : le reseau antigaspi compare 2026",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "phenix-karma-hop-hop-food-le-reseau-antigaspi-compare-2026",
+      "working_title": "Phenix, Karma, Hop Hop Food : le reseau antigaspi compare 2026"
+    },
+    {
+      "vertical": "antigaspi",
+      "topic": "Doggy bag au restau : ton droit reel depuis la loi AGEC",
+      "intent": "informational",
+      "done": false,
+      "slug": "doggy-bag-au-restau-ton-droit-reel-depuis-la-loi-agec",
+      "working_title": "Doggy bag au restau : ton droit reel depuis la loi AGEC"
+    },
+    {
+      "vertical": "antigaspi",
+      "topic": "DLC vs DDM 2026 : ce que tu peux manger apres la date",
+      "intent": "informational",
+      "done": false,
+      "slug": "dlc-vs-ddm-2026-ce-que-tu-peux-manger-apres-la-date",
+      "working_title": "DLC vs DDM 2026 : ce que tu peux manger apres la date"
+    },
+    {
+      "vertical": "antigaspi",
+      "topic": "Congeler maison sans danger : guide complet temperatures et duree",
+      "intent": "informational",
+      "done": false,
+      "slug": "congeler-maison-sans-danger-guide-complet-temperatures-et-duree",
+      "working_title": "Congeler maison sans danger : guide complet temperatures et duree"
+    },
+    {
+      "vertical": "transition-energetique",
+      "topic": "MaPrimeRenov 2026 : baremes, plafonds et nouveaux profils",
+      "intent": "informational",
+      "done": false,
+      "slug": "maprimerenov-2026-baremes-plafonds-et-nouveaux-profils",
+      "working_title": "MaPrimeRenov 2026 : baremes, plafonds et nouveaux profils"
+    },
+    {
+      "vertical": "transition-energetique",
+      "topic": "Isoler tes combles 2026 : prix, aides, ROI reel en 5 ans",
+      "intent": "informational",
+      "done": false,
+      "slug": "isoler-tes-combles-2026-prix-aides-roi-reel-en-5-ans",
+      "working_title": "Isoler tes combles 2026 : prix, aides, ROI reel en 5 ans"
+    },
+    {
+      "vertical": "transition-energetique",
+      "topic": "Pompe a chaleur : prix, aides 2026 et economies reelles annuelles",
+      "intent": "commercial",
+      "done": false,
+      "slug": "pompe-a-chaleur-prix-aides-2026-et-economies-reelles-annuelles",
+      "working_title": "Pompe a chaleur : prix, aides 2026 et economies reelles annuelles"
+    },
+    {
+      "vertical": "transition-energetique",
+      "topic": "Photovoltaique autoconsommation 2026 : rentabilite et pieges",
+      "intent": "informational",
+      "done": false,
+      "slug": "photovoltaique-autoconsommation-2026-rentabilite-et-pieges",
+      "working_title": "Photovoltaique autoconsommation 2026 : rentabilite et pieges"
+    },
+    {
+      "vertical": "transition-energetique",
+      "topic": "Chauffe-eau solaire : prix, aides, economies par foyer 2026",
+      "intent": "informational",
+      "done": false,
+      "slug": "chauffe-eau-solaire-prix-aides-economies-par-foyer-2026",
+      "working_title": "Chauffe-eau solaire : prix, aides, economies par foyer 2026"
+    },
+    {
+      "vertical": "consommation-responsable",
+      "topic": "Labels eco fiables 2026 : B Corp, FSC, GOTS, Ecocert decryptes",
+      "intent": "informational",
+      "done": false,
+      "slug": "labels-eco-fiables-2026-b-corp-fsc-gots-ecocert-decryptes",
+      "working_title": "Labels eco fiables 2026 : B Corp, FSC, GOTS, Ecocert decryptes"
+    },
+    {
+      "vertical": "consommation-responsable",
+      "topic": "Greenwashing 2026 : 10 signaux pour ne plus te faire avoir",
+      "intent": "informational",
+      "done": false,
+      "slug": "greenwashing-2026-10-signaux-pour-ne-plus-te-faire-avoir",
+      "working_title": "Greenwashing 2026 : 10 signaux pour ne plus te faire avoir"
+    },
+    {
+      "vertical": "consommation-responsable",
+      "topic": "Acheter local 2026 : circuits courts, AMAP, La Ruche compares",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "acheter-local-2026-circuits-courts-amap-la-ruche-compares",
+      "working_title": "Acheter local 2026 : circuits courts, AMAP, La Ruche compares"
+    },
+    {
+      "vertical": "consommation-responsable",
+      "topic": "Magasins vrac 2026 : economies reelles, reseaux, conseils pratiques",
+      "intent": "informational",
+      "done": false,
+      "slug": "magasins-vrac-2026-economies-reelles-reseaux-conseils-pratiques",
+      "working_title": "Magasins vrac 2026 : economies reelles, reseaux, conseils pratiques"
+    },
+    {
+      "vertical": "consommation-responsable",
+      "topic": "Packaging zero dechet 2026 : 12 alternatives qui marchent",
+      "intent": "informational",
+      "done": false,
+      "slug": "packaging-zero-dechet-2026-12-alternatives-qui-marchent",
+      "working_title": "Packaging zero dechet 2026 : 12 alternatives qui marchent"
+    },
+    {
+      "vertical": "mobilite",
+      "topic": "Subventions velo 2026 : bonus etat, regions, prime conversion",
+      "intent": "informational",
+      "done": false,
+      "slug": "subventions-velo-2026-bonus-etat-regions-prime-conversion",
+      "working_title": "Subventions velo 2026 : bonus etat, regions, prime conversion"
+    },
+    {
+      "vertical": "mobilite",
+      "topic": "Voiture electrique d'occasion 2026 : prix, batterie, garantie",
+      "intent": "commercial",
+      "done": false,
+      "slug": "voiture-electrique-d-occasion-2026-prix-batterie-garantie",
+      "working_title": "Voiture electrique d'occasion 2026 : prix, batterie, garantie"
+    },
+    {
+      "vertical": "mobilite",
+      "topic": "BlaBlaCar et fiscalite 2026 : ce que tu dois declarer vraiment",
+      "intent": "informational",
+      "done": false,
+      "slug": "blablacar-et-fiscalite-2026-ce-que-tu-dois-declarer-vraiment",
+      "working_title": "BlaBlaCar et fiscalite 2026 : ce que tu dois declarer vraiment"
+    },
+    {
+      "vertical": "mobilite",
+      "topic": "Train vs avion 2026 : la calculatrice CO2 et le vrai cout compare",
+      "intent": "comparatif",
+      "done": false,
+      "slug": "train-vs-avion-2026-la-calculatrice-co2-et-le-vrai-cout-compare",
+      "working_title": "Train vs avion 2026 : la calculatrice CO2 et le vrai cout compare"
+    },
+    {
+      "vertical": "reglementation",
+      "topic": "Loi AGEC 2020 : ce qui change pour toi en 2026 (achats, repar.)",
+      "intent": "informational",
+      "done": false,
+      "slug": "loi-agec-2020-ce-qui-change-pour-toi-en-2026-achats-repar",
+      "working_title": "Loi AGEC 2020 : ce qui change pour toi en 2026 (achats, repar.)"
+    },
+    {
+      "vertical": "reglementation",
+      "topic": "Indice de reparabilite obligatoire 2026 : les produits concernes",
+      "intent": "informational",
+      "done": false,
+      "slug": "indice-de-reparabilite-obligatoire-2026-les-produits-concernes",
+      "working_title": "Indice de reparabilite obligatoire 2026 : les produits concernes"
+    },
+    {
+      "vertical": "reglementation",
+      "topic": "Garantie legale 2 ans : comment l'activer vraiment en 2026",
+      "intent": "informational",
+      "done": false,
+      "slug": "garantie-legale-2-ans-comment-l-activer-vraiment-en-2026",
+      "working_title": "Garantie legale 2 ans : comment l'activer vraiment en 2026"
+    },
+    {
+      "vertical": "reglementation",
+      "topic": "Obsolescence programmee 2026 : ce que la loi punit vraiment",
+      "intent": "informational",
+      "done": false,
+      "slug": "obsolescence-programmee-2026-ce-que-la-loi-punit-vraiment",
+      "working_title": "Obsolescence programmee 2026 : ce que la loi punit vraiment"
+    },
+    {
+      "vertical": "diy-upcycling",
+      "topic": "Meubles en palette 2026 : 8 projets faciles avec budget reel",
+      "intent": "informational",
+      "done": false,
+      "slug": "meubles-en-palette-2026-8-projets-faciles-avec-budget-reel",
+      "working_title": "Meubles en palette 2026 : 8 projets faciles avec budget reel"
+    },
+    {
+      "vertical": "diy-upcycling",
+      "topic": "Peinture naturelle maison 2026 : recettes, cout, tenue testee",
+      "intent": "informational",
+      "done": false,
+      "slug": "peinture-naturelle-maison-2026-recettes-cout-tenue-testee",
+      "working_title": "Peinture naturelle maison 2026 : recettes, cout, tenue testee"
+    },
+    {
+      "vertical": "diy-upcycling",
+      "topic": "Cosmetiques maison 2026 : 10 recettes safe et economiques",
+      "intent": "informational",
+      "done": false,
+      "slug": "cosmetiques-maison-2026-10-recettes-safe-et-economiques",
+      "working_title": "Cosmetiques maison 2026 : 10 recettes safe et economiques"
+    },
+    {
+      "vertical": "diy-upcycling",
+      "topic": "Produits menagers maison 2026 : recettes, economies, efficacite",
+      "intent": "informational",
+      "done": false,
+      "slug": "produits-menagers-maison-2026-recettes-economies-efficacite",
+      "working_title": "Produits menagers maison 2026 : recettes, economies, efficacite"
+    },
+    {
+      "vertical": "diy-upcycling",
+      "topic": "Jardinage urbain 2026 : balcon, bac, lombricomposteur, vrai cout",
+      "intent": "informational",
+      "done": false,
+      "slug": "jardinage-urbain-2026-balcon-bac-lombricomposteur-vrai-cout",
+      "working_title": "Jardinage urbain 2026 : balcon, bac, lombricomposteur, vrai cout"
+    },
+    {
+      "vertical": "zero-dechet",
+      "topic": "Demarrer le zero dechet 2026 : 10 premiers gestes vraiment utiles",
+      "intent": "informational",
+      "done": false,
+      "slug": "demarrer-le-zero-dechet-2026-10-premiers-gestes-vraiment-utiles",
+      "working_title": "Demarrer le zero dechet 2026 : 10 premiers gestes vraiment utiles"
+    },
+    {
+      "vertical": "zero-dechet",
+      "topic": "Salle de bains zero dechet 2026 : kit complet et economies/an",
+      "intent": "commercial",
+      "done": false,
+      "slug": "salle-de-bains-zero-dechet-2026-kit-complet-et-economies-an",
+      "working_title": "Salle de bains zero dechet 2026 : kit complet et economies/an"
+    },
+    {
+      "vertical": "zero-dechet",
+      "topic": "Cuisine sans plastique 2026 : alternatives testees et budget reel",
+      "intent": "informational",
+      "done": false,
+      "slug": "cuisine-sans-plastique-2026-alternatives-testees-et-budget-reel",
+      "working_title": "Cuisine sans plastique 2026 : alternatives testees et budget reel"
+    },
+    {
+      "vertical": "zero-dechet",
+      "topic": "Courses sans emballage 2026 : itineraire vrac, bocaux, astuces",
+      "intent": "informational",
+      "done": false,
+      "slug": "courses-sans-emballage-2026-itineraire-vrac-bocaux-astuces",
+      "working_title": "Courses sans emballage 2026 : itineraire vrac, bocaux, astuces"
+    },
+    {
+      "vertical": "zero-dechet",
+      "topic": "Voyager zero dechet 2026 : kit, astuces, vrais gains au quotidien",
+      "intent": "informational",
+      "done": false,
+      "slug": "voyager-zero-dechet-2026-kit-astuces-vrais-gains-au-quotidien",
+      "working_title": "Voyager zero dechet 2026 : kit, astuces, vrais gains au quotidien"
     }
   ]
 }
