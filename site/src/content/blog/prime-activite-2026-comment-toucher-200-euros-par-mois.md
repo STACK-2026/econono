@@ -212,8 +212,8 @@ Si la CAF estime que tu as touché trop d’argent, elle peut te demander un **r
 ## Sources
 
 - CAF · [Barème prime d’activité 2026](https://www.caf.fr/) (données vérifiées en avril 2026)
-- Service-Public · [Conditions d’éligibilité à la prime d’activité](https://www.service-public.fr/particuliers/vosdroits/F1985)
-- INSEE · [SMIC 2026 et revalorisation des aides](https://www.insee.fr/fr/statistiques/2521962)
+- Service-Public · Conditions d’éligibilité à la prime d’activité
+- INSEE · SMIC 2026 et revalorisation des aides
 - DREES · [Nombre de bénéficiaires et non-recours à la prime d’activité](https://drees.solidarites-sante.gouv.fr/) (2025)
 - La Finance pour Tous · [Explications sur le calcul de la prime d’activité](https://www.lafinancepourtous.com/)
 

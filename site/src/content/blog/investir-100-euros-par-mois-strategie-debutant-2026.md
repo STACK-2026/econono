@@ -371,8 +371,8 @@ Investir 100 €/mois, c’est simple… à condition d’éviter ces pièges cl
 
 ## Sources
 
-- INSEE · [Épargne des ménages en France (2023)](https://www.insee.fr/fr/statistiques/2521932)
-- Service-Public.fr · [SMIC 2026](https://www.service-public.fr/particuliers/actualites/A16003)
+- INSEE · Épargne des ménages en France (2023)
+- Service-Public.fr · SMIC 2026
 - Banque de France · [Taux d’épargne des Français (2024)](https://www.banque-france.fr/)
 - HCSF · [Recommandations sur le crédit immobilier (2022)](https://www.hcsf.gouv.fr/)
 - La Finance pour Tous · [Guide des ETF](https://www.lafinancepourtous.com/)

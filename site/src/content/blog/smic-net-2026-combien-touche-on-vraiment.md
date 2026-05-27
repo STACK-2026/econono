@@ -35,7 +35,7 @@ Dans ce guide, on te explique :
 
 En 2026, le **SMIC net** pour un temps plein (35 heures par semaine) est de **1 443 € par mois**. Ce montant est calculé après déduction des cotisations sociales (santé, retraite, chômage, etc.), mais avant l’impôt sur le revenu (qui dépend de ta situation familiale).
 
-Voici les chiffres officiels pour 2026, selon [Service-Public.fr](https://www.service-public.fr/particuliers/actualites/A17635) et [INSEE](https://www.insee.fr/fr/statistiques/2521951) :
+Voici les chiffres officiels pour 2026, selon Service-Public.fr et INSEE :
 - **SMIC brut mensuel** : 1 766,92 €
 - **SMIC net mensuel** : 1 443 €
 - **SMIC horaire brut** : 11,65 €
@@ -98,7 +98,7 @@ Le SMIC est revalorisé **automatiquement** chaque année au **1er janvier** en 
 1. **L’inflation** (hausse des prix à la consommation pour les 20% des ménages les plus modestes).
 2. **La moitié du gain de pouvoir d’achat du salaire horaire de base ouvrier et employé (SHBOE)**.
 
-En 2026, le SMIC a augmenté de **2,2%** par rapport à 2025, soit une hausse de **31 € net par mois**. Cette revalorisation suit l’inflation observée en 2025 (environ **2,1%** selon l’[INSEE](https://www.insee.fr/fr/statistiques/2521951)).
+En 2026, le SMIC a augmenté de **2,2%** par rapport à 2025, soit une hausse de **31 € net par mois**. Cette revalorisation suit l’inflation observée en 2025 (environ **2,1%** selon l’INSEE).
 
 *À savoir* :
 - Le gouvernement peut décider d’une **revalorisation supplémentaire** (comme en 2022 et 2023), mais ce n’est pas automatique.
@@ -295,8 +295,8 @@ Le SMIC est revalorisé **automatiquement chaque année au 1er janvier** en fonc
 
 ## Sources
 
-- [Service-Public.fr - SMIC 2026](https://www.service-public.fr/particuliers/actualites/A17635)
-- [INSEE - Salaire minimum et pouvoir d’achat](https://www.insee.fr/fr/statistiques/2521951)
+- Service-Public.fr - SMIC 2026
+- INSEE - Salaire minimum et pouvoir d’achat
 - [Banque de France - Revalorisation du SMIC](https://www.banque-france.fr/)
 - [CAF - Prime d’activité et APL](https://www.caf.fr/)
 - [DARES - Heures supplémentaires non payées](https://dares.travail-emploi.gouv.fr/)

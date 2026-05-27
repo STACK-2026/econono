@@ -100,8 +100,8 @@ Voici un **tableau récapitulatif** pour comparer en un clin d’œil. Les déta
 | Heu?reka               | YouTube, TikTok             | 1,2M           | Éducation financière globale     | Gratuit (pub)        | Débutants, curieux               | Tu veux du 100% budget                  | [YouTube](https://www.youtube.com/c/HeuReKa) |
 | Léa Bordier            | Instagram, TikTok           | 500K           | Budget zéro-déchet               | Gratuit (livre payant)| Familles, écolos                 | Tu veux des conseils 100% classiques    | [Instagram](https://www.instagram.com/leabordier/) |
 | Naelle Tesfa           | TikTok, Instagram           | 300K           | Budget anti-gaspi                | Gratuit (formations payantes) | Jeunes actifs, étudiants | Tu veux des conseils "traditionnels" | [TikTok](https://www.tiktok.com/@naelletesfa) |
-| Daphné Borel           | YouTube, Newsletter         | 200K           | Budget minimaliste               | Gratuit (formations payantes) | Freelances, indépendants | Tu veux des conseils pour salariés | [Newsletter](https://daphneborel.substack.com/) |
-| Mes Allocs Show        | YouTube, Podcast            | 150K           | Optimisation fiscale et aides    | Gratuit (pub)        | Familles, allocataires           | Tu veux gérer ton budget au quotidien   | [YouTube](https://www.youtube.com/c/MesAllocsShow) |
+| Daphné Borel           | YouTube, Newsletter         | 200K           | Budget minimaliste               | Gratuit (formations payantes) | Freelances, indépendants | Tu veux des conseils pour salariés | Newsletter |
+| Mes Allocs Show        | YouTube, Podcast            | 150K           | Optimisation fiscale et aides    | Gratuit (pub)        | Familles, allocataires           | Tu veux gérer ton budget au quotidien   | YouTube |
 | Le Coin des Investisseurs | YouTube, Newsletter      | 100K           | Investissement long terme        | Gratuit (formations payantes) | Épargnants, investisseurs | Tu veux juste gérer ton budget    | [Newsletter](https://lecoindesinvestisseurs.fr/) |
 | Crystal Coaching       | Instagram, TikTok           | 80K            | Budget émotionnel                | Gratuit (coaching payant) | Femmes, freelances          | Tu veux des conseils 100% rationnels    | [Instagram](https://www.instagram.com/crystalcoaching/) |
 
@@ -234,7 +234,7 @@ Daphné Borel, c’est **la reine du minimalisme financier**. Ancienne salariée
 **Pourquoi la suivre ?**
 Daphné est **parfaite si tu veux simplifier ta vie financière**. Son approche minimaliste te permet de **te concentrer sur l’essentiel**.
 
-👉 **Lien utile** : [Sa newsletter](https://daphneborel.substack.com/).
+👉 **Lien utile** : Sa newsletter.
 
 ---
 
@@ -266,7 +266,7 @@ Mes Allocs Show, c’est **l’émission qui t’aide à récupérer ton dû**. 
 **Pourquoi les suivre ?**
 Mes Allocs Show est **indispensable si tu touches des aides sociales**. Ils te permettent de **récupérer des centaines d’euros par an**.
 
-👉 **Lien utile** : [Leur chaîne YouTube](https://www.youtube.com/c/MesAllocsShow).
+👉 **Lien utile** : Leur chaîne YouTube.
 
 ---
 
@@ -386,11 +386,11 @@ Voici comment repérer les **bons créateurs** :
 
 ## Sources
 
-- INSEE · [Enquête Budget de famille 2025](https://www.insee.fr/fr/statistiques/6435933)
-- Banque de France · [Baromètre des ménages 2024](https://www.banque-france.fr/statistiques/menages)
+- INSEE · Enquête Budget de famille 2025
+- Banque de France · Baromètre des ménages 2024
 - Service-Public.fr · [Aides sociales 2026](https://www.service-public.fr/particuliers/vosdroits/F1419)
-- DREES · [Étude sur la précarité financière 2025](https://drees.solidarites-sante.gouv.fr/publications/etudes-et-resultats/precarite-financiere-en-france)
-- La Finance pour Tous · [Guide de l’éducation financière](https://www.lafinancepourtous.com/outils/guides/)
+- DREES · Étude sur la précarité financière 2025
+- La Finance pour Tous · Guide de l’éducation financière
 
 ---
 

@@ -317,12 +317,12 @@ Tu n’es pas obligé·e de choisir entre les deux ! **Les combiner peut être u
 
 ## Sources
 
-- **Service-Public.fr** · [Fiscalité du PEA](https://www.service-public.fr/particuliers/vosdroits/F1417) (avril 2026).
+- **Service-Public.fr** · Fiscalité du PEA (avril 2026).
 - **Banque de France** · [Rendement des fonds euros 2026](https://www.banque-france.fr/statistiques) (avril 2026).
 - **HCSF** · [Plafond du PEA](https://www.hcsf.gouv.fr/) (avril 2026).
-- **INSEE** · [Taux d’épargne des ménages 2026](https://www.insee.fr/fr/statistiques/2521067) (avril 2026).
-- **La Finance pour Tous** · [Assurance vie vs PEA](https://www.lafinancepourtous.com/pratique/placements/assurance-vie/assurance-vie-ou-pea/) (avril 2026).
-- **UFC-Que Choisir** · [Comparatif des contrats d’assurance vie](https://www.quechoisir.org/comparatif-assurance-vie-n56807/) (avril 2026).
+- **INSEE** · Taux d’épargne des ménages 2026 (avril 2026).
+- **La Finance pour Tous** · Assurance vie vs PEA (avril 2026).
+- **UFC-Que Choisir** · Comparatif des contrats d’assurance vie (avril 2026).
 - **ACPR** · [Rendement des UC 2026](https://acpr.banque-france.fr/) (avril 2026).
 
 ---

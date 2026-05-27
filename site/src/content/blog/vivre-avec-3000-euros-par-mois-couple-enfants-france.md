@@ -303,7 +303,7 @@ Avec **3 000 €/mois**, tu peux prétendre à plusieurs aides, selon ta situati
 
 ## Sources
 
-- INSEE · [Enquête Budget de famille 2025](https://www.insee.fr/fr/statistiques/2521391) (dépenses moyennes des ménages).
+- INSEE · Enquête Budget de famille 2025 (dépenses moyennes des ménages).
 - Banque de France · [Taux d’endettement et recommandations HCSF](https://www.banque-france.fr/) (plafond à 35%).
 - CAF · [Simulateur d’aides 2026](https://www.caf.fr/) (APL, allocations familiales, prime d’activité).
 - Service-Public.fr · [Aides au logement et allocations](https://www.service-public.fr/) (conditions et montants).

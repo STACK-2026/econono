@@ -28,7 +28,7 @@ Tu touches **1 800 € net par mois** et tu te demandes si c’est suffisant pou
 
 Dans ce guide, on te montre **un budget type détaillé** pour vivre avec 1 800 €/mois, ville par ville. On compare les coûts (loyer, courses, transport), on active les aides auxquelles tu as droit (LEP, prime activité), et on te donne des astuces pour optimiser chaque euro. Spoiler : oui, c’est serré, mais c’est possible sans se priver de tout.
 
-*Pourquoi ce montant ?* 1 800 € net, c’est **26% de plus que le SMIC** (1 443 € net en 2026, selon [Service-Public.fr](https://www.service-public.fr/)). C’est aussi le salaire médian des moins de 30 ans en France ([INSEE, 2023](https://www.insee.fr/fr/statistiques/6474073)). Bref, tu n’es pas seul·e dans cette situation.
+*Pourquoi ce montant ?* 1 800 € net, c’est **26% de plus que le SMIC** (1 443 € net en 2026, selon [Service-Public.fr](https://www.service-public.fr/)). C’est aussi le salaire médian des moins de 30 ans en France (INSEE, 2023). Bref, tu n’es pas seul·e dans cette situation.
 
 ---
 
@@ -56,7 +56,7 @@ Mais en réalité, avec 1 800 €, tu vas devoir ajuster ces pourcentages. Voici
 | **Frais bancaires**         | 20          | 1%          | Banque en ligne gratuite                    |
 | **Total**                   | **1 800**   | **100%**    |                                             |
 
-*Source : adaptation des données [INSEE 2023](https://www.insee.fr/fr/statistiques/6474073) et [Banque de France](https://www.banque-france.fr/).*
+*Source : adaptation des données INSEE 2023 et [Banque de France](https://www.banque-france.fr/).*
 
 👉 **Veux-tu un budget personnalisé ?** Utilise notre [calculateur de budget mensuel](/calculateurs/budget-mensuel/) pour ajuster ces chiffres à ta situation.
 
@@ -161,7 +161,7 @@ Avec **10% de ton budget** (180 €/mois), tu peux :
 | Lecture                | 0-10           | Bibliothèques, livres d’occasion        |
 | Voyages                | 50-100         | Week-ends en covoiturage, Airbnb partagé |
 
-*Source : [INSEE, 2023](https://www.insee.fr/fr/statistiques/6474073) - dépenses moyennes des Français.*
+*Source : INSEE, 2023 - dépenses moyennes des Français.*
 
 👉 **Besoin d’idées ?** Consulte notre [guide des loisirs pas chers](/guides/loisirs-pas-chers/).
 
@@ -249,8 +249,8 @@ Oui, mais **pas beaucoup**. Avec **144 €/mois** (8% de ton budget), tu peux pl
 ---
 
 ## Sources
-- [INSEE - Revenus et conditions de vie en France (2023)](https://www.insee.fr/fr/statistiques/6474073)
-- [Service-Public.fr - SMIC 2026](https://www.service-public.fr/particuliers/actualites/A16000)
+- INSEE - Revenus et conditions de vie en France (2023)
+- Service-Public.fr - SMIC 2026
 - [Banque de France - Taux des livrets réglementés (2026)](https://www.banque-france.fr/)
 - [CAF - Prime d’activité et APL](https://www.caf.fr/)
 - [ADEME - Budget courses et gaspillage alimentaire](https://www.ademe.fr/)

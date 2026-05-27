@@ -285,10 +285,10 @@ C’est plus difficile, mais pas impossible. Les banques préfèrent les CDI, ma
 
 - **HCSF** : [Recommandations du Haut Conseil de Stabilité Financière (janvier 2022)](https://www.hcsf.gouv.fr/recommandations-du-hcsf-sur-les-conditions-d-octroi-de-credits-immobiliers-aux-particuliers)
 - **Banque de France** : [Taux d’usure et conditions de crédit (avril 2026)](https://www.banque-france.fr/statistiques/taux-et-cours/taux-dusure)
-- **Service-Public.fr** : [Crédit immobilier : règles d’octroi (2026)](https://www.service-public.fr/particuliers/vosdroits/F1985)
-- **INSEE** : [Revenus et endettement des ménages (2025)](https://www.insee.fr/fr/statistiques/2521061)
-- **La Finance pour Tous** : [Comprendre le taux d’endettement](https://www.lafinancepourtous.com/pratique/credit/credit-immobilier/taux-dendettement/)
-- **UFC-Que Choisir** : [Crédit immobilier : comment obtenir une dérogation ? (2026)](https://www.quechoisir.org/guide-d-achat-credit-immobilier-n2026/)
+- **Service-Public.fr** : Crédit immobilier : règles d’octroi (2026)
+- **INSEE** : Revenus et endettement des ménages (2025)
+- **La Finance pour Tous** : Comprendre le taux d’endettement
+- **UFC-Que Choisir** : Crédit immobilier : comment obtenir une dérogation ? (2026)
 
 ---
 

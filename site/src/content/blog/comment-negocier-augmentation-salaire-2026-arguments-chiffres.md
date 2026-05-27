@@ -318,14 +318,14 @@ En freelance, tu négocies **tes tarifs**, pas une augmentation. Voici comment f
 
 ## Sources
 
-- **INSEE** : [Inflation en France (2022-2025)](https://www.insee.fr/fr/statistiques/2521961)
-- **Apec** : [Salaires par métier et région (2025)](https://www.apec.fr/candidat/recherche-emploi/offres-emploi/salaires.html)
+- **INSEE** : Inflation en France (2022-2025)
+- **Apec** : Salaires par métier et région (2025)
 - **Glassdoor** : [Salaire moyen par entreprise](https://www.glassdoor.fr/Salaires/)
 - **Payscale** : [Salaire par expérience](https://www.payscale.com/)
 - **JobTeaser** : [Étude sur les demandes d’augmentation (2024)](https://www.jobteaser.com/fr)
 - **Banque de France** : [Évolution des salaires en France](https://www.banque-france.fr/statistiques)
 - **DARES** : [Tensions sur le marché du travail (2026)](https://dares.travail-emploi.gouv.fr/)
-- **La Finance pour Tous** : [Comment négocier son salaire](https://www.lafinancepourtous.com/pratique/epargne-et-placement/comment-negocier-son-salaire/)
+- **La Finance pour Tous** : Comment négocier son salaire
 
 ---
 

@@ -317,11 +317,11 @@ En plus du prix du bien, prévois :
 
 ## Sources
 
-- Banque de France · [Statistiques des taux de crédit immobilier (avril 2026)](https://www.banque-france.fr/statistiques/taux/taux-de-credit-immobilier)
-- Observatoire Crédit Logement/CSA · [Baromètre des taux (mai 2026)](https://www.creditlogement.fr/observatoire-des-taux)
-- Service-Public.fr · [Taux d’endettement et HCSF (2022)](https://www.service-public.fr/particuliers/vosdroits/F1985)
-- INSEE · [Revenus et pouvoir d’achat des ménages (2025)](https://www.insee.fr/fr/statistiques/2521355)
-- La Finance pour Tous · [Comment calculer sa capacité d’emprunt ?](https://www.lafinancepourtous.com/pratique/credit/credit-immobilier/capacite-d-emprunt/)
+- Banque de France · Statistiques des taux de crédit immobilier (avril 2026)
+- Observatoire Crédit Logement/CSA · Baromètre des taux (mai 2026)
+- Service-Public.fr · Taux d’endettement et HCSF (2022)
+- INSEE · Revenus et pouvoir d’achat des ménages (2025)
+- La Finance pour Tous · Comment calculer sa capacité d’emprunt ?
 - UFC-Que Choisir · [Assurance emprunteur : comment économiser ?](https://www.quechoisir.org/guide-d-achat-assurance-emprunteur-n5683/)
 
 ---

@@ -405,7 +405,7 @@ Non, *sauf* si tu vis dans une zone très risquée (inondations, cambriolages fr
 
 ## Sources
 
-- INSEE · [Niveau de vie et pauvreté en France](https://www.insee.fr/fr/statistiques/2521393) (2025).
+- INSEE · Niveau de vie et pauvreté en France (2025).
 - Banque de France · [Recommandations sur l’épargne de précaution](https://www.banque-france.fr/) (2023).
 - Service-Public · [Livret A, LEP, LDDS : plafonds et taux](https://www.service-public.fr/particuliers/vosdroits/F1514) (2026).
 - UFC-Que Choisir · [Coût des pannes domestiques](https://www.quechoisir.org/) (2024).

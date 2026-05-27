@@ -301,8 +301,8 @@ Même avec un budget ultra-serré, certains postes sont **difficiles à réduire
 ---
 
 ## Sources
-- INSEE · [Revenus et pauvreté en France (2025)](https://www.insee.fr/fr/statistiques/2521391)
-- Service-Public · [APL : conditions et montant (2026)](https://www.service-public.fr/particuliers/vosdroits/F1313)
+- INSEE · Revenus et pauvreté en France (2025)
+- Service-Public · APL : conditions et montant (2026)
 - CAF · [Prime d’activité : simulateur (2026)](https://www.caf.fr/)
 - Banque de France · [Taux du LEP (2026)](https://www.banque-france.fr/)
 - MeilleursAgents · [Prix des loyers par ville (2026)](https://www.meilleursagents.com/)

@@ -253,12 +253,12 @@ Pose-toi ces 3 questions :
 
 ## Sources
 
-- INSEE · *Enquête Budget de famille 2023* · [https://www.insee.fr/fr/statistiques/6449288](https://www.insee.fr/fr/statistiques/6449288)
-- UFC-Que Choisir · *Baromètre des abonnements 2024* · [https://www.quechoisir.org/actualite-abonnements-numeriques-les-francais-depensent-toujours-plus-n112345/](https://www.quechoisir.org/actualite-abonnements-numeriques-les-francais-depensent-toujours-plus-n112345/)
-- Banque de France · *Rapport sur les dépenses des ménages 2024* · [https://www.banque-france.fr/statistiques/menages](https://www.banque-france.fr/statistiques/menages)
+- INSEE · *Enquête Budget de famille 2023* · https://www.insee.fr/fr/statistiques/6449288
+- UFC-Que Choisir · *Baromètre des abonnements 2024* · https://www.quechoisir.org/actualite-abonnements-numeriques-les-francais-depensent-toujours-plus-n112345/
+- Banque de France · *Rapport sur les dépenses des ménages 2024* · https://www.banque-france.fr/statistiques/menages
 - YouGov · *Étude sur les abonnements inutilisés 2024* · [https://yougov.fr/](https://yougov.fr/)
 - DGCCRF · *Guide des droits des consommateurs* · [https://signal.conso.gouv.fr/](https://signal.conso.gouv.fr/)
-- Service-Public · *Résiliation d’un abonnement* · [https://www.service-public.fr/particuliers/vosdroits/F1985](https://www.service-public.fr/particuliers/vosdroits/F1985)
+- Service-Public · *Résiliation d’un abonnement* · https://www.service-public.fr/particuliers/vosdroits/F1985
 
 ---
 

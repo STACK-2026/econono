@@ -339,10 +339,10 @@ En moyenne, **650 € à 1 000 €/mois** la première année, aides CAF déduit
 ---
 
 ## Sources
-- **UFC-Que Choisir** : [Coût d’un enfant en France (2023)](https://www.quechoisir.org/actualite-cout-d-un-enfant-en-france-n99007/)
+- **UFC-Que Choisir** : Coût d’un enfant en France (2023)
 - **CAF** : [Barèmes 2026 des aides (PAJE, CMG, PreParE)](https://www.caf.fr/)
-- **Service-Public.fr** : [Prime à la naissance et allocation de base](https://www.service-public.fr/particuliers/vosdroits/F1320)
-- **INSEE** : [Dépenses des ménages pour les enfants (2022)](https://www.insee.fr/fr/statistiques/2521942)
+- **Service-Public.fr** : Prime à la naissance et allocation de base
+- **INSEE** : Dépenses des ménages pour les enfants (2022)
 - **Banque de France** : [Taux d’endettement et budget familial](https://www.banque-france.fr/)
 - **La Finance pour Tous** : [Gérer son budget avec un bébé](https://www.lafinancepourtous.com/)
 

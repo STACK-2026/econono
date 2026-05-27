@@ -613,13 +613,13 @@ Pour économiser, voici les meilleurs moments pour faire tes courses :
 
 ## Sources
 
-1. INSEE · [Enquête Budget de famille 2026](https://www.insee.fr/fr/statistiques/2521338) - Données sur les dépenses des ménages en France.
+1. INSEE · Enquête Budget de famille 2026 - Données sur les dépenses des ménages en France.
 2. ADEME · [Gaspillage alimentaire en France](https://www.ademe.fr/gaspillage-alimentaire) - Chiffres et astuces pour réduire le gaspillage.
-3. Service-Public · [Prix des produits alimentaires](https://www.service-public.fr/particuliers/vosdroits/F1985) - Évolution des prix et conseils pour les consommateurs.
-4. UFC-Que Choisir · [Comparatif des prix en supermarché](https://www.quechoisir.org/comparatif-prix-supermarche-n83401/) - Analyse des écarts de prix entre les enseignes.
-5. Banque de France · [Inflation et pouvoir d’achat](https://www.banque-france.fr/statistiques/inflation) - Données sur l’inflation et son impact sur les ménages.
+3. Service-Public · Prix des produits alimentaires - Évolution des prix et conseils pour les consommateurs.
+4. UFC-Que Choisir · Comparatif des prix en supermarché - Analyse des écarts de prix entre les enseignes.
+5. Banque de France · Inflation et pouvoir d’achat - Données sur l’inflation et son impact sur les ménages.
 6. Too Good To Go · [Rapport sur le gaspillage alimentaire](https://toogoodtoogo.org/fr) - Chiffres et solutions pour lutter contre le gaspillage.
-7. Shopmium · [Étude sur les économies réalisées avec le cashback](https://www.shopmium.com/fr) - Avantages des apps de cashback pour les consommateurs.
+7. Shopmium · Étude sur les économies réalisées avec le cashback - Avantages des apps de cashback pour les consommateurs.
 8. Biocoop · [Guide des prix en magasin bio](https://www.biocoop.fr) - Comparaison des prix entre le bio et le conventionnel.
 9. Carrefour · [Comparatif des marques distributeurs](https://www.carrefour.fr) - Analyse des économies réalisées avec les marques distributeurs.
 10. ADEME · [Guide pour une alimentation durable](https://www.ademe.fr/expertises/dechets/passer-a-laction/reduire-ses-dechets/reduire-gaspillage-alimentaire) - Conseils pour une consommation responsable.

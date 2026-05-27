@@ -376,7 +376,7 @@ Oui, toutes les applis que l’on a testées respectent le **RGPD** et utilisent
 - **Vérifie régulièrement tes transactions** pour détecter les fraudes.
 - **Choisis une appli française** (Bankin’, Linxo, Finary, Origin) si tu veux que tes données soient hébergées en France.
 
-Source : [CNIL · Sécurité des applis bancaires](https://www.cnil.fr/fr/securite-des-applications-bancaires) (2025).
+Source : CNIL · Sécurité des applis bancaires (2025).
 
 ---
 
@@ -433,7 +433,7 @@ Si tu veux gérer un budget commun, **Linxo est la meilleure option**.
 
 - Banque de France · [Étude sur les applis de gestion de budget](https://www.banque-france.fr/) (2024).
 - INSEE · [Enquête sur les habitudes de gestion de budget](https://www.insee.fr/fr/statistiques) (2024).
-- CNIL · [Sécurité des applis bancaires](https://www.cnil.fr/fr/securite-des-applications-bancaires) (2025).
+- CNIL · Sécurité des applis bancaires (2025).
 - UFC-Que Choisir · [Comparatif des applis bancaires](https://www.quechoisir.org/) (2025).
 - DREES · [Impact des applis budget sur l’épargne](https://drees.solidarites-sante.gouv.fr/) (2025).
 - Service-Public.fr · [RGPD et protection des données](https://www.service-public.fr/) (2026).

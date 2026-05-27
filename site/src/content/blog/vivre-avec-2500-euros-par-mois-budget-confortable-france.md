@@ -257,12 +257,12 @@ Si tu n’arrives pas à épargner, c’est souvent à cause de **3 raisons** :
 ---
 
 ## Sources
-- INSEE · [Revenus et patrimoine des ménages (2026)](https://www.insee.fr/fr/statistiques/2521393)
+- INSEE · Revenus et patrimoine des ménages (2026)
 - Banque de France · [Taux d’intérêt moyens (avril 2026)](https://www.banque-france.fr/statistiques/taux-et-cours/taux-dinteret-moyens)
 - Service-Public · [Livret d’Épargne Populaire (LEP)](https://www.service-public.fr/particuliers/vosdroits/F1515)
-- DREES · [Niveau de vie des Français (2026)](https://drees.solidarites-sante.gouv.fr/etudes-et-statistiques/publications/panoramas-de-la-drees/article/niveau-de-vie-et-inegalites)
+- DREES · Niveau de vie des Français (2026)
 - La Finance pour Tous · [Comment bien gérer son budget](https://www.lafinancepourtous.com/pratique/budget/)
-- UFC-Que Choisir · [Comparateur de crédits immobiliers](https://www.quechoisir.org/comparateur-credit-immobilier-n55238/)
+- UFC-Que Choisir · Comparateur de crédits immobiliers
 
 ---
 

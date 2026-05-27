@@ -58,7 +58,7 @@ Pour ouvrir un LEP, **ton revenu fiscal de référence (RFR) 2024** (celui de to
 | 3 parts                  | 45 880               |
 | +0,5 part par enfant     | +5 735               |
 
-*Source : [Service-Public.fr (janvier 2026)](https://www.service-public.fr/particuliers/vosdroits/F1519)*
+*Source : Service-Public.fr (janvier 2026)*
 
 **Comment trouver ton RFR ?**
 1. Prends ton **avis d’imposition 2025** (celui sur tes revenus 2024).
@@ -230,11 +230,11 @@ Les intérêts sont **calculés par quinzaine** (2 fois par mois) et **versés l
 
 ## Sources
 
-- **Service-Public.fr** · [LEP : conditions, taux, plafond (janvier 2026)](https://www.service-public.fr/particuliers/vosdroits/F1519)
+- **Service-Public.fr** · LEP : conditions, taux, plafond (janvier 2026)
 - **Banque de France** · [Statistiques sur les livrets réglementés (décembre 2025)](https://www.banque-france.fr/statistiques/epargne/livrets-reglementes)
-- **INSEE** · [Revenus fiscaux de référence par ménage (2024)](https://www.insee.fr/fr/statistiques/2521067)
+- **INSEE** · Revenus fiscaux de référence par ménage (2024)
 - **La Finance pour Tous** · [LEP : tout savoir sur le Livret d’Épargne Populaire](https://www.lafinancepourtous.com/epargne/livrets-reglementes/lep/)
-- **UFC-Que Choisir** · [Comparatif des livrets d’épargne (2026)](https://www.quechoisir.org/comparatif-livrets-d-epargne-n83051/)
+- **UFC-Que Choisir** · Comparatif des livrets d’épargne (2026)
 - **DREES** · [Niveau de vie et épargne des ménages (2025)](https://drees.solidarites-sante.gouv.fr/)
 
 ---

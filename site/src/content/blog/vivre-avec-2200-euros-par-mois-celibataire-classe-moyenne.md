@@ -230,7 +230,7 @@ Quelques pistes :
 ---
 
 ## Sources
-- INSEE · [Salaire médian et moyen en France (2026)](https://www.insee.fr/fr/statistiques/2521380)
+- INSEE · Salaire médian et moyen en France (2026)
 - Service-Public · [Simulateur impôts 2026](https://www.service-public.fr/particuliers/vosdroits/F1419)
 - Banque de France · [Taux d’endettement et reste à vivre](https://www.banque-france.fr/)
 - CAF · [Prime d’activité 2026](https://www.caf.fr/)

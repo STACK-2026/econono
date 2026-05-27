@@ -294,10 +294,10 @@ Oui, mais il faut :
 
 ## Sources
 
-- INSEE · [Les dépenses de logement des ménages en 2023](https://www.insee.fr/fr/statistiques/2521067)
+- INSEE · Les dépenses de logement des ménages en 2023
 - DARES · [Salaire médian en France en 2024](https://dares.travail-emploi.gouv.fr/)
 - CRE · [Évolution des prix de l’énergie (2021-2024)](https://www.cre.fr/)
-- Service-Public · [APL et aides au logement en 2024](https://www.service-public.fr/particuliers/vosdroits/F1321)
+- Service-Public · APL et aides au logement en 2024
 - ADEME · [Aides pour la rénovation énergétique](https://www.ademe.fr/)
 - Banque de France · [Taux d’endettement et HCSF](https://www.banque-france.fr/)
 - MeilleursAgents · [Prix des loyers en France (2024)](https://www.meilleursagents.com/)

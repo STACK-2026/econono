@@ -148,7 +148,7 @@ Si tu touches déjà des APL et que tu reçois un courrier de la CAF t’annonç
 ### 2️⃣ Fais un recours si le calcul est faux
 Si tu penses que la CAF s’est trompée, tu peux :
 - **Demander une révision** via ton compte en ligne (rubrique "Mes démarches").
-- **Envoyer un courrier** à ta CAF locale (modèle de lettre [ici](https://www.service-public.fr/particuliers/vosdroits/F1985)).
+- **Envoyer un courrier** à ta CAF locale (modèle de lettre ici).
 - **Saisir le médiateur de la CAF** si le litige persiste (gratuit et sans avocat).
 
 ### 3️⃣ Cherche d’autres aides
@@ -197,7 +197,7 @@ Oui, **tes allocations chômage sont prises en compte dans le calcul de tes APL*
 
 - [CAF - Simulateur APL (avril 2026)](https://www.caf.fr/allocataires/aides-et-services/les-aides-au-logement/simuler-vos-droits)
 - [Service-Public.fr - APL : conditions et calcul (avril 2026)](https://www.service-public.fr/particuliers/vosdroits/F1314)
-- [INSEE - Revenus et pauvreté en France (2024)](https://www.insee.fr/fr/statistiques/2521391)
+- INSEE - Revenus et pauvreté en France (2024)
 - [DREES - Aides au logement en 2023 (rapport)](https://drees.solidarites-sante.gouv.fr/)
 - [La Finance pour Tous - Comprendre les APL (2025)](https://www.lafinancepourtous.com/)
 - [UFC-Que Choisir - Guide des aides au logement (2026)](https://www.quechoisir.org/)

@@ -171,8 +171,8 @@ Les banques conseillent de **mettre de côté 10% de tes revenus** pour les impr
 
 **Outils pour t’aider** :
 - [Notre calculateur de reste à vivre](/calculateurs/reste-a-vivre/) (gratuit, sans inscription).
-- [Le simulateur de budget de la Banque de France](https://www.banque-france.fr/particuliers/outils/simulateur-de-budget).
-- [Le tableau Excel "Budget mensuel" de Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/R14131).
+- Le simulateur de budget de la Banque de France.
+- Le tableau Excel "Budget mensuel" de Service-Public.fr.
 
 ---
 
@@ -220,7 +220,7 @@ Si tu es **vraiment à découvert** chaque mois, tu peux demander :
 - Un **plan conventionnel de redressement** à la Banque de France (si tu es surendetté·e).
 - Un **microcrédit personnel** (via l’[ADIE](https://www.adie.org/) ou ta banque) pour financer un projet qui te fera gagner de l’argent (exemple : acheter une machine à coudre pour lancer une activité de couture).
 
-**À savoir** : La Banque de France propose un [simulateur de surendettement](https://www.banque-france.fr/particuliers/surendettement) pour voir si tu es éligible à un plan.
+**À savoir** : La Banque de France propose un simulateur de surendettement pour voir si tu es éligible à un plan.
 
 ---
 
@@ -287,7 +287,7 @@ Si ton reste à vivre est **négatif**, ça veut dire que tu dépenses **plus qu
 - Les prêts entre particuliers non encadrés (risque d’arnaque).
 
 ### 📊 Quel est le reste à vivre moyen en France ?
-Selon l’[INSEE (2025)](https://www.insee.fr/fr/statistiques/6473532), le **reste à vivre moyen** des ménages français est de **1 200 €/mois** pour une personne seule et **2 000 €/mois** pour un couple avec 2 enfants.
+Selon l’INSEE (2025), le **reste à vivre moyen** des ménages français est de **1 200 €/mois** pour une personne seule et **2 000 €/mois** pour un couple avec 2 enfants.
 
 **Mais attention** : ces chiffres cachent de **grosses inégalités** :
 - **10% des ménages** ont un reste à vivre **inférieur à 500 €/mois**.
@@ -308,13 +308,13 @@ Ton reste à vivre n’est **pas figé**. Il peut évoluer en fonction :
 
 ## Sources
 
-- Banque de France · [Seuils de reste à vivre 2026](https://www.banque-france.fr/particuliers/outils/seuils-reste-a-vivre) (consulté en avril 2026).
-- INSEE · [Revenus et conditions de vie des ménages 2025](https://www.insee.fr/fr/statistiques/6473532) (publié en mars 2026).
-- Service-Public.fr · [Calculer son budget mensuel](https://www.service-public.fr/particuliers/vosdroits/R14131) (mis à jour en janvier 2026).
+- Banque de France · Seuils de reste à vivre 2026 (consulté en avril 2026).
+- INSEE · Revenus et conditions de vie des ménages 2025 (publié en mars 2026).
+- Service-Public.fr · Calculer son budget mensuel (mis à jour en janvier 2026).
 - ADEME · [Économies d’énergie à la maison](https://www.ademe.fr/expertises/dechets/passer-a-laction/reduire-ses-dechets/economies-denergie-maison) (2025).
-- UFC-Que Choisir · [Gaspillage d’électricité en France](https://www.quechoisir.org/actualite-gaspillage-d-electricite-en-france-n98747/) (2025).
+- UFC-Que Choisir · Gaspillage d’électricité en France (2025).
 - CAF · [Simulateur de droits](https://www.caf.fr/) (2026).
-- La Finance pour Tous · [Reste à vivre et taux d’endettement](https://www.lafinancepourtous.com/pratique/credit/le-reste-a-vivre/) (2026).
+- La Finance pour Tous · Reste à vivre et taux d’endettement (2026).
 
 ---
 

@@ -261,10 +261,10 @@ Non ! Les **intérêts du Livret A, du LEP, du LDDS et du Livret Jeune** sont **
 ## Sources
 
 - [Service-Public.fr - Barème TMI 2026](https://www.service-public.fr/particuliers/vosdroits/F1419)
-- [INSEE - Impôt sur le revenu en France (2025)](https://www.insee.fr/fr/statistiques/2521067)
-- [Service-Public.fr - Quotient familial 2026](https://www.service-public.fr/particuliers/vosdroits/F1417)
+- INSEE - Impôt sur le revenu en France (2025)
+- Service-Public.fr - Quotient familial 2026
 - [Banque de France - Plafonds PER 2026](https://www.banque-france.fr/)
-- [Service-Public.fr - Réduction d’impôt pour dons 2026](https://www.service-public.fr/particuliers/vosdroits/F1418)
+- Service-Public.fr - Réduction d’impôt pour dons 2026
 - [ADEME - Crédit d’impôt emploi à domicile](https://www.ademe.fr/)
 - [La Finance pour Tous - Investissement locatif Pinel](https://www.lafinancepourtous.com/)
 

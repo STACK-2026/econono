@@ -387,14 +387,14 @@ Si tu ne peux **vraiment pas payer tes factures** (électricité, loyer, crédit
 
 ## Sources
 
-- **Service-Public.fr** · SMIC net 2026 : [https://www.service-public.fr/particuliers/actualites/A16003](https://www.service-public.fr/particuliers/actualites/A16003)
-- **INSEE** · Dépenses des ménages 2025 : [https://www.insee.fr/fr/statistiques/2521388](https://www.insee.fr/fr/statistiques/2521388)
-- **Banque de France** · Frais d’incidents bancaires 2025 : [https://www.banque-france.fr/statistiques/incidents-de-paiement](https://www.banque-france.fr/statistiques/incidents-de-paiement)
+- **Service-Public.fr** · SMIC net 2026 : https://www.service-public.fr/particuliers/actualites/A16003
+- **INSEE** · Dépenses des ménages 2025 : https://www.insee.fr/fr/statistiques/2521388
+- **Banque de France** · Frais d’incidents bancaires 2025 : https://www.banque-france.fr/statistiques/incidents-de-paiement
 - **CAF** · Prime d’activité 2026 : [https://www.caf.fr/allocataires/aides-et-services/les-aides/prime-d-activite](https://www.caf.fr/allocataires/aides-et-services/les-aides/prime-d-activite)
-- **UFC-Que Choisir** · Abonnements inutiles 2025 : [https://www.quechoisir.org/actualite-abonnements-inutiles-n98767/](https://www.quechoisir.org/actualite-abonnements-inutiles-n98767/)
-- **DREES** · Aides non réclamées 2025 : [https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/etudes-et-resultats/les-aides-sociales-non-rec](https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/etudes-et-resultats/les-aides-sociales-non-rec)
+- **UFC-Que Choisir** · Abonnements inutiles 2025 : https://www.quechoisir.org/actualite-abonnements-inutiles-n98767/
+- **DREES** · Aides non réclamées 2025 : https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/etudes-et-resultats/les-aides-sociales-non-rec
 - **ADEME** · Objets inutilisés 2025 : [https://www.ademe.fr/expertises/dechets/passer-a-laction/reduire-ses-dechets/reutiliser](https://www.ademe.fr/expertises/dechets/passer-a-laction/reduire-ses-dechets/reutiliser)
-- **La Finance pour Tous** · Taux d’endettement : [https://www.lafinancepourtous.com/pratique/credit/taux-dendettement/](https://www.lafinancepourtous.com/pratique/credit/taux-dendettement/)
+- **La Finance pour Tous** · Taux d’endettement : https://www.lafinancepourtous.com/pratique/credit/taux-dendettement/
 
 ---
 

@@ -241,7 +241,7 @@ Si tu as **rempli ton LDDS (12 000 €) et ton Livret A (22 950 €)**, tu peux 
 
 - **Banque de France** · [Taux du Livret A et du LDDS en 2026](https://www.banque-france.fr/) (avril 2026).
 - **Service-Public.fr** · [Plafonds et règles des livrets réglementés](https://www.service-public.fr/particuliers/vosdroits/F1314) (mis à jour 2026).
-- **INSEE** · [Épargne des ménages en France](https://www.insee.fr/fr/statistiques/2521959) (2025).
+- **INSEE** · Épargne des ménages en France (2025).
 - **ADEME** · [Financement des projets écologiques via le LDDS](https://www.ademe.fr/) (2024).
 - **La Finance pour Tous** · [Comparatif des livrets d’épargne](https://www.lafinancepourtous.com/) (2026).
 

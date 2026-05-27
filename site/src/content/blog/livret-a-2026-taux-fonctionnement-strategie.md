@@ -200,9 +200,9 @@ Oui, ton argent est **disponible 24h/24 et 7j/7** :
 
 - [Banque de France - Taux du Livret A 2026](https://www.banque-france.fr/statistiques/taux-et-cours/taux-du-livret-a)
 - [Service-Public.fr - Plafond du Livret A](https://www.service-public.fr/particuliers/vosdroits/F1359)
-- [INSEE - Inflation 2026](https://www.insee.fr/fr/statistiques/2521948)
+- INSEE - Inflation 2026
 - [La Finance pour Tous - Comparatif des livrets](https://www.lafinancepourtous.com/epargne/livrets-reglementes/)
-- [UFC-Que Choisir - Assurance vie 2026](https://www.quechoisir.org/comparatif-assurance-vie-n56747/)
+- UFC-Que Choisir - Assurance vie 2026
 - [Banque de France - Taux €STR 2026](https://www.banque-france.fr/statistiques/taux-et-cours/taux-de-reference-de-la-bce)
 
 ---

@@ -222,7 +222,7 @@ Les **Certificats d’Économies d’Énergie (CEE)** te permettent de recevoir 
 
 *Exemple* : Pour l’installation d’une pompe à chaleur, tu peux recevoir une prime de 4 000 €.
 
-*Plus d’infos* : [ecologie.gouv.fr/certificats-deconomies-denergie-cee](https://www.ecologie.gouv.fr/certificats-deconomies-denergie-cee).
+*Plus d’infos* : ecologie.gouv.fr/certificats-deconomies-denergie-cee.
 
 ---
 
@@ -275,7 +275,7 @@ Le chèque énergie est envoyé au **foyer fiscal**, pas à chaque personne. Si 
 - Calendrier d’envoi 2026 · [Ministère de la Transition écologique](https://www.ecologie.gouv.fr/)
 - Bouclier tarifaire 2026 · [gouvernement.fr](https://www.gouvernement.fr/bouclier-tarifaire)
 - MaPrimeRénov’ · [maprimerenov.gouv.fr](https://www.maprimerenov.gouv.fr/)
-- Certificats d’Économies d’Énergie (CEE) · [ecologie.gouv.fr](https://www.ecologie.gouv.fr/certificats-deconomies-denergie-cee)
+- Certificats d’Économies d’Énergie (CEE) · ecologie.gouv.fr
 
 ---
 

@@ -277,8 +277,8 @@ Si tu as déjà un matelas de sécurité, tu peux utiliser ces 32 € pour :
 
 ## Sources
 
-- **Décret n°2025-1542 du 20 décembre 2025** (Journal Officiel) · [Service-Public.fr](https://www.service-public.fr/particuliers/actualites/A123456)
-- **INSEE** · Inflation 2025 (+2,1%) · [INSEE.fr](https://www.insee.fr/fr/statistiques/2521951)
+- **Décret n°2025-1542 du 20 décembre 2025** (Journal Officiel) · Service-Public.fr
+- **INSEE** · Inflation 2025 (+2,1%) · INSEE.fr
 - **Banque de France** · Impact du SMIC sur l’inflation · [Banque-France.fr](https://www.banque-france.fr/)
 - **CAF** · Plafonds prime d’activité et APL 2026 · [CAF.fr](https://www.caf.fr/)
 - **DARES** · Évolution des prix de l’énergie et de l’alimentation · [Dares.travail-emploi.gouv.fr](https://dares.travail-emploi.gouv.fr/)

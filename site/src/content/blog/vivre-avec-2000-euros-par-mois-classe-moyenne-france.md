@@ -343,7 +343,7 @@ Privilégie une **banque en ligne** (0 € de frais) ou une **néobanque** (Revo
 
 ## Sources
 
-- **INSEE** : Revenus et patrimoine des ménages (2024) · [Lien](https://www.insee.fr/fr/statistiques/2521391)
+- **INSEE** : Revenus et patrimoine des ménages (2024) · Lien
 - **Service-Public.fr** : SMIC et revenus en France (2026) · [Lien](https://www.service-public.fr/particuliers/vosdroits/F1419)
 - **Banque de France** : Taux d’endettement et capacité d’emprunt · [Lien](https://www.banque-france.fr/)
 - **UFC-Que Choisir** : Budget type des ménages français (2026) · [Lien](https://www.quechoisir.org/)
