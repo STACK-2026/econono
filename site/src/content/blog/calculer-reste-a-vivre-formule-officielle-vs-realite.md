@@ -210,7 +210,7 @@ Si tes dépenses sont déjà optimisées, il faut **agir sur tes revenus**. Voic
 Même avec un reste à vivre serré, il faut **prévoir une marge de sécurité**. Voici comment faire :
 - **Épargne de précaution** : Vise **1 mois de charges fixes** en épargne (exemple : si tes charges fixes sont de 900 €, essaie d’épargner 900 €). Même 20 €/mois, c’est un début.
 - **Assurance "perte d’emploi"** : Certaines banques proposent des assurances qui prennent le relais en cas de licenciement. Compare les offres.
-- **Réseau d’entraide** : Famille, amis, voisins… N’hésite pas à demander de l’aide en cas de coup dur (exemple : faire garder ton enfant pour éviter une baby-sitter payante).
+- **Réseau d’entraide** : Famille, amis, voisins…  demander de l’aide en cas de coup dur (exemple : faire garder ton enfant pour éviter une baby-sitter payante).
 
 **Astuce** : Ouvre un **livret A** ou un **LDDS** pour ton épargne de précaution. Ces livrets sont **sans frais** et **disponibles à tout moment**.
 

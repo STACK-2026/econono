@@ -281,7 +281,7 @@ Si ta demande est refusée, la CAF t’envoie une **notification avec les motifs
 2. **Faire un recours contentieux** (saisir le tribunal administratif dans les 2 mois).
 3. **Demander de l’aide** à une assistante sociale ou à une association (comme le Secours Catholique ou la Croix-Rouge).
 
-💡 **Conseil** : Si tu es dans une situation difficile, n’hésite pas à contacter une **association d’aide aux personnes en précarité** (ex : [Secours Catholique](https://www.secours-catholique.org/), [Croix-Rouge](https://www.croix-rouge.fr/)). Elles peuvent t’aider à monter ton dossier ou à faire un recours.
+💡 **Conseil** : Si tu es dans une situation difficile,  contacter une **association d’aide aux personnes en précarité** (ex : [Secours Catholique](https://www.secours-catholique.org/), [Croix-Rouge](https://www.croix-rouge.fr/)). Elles peuvent t’aider à monter ton dossier ou à faire un recours.
 
 ---
 
