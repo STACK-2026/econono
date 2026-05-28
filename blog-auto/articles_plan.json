@@ -349,7 +349,7 @@
       "angle": "Taux moyen 3,3-3,7% mai 2026 (selon durée). Capacité emprunt selon revenu (HCSF 35%). Simulation 3 profils. Quick win. Volume 60-100k/mois."
     },
     {
-      "slug": "frais-bancaires-cachés-comment-identifier-éviter-2026",
+      "slug": "frais-bancaires-caches-comment-identifier-eviter-2026",
       "scheduled_date": "2026-05-28",
       "category": "astuce",
       "pillar": "/glossaire/",
@@ -357,7 +357,9 @@
       "target_keyword": "frais bancaires cachés",
       "working_title": "Frais bancaires cachés en 2026 : la liste complète pour ne plus se faire avoir",
       "intent": "informational",
-      "angle": "Top 10 frais cachés (commission intervention, frais incidents, frais carte CB premium inutile). Plafonds légaux 2026. Lettre type contestation. Volume 8-15k/mois."
+      "angle": "Top 10 frais cachés (commission intervention, frais incidents, frais carte CB premium inutile). Plafonds légaux 2026. Lettre type contestation. Volume 8-15k/mois.",
+      "done": true,
+      "published_at": "2026-05-28"
     },
     {
       "slug": "indemnites-kilometriques-2026-bareme-fiscal-calcul",
