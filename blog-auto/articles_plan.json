@@ -370,7 +370,9 @@
       "target_keyword": "barème kilométrique 2026",
       "working_title": "Barème kilométrique 2026 : combien déduire et comment opter pour les frais réels",
       "intent": "informational",
-      "angle": "Barème officiel actualisé mars 2026 (puissance fiscale × km). Calcul vs forfait 10%. Quand opter frais réels. Volume 10-20k/mois. Spike avril-mai déclaration."
+      "angle": "Barème officiel actualisé mars 2026 (puissance fiscale × km). Calcul vs forfait 10%. Quand opter frais réels. Volume 10-20k/mois. Spike avril-mai déclaration.",
+      "done": true,
+      "published_at": "2026-05-29"
     },
     {
       "slug": "lep-livret-epargne-populaire-plafond-conditions-revenu-2026",
