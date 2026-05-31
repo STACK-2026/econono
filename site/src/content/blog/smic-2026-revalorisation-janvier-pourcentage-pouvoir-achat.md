@@ -195,7 +195,7 @@ Même avec un petit salaire, il est crucial d’avoir **1 à 2 mois de salaire d
 32 €/mois, c’est l’occasion de **renégocier tes abonnements** ou de **changer de fournisseur** pour économiser plus.
 - **Exemples d’économies possibles** :
   - **Téléphone** : Passer d’un forfait à 20 € à un forfait à 5 € (ex : RED by SFR, Free Mobile) → **15 € d’économies/mois**.
-  - **Électricité** : Changer de fournisseur pour un tarif moins cher (ex : TotalEnergies, Mint Energie) → **10 € d’économies/mois**.
+  - **Électricité** : Changer de fournisseur pour un tarif moins cher (ex : TotalEnergies, Mint Énergie) → **10 € d’économies/mois**.
   - **Assurance habitation** : Comparer les offres sur [LesFurets.com](https://www.lesfurets.com/) → **5 à 10 € d’économies/mois**.
 
 👉 *Pour comparer tes abonnements, utilise notre [comparateur d’abonnements](/calculateurs/comparateur-abonnements/).*

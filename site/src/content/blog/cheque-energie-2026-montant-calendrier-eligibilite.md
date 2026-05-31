@@ -153,7 +153,7 @@ Tous les fournisseurs d’énergie en France acceptent le chèque énergie, y co
 - Eni
 - EkWateur
 - Planète Oui
-- Mint Energie
+- Mint Énergie
 - Et bien d’autres.
 
 ### 2. Financer des travaux de rénovation énergétique
