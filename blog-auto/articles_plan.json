@@ -405,7 +405,9 @@
       "target_keyword": "salaire cadre non cadre différence",
       "working_title": "Cadre ou non-cadre en 2026 : quelle différence sur ta fiche de paie au final ?",
       "intent": "informational",
-      "angle": "Cotisations supplémentaires cadre (Agirc-Arrco T2, prévoyance, APEC). Net différentiel ~3-5%. Avantages non-financiers. Volume 8-15k/mois."
+      "angle": "Cotisations supplémentaires cadre (Agirc-Arrco T2, prévoyance, APEC). Net différentiel ~3-5%. Avantages non-financiers. Volume 8-15k/mois.",
+      "done": true,
+      "published_at": "2026-06-01"
     },
     {
       "slug": "comment-sortir-du-fichage-banque-de-france-ficp-fcc",
