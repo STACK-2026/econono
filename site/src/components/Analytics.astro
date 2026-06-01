@@ -2,8 +2,9 @@
 // Analytics tracker · Supabase page_views + bot detection.
 // Pas de Google Analytics, pas de Facebook Pixel, RGPD-friendly.
 // Tracking conditionné au consentement cookies (helper hasValidConsent).
-const SB_URL = "https://rxdcejlofnhjicupzikx.supabase.co";
-const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZGNlamxvZm5oamljdXB6aWt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4OTc2MDUsImV4cCI6MjA5MjQ3MzYwNX0.uG3WBUQ6LBnUxYBzo9LGoxRKU4oSzNlggixjNVSoJIY";
+// Migrated to shared STACK-2026 collector (ref vuzdnxlvrqsclpqmhkxn) · 2026-06-01
+const SB_URL = "https://vuzdnxlvrqsclpqmhkxn.supabase.co";
+const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1emRueGx2cnFzY2xwcW1oa3huIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NTU5MzUsImV4cCI6MjA5MjAzMTkzNX0.G9j5oZxL23L6JarsegjL4kf7Ki7sdHD__wpWtfdTD_Y";
 ---
 
 <script define:vars={{ SB_URL, SB_ANON }}>
@@ -66,15 +67,14 @@ const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsIn
         "Prefer": "return=minimal",
       },
       body: JSON.stringify({
-        visit_id: visitId,
+        site: "econono",
+        session_id: visitId,
         path: window.location.pathname,
         referrer: document.referrer || null,
         user_agent: ua,
         is_bot: det.bot,
-        bot_family: det.family,
         locale: navigator.language || "fr-FR",
         viewport_w: window.innerWidth,
-        viewport_h: window.innerHeight,
       }),
       keepalive: true,
     }).catch(() => {});
