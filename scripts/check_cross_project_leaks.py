@@ -48,7 +48,8 @@ SELF_PROJECT = {
     "cf_pages_project": 'econono',
     "own_tokens": {'Econono', 'econono', 'econono.com'},
     "own_domains": {'econono.com'},
-    "own_supabase_refs": {'rxdcejlofnhjicupzikx'},
+    # + vuzdnxlvrqsclpqmhkxn = collecteur analytics/leads PARTAGÉ du parc (légitime, pas une fuite)
+    "own_supabase_refs": {'rxdcejlofnhjicupzikx', 'vuzdnxlvrqsclpqmhkxn'},
 }
 
 # Known sibling STACK-2026 Supabase refs. Anything in this map that is not
