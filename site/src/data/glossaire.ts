@@ -143,7 +143,7 @@ export const glossaire: Record<string, GlossaireEntry> = {
     definition: "Situation où tu ne peux plus faire face à l'ensemble de tes dettes (crédits + factures non réglées + impôts). Possibilité de saisir la Banque de France pour ouvrir une procédure de surendettement (effacement partiel possible).",
     example: "Si la somme des mensualités + impayés + retards dépasse durablement tes capacités de remboursement, dépose un dossier à la Banque de France (gratuit, anonyme).",
     internalLink: { href: "/guides/sortir-decouvert-bancaire/", label: "Plan sortir du découvert" },
-    externalSource: { url: "https://www.banque-france.fr/fr/particuliers/surendettement", label: "Banque de France · surendettement" },
+    externalSource: { url: "https://www.banque-france.fr/fr/a-votre-service/particuliers/faire-face-difficultes-financieres-ou-dettes", label: "Banque de France · surendettement" },
     category: "credit",
   },
 
@@ -462,7 +462,7 @@ export const glossaire: Record<string, GlossaireEntry> = {
     definition: "Fichier national des Incidents de remboursement des Crédits aux Particuliers. Géré par la Banque de France. Te fiche en cas de défaut de paiement sur un crédit (>60 jours d'impayé). Inscription 5 ans max.",
     example: "Tu as 3 mois d'impayés sur ton crédit auto : la banque déclare l'incident à la Banque de France, tu es fiché FICP. Pendant 5 ans, plus aucune banque ne t'accordera de crédit.",
     internalLink: { href: "/glossaire/#surendettement", label: "Le surendettement" },
-    externalSource: { url: "https://www.banque-france.fr/fr/particuliers/fichiers-incidents-bancaires", label: "Banque de France · FICP" },
+    externalSource: { url: "https://www.banque-france.fr/fr/a-votre-service/particuliers/fichiers-incident-bancaire/fichier-incidents-remboursement-credits", label: "Banque de France · FICP" },
     category: "bancaire",
     aliases: ["fichier incidents crédits"],
   },
