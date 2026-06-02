@@ -418,7 +418,9 @@
       "target_keyword": "sortir du FICP",
       "working_title": "Sortir du FICP / FCC en 2026 : démarches, délais, banque qui accepte les fichés",
       "intent": "informational",
-      "angle": "Procédure radiation FICP (5 ans max) / FCC (5 ans). Banques 'second choice' (Nickel, La Banque Postale). Pas de promesses miracle. Volume 20-40k/mois."
+      "angle": "Procédure radiation FICP (5 ans max) / FCC (5 ans). Banques 'second choice' (Nickel, La Banque Postale). Pas de promesses miracle. Volume 20-40k/mois.",
+      "done": true,
+      "published_at": "2026-06-02"
     },
     {
       "slug": "plafond-caf-2026-revenu-aides-allocations-familiales",
