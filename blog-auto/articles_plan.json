@@ -431,7 +431,9 @@
       "target_keyword": "plafond CAF 2026",
       "working_title": "Plafonds CAF 2026 : seuils revenus pour APL, PAJE, allocations familiales",
       "intent": "informational",
-      "angle": "Tableau complet plafonds 2026 par aide et composition foyer. Source CAF officielle. Volume 25-50k/mois."
+      "angle": "Tableau complet plafonds 2026 par aide et composition foyer. Source CAF officielle. Volume 25-50k/mois.",
+      "done": true,
+      "published_at": "2026-06-03"
     },
     {
       "slug": "rachat-credit-2026-quand-est-ce-rentable-conditions",
