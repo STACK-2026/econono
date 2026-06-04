@@ -444,7 +444,9 @@
       "target_keyword": "rachat de crédit 2026",
       "working_title": "Rachat de crédit en 2026 : à quel moment c'est vraiment rentable",
       "intent": "informational",
-      "angle": "Règle 1% de différence + 1/3 durée restante. Frais cachés (IRA, garantie, dossier). Profils 'oui' vs 'non'. Volume 30-70k/mois."
+      "angle": "Règle 1% de différence + 1/3 durée restante. Frais cachés (IRA, garantie, dossier). Profils 'oui' vs 'non'. Volume 30-70k/mois.",
+      "done": true,
+      "published_at": "2026-06-04"
     },
     {
       "slug": "comment-calculer-impot-revenu-2026-bareme-quotient-familial",
