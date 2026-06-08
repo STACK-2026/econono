@@ -490,7 +490,10 @@
       "target_keyword": "carte bancaire gratuite",
       "working_title": "Carte bancaire gratuite en 2026 : les 6 vraies offres sans frais cachés",
       "intent": "transactional",
-      "angle": "Nickel, Revolut Standard, N26 Standard, Boursorama Welcome, BforBank... Conditions cachées (revenu, dépôt mensuel). Lead gen 30-80€/conversion. Volume 25-50k/mois."
+      "angle": "Nickel, Revolut Standard, N26 Standard, Boursorama Welcome, BforBank... Conditions cachées (revenu, dépôt mensuel). Lead gen 30-80€/conversion. Volume 25-50k/mois.",
+      "done": true,
+      "published": true,
+      "published_at": "2026-06-08"
     },
     {
       "slug": "smic-prevu-augmentation-juin-2026-projection-pouvoir-achat",
