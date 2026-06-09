@@ -16,7 +16,9 @@
       "target_keyword": "smic net 2026",
       "working_title": "SMIC net 2026 : combien touche-t-on vraiment chaque mois ?",
       "intent": "informational",
-      "angle": "Réponse factuelle dès la 1ère phrase (1 443 € net), puis détail par profil (CDI, alternance, fonction publique, temps partiel). Comparaison avec coût de la vie par ville. Chiffres officiels Service-Public + INSEE. Quick win SEO : volume 20-50k/mois, concurrence souvent datée 2024-2025."
+      "angle": "Réponse factuelle dès la 1ère phrase (1 443 € net), puis détail par profil (CDI, alternance, fonction publique, temps partiel). Comparaison avec coût de la vie par ville. Chiffres officiels Service-Public + INSEE. Quick win SEO : volume 20-50k/mois, concurrence souvent datée 2024-2025.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "livret-a-2026-taux-fonctionnement-strategie",
@@ -27,7 +29,9 @@
       "target_keyword": "taux livret A 2026",
       "working_title": "Livret A 2026 : taux à 2,4%, plafond 22 950 €, et ce que tu fais quand il est plein",
       "intent": "informational",
-      "angle": "Volume fenêtre post-révision février 2026 (8-15k/mois). Réponse directe au taux + plafond. Stratégie pour quand le livret est plein (LEP si éligible, LDDS, assurance vie, PEA). Calculateur intérêts composés en lien."
+      "angle": "Volume fenêtre post-révision février 2026 (8-15k/mois). Réponse directe au taux + plafond. Stratégie pour quand le livret est plein (LEP si éligible, LDDS, assurance vie, PEA). Calculateur intérêts composés en lien.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "vivre-avec-1500-euros-par-mois-budget-realiste",
@@ -38,7 +42,9 @@
       "target_keyword": "vivre avec 1500 euros par mois",
       "working_title": "Vivre avec 1 500 € par mois en 2026 : budget type, ce qui passe, ce qui coince",
       "intent": "informational",
-      "angle": "Ton complice et empathique (ne pas juger, ne pas idéaliser). Budget type ventilé poste par poste (loyer, courses, transport, loisirs). Comparaison province vs grandes villes vs IDF. Aides à activer (LEP, prime d'activité, APL). 5-12k/mois. Quick win avec quasi aucun concurrent FR moderne."
+      "angle": "Ton complice et empathique (ne pas juger, ne pas idéaliser). Budget type ventilé poste par poste (loyer, courses, transport, loisirs). Comparaison province vs grandes villes vs IDF. Aides à activer (LEP, prime d'activité, APL). 5-12k/mois. Quick win avec quasi aucun concurrent FR moderne.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "vivre-avec-2000-euros-par-mois-classe-moyenne-france",
@@ -49,7 +55,9 @@
       "target_keyword": "vivre avec 2000 euros par mois",
       "working_title": "Vivre avec 2 000 € par mois en France : à quoi ça ressemble vraiment ?",
       "intent": "informational",
-      "angle": "Pendant du précédent. Budget type 2 000 € net (au-dessus de la médiane). Capacité d'épargne réelle (10-15%), poste loisirs, achat immobilier possible ou pas. Quick win comme l'autre."
+      "angle": "Pendant du précédent. Budget type 2 000 € net (au-dessus de la médiane). Capacité d'épargne réelle (10-15%), poste loisirs, achat immobilier possible ou pas. Quick win comme l'autre.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "regle-50-30-20-budget-explication-france-2026",
@@ -60,7 +68,9 @@
       "target_keyword": "règle 50 30 20 budget",
       "working_title": "La règle 50/30/20 expliquée simplement : marche-t-elle vraiment en France ?",
       "intent": "informational",
-      "angle": "Origine américaine (Elizabeth Warren), application FR avec ses limites (loyer urbain dépasse 30%). Calculs concrets sur SMIC, 2 000 €, 3 000 €, 4 000 €. Lien vers calculateur. Volume 5-15k/mois."
+      "angle": "Origine américaine (Elizabeth Warren), application FR avec ses limites (loyer urbain dépasse 30%). Calculs concrets sur SMIC, 2 000 €, 3 000 €, 4 000 €. Lien vers calculateur. Volume 5-15k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "sortir-decouvert-bancaire-plan-30-jours",
@@ -71,7 +81,9 @@
       "target_keyword": "sortir du découvert bancaire",
       "working_title": "Sortir du découvert bancaire : plan d'action concret en 30 jours",
       "intent": "informational",
-      "angle": "Sans morale, ton solidaire. Étape par étape : audit reste à vivre, identifier les agios, négocier la banque, activer aides oubliées (prime d'activité, LEP, APL), couper abonnements. 5-8k/mois, urgence émotionnelle forte."
+      "angle": "Sans morale, ton solidaire. Étape par étape : audit reste à vivre, identifier les agios, négocier la banque, activer aides oubliées (prime d'activité, LEP, APL), couper abonnements. 5-8k/mois, urgence émotionnelle forte.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "comparatif-applications-budget-2026-bankin-linxo-finary-ynab",
@@ -82,7 +94,9 @@
       "target_keyword": "meilleure application budget 2026",
       "working_title": "Meilleure application de gestion de budget en 2026 : on a testé les 7 principales",
       "intent": "commercial_investigation",
-      "angle": "Comparatif honnête : Bankin, Linxo, Finary, YNAB, Plan & Multiply, Origin, Spendee. Critères : connexion bancaire ou pas, prix, design, RGPD, méthode enveloppes. Tableau comparatif. Pour chacune : pour qui c'est fait, pour qui ce ne l'est pas. Volume 5-15k/mois."
+      "angle": "Comparatif honnête : Bankin, Linxo, Finary, YNAB, Plan & Multiply, Origin, Spendee. Critères : connexion bancaire ou pas, prix, design, RGPD, méthode enveloppes. Tableau comparatif. Pour chacune : pour qui c'est fait, pour qui ce ne l'est pas. Volume 5-15k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "meilleurs-coachs-budget-france-2026-influenceurs-finance-perso",
@@ -93,7 +107,9 @@
       "target_keyword": "meilleur coach budget france",
       "working_title": "Les meilleurs coachs budget et créateurs finances perso en France 2026 : qui suivre vraiment",
       "intent": "commercial_investigation",
-      "angle": "Comparatif des créateurs FR (TikTok, YouTube, Instagram, newsletters) qui parlent budget : Heu?reka, Léa Bordier, Naelle Tesfa, Daphné Borel, Mes Allocs Show, Le Coin des Investisseurs, Crystal Coaching. Pour chaque : nombre d'abonnés, méthode, transparence (gratuit/payant/affiliations), public idéal, à éviter si... Critères : sérieux scientifique, indépendance, accessibilité. Format tableau + portraits courts. Volume estimé 1-3k/mois mais excellent pour brand awareness + maillage social."
+      "angle": "Comparatif des créateurs FR (TikTok, YouTube, Instagram, newsletters) qui parlent budget : Heu?reka, Léa Bordier, Naelle Tesfa, Daphné Borel, Mes Allocs Show, Le Coin des Investisseurs, Crystal Coaching. Pour chaque : nombre d'abonnés, méthode, transparence (gratuit/payant/affiliations), public idéal, à éviter si... Critères : sérieux scientifique, indépendance, accessibilité. Format tableau + portraits courts. Volume estimé 1-3k/mois mais excellent pour brand awareness + maillage social.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "calculer-reste-a-vivre-formule-officielle-vs-realite",
@@ -104,7 +120,9 @@
       "target_keyword": "calcul reste à vivre",
       "working_title": "Calcul du reste à vivre : la formule officielle, et ce qu'elle oublie de te dire",
       "intent": "informational",
-      "angle": "Volume 2-4k/mois. Formule officielle (revenus moins charges fixes), barèmes des banques (~700€ pers seule, 1100€ couple). Mais ce que la formule oublie : variabilité saisonnière, imprévus, qualité de vie subjective. Lien vers calculateur."
+      "angle": "Volume 2-4k/mois. Formule officielle (revenus moins charges fixes), barèmes des banques (~700€ pers seule, 1100€ couple). Mais ce que la formule oublie : variabilité saisonnière, imprévus, qualité de vie subjective. Lien vers calculateur.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "smic-2026-revalorisation-janvier-pourcentage-pouvoir-achat",
@@ -115,7 +133,9 @@
       "target_keyword": "smic 2026 revalorisation",
       "working_title": "Revalorisation du SMIC au 1er janvier 2026 : combien tu gagnes en plus chaque mois",
       "intent": "informational",
-      "angle": "Hauteur exacte de la revalorisation, gain net mensuel concret (ex : +X€/mois), comparaison avec inflation 2025. Limites : seuil prime d'activité, taxation. Volume 3-8k/mois (pic janvier-février)."
+      "angle": "Hauteur exacte de la revalorisation, gain net mensuel concret (ex : +X€/mois), comparaison avec inflation 2025. Limites : seuil prime d'activité, taxation. Volume 3-8k/mois (pic janvier-février).",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "lep-livret-epargne-populaire-eligible-comment-ouvrir",
@@ -126,7 +146,9 @@
       "target_keyword": "lep livret épargne populaire",
       "working_title": "LEP en 2026 : 3,5%, 10 000 € de plafond, et pourquoi 1 éligible sur 4 passe à côté",
       "intent": "informational",
-      "angle": "Conditions d'éligibilité (RFR par parts), procédure d'ouverture, gain annuel concret (350€ sur 10k à 3,5%), comparaison avec livret A. Statistique d'éligibles non-souscripteurs. Volume 4-8k/mois."
+      "angle": "Conditions d'éligibilité (RFR par parts), procédure d'ouverture, gain annuel concret (350€ sur 10k à 3,5%), comparaison avec livret A. Statistique d'éligibles non-souscripteurs. Volume 4-8k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "taux-endettement-35-pourcent-comment-calculer-banque",
@@ -137,7 +159,9 @@
       "target_keyword": "calcul taux endettement",
       "working_title": "Taux d'endettement : la règle des 35% expliquée par la banque (et le calcul officiel HCSF)",
       "intent": "informational",
-      "angle": "Plafond HCSF 35% depuis 2022, calcul exact (mensualités/revenus), 20% de dérogations, conséquences si dépassé. Cas pratiques : peut-on encore emprunter avec déjà un crédit auto ? Volume 8-15k/mois."
+      "angle": "Plafond HCSF 35% depuis 2022, calcul exact (mensualités/revenus), 20% de dérogations, conséquences si dépassé. Cas pratiques : peut-on encore emprunter avec déjà un crédit auto ? Volume 8-15k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "budget-courses-couple-france-2026-combien-depenser",
@@ -148,7 +172,9 @@
       "target_keyword": "budget courses couple",
       "working_title": "Budget courses pour 2 personnes en 2026 : 480 €/mois en moyenne, ce qui change selon les choix",
       "intent": "informational",
-      "angle": "Données INSEE médiane 480€/mois, ventilation par catégorie, comparaison hard discount vs supermarché vs marché vs bio. Levier d'optimisation. Volume 5-12k/mois."
+      "angle": "Données INSEE médiane 480€/mois, ventilation par catégorie, comparaison hard discount vs supermarché vs marché vs bio. Levier d'optimisation. Volume 5-12k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "budget-bebe-premiere-annee-cout-aides-caf-2026",
@@ -159,7 +185,9 @@
       "target_keyword": "budget bébé première année",
       "working_title": "Combien coûte un bébé la première année en 2026 : entre 8 000 € et 12 000 €, aides CAF déduites",
       "intent": "informational",
-      "angle": "Détail par poste (équipement, garde, alimentation, santé, vêtements), aides CAF avec barèmes 2026 (prime naissance, allocation de base, complément libre choix), conseil budget en attendant retour de couches. Volume 3-8k/mois."
+      "angle": "Détail par poste (équipement, garde, alimentation, santé, vêtements), aides CAF avec barèmes 2026 (prime naissance, allocation de base, complément libre choix), conseil budget en attendant retour de couches. Volume 3-8k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "comparateur-abonnements-streaming-telecom-recuperer-50-euros",
@@ -170,7 +198,9 @@
       "target_keyword": "réduire abonnements mensuels",
       "working_title": "Récupère 50 € par mois en auditant tes abonnements : la méthode 30 minutes",
       "intent": "informational",
-      "angle": "Méthode pratique : audit prélèvements 3 derniers mois, identification doublons (streaming, mobile, salle), négociation, désabonnement. Outils. Volume 3-6k/mois. Très shareable."
+      "angle": "Méthode pratique : audit prélèvements 3 derniers mois, identification doublons (streaming, mobile, salle), négociation, désabonnement. Outils. Volume 3-6k/mois. Très shareable.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "vivre-avec-1800-euros-par-mois-budget-realiste-france",
@@ -181,7 +211,9 @@
       "target_keyword": "vivre avec 1800 euros par mois",
       "working_title": "Vivre avec 1 800 € par mois en France : budget type ville par ville",
       "intent": "informational",
-      "angle": "Suite de la série 'Vivre avec X €'. 1800 € = juste au-dessus du SMIC. Budget type ventilé : loyer 35%, courses 18%, transport 10%, loisirs 10%, épargne 8%. Variation Paris vs province (loyer x2). Aides activables (LEP, prime activité partielle)."
+      "angle": "Suite de la série 'Vivre avec X €'. 1800 € = juste au-dessus du SMIC. Budget type ventilé : loyer 35%, courses 18%, transport 10%, loisirs 10%, épargne 8%. Variation Paris vs province (loyer x2). Aides activables (LEP, prime activité partielle).",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "vivre-avec-2200-euros-par-mois-celibataire-classe-moyenne",
@@ -192,7 +224,9 @@
       "target_keyword": "vivre avec 2200 euros par mois",
       "working_title": "Vivre avec 2 200 € net par mois : le budget classe moyenne décrypté",
       "intent": "informational",
-      "angle": "Salaire médian France 2026. Capacité épargne 15-20%, premier accès au crédit immobilier (~150k€). Comparatif célibataire vs couple sans enfant. Pièges fiscaux à 2200€."
+      "angle": "Salaire médian France 2026. Capacité épargne 15-20%, premier accès au crédit immobilier (~150k€). Comparatif célibataire vs couple sans enfant. Pièges fiscaux à 2200€.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "vivre-avec-2500-euros-par-mois-budget-confortable-france",
@@ -203,7 +237,9 @@
       "target_keyword": "vivre avec 2500 euros par mois",
       "working_title": "Vivre avec 2 500 € par mois : capacité d'épargne et achat immobilier",
       "intent": "informational",
-      "angle": "Au-dessus du salaire médian, sous le seuil des cadres. Stratégie épargne (Livret A plein, LEP si éligible, assurance vie, PEA). Capacité emprunt 175-200k€. Optimisation impôt."
+      "angle": "Au-dessus du salaire médian, sous le seuil des cadres. Stratégie épargne (Livret A plein, LEP si éligible, assurance vie, PEA). Capacité emprunt 175-200k€. Optimisation impôt.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "vivre-avec-3000-euros-par-mois-couple-enfants-france",
@@ -214,7 +250,9 @@
       "target_keyword": "vivre avec 3000 euros par mois",
       "working_title": "Vivre avec 3 000 € par mois à deux : budget couple et famille en 2026",
       "intent": "informational",
-      "angle": "Budget couple ou famille jeune. Détail dépenses contraintes vs choisies. Aides CAF possibles (selon plafonds). Capacité épargne 20-25% si pas d'enfant, 10-15% avec enfants. Outils budget couple."
+      "angle": "Budget couple ou famille jeune. Détail dépenses contraintes vs choisies. Aides CAF possibles (selon plafonds). Capacité épargne 20-25% si pas d'enfant, 10-15% avec enfants. Outils budget couple.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "cheque-energie-2026-montant-calendrier-eligibilite",
@@ -225,7 +263,9 @@
       "target_keyword": "chèque énergie 2026",
       "working_title": "Chèque énergie 2026 : montant, calendrier d'envoi, qui peut le toucher",
       "intent": "informational",
-      "angle": "Actu hot avril-mai 2026. Montants 48€ à 277€ selon revenu et composition foyer. Envoi automatique avril-mai. Conditions d'éligibilité (RFR). Usage (gaz, électricité, fioul, rénovation). Quick win SEO."
+      "angle": "Actu hot avril-mai 2026. Montants 48€ à 277€ selon revenu et composition foyer. Envoi automatique avril-mai. Conditions d'éligibilité (RFR). Usage (gaz, électricité, fioul, rénovation). Quick win SEO.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "prime-activite-2026-comment-toucher-200-euros-par-mois",
@@ -236,7 +276,9 @@
       "target_keyword": "prime d'activité 2026",
       "working_title": "Prime d'activité 2026 : qui y a droit et comment toucher 200 € de plus par mois",
       "intent": "informational",
-      "angle": "Aide CAF pour travailleurs modestes (< 1,5 SMIC). Calcul, simulation, demande en ligne. 4,2 M de foyers bénéficiaires. Volume search 30-60k/mois. Pillar majeur."
+      "angle": "Aide CAF pour travailleurs modestes (< 1,5 SMIC). Calcul, simulation, demande en ligne. 4,2 M de foyers bénéficiaires. Volume search 30-60k/mois. Pillar majeur.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "tmi-2026-bareme-impot-revenu-tranches-marginales",
@@ -247,7 +289,9 @@
       "target_keyword": "TMI 2026 barème",
       "working_title": "TMI 2026 : le barème complet par tranche et comment réduire ton impôt",
       "intent": "informational",
-      "angle": "Tranches 0%, 11%, 30%, 41%, 45%. Calcul concret pour différents revenus. Niches fiscales (PER, dons, emploi à domicile). Quotient familial. Volume 15-25k/mois."
+      "angle": "Tranches 0%, 11%, 30%, 41%, 45%. Calcul concret pour différents revenus. Niches fiscales (PER, dons, emploi à domicile). Quotient familial. Volume 15-25k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "comparatif-banques-en-ligne-boursorama-fortuneo-revolut-n26",
@@ -258,7 +302,9 @@
       "target_keyword": "meilleure banque en ligne 2026",
       "working_title": "Boursorama vs Fortuneo vs Revolut vs N26 : laquelle choisir en 2026 ?",
       "intent": "transactional",
-      "angle": "Comparatif 2026 4 acteurs majeurs. Frais, services, primes de bienvenue (à jour mai 2026), public cible. Lead gen forte (80-150€/conversion possible). Volume 20-40k/mois."
+      "angle": "Comparatif 2026 4 acteurs majeurs. Frais, services, primes de bienvenue (à jour mai 2026), public cible. Lead gen forte (80-150€/conversion possible). Volume 20-40k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "comparatif-assurance-vie-ou-pea-comment-choisir-2026",
@@ -269,7 +315,9 @@
       "target_keyword": "assurance vie ou PEA",
       "working_title": "Assurance vie ou PEA en 2026 : lequel choisir selon ton profil ?",
       "intent": "informational",
-      "angle": "Fiscalité comparée, fonds en euros vs UC, plafond PEA 150k€, abattement assurance vie 4600€ après 8 ans. Profils investisseur. Volume 15-30k/mois."
+      "angle": "Fiscalité comparée, fonds en euros vs UC, plafond PEA 150k€, abattement assurance vie 4600€ après 8 ans. Profils investisseur. Volume 15-30k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "rsa-2026-montant-conditions-comment-demander",
@@ -280,7 +328,9 @@
       "target_keyword": "RSA 2026 montant",
       "working_title": "RSA 2026 : montant exact, conditions et démarches en 4 étapes",
       "intent": "informational",
-      "angle": "Montant 2026 (635€ célibataire). Conditions, démarches CAF. Différences RSA jeune actif vs majoré. Articulation prime activité. Volume 50-90k/mois. Pillar."
+      "angle": "Montant 2026 (635€ célibataire). Conditions, démarches CAF. Différences RSA jeune actif vs majoré. Articulation prime activité. Volume 50-90k/mois. Pillar.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "apl-2026-simulation-montant-comment-calculer",
@@ -291,7 +341,9 @@
       "target_keyword": "APL 2026 simulation",
       "working_title": "APL 2026 : combien tu peux toucher selon ton loyer et ton revenu",
       "intent": "informational",
-      "angle": "Formule simplifiée APL, simulateur CAF, plafonds 2026, calcul concret 3 profils (étudiant, jeune actif, famille). Volume 80-150k/mois. Pillar majeur."
+      "angle": "Formule simplifiée APL, simulateur CAF, plafonds 2026, calcul concret 3 profils (étudiant, jeune actif, famille). Volume 80-150k/mois. Pillar majeur.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "epargne-precaution-combien-mettre-de-cote-2026",
@@ -302,7 +354,9 @@
       "target_keyword": "épargne de précaution combien",
       "working_title": "Épargne de précaution : combien mettre de côté et où le placer en 2026",
       "intent": "informational",
-      "angle": "Règle 3-6 mois de charges. Calcul concret selon situation. Où placer (Livret A puis LEP). Volume 8-15k/mois. Excellent pillar épargne."
+      "angle": "Règle 3-6 mois de charges. Calcul concret selon situation. Où placer (Livret A puis LEP). Volume 8-15k/mois. Excellent pillar épargne.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "comment-negocier-augmentation-salaire-2026-arguments-chiffres",
@@ -313,7 +367,9 @@
       "target_keyword": "négocier augmentation salaire",
       "working_title": "Comment négocier ton augmentation en 2026 : arguments, timing, chiffres à apporter",
       "intent": "informational",
-      "angle": "Méthode SMART, benchmarks salaire (Apec, JobIRL, Glassdoor), chiffres inflation officielle, scripts de négociation. Volume 15-30k/mois. Shareable."
+      "angle": "Méthode SMART, benchmarks salaire (Apec, JobIRL, Glassdoor), chiffres inflation officielle, scripts de négociation. Volume 15-30k/mois. Shareable.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "investir-100-euros-par-mois-strategie-debutant-2026",
@@ -324,7 +380,9 @@
       "target_keyword": "investir 100 euros par mois",
       "working_title": "Investir 100 € par mois quand on débute : la stratégie qui marche en 2026",
       "intent": "informational",
-      "angle": "DCA, ETF World, plafonds PEA, frais Trade Republic vs Boursorama. Projection 20 ans. Pas de conseil personnalisé mais pédagogique. Volume 10-25k/mois."
+      "angle": "DCA, ETF World, plafonds PEA, frais Trade Republic vs Boursorama. Projection 20 ans. Pas de conseil personnalisé mais pédagogique. Volume 10-25k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "ldds-livret-developpement-durable-2026-vs-livret-a",
@@ -335,7 +393,9 @@
       "target_keyword": "LDDS ou Livret A",
       "working_title": "LDDS ou Livret A en 2026 : taux identique, plafond différent, quelle stratégie ?",
       "intent": "informational",
-      "angle": "Taux 2,4% identique. Plafond LDDS 12k€ vs LA 22950€. Bénéfice cumul. Volume 5-12k/mois."
+      "angle": "Taux 2,4% identique. Plafond LDDS 12k€ vs LA 22950€. Bénéfice cumul. Volume 5-12k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "credit-immobilier-2026-taux-actuel-capacite-emprunt",
@@ -346,7 +406,9 @@
       "target_keyword": "taux crédit immobilier 2026",
       "working_title": "Taux crédit immobilier mai 2026 : où on en est et capacité d'emprunt actuelle",
       "intent": "informational",
-      "angle": "Taux moyen 3,3-3,7% mai 2026 (selon durée). Capacité emprunt selon revenu (HCSF 35%). Simulation 3 profils. Quick win. Volume 60-100k/mois."
+      "angle": "Taux moyen 3,3-3,7% mai 2026 (selon durée). Capacité emprunt selon revenu (HCSF 35%). Simulation 3 profils. Quick win. Volume 60-100k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "frais-bancaires-caches-comment-identifier-eviter-2026",
@@ -383,7 +445,9 @@
       "target_keyword": "LEP plafond 2026",
       "working_title": "LEP 2026 : plafond revenu, taux à 4%, comment vérifier ton éligibilité",
       "intent": "informational",
-      "angle": "Plafond RFR 2026 (~22 500€ célibataire, ~34 480€ couple), taux boosté 4% (mars 2026). Démarche en ligne. 11M de Français éligibles, 60% ne savent pas. Volume 30-60k/mois."
+      "angle": "Plafond RFR 2026 (~22 500€ célibataire, ~34 480€ couple), taux boosté 4% (mars 2026). Démarche en ligne. 11M de Français éligibles, 60% ne savent pas. Volume 30-60k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "compte-epargne-temps-cet-fonctionnement-defiscalisation",
@@ -394,7 +458,9 @@
       "target_keyword": "compte épargne temps",
       "working_title": "Compte épargne temps (CET) : transformer tes congés en cash ou en retraite",
       "intent": "informational",
-      "angle": "Mécanisme CET, conditions, fiscalité. Volume 5-12k/mois. Niche mais haute valeur."
+      "angle": "Mécanisme CET, conditions, fiscalité. Volume 5-12k/mois. Niche mais haute valeur.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "salaire-cadre-vs-non-cadre-2026-difference-fiches-paie",
@@ -457,7 +523,9 @@
       "target_keyword": "calculer impôt revenu 2026",
       "working_title": "Calculer ton impôt sur le revenu 2026 en 5 minutes : la formule complète",
       "intent": "informational",
-      "angle": "Calcul concret 3 profils. Quotient familial. Décote. Crédits d'impôt. Volume 80-150k/mois. Pillar majeur."
+      "angle": "Calcul concret 3 profils. Quotient familial. Décote. Crédits d'impôt. Volume 80-150k/mois. Pillar majeur.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "csg-crds-2026-taux-calcul-fiche-paie-explique",
@@ -468,7 +536,9 @@
       "target_keyword": "CSG CRDS 2026",
       "working_title": "CSG-CRDS 2026 : à quoi ça sert, combien tu payes vraiment chaque mois",
       "intent": "informational",
-      "angle": "Mécanisme, taux (9,2% + 0,5%), partie déductible vs non-déductible. Spécificités retraités. Volume 5-12k/mois. Citable LLM (chiffre exact)."
+      "angle": "Mécanisme, taux (9,2% + 0,5%), partie déductible vs non-déductible. Spécificités retraités. Volume 5-12k/mois. Citable LLM (chiffre exact).",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "succession-2026-abattements-droits-frais-notaire",
@@ -479,7 +549,9 @@
       "target_keyword": "frais succession 2026",
       "working_title": "Succession 2026 : abattements, droits, frais de notaire en clair",
       "intent": "informational",
-      "angle": "Abattement 100k€ par enfant, barème 5-45%. Donation 15 ans. Frais notaire. Volume 30-60k/mois."
+      "angle": "Abattement 100k€ par enfant, barème 5-45%. Donation 15 ans. Frais notaire. Volume 30-60k/mois.",
+      "done": true,
+      "published_at": "backfilled"
     },
     {
       "slug": "carte-cb-gratuite-2026-comparatif-banques-frais-zero",
@@ -504,7 +576,9 @@
       "target_keyword": "SMIC juin 2026",
       "working_title": "SMIC juin 2026 : la deuxième revalorisation attendue (+2% minimum)",
       "intent": "informational",
-      "angle": "Actu juin 2026. Formule revalorisation. Projection 1460-1480€ net mensuel. Impact pouvoir achat. Quick win timing."
+      "angle": "Actu juin 2026. Formule revalorisation. Projection 1460-1480€ net mensuel. Impact pouvoir achat. Quick win timing.",
+      "done": true,
+      "published_at": "2026-06-09"
     },
     {
       "slug": "indemnite-rupture-conventionnelle-2026-calcul-montant",
