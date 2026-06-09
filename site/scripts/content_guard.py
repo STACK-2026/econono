@@ -67,11 +67,30 @@ def split_fm(text: str):
     return m.group(1), m.group(2), m.group(3), text[m.end():]
 
 
+def _looks_like_frontmatter(inner: str) -> bool:
+    """True only if `inner` is a real YAML frontmatter block (majority of
+    non-blank lines are `key: value`), NOT a prose section that merely happens
+    to sit between two `---` markdown horizontal rules (e.g. a TL;DR or a
+    Sommaire opening with `---`). Without this guard the greedy `---...---`
+    match eats the whole article body (karmastro regression, 09/06)."""
+    lines = [ln for ln in inner.splitlines() if ln.strip()]
+    if not lines:
+        return False
+    kv = sum(1 for ln in lines if re.match(r"^\s*[A-Za-z_][\w-]*:\s", ln))
+    # require at least 2 key: lines AND that they dominate the block; a single
+    # stray `Mot : valeur` inside prose must never qualify.
+    return kv >= 2 and kv >= len(lines) * 0.8
+
+
 def strip_echoed_frontmatter(body: str) -> str:
-    """Drop a frontmatter block echoed into the body (fenced or bare key: run)."""
+    """Drop a frontmatter block echoed into the body (fenced or bare key: run).
+
+    Only strips a leading `---...---` block when its inner content actually
+    looks like frontmatter; a body that opens with a markdown `<hr>` followed
+    by prose is left untouched."""
     b = body.lstrip("\n")
-    m = re.match(r"^---\s*\n.*?\n---\s*\n", b, re.S)
-    if m:
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", b, re.S)
+    if m and _looks_like_frontmatter(m.group(1)):
         return b[m.end():].lstrip("\n")
     m = re.match(r"^(?:[A-Za-z_][\w-]*:.*\n)+---\s*\n", b)
     if m:
@@ -90,12 +109,15 @@ def clamp_value(val: str, limit: int) -> str:
 
 
 def fm_field(fm_inner: str, key: str):
+    # Returns (match, DECODED logical value, source_quote). The value is decoded
+    # to its logical content (YAML un-escaped) so the caller can re-encode it
+    # safely regardless of the original quoting style.
     m = re.search(rf'(?m)^(\s*{re.escape(key)}:\s*)"((?:[^"\\]|\\.)*)"\s*$', fm_inner)
     if m:
-        return m, m.group(2), '"'
+        return m, m.group(2).replace('\\"', '"').replace("\\\\", "\\"), '"'
     m = re.search(rf"(?m)^(\s*{re.escape(key)}:\s*)'((?:[^']|'')*)'\s*$", fm_inner)
     if m:
-        return m, m.group(2), "'"
+        return m, m.group(2).replace("''", "'"), "'"
     m = re.search(rf"(?m)^(\s*{re.escape(key)}:\s*)(?![\"'\[{{])(.+?)\s*$", fm_inner)
     if m:
         return m, m.group(2), ""
