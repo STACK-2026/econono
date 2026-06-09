@@ -13,17 +13,6 @@ keywords: "budget courses couple"
 draft: false
 ---
 
----
-
-**TL;DR**
-- En 2026, un couple dépense en moyenne **480 €/mois** pour les courses (INSEE), mais ce budget varie de **350 €** (hard discount) à **600 €** (bio).
-- Les prix de l’alimentation ont augmenté de **12% depuis 2020** (INSEE), impactant surtout les produits frais.
-- Voici 5 leviers pour économiser sans se priver : **planifier ses repas**, **acheter en vrac**, **privilégier les marques distributeurs**, **cuisiner maison** et **utiliser les apps de cashback**.
-- Le gaspillage alimentaire coûte **200 à 300 €/an** à un couple (ADEME) : des astuces existent pour l’éviter.
-- Selon votre mode de vie (végétarien, bio, avec enfants), votre budget peut être optimisé différemment.
-
----
-
 Tu partages ta vie avec quelqu’un, et chaque mois, c’est la même équation : comment nourrir deux personnes sans exploser ton budget ? En 2026, un couple dépense en moyenne **480 € par mois** pour les courses (INSEE). Mais derrière cette moyenne se cachent des réalités très différentes : certains s’en sortent avec **350 €**, tandis que d’autres dépassent les **600 €**.
 
 La bonne nouvelle ? Tu peux agir sur ton budget sans te priver. Pas besoin de manger des pâtes à l’eau tous les soirs ou de renoncer à tes produits préférés. En ajustant tes habitudes, en comparant les enseignes et en optimisant tes achats, tu peux réduire tes dépenses de **20 à 30%** sans sacrifier la qualité. Voici comment, avec des chiffres précis, des exemples concrets et des astuces testées par des milliers de couples.

@@ -171,19 +171,24 @@ Autrement dit, il n'y a pas de date fixe : tout dépend du moment où le seuil e
 
 ## Questions fréquentes sur le SMIC de juin 2026
 
-**Le SMIC va-t-il forcément augmenter en juin 2026 ?**
+### Le SMIC va-t-il forcément augmenter en juin 2026 ?
+
 Non. La hausse en cours d'année n'est pas automatique au sens calendaire : elle ne se déclenche que si l'inflation des ménages modestes dépasse 2% depuis le 1er janvier 2026. Tant que ce seuil n'est pas franchi, le SMIC ne bouge pas avant janvier 2027.
 
-**De combien serait la hausse si elle a lieu ?**
+### De combien serait la hausse si elle a lieu ?
+
 Au minimum +2%, soit environ +29 € net par mois pour un temps plein, portant le SMIC net autour de 1 472 €. Le gouvernement peut décider d'un coup de pouce supplémentaire, mais ce n'est jamais garanti.
 
-**Quand connaîtra-t-on la réponse ?**
+### Quand connaîtra-t-on la réponse ?
+
 À chaque publication mensuelle de l'indice des prix par l'INSEE, vers la mi-mois. Dès qu'un indice dépasse le seuil, la hausse s'applique le 1er du mois suivant et est officialisée par décret.
 
-**Cette hausse va-t-elle augmenter mon pouvoir d'achat ?**
+### Cette hausse va-t-elle augmenter mon pouvoir d'achat ?
+
 Pas vraiment. Une revalorisation indexée sur l'inflation sert surtout à compenser la hausse des prix, pas à te faire gagner du pouvoir d'achat. C'est une protection, pas un bonus.
 
-**La hausse peut-elle réduire mes aides ?**
+### La hausse peut-elle réduire mes aides ?
+
 Oui. La prime d'activité, les APL et certaines aides locales sont calculées sur tes revenus. Une hausse de salaire peut les faire baisser, ce qui réduit le gain net réel.
 
 ---
