@@ -37,7 +37,7 @@ export const glossaire: Record<string, GlossaireEntry> = {
     definition: "Méthode japonaise de gestion de budget par carnet papier : on note chaque dépense et on la classe en 4 catégories (essentiel, plaisir, culture, imprévu). Inventée en 1904 par Hani Motoko.",
     example: "Tu as un cahier dédié, tu remplis chaque soir tes dépenses du jour. Au bout du mois, tu vois où ton argent est passé sans aucune appli.",
     internalLink: { href: "/calculateurs/budget-mensuel/", label: "Calculateur budget mensuel" },
-    externalSource: { url: "https://fr.wikipedia.org/wiki/Kakeibo", label: "Kakeibo · Wikipedia" },
+    externalSource: { url: "https://en.wikipedia.org/wiki/Kakeibo", label: "Kakeibo · Wikipedia" },
     category: "budget",
     aliases: ["kakeibo"],
   },
