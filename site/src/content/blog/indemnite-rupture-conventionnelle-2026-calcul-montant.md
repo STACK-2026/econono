@@ -54,7 +54,7 @@ L'avantage majeur par rapport à une démission : tu conserves ton **droit à l'
 
 ⚠️ La rupture conventionnelle ne concerne que le **CDI**. Pour un CDD, on parle de rupture anticipée d'un commun accord, qui obéit à d'autres règles.
 
-*Source : [Service-Public.fr - Rupture conventionnelle (2026)](https://www.service-public.fr/particuliers/vosdroits/F1561)*
+*Source : [Service-Public.fr - Rupture conventionnelle (2026)](https://www.service-public.fr/particuliers/vosdroits/F19030)*
 
 ---
 
@@ -139,7 +139,7 @@ Ces deux derniers plafonds sont eux-mêmes limités à **6 fois le plafond annue
 
 Au-delà de la part exonérée, le surplus est imposable comme un salaire classique.
 
-*Source : [Service-Public.fr - Fiscalité de l'indemnité de rupture conventionnelle (2026)](https://www.service-public.fr/particuliers/vosdroits/F1561)*
+*Source : [Service-Public.fr - Fiscalité de l'indemnité de rupture conventionnelle (2026)](https://www.service-public.fr/particuliers/vosdroits/F19030)*
 
 ### Les cotisations sociales et la CSG-CRDS
 
@@ -165,7 +165,7 @@ Mais l'indemnisation ne commence pas le lendemain de ton départ. France Travail
 
 En clair, négocier une très grosse indemnité a une contrepartie : tu attends un peu plus longtemps avant de toucher le chômage. À toi de faire le calcul selon ta situation.
 
-*Source : [France Travail - Différés d'indemnisation et délai d'attente (2026)](https://www.francetravail.fr/candidat/vos-droits/quel-revenu-pendant-votre-recherc/votre-allocation-chomage/comment-se-determine-le-debut-de.html)*
+*Source : [France Travail - Différés d'indemnisation et délai d'attente (2026)](https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/a-chaque-situation-son-allocatio/quelle-est-ma-situation-professi/je-perds-ou-je-quitte-un-emploi/je-veux-faire-une-rupture-conven.html)*
 
 👉 Anticipe ton budget pendant cette période de transition avec notre [calculateur de reste à vivre](/calculateurs/reste-a-vivre/).
 
@@ -236,7 +236,7 @@ Pas entièrement. Elle est **exonérée d'impôt sur le revenu** dans la limite 
 
 France Travail applique un **délai d'attente de 7 jours**, auquel s'ajoutent un différé congés payés et un différé spécifique lié à la part d'indemnité supra-légale (jusqu'à 150 jours maximum). Plus ton indemnité négociée est élevée au-dessus du minimum légal, plus le différé spécifique s'allonge.
 
-*Source : [France Travail - Début de l'indemnisation (2026)](https://www.francetravail.fr/candidat/vos-droits/quel-revenu-pendant-votre-recherc/votre-allocation-chomage/comment-se-determine-le-debut-de.html)*
+*Source : [France Travail - Début de l'indemnisation (2026)](https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/a-chaque-situation-son-allocatio/quelle-est-ma-situation-professi/je-perds-ou-je-quitte-un-emploi/je-veux-faire-une-rupture-conven.html)*
 
 ---
 
@@ -250,18 +250,18 @@ Il n'y a **pas d'ancienneté minimale** pour signer une rupture conventionnelle 
 
 Oui, des deux côtés. Ni le salarié ni l'employeur ne peuvent imposer une rupture conventionnelle. Et même après signature, chacun dispose d'un **délai de rétractation de 15 jours calendaires** pour revenir sur sa décision, sans avoir à se justifier.
 
-*Source : [Service-Public.fr - Rupture conventionnelle (2026)](https://www.service-public.fr/particuliers/vosdroits/F1561)*
+*Source : [Service-Public.fr - Rupture conventionnelle (2026)](https://www.service-public.fr/particuliers/vosdroits/F19030)*
 
 ---
 
 ## Sources
 
-- [Service-Public.fr - Rupture conventionnelle d'un CDI (2026)](https://www.service-public.fr/particuliers/vosdroits/F1561)
+- [Service-Public.fr - Rupture conventionnelle d'un CDI (2026)](https://www.service-public.fr/particuliers/vosdroits/F19030)
 - [Service-Public.fr - Indemnité légale de licenciement (2026)](https://www.service-public.fr/particuliers/vosdroits/F987)
 - [Légifrance - Article R1234-2 du Code du travail](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036517433)
 - [Légifrance - Article L1237-13 du Code du travail](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019071180)
-- [France Travail - Différés d'indemnisation et délai d'attente (2026)](https://www.francetravail.fr/candidat/vos-droits/quel-revenu-pendant-votre-recherc/votre-allocation-chomage/comment-se-determine-le-debut-de.html)
-- [URSSAF - Régime social des indemnités de rupture (2026)](https://www.urssaf.fr/accueil/employeur/cotisations/liste-cotisations/indemnites-rupture-contrat-travail.html)
+- [France Travail - Différés d'indemnisation et délai d'attente (2026)](https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/a-chaque-situation-son-allocatio/quelle-est-ma-situation-professi/je-perds-ou-je-quitte-un-emploi/je-veux-faire-une-rupture-conven.html)
+- [URSSAF - Régime social des indemnités de rupture (2026)](https://www.urssaf.fr/accueil/employeur/embaucher-gerer-salaries/gerer-fin-relation-travail/rupture-conventionnelle.html)
 
 ---
 
