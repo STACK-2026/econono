@@ -589,7 +589,9 @@
       "target_keyword": "indemnité rupture conventionnelle",
       "working_title": "Indemnité de rupture conventionnelle 2026 : montant, calcul, fiscalité",
       "intent": "informational",
-      "angle": "Formule officielle (1/4 mois × années, puis 1/3 au-delà de 10 ans). Plancher légal. Fiscalité (exonération partielle). Articulation chômage. Volume 30-60k/mois."
+      "angle": "Formule officielle (1/4 mois × années, puis 1/3 au-delà de 10 ans). Plancher légal. Fiscalité (exonération partielle). Articulation chômage. Volume 30-60k/mois.",
+      "done": true,
+      "published_at": "2026-06-10"
     },
     {
       "vertical": "reparation-electromenager",
