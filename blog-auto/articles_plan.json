@@ -597,9 +597,11 @@
       "vertical": "reparation-electromenager",
       "topic": "Bonus reparation 2026 : electromenager eligibles, montants et demarches",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "bonus-reparation-2026-electromenager-eligibles-montants-et-demarches",
-      "working_title": "Bonus reparation 2026 : electromenager eligibles, montants et demarches"
+      "working_title": "Bonus reparation 2026 : electromenager eligibles, montants et demarches",
+      "published_at": "2026-06-11",
+      "category": "decryptage"
     },
     {
       "vertical": "reparation-electromenager",
