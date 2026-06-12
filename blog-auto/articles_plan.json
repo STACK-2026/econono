@@ -607,9 +607,10 @@
       "vertical": "reparation-electromenager",
       "topic": "Indice de reparabilite 2026 : comment le lire et bien choisir",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "indice-de-reparabilite-2026-comment-le-lire-et-bien-choisir",
-      "working_title": "Indice de reparabilite 2026 : comment le lire et bien choisir"
+      "working_title": "Indice de reparabilite 2026 : comment le lire et bien choisir",
+      "published_at": "2026-06-12"
     },
     {
       "vertical": "reparation-electromenager",
