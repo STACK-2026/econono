@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdArticle, jsonLdFaq, jsonLdBreadcrumbs } from "../../utils/seo";
+import { VILLES_BUDGET, type VilleBudget } from "../../data/budget-etudiant-villes";
+
+export function getStaticPaths() {
+  return VILLES_BUDGET.map((v) => ({ params: { ville: v.slug }, props: { v } }));
+}
+const { v } = Astro.props as { v: VilleBudget };
+const url = `${siteConfig.url}/budget-etudiant/${v.slug}/`;
+const eur = (f: { min: number; max: number }) => `${f.min} à ${f.max} €`;
+const reseauCourt = v.transport.reseau.split("(")[0].trim();
+const title = `Budget étudiant ${v.nom} 2026 : logement, transport, aides`;
+const description = `Budget étudiant à ${v.nom} : ${v.budgetTotal.min} à ${v.budgetTotal.max} €/mois. Loyers CROUS, coloc, studio, transport ${reseauCourt}, aides locales et budget type détaillé.`;
+const postes = [
+  { label: "Logement (CROUS)", val: eur(v.logement.crous) },
+  { label: "Logement (coloc)", val: eur(v.logement.coloc) },
+  { label: "Logement (studio)", val: eur(v.logement.studio) },
+  { label: `Transport (${reseauCourt})`, val: `${v.transport.abonnementMensuelEtudiant} €` },
+  { label: "Alimentation", val: eur(v.alimentation) },
+  { label: "Loisirs", val: eur(v.loisirs) },
+];
+const faq = [
+  { question: `Quel budget pour un étudiant à ${v.nom} en 2026 ?`,
+    answer: `Compte ${v.budgetTotal.min} à ${v.budgetTotal.max} €/mois à ${v.nom}, logement compris. Le poste logement pèse 50-60 % : ${v.logement.crous.min}-${v.logement.crous.max} € en résidence CROUS, ${v.logement.coloc.min}-${v.logement.coloc.max} € en colocation, ${v.logement.studio.min}-${v.logement.studio.max} € pour un studio seul.` },
+  { question: `Combien coûte le transport étudiant à ${v.nom} ?`,
+    answer: `L'abonnement étudiant ${v.transport.reseau} revient à environ ${v.transport.abonnementMensuelEtudiant} €/mois.` },
+  { question: `À quelles aides un étudiant a droit à ${v.nom} ?`,
+    answer: v.aidesLocales.join(" ") },
+];
+const breadcrumbs = [
+  { name: "Accueil", url: siteConfig.url + "/" },
+  { name: "Budget étudiant", url: siteConfig.url + "/budget-etudiant/" },
+  { name: v.nom, url },
+];
+const jsonLd = [
+  jsonLdArticle({ title, description, url, datePublished: "2026-06-13", author: siteConfig.blog.defaultAuthor, keywords: [`budget étudiant ${v.nom.toLowerCase()}`] }),
+  jsonLdFaq(faq),
+  jsonLdBreadcrumbs(breadcrumbs),
+];
+---
+<BaseLayout title={title} description={description} canonicalUrl={url} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <Breadcrumbs items={breadcrumbs} />
+    <div class="prose max-w-none">
+      <h1>Budget étudiant à {v.nom} en 2026</h1>
+      <p data-speakable><strong>TL;DR</strong> · À {v.nom}, prévois <strong>{v.budgetTotal.min} à {v.budgetTotal.max} €/mois</strong> (logement compris). Le logement pèse 50-60 % du budget ; la résidence CROUS ({v.logement.crous.min}-{v.logement.crous.max} €) reste la solution la moins chère devant la colocation et le studio.</p>
+      <p>{v.introEditoriale}</p>
+      <h2>Budget type mensuel à {v.nom}</h2>
+      <table>
+        <thead><tr><th>Poste</th><th>Fourchette (€/mois)</th></tr></thead>
+        <tbody>{postes.map((p) => <tr><td>{p.label}</td><td>{p.val}</td></tr>)}</tbody>
+      </table>
+      <h2>Se loger : CROUS, coloc ou studio ?</h2>
+      <ul>
+        <li><strong>Résidence CROUS</strong> : {v.logement.crous.min}-{v.logement.crous.max} €/mois · le moins cher, attribution sur critères sociaux, forte demande.</li>
+        <li><strong>Colocation</strong> : {v.logement.coloc.min}-{v.logement.coloc.max} €/mois · bon compromis prix/surface.</li>
+        <li><strong>Studio seul</strong> : {v.logement.studio.min}-{v.logement.studio.max} €/mois · autonomie, le plus cher.</li>
+      </ul>
+      <h2>Aides à {v.nom}</h2>
+      <ul>{v.aidesLocales.map((a) => <li>{a}</li>)}</ul>
+      <h2>Questions fréquentes · budget étudiant {v.nom}</h2>
+      {faq.map((item) => (<details><summary>{item.question}</summary><p>{item.answer}</p></details>))}
+      <p class="mt-8">👉 <a href="/calculateurs/budget-etudiant/">Calcule ton budget étudiant personnalisé</a> · <a href="/budget-etudiant/">Voir toutes les villes</a></p>
+      <p class="text-sm text-gray-500 mt-6">Sources : {v.sources.join(" · ")}. Dernière mise à jour : juin 2026.</p>
+    </div>
+  </article>
+</BaseLayout>
