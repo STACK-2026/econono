@@ -40,10 +40,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Paris concentre le coût de la vie étudiant le plus élevé de France, tiré par le logement : un studio dépasse souvent 1 000 €/mois et les places en résidence CROUS sont rares face à la demande. La colocation et les communes de petite couronne (Montreuil, Saint-Denis, Ivry) restent les leviers les plus efficaces pour tenir le budget.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "CROUS de Paris — tarifs résidences universitaires",
-      "Île-de-France Mobilités — abonnement Imagine R étudiant",
-      "Caf — barème APL/ALS 2026",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "CROUS de Paris · tarifs résidences universitaires",
+      "Île-de-France Mobilités · abonnement Imagine R étudiant",
+      "Caf · barème APL/ALS 2026",
     ],
   },
   {
@@ -59,10 +59,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Deuxième ville étudiante de France, Lyon offre un compromis recherché entre dynamisme et coût maîtrisé : la Guillotière, Villeurbanne et le 7e arrondissement concentrent les colocations abordables proches des campus de la Doua et des Berges du Rhône. Le réseau TCL, dense et bon marché pour les 18-25 ans, allège nettement le poste transport par rapport à Paris.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "TCL — abonnement 18-25 ans illimité",
-      "CROUS de Lyon — tarifs résidences universitaires",
-      "Région Auvergne-Rhône-Alpes — PASS'Région jeunes",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "TCL · abonnement 18-25 ans illimité",
+      "CROUS de Lyon · tarifs résidences universitaires",
+      "Région Auvergne-Rhône-Alpes · PASS'Région jeunes",
     ],
   },
   {
@@ -78,10 +78,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Marseille reste l'une des grandes métropoles étudiantes les plus accessibles du pays côté logement : les quartiers de la Plaine, Notre-Dame-du-Mont, Saint-Charles et le 5e arrondissement proposent des loyers nettement inférieurs à ceux de Lyon ou Bordeaux. Le poste transport pèse davantage dès qu'on couvre toute la métropole avec le pass RTM étudiant, mais le tarif jeune local reste très avantageux.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "RTM — Pass 30 jours étudiant métropole",
-      "CROUS Aix-Marseille-Avignon — tarifs résidences universitaires",
-      "Région Sud — Pass ZOU! Études",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "RTM · Pass 30 jours étudiant métropole",
+      "CROUS Aix-Marseille-Avignon · tarifs résidences universitaires",
+      "Région Sud · Pass ZOU! Études",
     ],
   },
   {
@@ -97,10 +97,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Bordeaux a vu ses loyers grimper avec son attractivité : la tension locative pousse les étudiants vers la rive droite (La Bastide), Talence, Pessac et Bègles, à proximité directe du campus universitaire desservi par le tram B. Le réseau TBM compense partiellement avec un Pass Jeune parmi les moins chers des grandes métropoles françaises.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "TBM — Pass Jeune Mensuel 11-27 ans",
-      "CROUS de Bordeaux-Aquitaine — tarif des logements",
-      "Info Jeunes Nouvelle-Aquitaine — bourses et aides",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "TBM · Pass Jeune Mensuel 11-27 ans",
+      "CROUS de Bordeaux-Aquitaine · tarif des logements",
+      "Info Jeunes Nouvelle-Aquitaine · bourses et aides",
     ],
   },
   {
@@ -116,10 +116,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Troisième ville étudiante de France, Lille séduit par sa vie nocturne et des loyers contenus dans le Vieux-Lille populaire, à Wazemmes, Moulins et autour du campus de Villeneuve-d'Ascq relié par le métro. La proximité de la Belgique et un réseau Ilévia au tarif modulé selon les revenus permettent de boucler un budget mesuré pour une grande métropole.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "Ilévia — grille tarifaire 4-25 ans",
-      "CROUS de Lille — tarifs résidences universitaires",
-      "CRIJ / Info Jeunes Hauts-de-France — aides au transport",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "Ilévia · grille tarifaire 4-25 ans",
+      "CROUS de Lille · tarifs résidences universitaires",
+      "CRIJ / Info Jeunes Hauts-de-France · aides au transport",
     ],
   },
   {
@@ -135,10 +135,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Première ville étudiante de France, Toulouse combine un coût de la vie modéré et le pass de transport étudiant le moins cher des grandes métropoles, à 15,50 €/mois sur le réseau Tisséo. Les quartiers Saint-Cyprien, des Carmes, de Rangueil et l'écosystème aéronautique près de l'université Paul-Sabatier concentrent les logements étudiants accessibles.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "Tisséo — pass étudiant 20-25 ans",
-      "CROUS Toulouse-Occitanie — tarifs résidences universitaires",
-      "Région Occitanie — Carte Jeune et loRdi",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "Tisséo · pass étudiant 20-25 ans",
+      "CROUS Toulouse-Occitanie · tarifs résidences universitaires",
+      "Région Occitanie · Carte Jeune et loRdi",
     ],
   },
   {
@@ -154,10 +154,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Ville à taille humaine et fortement étudiante, Rennes offre un campus de Beaulieu bien relié par le métro et des quartiers vivants comme Sainte-Anne, Villejean ou le centre historique. Les loyers y restent plus doux que dans les très grandes métropoles, mais la forte demande locative impose d'anticiper sa recherche dès le printemps.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "STAR — abonnement jeune 18-26 ans",
-      "CROUS de Rennes-Bretagne — tarifs studios 2025-2026",
-      "Région Bretagne — BreizhGo Jeunes",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "STAR · abonnement jeune 18-26 ans",
+      "CROUS de Rennes-Bretagne · tarifs studios 2025-2026",
+      "Région Bretagne · BreizhGo Jeunes",
     ],
   },
   {
@@ -173,10 +173,10 @@ export const VILLES_BUDGET: VilleBudget[] = [
     ],
     introEditoriale: "Nantes attire toujours plus d'étudiants avec son campus du Tertre et de l'île de Nantes, mais cette popularité tend le marché du logement autour de Chantenay, Doulon et du centre. Le réseau Naolib (ex-TAN), tramway et busway, structure les déplacements quotidiens, avec une tarification solidaire qui allège fortement la facture des étudiants les plus modestes.",
     sources: [
-      "FAGE — Indicateur du coût de la rentrée 2026",
-      "Naolib (TAN) — formule illimitée moins de 26 ans",
-      "CROUS de Nantes-Pays de la Loire — résidences universitaires",
-      "Région Pays de la Loire — e.pass jeunes",
+      "FAGE · Indicateur du coût de la rentrée 2026",
+      "Naolib (TAN) · formule illimitée moins de 26 ans",
+      "CROUS de Nantes-Pays de la Loire · résidences universitaires",
+      "Région Pays de la Loire · e.pass jeunes",
     ],
   },
 ];
