@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { siteConfig } from "../../../site.config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+import { VILLES_BUDGET } from "../../data/budget-etudiant-villes";
+const url = `${siteConfig.url}/budget-etudiant/`;
+const title = "Budget étudiant par ville 2026 : logement, transport, aides";
+const description = "Budget étudiant ville par ville en 2026 : Paris, Lyon, Marseille, Bordeaux, Lille, Toulouse, Rennes, Nantes. Loyers CROUS, coloc, studio, transport et aides locales.";
+const breadcrumbs = [{ name: "Accueil", url: siteConfig.url + "/" }, { name: "Budget étudiant", url }];
+const villes = [...VILLES_BUDGET].sort((a, b) => a.nom.localeCompare(b.nom, "fr"));
+---
+<BaseLayout title={title} description={description} canonicalUrl={url} jsonLd={jsonLdBreadcrumbs(breadcrumbs)}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <Breadcrumbs items={breadcrumbs} />
+    <div class="prose max-w-none">
+      <h1>Budget étudiant par ville en 2026</h1>
+      <p data-speakable>Le budget étudiant varie fortement selon la ville, surtout sur le logement. Choisis ta ville pour un budget type détaillé (CROUS, colocation, studio), le prix du transport et les aides locales. Pour une estimation personnalisée, utilise le <a href="/calculateurs/budget-etudiant/">calculateur budget étudiant</a>.</p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 mt-8">
+      {villes.map((v) => (
+        <a href={`/budget-etudiant/${v.slug}/`} class="block rounded-xl border border-gray-200 p-4 no-underline hover:shadow-md transition-shadow">
+          <strong>Budget étudiant {v.nom}</strong>
+          <span class="block text-sm text-gray-600">{v.budgetTotal.min} à {v.budgetTotal.max} €/mois · {v.region}</span>
+        </a>
+      ))}
+    </div>
+  </article>
+</BaseLayout>
