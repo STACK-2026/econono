@@ -67,9 +67,9 @@ export const VILLES_BUDGET: VilleBudget[] = [
   },
   {
     slug: "marseille", nom: "Marseille", region: "Provence-Alpes-Côte d'Azur", academie: "Aix-Marseille", populationEtudiante: 104000,
-    logement: { crous: { min: 165, max: 395 }, coloc: { min: 380, max: 560 }, studio: { min: 470, max: 700 } },
+    logement: { crous: { min: 165, max: 395 }, coloc: { min: 360, max: 520 }, studio: { min: 450, max: 650 } },
     transport: { reseau: "RTM (Pass étudiant métropole)", abonnementMensuelEtudiant: 36 },
-    alimentation: { min: 220, max: 310 }, loisirs: { min: 70, max: 130 }, budgetTotal: { min: 850, max: 1100 },
+    alimentation: { min: 215, max: 300 }, loisirs: { min: 65, max: 120 }, budgetTotal: { min: 820, max: 1060 },
     aidesLocales: [
       "Pass ZOU! Études (Région Sud) : 90 €/an (45 € tarif réduit) pour les TER et cars régionaux illimités",
       "Pass RTM jeune zone Marseille à 13,20 €/mois pour les moins de 26 ans résidant dans la métropole",
@@ -105,9 +105,9 @@ export const VILLES_BUDGET: VilleBudget[] = [
   },
   {
     slug: "lille", nom: "Lille", region: "Hauts-de-France", academie: "Lille", populationEtudiante: 120000,
-    logement: { crous: { min: 250, max: 500 }, coloc: { min: 380, max: 560 }, studio: { min: 470, max: 700 } },
+    logement: { crous: { min: 250, max: 500 }, coloc: { min: 390, max: 560 }, studio: { min: 490, max: 700 } },
     transport: { reseau: "Ilévia (abonnement 4-25 ans)", abonnementMensuelEtudiant: 32 },
-    alimentation: { min: 220, max: 310 }, loisirs: { min: 70, max: 130 }, budgetTotal: { min: 870, max: 1150 },
+    alimentation: { min: 225, max: 310 }, loisirs: { min: 75, max: 135 }, budgetTotal: { min: 880, max: 1160 },
     aidesLocales: [
       "Mon Abo Étudiant TER Hauts-de-France : jusqu'à 88 % de réduction, gratuit pour les boursiers",
       "Tarification Ilévia au quotient familial : l'abonnement jeune descend bien en dessous de 32 €/mois selon les ressources",
@@ -124,9 +124,9 @@ export const VILLES_BUDGET: VilleBudget[] = [
   },
   {
     slug: "toulouse", nom: "Toulouse", region: "Occitanie", academie: "Toulouse", populationEtudiante: 125000,
-    logement: { crous: { min: 217, max: 400 }, coloc: { min: 380, max: 560 }, studio: { min: 470, max: 700 } },
+    logement: { crous: { min: 217, max: 400 }, coloc: { min: 370, max: 540 }, studio: { min: 460, max: 680 } },
     transport: { reseau: "Tisséo (pass étudiant 20-25 ans)", abonnementMensuelEtudiant: 15 },
-    alimentation: { min: 220, max: 310 }, loisirs: { min: 70, max: 130 }, budgetTotal: { min: 830, max: 1080 },
+    alimentation: { min: 220, max: 305 }, loisirs: { min: 70, max: 130 }, budgetTotal: { min: 830, max: 1080 },
     aidesLocales: [
       "Pass étudiant Tisséo à 15,50 €/mois (12,40 € pour les boursiers, gratuit échelon 7) sur carte Pastel",
       "Carte Jeune Région Occitanie et dispositif loRdi (ordinateur portable subventionné)",
@@ -162,9 +162,9 @@ export const VILLES_BUDGET: VilleBudget[] = [
   },
   {
     slug: "nantes", nom: "Nantes", region: "Pays de la Loire", academie: "Nantes", populationEtudiante: 67000,
-    logement: { crous: { min: 220, max: 450 }, coloc: { min: 380, max: 560 }, studio: { min: 470, max: 700 } },
+    logement: { crous: { min: 220, max: 450 }, coloc: { min: 410, max: 600 }, studio: { min: 510, max: 740 } },
     transport: { reseau: "Naolib / TAN (Formule illimitée moins de 26 ans)", abonnementMensuelEtudiant: 32 },
-    alimentation: { min: 220, max: 310 }, loisirs: { min: 70, max: 130 }, budgetTotal: { min: 900, max: 1170 },
+    alimentation: { min: 230, max: 315 }, loisirs: { min: 70, max: 125 }, budgetTotal: { min: 920, max: 1200 },
     aidesLocales: [
       "Prime Job Étudiant de 200 € (Région Pays de la Loire) via le dispositif e.pass jeunes",
       "Tarification solidaire Naolib pour les moins de 26 ans (2,55 à 17,85 €/mois selon les ressources)",

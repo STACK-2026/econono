@@ -1,7 +1,10 @@
+// Requires Node >= 23 to import the .ts data directly (native type-stripping),
+// or run with `node --experimental-strip-types scripts/validate-budget-villes.mjs`.
 import { VILLES_BUDGET } from "../src/data/budget-etudiant-villes.ts";
 let errors = 0;
 const fail = (msg) => { console.error("✗ " + msg); errors++; };
 const slugs = new Set(); const intros = new Set();
+// update EXPECTED when adding a city
 const EXPECTED = ["paris","lyon","marseille","bordeaux","lille","toulouse","rennes","nantes"];
 for (const v of VILLES_BUDGET) {
   const id = v.slug || "(no slug)";
