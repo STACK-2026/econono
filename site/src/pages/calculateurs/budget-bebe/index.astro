@@ -260,7 +260,7 @@ const calcJsonLd = {
     const equipement = getRadio("equipement", "economique");
 
     // Coûts annuels (sur 12 mois pour la garde, mais bébé naît mid-year en pratique , on suppose 12 mois pour simplification)
-    const couts = {
+    const coûts = {
       equipement: EQUIPEMENT[equipement],
       couches: equipement === "economique" ? 200 : 850, // jetables vs lavables
       lait: 1000, // si pas d'allaitement
@@ -269,7 +269,7 @@ const calcJsonLd = {
       vetements: equipement === "premium" ? 800 : (equipement === "moyen" ? 500 : 300),
       garde: GARDE_BRUT[garde] * 12,
     };
-    const totalBrut = Object.values(couts).reduce((s, v) => s + v, 0);
+    const totalBrut = Object.values(coûts).reduce((s, v) => s + v, 0);
 
     // Aides estimées simplifiées
     let aides = 0;
@@ -305,13 +305,13 @@ const calcJsonLd = {
     if (elTotal) elTotal.textContent = fmt(resteCharge);
     if (elMensuel) elMensuel.textContent = `Soit ~${fmt(mensuel)}/mois reste à charge.`;
     if (elDetail) elDetail.innerHTML = [
-      ["Équipement initial", couts.equipement],
-      ["Couches", couts.couches],
-      ["Lait infantile", couts.lait],
-      ["Repas (dès 6 mois)", couts.repas],
-      ["Santé reste à charge", couts.sante],
-      ["Vêtements", couts.vetements],
-      ["Garde (sur 12 mois)", couts.garde],
+      ["Équipement initial", coûts.equipement],
+      ["Couches", coûts.couches],
+      ["Lait infantile", coûts.lait],
+      ["Repas (dès 6 mois)", coûts.repas],
+      ["Santé reste à charge", coûts.sante],
+      ["Vêtements", coûts.vetements],
+      ["Garde (sur 12 mois)", coûts.garde],
     ].map(([n, v]) => `<li class="flex justify-between border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">${n}</span><span class="font-mono tabular text-stone-800">${fmt(v as number)}</span></li>`).join("") + `<li class="flex justify-between pt-2 border-t-2 border-[#1a3d2e]"><span class="font-semibold" style="color: #1a3d2e;">Total brut</span><span class="font-mono font-bold tabular" style="color: #1a3d2e;">${fmt(totalBrut)}</span></li>`;
 
     if (elAides) elAides.textContent = `+ ${fmt(aides)} sur l'année`;

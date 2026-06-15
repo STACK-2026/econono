@@ -5,7 +5,7 @@ import { jsonLdBreadcrumbs } from "../../utils/seo";
 
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
-  { name: "Données ouvertes", url: siteConfig.url + "/donnees-ouvertes/" },
+  { name: "Données ouvertes", url: siteConfig.url + "/données-ouvertes/" },
 ]);
 
 const datasets = [
@@ -58,7 +58,7 @@ const datasetCollectionSchema = {
   "@type": "DataCatalog",
   name: `Données ouvertes finances perso France · ${siteConfig.name}`,
   description: "Catalogue de datasets ouverts CC-BY sur les finances personnelles françaises : SMIC, Livret A, plafonds CAF. Sources officielles, format CSV téléchargeable libre.",
-  url: siteConfig.url + "/donnees-ouvertes/",
+  url: siteConfig.url + "/données-ouvertes/",
   publisher: {
     "@type": "Organization",
     "@id": siteConfig.url + "/#organization",
@@ -72,7 +72,7 @@ const datasetCollectionSchema = {
     "@type": "Dataset",
     name: d.title,
     description: d.description,
-    url: siteConfig.url + `/donnees-ouvertes/${d.slug}/`,
+    url: siteConfig.url + `/données-ouvertes/${d.slug}/`,
     identifier: siteConfig.url + `/datasets/${d.slug}.csv`,
     keywords: d.keywords,
     inLanguage: "fr-FR",

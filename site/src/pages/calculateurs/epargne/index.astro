@@ -8,14 +8,14 @@ import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
-  { name: "Calculateur d'épargne", url: siteConfig.url + "/calculateurs/epargne/" },
+  { name: "Calculateur d'épargne", url: siteConfig.url + "/calculateurs/épargne/" },
 ]);
 
 const calculatorJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Calculateur d'épargne intérêts composés · Econono",
-  url: siteConfig.url + "/calculateurs/epargne/",
+  url: siteConfig.url + "/calculateurs/épargne/",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Any",
   description: "Calcule combien tu auras dans 10, 20 ou 30 ans en mettant X €/mois. Intérêts composés inclus. Compatible livret A, LEP, assurance vie. Gratuit.",
@@ -228,8 +228,8 @@ const faqJsonLd = jsonLdFaq(faqItems);
     </div>
   </section>
 
-  <RelatedBlogsByKeywords keywords={["epargne", "livret a", "lep", "interets composes"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
-  <WikidataAbout entities={[{ name: "Livret A", wikidata: "Q3247108" }, { name: "Livret d'épargne populaire", wikidata: "Q3247109" }, { name: "Intérêts composés", wikidata: "Q179310" }]} pageUrl="https://econono.com/calculateurs/epargne/" pageName="Calculateur épargne intérêts composés Livret A LEP" />
+  <RelatedBlogsByKeywords keywords={["épargne", "livret a", "lep", "intérêts composes"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
+  <WikidataAbout entities={[{ name: "Livret A", wikidata: "Q3247108" }, { name: "Livret d'épargne populaire", wikidata: "Q3247109" }, { name: "Intérêts composés", wikidata: "Q179310" }]} pageUrl="https://econono.com/calculateurs/épargne/" pageName="Calculateur épargne intérêts composés Livret A LEP" />
 </BaseLayout>
 
 <script>
@@ -279,16 +279,16 @@ const faqJsonLd = jsonLdFaq(faqItems);
 
     const total = capInitFinal + versFinal;
     const versementsCumules = PMT * 12 * annees;
-    const interets = total - C - versementsCumules;
+    const intérêts = total - C - versementsCumules;
 
     if (elFinal) elFinal.textContent = fmt(total);
     if (elFinalDetail) elFinalDetail.textContent = `Dans ${annees} an${annees > 1 ? "s" : ""} à ${tauxPct}% annuel.`;
     if (elInit) elInit.textContent = fmt(C);
     if (elVers) elVers.textContent = fmt(versementsCumules);
-    if (elInt) elInt.textContent = fmt(interets);
+    if (elInt) elInt.textContent = fmt(intérêts);
 
     const recos: string[] = [];
-    const partInterets = total > 0 ? (interets / total) * 100 : 0;
+    const partInterets = total > 0 ? (intérêts / total) * 100 : 0;
 
     if (annees < 5 && tauxPct > 4) recos.push("Avec moins de 5 ans, évite les supports volatils (PEA, unités de compte). Reste sur livret A et LEP : aucun risque.");
     if (annees >= 15 && tauxPct < 3) recos.push(`Sur ${annees} ans, un taux de ${tauxPct}% c'est conservateur. Une partie en assurance-vie multisupport ou PEA peut viser 5-7% sur le long terme.`);
