@@ -616,9 +616,10 @@
       "vertical": "reparation-electromenager",
       "topic": "Top 10 electromenager les plus reparables en 2026 (indice + retours)",
       "intent": "comparatif",
-      "done": false,
+      "done": true,
       "slug": "top-10-electromenager-les-plus-reparables-en-2026-indice-retours",
-      "working_title": "Top 10 electromenager les plus reparables en 2026 (indice + retours)"
+      "working_title": "Top 10 electromenager les plus reparables en 2026 (indice + retours)",
+      "published_at": "2026-06-15"
     },
     {
       "vertical": "reparation-electromenager",
