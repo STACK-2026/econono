@@ -210,7 +210,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
             <label class="block">
               <span class="block text-sm font-semibold mb-1" style="color: #0f2419;">Épargne mensuelle</span>
               <div class="relative">
-                <input type="number" name="épargne" min="0" step="10" placeholder="100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
+                <input type="number" name="epargne" min="0" step="10" placeholder="100" class="w-full pl-4 pr-10 py-3 rounded-md border-2 text-base font-mono tabular text-right transition-colors" style="border-color: #e7e5e4; background: #fffefb;" />
                 <span class="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-sm text-stone-400">€</span>
               </div>
             </label>
@@ -301,7 +301,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
         Trois pistes selon ton score :
       </p>
       <ul>
-        <li><strong>Score 70 et plus</strong> : tu es dans une situation saine. L'enjeu devient l'<a href="/calculateurs/épargne/">optimisation de ton épargne</a> (LEP si éligible, livret A complet, puis assurance vie ou PEA selon ton horizon).</li>
+        <li><strong>Score 70 et plus</strong> : tu es dans une situation saine. L'enjeu devient l'<a href="/calculateurs/epargne/">optimisation de ton épargne</a> (LEP si éligible, livret A complet, puis assurance vie ou PEA selon ton horizon).</li>
         <li><strong>Score 40 à 70</strong> : tu fonctionnes mais avec peu de marge. Cible deux postes optimisables (souvent : <a href="/comparatifs/">assurances</a>, <a href="/calculateurs/comparateur-abonnements/">abonnements</a>, énergie). 50 à 100 €/mois récupérables sans effort, et ton score bouge vite.</li>
         <li><strong>Score sous 40</strong> : tu es probablement en tension. Si tu es au découvert chronique, on a un <a href="/guides/sortir-decouvert-bancaire/">guide dédié pour en sortir</a>. Vérifie aussi que tu touches bien <a href="https://www.mesdroitssociaux.gouv.fr/">toutes les aides auxquelles tu as droit</a> (<a href="https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-quotidienne/la-prime-d-activite">prime d'activité</a>, <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F12006">APL</a>, LEP), un quart des éligibles ne les réclament pas.</li>
       </ul>
@@ -422,11 +422,11 @@ const faqJsonLd = jsonLdFaq(faqItems);
     const courses = getNum("courses");
     const loisirs = getNum("loisirs");
     const vetements = getNum("vetements");
-    const épargne = getNum("épargne");
+    const epargne = getNum("epargne");
 
     const chargesFixes = loyer + charges + assurances + transport + credits + abos;
     const variables = courses + loisirs + vetements;
-    const sortiesTotales = chargesFixes + variables + épargne;
+    const sortiesTotales = chargesFixes + variables + epargne;
     const reste = revenus - sortiesTotales;
 
     if (revenus <= 0) {
@@ -441,7 +441,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
 
     const tauxLogement = (loyer + charges) / revenus;
     const tauxEndettement = credits / revenus;
-    const tauxEpargne = épargne / revenus;
+    const tauxEpargne = epargne / revenus;
     const tauxContraintes = chargesFixes / revenus;
     const restePct = Math.max(0, Math.min(1, reste / revenus));
 

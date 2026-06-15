@@ -228,7 +228,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
           <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Budget mensuel complet</h3>
           <p class="text-sm text-stone-600">Score santé sur 100 et reste à vivre détaillé.</p>
         </a>
-        <a href="/calculateurs/coût-credit/" class="ticket p-6 hover-glow group">
+        <a href="/calculateurs/cout-credit/" class="ticket p-6 hover-glow group">
           <p class="font-mono text-xs uppercase tracking-wider mb-2" style="color: #c2410c;">Calculateur 08</p>
           <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display); color: #0f2419;">Coût total d'un crédit</h3>
           <p class="text-sm text-stone-600">Capital + intérêts + assurance, le vrai prix.</p>
@@ -267,7 +267,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
 
   function compute() {
     const revenus = getNum("salaires") + getNum("autres");
-    const mensualités = getNum("immo") + getNum("auto") + getNum("conso") + getNum("pension");
+    const mensualites = getNum("immo") + getNum("auto") + getNum("conso") + getNum("pension");
 
     if (revenus <= 0) {
       if (elResult) elResult.textContent = "- %";
@@ -278,8 +278,8 @@ const faqJsonLd = jsonLdFaq(faqItems);
       return;
     }
 
-    const taux = (mensualités / revenus) * 100;
-    const capacite = Math.max(0, 0.35 * revenus - mensualités);
+    const taux = (mensualites / revenus) * 100;
+    const capacite = Math.max(0, 0.35 * revenus - mensualites);
 
     if (elResult) {
       elResult.textContent = `${taux.toFixed(1)} %`;
@@ -320,7 +320,7 @@ const faqJsonLd = jsonLdFaq(faqItems);
     if (taux > 35) recos.push(`Tu dépasses le plafond HCSF de ${(taux - 35).toFixed(1)} points. Aucun nouveau crédit possible (sauf dérogation primo-accédant).`);
     if (taux > 30 && taux <= 35) recos.push("Tu es dans la zone tendue (30-35%). Si tu veux racheter ou financer un projet, libère d'abord de la marge en remboursant un crédit conso.");
     if (taux > 0 && taux < 25) recos.push("Excellente situation. Tu peux soit accélérer ton épargne, soit envisager un projet immobilier sans risque réglementaire.");
-    if (mensualités > 0 && getNum("conso") > 100) recos.push(`Crédit conso à ${fmt(getNum("conso"))}/mois. Cible de remboursement anticipé : ces crédits ont les pires taux (souvent 8-15%).`);
+    if (mensualites > 0 && getNum("conso") > 100) recos.push(`Crédit conso à ${fmt(getNum("conso"))}/mois. Cible de remboursement anticipé : ces crédits ont les pires taux (souvent 8-15%).`);
     if (capacite > 500 && taux < 25) recos.push(`Capacité de plus de 500 €/mois disponible. Tu peux financer un investissement locatif ou un projet immo.`);
     if (recos.length === 0) recos.push("Renseigne tes mensualités de crédit pour obtenir des recommandations contextuelles.");
 

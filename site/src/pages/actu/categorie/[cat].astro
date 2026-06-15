@@ -8,8 +8,8 @@ const CATEGORY_META: Record<string, { label: string; description: string }> = {
   smic: { label: "SMIC", description: "Revalorisation, calcul net, comparaison annuelle. Tout sur le SMIC français et son impact sur ta paye." },
   livret: { label: "Livrets épargne", description: "Livret A, LEP, LDDS, PEL : taux, plafonds, conditions, stratégie d'allocation." },
   aide: { label: "Aides sociales", description: "Prime d'activité, RSA, APL, allocations familiales : éligibilité, calcul, démarches." },
-  fiscalité: { label: "Fiscalité", description: "Impôt sur le revenu, prélèvement à la source, niches, lois de finances." },
-  énergie: { label: "Énergie", description: "Prix électricité et gaz, MaPrimeRénov, chèques énergie, comparateurs fournisseurs." },
+  fiscalite: { label: "Fiscalité", description: "Impôt sur le revenu, prélèvement à la source, niches, lois de finances." },
+  energie: { label: "Énergie", description: "Prix électricité et gaz, MaPrimeRénov, chèques énergie, comparateurs fournisseurs." },
   inflation: { label: "Inflation", description: "Indice INSEE, prix des courses, panier moyen, érosion du pouvoir d'achat." },
   logement: { label: "Logement", description: "Loyers, prix immobilier, encadrement, taxes, droits du locataire." },
   alerte: { label: "Alerte", description: "Mises en garde sur arnaques, démarchages, scams financiers." },
@@ -17,7 +17,7 @@ const CATEGORY_META: Record<string, { label: string; description: string }> = {
 
 export async function getStaticPaths() {
   return Object.keys({
-    smic: 1, livret: 1, aide: 1, fiscalité: 1, énergie: 1, inflation: 1, logement: 1, alerte: 1,
+    smic: 1, livret: 1, aide: 1, fiscalite: 1, energie: 1, inflation: 1, logement: 1, alerte: 1,
   }).map((cat) => ({ params: { cat } }));
 }
 

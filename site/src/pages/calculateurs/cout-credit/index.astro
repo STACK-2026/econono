@@ -8,7 +8,7 @@ import { jsonLdBreadcrumbs, jsonLdFaq } from "../../../utils/seo";
 const breadcrumbs = jsonLdBreadcrumbs([
   { name: "Accueil", url: siteConfig.url + "/" },
   { name: "Calculateurs", url: siteConfig.url + "/calculateurs/" },
-  { name: "Coût total d'un crédit", url: siteConfig.url + "/calculateurs/coût-credit/" },
+  { name: "Coût total d'un crédit", url: siteConfig.url + "/calculateurs/cout-credit/" },
 ]);
 
 const faqItems = [
@@ -24,7 +24,7 @@ const calcJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Calculateur coût total d'un crédit · Econono",
-  url: siteConfig.url + "/calculateurs/coût-credit/",
+  url: siteConfig.url + "/calculateurs/cout-credit/",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Any",
   description: "Calcule le vrai coût d'un crédit immobilier ou conso : capital + intérêts + assurance, pas juste la mensualité. Gratuit, sans inscription.",
@@ -108,15 +108,15 @@ const calcJsonLd = {
             <div class="ticket p-7 relative">
               <div class="absolute -top-3 -right-3"><div class="wax-seal text-[9px]">Mensualité</div></div>
               <p class="eyebrow text-xs mb-2">Tu paieras chaque mois</p>
-              <p id="cc-mensualité" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
-              <p id="cc-mensualité-detail" class="text-sm text-stone-600">Saisis tes paramètres pour démarrer.</p>
+              <p id="cc-mensualite" class="font-mono font-bold tabular leading-none mb-2" style="color: #1a3d2e; font-size: clamp(2.5rem, 5vw, 3.5rem);">- €</p>
+              <p id="cc-mensualite-detail" class="text-sm text-stone-600">Saisis tes paramètres pour démarrer.</p>
             </div>
 
             <div class="ticket p-7">
               <p class="eyebrow text-xs mb-3">Coût total</p>
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Capital emprunté</span><span id="cc-capital" class="font-mono tabular text-stone-800">- €</span></div>
-                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Intérêts cumulés</span><span id="cc-intérêts" class="font-mono tabular" style="color: #c2410c;">- €</span></div>
+                <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Intérêts cumulés</span><span id="cc-interets" class="font-mono tabular" style="color: #c2410c;">- €</span></div>
                 <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1.5"><span class="text-stone-600">Assurance cumulée</span><span id="cc-assur-total" class="font-mono tabular" style="color: #c2410c;">- €</span></div>
                 <div class="flex justify-between items-baseline pt-2 border-t-2" style="border-color: #1a3d2e;">
                   <span class="font-semibold" style="color: #1a3d2e;">Coût total</span>
@@ -148,7 +148,7 @@ const calcJsonLd = {
       <p>La formule de la mensualité (annuité constante) est : <strong>M = C × r / (1 - (1+r)^(-n))</strong>, où C = capital, r = taux mensuel (taux annuel / 12), n = nombre de mensualités. Le coût total = (M × n) - C + assurance cumulée.</p>
 
       <h2>L'assurance emprunteur : levier souvent oublié</h2>
-      <p>Représente 30 à 50% du coût total d'un crédit immobilier. La banque te propose son assurance interne (groupe), souvent 2 fois plus chère qu'une délégation externe. Depuis la <a href="https://www.économie.gouv.fr/cedef/loi-lemoine-assurance-emprunteur" target="_blank" rel="noopener">loi Lemoine 2022</a>, tu peux changer d'assurance à tout moment, sans frais, sans justification. Économie potentielle : <strong>5 000 à 15 000 €</strong> sur un crédit immo.</p>
+      <p>Représente 30 à 50% du coût total d'un crédit immobilier. La banque te propose son assurance interne (groupe), souvent 2 fois plus chère qu'une délégation externe. Depuis la <a href="https://www.economie.gouv.fr/cedef/loi-lemoine-assurance-emprunteur" target="_blank" rel="noopener">loi Lemoine 2022</a>, tu peux changer d'assurance à tout moment, sans frais, sans justification. Économie potentielle : <strong>5 000 à 15 000 €</strong> sur un crédit immo.</p>
 
       <h2>Mensualité vs durée : le bon arbitrage</h2>
       <p>Pour un crédit de 200 000 € à 3,5% :</p>
@@ -169,7 +169,7 @@ const calcJsonLd = {
       <ul>
         <li><a href="https://www.banque-france.fr/" target="_blank" rel="noopener">Banque de France · taux moyens crédit</a></li>
         <li><a href="https://www.service-public.fr/particuliers/vosdroits/F16123" target="_blank" rel="noopener">Service-Public · prêt immobilier</a></li>
-        <li><a href="https://www.économie.gouv.fr/cedef/loi-lemoine-assurance-emprunteur" target="_blank" rel="noopener">Loi Lemoine · assurance emprunteur</a></li>
+        <li><a href="https://www.economie.gouv.fr/cedef/loi-lemoine-assurance-emprunteur" target="_blank" rel="noopener">Loi Lemoine · assurance emprunteur</a></li>
       </ul>
 
       <p class="text-sm text-stone-500 mt-8 pt-4 border-t border-stone-200">Calculateur revu le 23 avril 2026. Formule officielle annuité constante (la plus utilisée par les banques françaises).</p>
@@ -192,15 +192,15 @@ const calcJsonLd = {
   </section>
 
   <RelatedBlogsByKeywords keywords={["credit", "taeg", "emprunt", "rachat"]} eyebrow="À lire dans le Carnet" title="Approfondis le sujet" />
-  <WikidataAbout entities={[{ name: "Taux annuel effectif global", wikidata: "Q3520881" }, { name: "Crédit à la consommation", wikidata: "Q1185906" }]} pageUrl="https://econono.com/calculateurs/coût-credit/" pageName="Calculateur coût total crédit TAEG" />
+  <WikidataAbout entities={[{ name: "Taux annuel effectif global", wikidata: "Q3520881" }, { name: "Crédit à la consommation", wikidata: "Q1185906" }]} pageUrl="https://econono.com/calculateurs/cout-credit/" pageName="Calculateur coût total crédit TAEG" />
 </BaseLayout>
 
 <script>
   const form = document.getElementById("cc-form") as HTMLFormElement | null;
-  const elM = document.getElementById("cc-mensualité");
-  const elMD = document.getElementById("cc-mensualité-detail");
+  const elM = document.getElementById("cc-mensualite");
+  const elMD = document.getElementById("cc-mensualite-detail");
   const elCap = document.getElementById("cc-capital");
-  const elInt = document.getElementById("cc-intérêts");
+  const elInt = document.getElementById("cc-interets");
   const elAssur = document.getElementById("cc-assur-total");
   const elTotal = document.getElementById("cc-total");
   const elSurcout = document.getElementById("cc-surcout");
@@ -232,17 +232,17 @@ const calcJsonLd = {
     const r = tauxAnnuel / 12;
     const n = annees * 12;
     const mensualiteCapital = r > 0 ? C * r / (1 - Math.pow(1 + r, -n)) : C / n;
-    const intérêts = mensualiteCapital * n - C;
+    const interets = mensualiteCapital * n - C;
     const assuranceMensuelle = (C * assurAnnuel) / 12;
     const assuranceTotale = assuranceMensuelle * n;
     const mensualiteTotale = mensualiteCapital + assuranceMensuelle;
-    const total = C + intérêts + assuranceTotale;
-    const surcoutPct = (intérêts + assuranceTotale) / C * 100;
+    const total = C + interets + assuranceTotale;
+    const surcoutPct = (interets + assuranceTotale) / C * 100;
 
     if (elM) elM.textContent = `${fmt(mensualiteTotale)}/mois`;
     if (elMD) elMD.textContent = `Capital : ${fmt(mensualiteCapital)}/mois · Assurance : ${fmt(assuranceMensuelle)}/mois`;
     if (elCap) elCap.textContent = fmt(C);
-    if (elInt) elInt.textContent = fmt(intérêts);
+    if (elInt) elInt.textContent = fmt(interets);
     if (elAssur) elAssur.textContent = fmt(assuranceTotale);
     if (elTotal) elTotal.textContent = fmt(total);
     if (elSurcout) elSurcout.textContent = `+${surcoutPct.toFixed(0)}% vs capital`;
