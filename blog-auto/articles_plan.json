@@ -625,9 +625,10 @@
       "vertical": "reparation-electromenager",
       "topic": "Lave-linge en panne : 7 reparations possibles avant de racheter",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "lave-linge-en-panne-7-reparations-possibles-avant-de-racheter",
-      "working_title": "Lave-linge en panne : 7 reparations possibles avant de racheter"
+      "working_title": "Lave-linge en panne : 7 reparations possibles avant de racheter",
+      "published_at": "2026-06-16"
     },
     {
       "vertical": "reparation-electromenager",
