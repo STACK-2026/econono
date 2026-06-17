@@ -634,9 +634,10 @@
       "vertical": "reparation-electromenager",
       "topic": "Frigo : compresseur HS, joints, fuite, ce qui se repare vraiment",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "frigo-compresseur-hs-joints-fuite-ce-qui-se-repare-vraiment",
-      "working_title": "Frigo : compresseur HS, joints, fuite, ce qui se repare vraiment"
+      "working_title": "Frigo : compresseur HS, joints, fuite, ce qui se repare vraiment",
+      "published_at": "2026-06-17"
     },
     {
       "vertical": "reparation-electromenager",
