@@ -643,9 +643,10 @@
       "vertical": "reparation-electromenager",
       "topic": "Lave-vaisselle : pompe, resistance, filtres, les vraies pannes 2026",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "lave-vaisselle-pompe-resistance-filtres-les-vraies-pannes-2026",
-      "working_title": "Lave-vaisselle : pompe, resistance, filtres, les vraies pannes 2026"
+      "working_title": "Lave-vaisselle : pompe, resistance, filtres, les vraies pannes 2026",
+      "published_at": "2026-06-18"
     },
     {
       "vertical": "seconde-main",
