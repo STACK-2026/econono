@@ -43,7 +43,7 @@ jobs:
 
       - name: Install deps
         working-directory: site
-        run: npm ci --prefer-offline --no-audit
+        run: npm install --prefer-offline --no-audit --no-fund || (echo "lockfile drift, retry clean" && rm -rf node_modules && npm install --no-audit --no-fund)
       - name: Sanitize content frontmatter (clamp description to 160 chars)
         # Routine claude.ai occasionally publishes articles with description > 160 chars,
         # which Astro content schema rejects. Clamp at build time to keep prod unblocked.

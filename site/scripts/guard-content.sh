@@ -31,11 +31,18 @@ if [ -n "$FILES" ]; then
     [ -f "$f" ] && EXISTING="$EXISTING $f"
   done
   if [ -n "$EXISTING" ]; then
-    echo "[guard:content] checking last-commit content files."
+    echo "[guard:content] auto-fix then check last-commit content files."
+    # --fix self-heals the auto-fixable defects (body H1, long description per
+    # the schema cap, keywords list->string, dashes, artifacts) so a cosmetic
+    # blog-auto slip never blocks the deploy; --check still blocks on the
+    # non-auto-fixable ones (ACCENT_LOW, mojibake).
+    # shellcheck disable=SC2086
+    python3 "$GUARD" --fix $EXISTING || true
     # shellcheck disable=SC2086
     exec python3 "$GUARD" --check $EXISTING
   fi
 fi
 
-echo "[guard:content] full-scan fallback on $CONTENT_DIR."
+echo "[guard:content] auto-fix then full-scan fallback on $CONTENT_DIR."
+python3 "$GUARD" --fix "$CONTENT_DIR" || true
 exec python3 "$GUARD" --check "$CONTENT_DIR"

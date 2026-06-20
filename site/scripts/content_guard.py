@@ -176,6 +176,89 @@ def fm_field(fm_inner: str, key: str):
     return None, None, None
 
 
+# ---- schema-aware description limit (iso-schema, root fix 2026-06-20) ----
+# The flat DESC_MAX=180 diverged from the Astro schema: blog/metiers/guides/outils
+# cap description at 160 while actu allows 260 (per content.config.ts). A 161-180c
+# blog description passed this guard but BROKE the Astro build (adapte-toi 20/06).
+# We now read each site's real per-collection cap from content.config.ts so the
+# guard's clamp can never under-shoot the schema. Defensive: any parse miss falls
+# back to DESC_MAX so the guard never regresses on a config it can't read.
+_SCHEMA_CACHE: dict = {}
+
+
+def schema_desc_limits(config_path: Path) -> dict:
+    """Parse an Astro content.config.ts -> {collection: max_int_or_None}."""
+    try:
+        txt = Path(config_path).read_text(encoding="utf-8")
+    except Exception:
+        return {}
+    limits = {}
+    for m in re.finditer(r"const\s+(\w+)\s*=\s*defineCollection\(", txt):
+        name, start = m.group(1), m.end()
+        nxt = re.search(r"const\s+\w+\s*=\s*defineCollection\(", txt[start:])
+        block = txt[start: start + (nxt.start() if nxt else len(txt))]
+        dm = re.search(r"description:\s*z\.string\(\)((?:\.\w+\([^)]*\))*)", block)
+        if not dm:
+            continue
+        mx = re.search(r"\.max\((\d+)\)", dm.group(1))
+        limits[name] = int(mx.group(1)) if mx else None
+    return limits
+
+
+def _find_content_config(path: Path):
+    p = Path(path).resolve()
+    for parent in [p] + list(p.parents):
+        for cand in (parent / "src" / "content.config.ts",
+                     parent / "src" / "content" / "config.ts"):
+            if cand.exists():
+                return cand
+    return None
+
+
+def desc_limit_for(path: Path, default: int = DESC_MAX) -> int:
+    """Per-collection description cap for `path` from its content.config.ts,
+    falling back to DESC_MAX when the config/collection cannot be resolved."""
+    cfg = _find_content_config(path)
+    if cfg is None:
+        return default
+    key = str(cfg)
+    if key not in _SCHEMA_CACHE:
+        _SCHEMA_CACHE[key] = schema_desc_limits(cfg)
+    limits = _SCHEMA_CACHE[key]
+    parts = Path(path).parts
+    if "content" in parts:
+        i = parts.index("content")
+        if i + 1 < len(parts) and parts[i + 1] in limits:
+            lim = limits[parts[i + 1]]
+            return lim if lim is not None else default
+    return default
+
+
+# ---- keywords coerced to a scalar (schema expects z.string()) ----
+# blog-auto sometimes emits `keywords:` as a YAML list; the Astro schema declares
+# z.string(), so the build dies with "Expected string, received object"
+# (adapte-toi 20/06). Collapse the list to a comma-joined scalar.
+KW_LIST_RE = re.compile(r"(?m)^(keywords:)[ \t]*\n((?:[ \t]+-[ \t]+.*(?:\n|$))+)")
+
+
+def coerce_keywords_list(fm_inner: str):
+    m = KW_LIST_RE.search(fm_inner)
+    if not m:
+        return fm_inner, False
+    items = re.findall(r"(?m)^[ \t]+-[ \t]+(.*?)[ \t]*$", m.group(2))
+    vals = []
+    for it in items:
+        it = it.strip()
+        if len(it) >= 2 and it[0] == it[-1] and it[0] in "\"'":
+            it = it[1:-1]
+        if it:
+            vals.append(it)
+    joined = ", ".join(vals)
+    esc = joined.replace("\\", "\\\\").replace('"', '\\"')
+    new_fm = fm_inner[:m.start()] + f'keywords: "{esc}"\n' + fm_inner[m.end():].lstrip("\n")
+    return new_fm, True
+
+
 def analyze(path: Path, fix: bool, check_links: bool):
     """Return (issues, fixed_count, new_text_or_None)."""
     raw = path.read_text(encoding="utf-8")
@@ -220,15 +303,36 @@ def analyze(path: Path, fix: bool, check_links: bool):
             if dq == '"' and "''" in new_val:
                 new_val = new_val.replace("''", "'")
                 issues.append(("DESC_QUOTE_ARTIFACT", "double-quoted description contains '' (renders d''un)"))
-            if len(new_val) > DESC_MAX:
-                issues.append(("DESC_LONG", f"description {len(new_val)}c > {DESC_MAX}"))
-                new_val = clamp_value(new_val, DESC_MAX)
+            desc_limit = desc_limit_for(path)
+            if len(new_val) > desc_limit:
+                issues.append(("DESC_LONG", f"description {len(new_val)}c > {desc_limit}"))
+                new_val = clamp_value(new_val, desc_limit)
             if fix and new_val != dval:
                 # re-emit as a double-quoted YAML scalar (valid for any source
                 # quote style) so apostrophes, colons and question marks survive.
                 esc = new_val.replace("\\", "\\\\").replace('"', '\\"')
                 fm_inner = fm_inner[:dm.start()] + f'{dm.group(1)}"{esc}"' + fm_inner[dm.end():]
                 fixes.append(f"normalized description -> {len(new_val)}c")
+
+        # keywords as a YAML list -> scalar string (schema declares z.string())
+        new_fm_kw, kw_listed = coerce_keywords_list(fm_inner)
+        if kw_listed:
+            issues.append(("KEYWORDS_LIST", "keywords is a YAML list; schema expects a string scalar"))
+            if fix:
+                fm_inner = new_fm_kw
+                fixes.append("coerced keywords list -> string")
+
+    # ---- 3b. dead hero image (frontmatter image: URL must resolve) ----
+    # Catches dead Unsplash IDs (404): hallucinated by the model OR a 3rd-party
+    # photo removed after publication. Network-resilient: only 404/410 flags;
+    # offline build hosts return 0. Blocking only on freshly-changed files
+    # (--strict-images); warn-only on full scan (see main()).
+    if fm_inner is not None:
+        _im, ival, _iq = fm_field(fm_inner, "image")
+        if ival and ival.startswith("http"):
+            code = _http_status(ival)
+            if code in (404, 410):
+                issues.append(("IMG_DEAD", f"{code} hero image unreachable: {ival}"))
 
     # ---- 4. body-level H1 (=> double H1 with template title) ----
     h1s = re.findall(r"(?m)^#[ \t]+\S", body)
@@ -283,6 +387,23 @@ def analyze(path: Path, fix: bool, check_links: bool):
     return issues, fixes, (new_text if changed else None)
 
 
+def _http_status(url: str) -> int:
+    """HEAD a URL, return status (0 on any network error so a build host without
+    network is never falsely blocked). One light retry to absorb transient blips."""
+    import urllib.request, urllib.error
+    UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+    for _ in range(2):
+        try:
+            req = urllib.request.Request(url, headers=UA, method="HEAD")
+            return urllib.request.urlopen(req, timeout=10).status
+        except urllib.error.HTTPError as e:
+            return e.code
+        except Exception:
+            continue
+    return 0
+
+
 def _check_links(text: str, path: Path):
     import urllib.request, urllib.error
     out = []
@@ -312,6 +433,9 @@ def main():
     ap.add_argument("--with-accents", action="store_true", help="also run check_accents.py")
     ap.add_argument("--site", default=None, help="site slug (for --with-accents)")
     ap.add_argument("--check-links", action="store_true", help="HEAD-check external links (slow)")
+    ap.add_argument("--strict-images", action="store_true",
+                    help="treat IMG_DEAD as blocking (use on freshly-changed files only; on a "
+                         "full scan dead images are warn-only since 3rd-party photos rot over time)")
     args = ap.parse_args()
 
     files = []
@@ -323,6 +447,11 @@ def main():
             files.append(pp)
     # blocking = anything except the flag-only TITLE_LONG / TITLE_TRUNCATED?
     NON_BLOCKING = {"TITLE_LONG", "DESC_QUOTE_ARTIFACT"}
+    # Dead external hero images block only on freshly-changed files (publish-time
+    # gate). On a full scan they are warn-only: a 3rd-party Unsplash photo removed
+    # months later must never halt an unrelated rebuild.
+    if not args.strict_images:
+        NON_BLOCKING = NON_BLOCKING | {"IMG_DEAD"}
 
     total_block = 0
     total_fixed = 0
