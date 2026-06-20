@@ -269,6 +269,14 @@ def build_markdown_file(article: dict, title: str, meta: str, body: str, author:
 # GitHub Contents API push (memory rule)
 # ============================================================
 def push_via_github_api(rel_path: str, content: str, message: str) -> bool:
+    # Accents obligatoires : re-accent any ASCII-folded French markdown before
+    # commit (best-effort, no-op without GEMINI_API_KEY, never raises).
+    if rel_path.endswith((".md", ".mdx")):
+        try:
+            from reaccent_lib import reaccent_text
+            content = reaccent_text(content, os.getenv("GEMINI_API_KEY"))
+        except Exception:
+            pass
     if not GH_TOKEN:
         log.warning("GITHUB_TOKEN absent, skip push (dry run)")
         return False
