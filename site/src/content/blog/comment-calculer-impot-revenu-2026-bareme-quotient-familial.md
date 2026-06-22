@@ -1,5 +1,5 @@
 ---
-title: "Calculer ton impôt sur le revenu 2026 : formule complète + simulateur"
+title: "Calculer impôt sur le revenu 2026 : formule et simulateur"
 description: "Découvre comment calculer ton impôt sur le revenu 2026 en 5 min avec la formule officielle, 3 exemples concrets et les astuces pour payer moins. Données 2026 vé"
 date: 2026-06-05T07:12:52+00:00
 lastReviewed: 2026-06-05

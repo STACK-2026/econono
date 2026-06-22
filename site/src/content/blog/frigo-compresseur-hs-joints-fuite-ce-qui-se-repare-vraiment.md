@@ -1,5 +1,5 @@
 ---
-title: "Frigo en panne : compresseur, joints, fuite, ce qui se répare vraiment"
+title: "Frigo en panne : pannes réparables, économisez !"
 description: "Frigo qui ne refroidit plus, fuit ou fait du bruit ? Les pannes qui se réparent pour 20 à 150 €, celles qui condamnent l'appareil, et la règle pour décider."
 date: 2026-06-17T08:12:00+00:00
 lastReviewed: 2026-06-17

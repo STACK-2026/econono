@@ -1,5 +1,5 @@
 ---
-title: "LDDS ou Livret A en 2026 : lequel choisir ? Taux, plafond, stratégie"
+title: "LDDS ou Livret A 2026 : votre guide pour bien choisir"
 description: "LDDS et Livret A à 2,4% en 2026 : plafond de 12 000 € vs 22 950 €, cumul possible, quelle épargne pour ton budget ? On compare tout."
 date: 2026-05-26T07:14:38+00:00
 lastReviewed: 2026-05-26

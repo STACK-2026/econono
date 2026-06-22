@@ -1,5 +1,5 @@
 ---
-title: "Prime d'activité 2026 : montant, conditions et simulation gratuite"
+title: "Prime d'activité 2026 : Montant, conditions, simulation"
 description: "La prime d'activité 2026 peut t'ajouter 200 €/mois. Qui y a droit ? Comment la demander ? Simule ton éligibilité en 2 min avec notre calculateur."
 date: 2026-05-17T05:22:38+00:00
 lastReviewed: 2026-05-17

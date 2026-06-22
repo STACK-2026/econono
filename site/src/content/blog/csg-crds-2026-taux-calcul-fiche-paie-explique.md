@@ -1,5 +1,5 @@
 ---
-title: "CSG CRDS 2026 : taux, calcul, déductible - ce que tu paies vraiment"
+title: "CSG CRDS 2026 : Taux, calcul, déduction, impact net"
 description: "En 2026, la CSG (9,2%) et CRDS (0,5%) te coûtent 50 à 200€/mois. Décryptage des taux, partie déductible, et impact sur ton salaire net · Exemples concrets."
 date: 2026-06-06T06:32:54+00:00
 lastReviewed: 2026-06-06

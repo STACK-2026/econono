@@ -1,5 +1,5 @@
 ---
-title: "Négocier ton augmentation en 2026 : méthode, chiffres et scripts"
+title: "Négocier ton augmentation 2026 : méthode, chiffres, scripts"
 description: "Tu veux une augmentation en 2026 ? Voici la méthode SMART, les benchmarks salaires (Apec, INSEE), les chiffres à apporter et des scripts pour réussir ta négocia"
 date: 2026-05-24T07:25:32+00:00
 lastReviewed: 2026-05-24

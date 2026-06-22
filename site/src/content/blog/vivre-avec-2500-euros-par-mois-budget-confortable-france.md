@@ -1,5 +1,5 @@
 ---
-title: "Vivre avec 2 500 € par mois en 2026 : épargne, immobilier et optimisation"
+title: "2 500 €/mois : Épargner, acheter, optimiser en 2026"
 description: "Avec 2 500 € net/mois, tu peux épargner 300-500 € et emprunter 180-200 k€. Stratégies Livret A, LEP, PEA et optimisation fiscale pour ton budget."
 date: 2026-05-14T05:56:48+00:00
 lastReviewed: 2026-05-14

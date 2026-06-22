@@ -1,5 +1,5 @@
 ---
-title: "Carte bancaire gratuite 2026 : les 6 vraies offres sans frais cachés"
+title: "Carte bancaire gratuite 2026 : 6 vraies offres sans frais"
 description: "Nickel, Revolut, N26, Boursorama, BforBank, Fortuneo. Le comparatif des cartes bancaires gratuites 2026 avec conditions réelles et frais cachés débusqués."
 date: 2026-06-08T07:48:00+00:00
 lastReviewed: 2026-06-08

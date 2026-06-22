@@ -1,5 +1,5 @@
 ---
-title: "Barème kilométrique 2026 : combien déduire et comment opter pour les frais réels"
+title: "Barème kilométrique 2026 : optimisez vos frais réels"
 description: "Barème kilométrique 2026 par puissance fiscale, calcul des frais réels vs abattement 10%, et la méthode pour savoir si ça vaut le coup. Exemples chiffrés."
 date: 2026-05-29T07:42:00+00:00
 lastReviewed: 2026-05-29

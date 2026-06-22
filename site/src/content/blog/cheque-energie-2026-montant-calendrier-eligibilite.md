@@ -1,5 +1,5 @@
 ---
-title: "Chèque énergie 2026 : montant, éligibilité, date d'envoi (avril-mai)"
+title: "Chèque énergie 2026 : montant, éligibilité, dates d'envoi"
 description: "Le chèque énergie 2026 arrive en avril-mai : 48€ à 277€ selon tes revenus. Vérifie si tu y as droit, quand tu le recevras et comment l'utiliser pour payer tes f"
 date: 2026-05-16T05:10:48+00:00
 lastReviewed: 2026-05-16

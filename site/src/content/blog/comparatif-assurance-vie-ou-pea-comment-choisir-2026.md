@@ -1,5 +1,5 @@
 ---
-title: "Assurance vie ou PEA en 2026 : lequel choisir pour ton épargne ?"
+title: "Assurance vie ou PEA 2026 : lequel choisir pour épargner ?"
 description: "Assurance vie ou PEA en 2026 ? Compare fiscalité, fonds euros, UC, plafonds 150k€ et 4600€ d'abattement. Trouve le meilleur placement selon ton profil."
 date: 2026-05-20T05:54:30+00:00
 lastReviewed: 2026-05-20

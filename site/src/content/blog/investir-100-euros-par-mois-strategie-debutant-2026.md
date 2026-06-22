@@ -1,5 +1,5 @@
 ---
-title: "Investir 100 € par mois en 2026 : stratégie ETF et DCA pour débutants"
+title: "Investir 100 €/mois en 2026 : ETF & DCA pour débutants"
 description: "Découvre comment investir 100 € par mois avec des ETF World, le DCA et un PEA. Projections 20 ans, frais comparés, et conseils concrets pour débuter sans stress"
 date: 2026-05-25T06:38:56+00:00
 lastReviewed: 2026-05-25

@@ -1,5 +1,5 @@
 ---
-title: "Frais de succession 2026 : abattements, droits et frais notaire en clair"
+title: "Frais de succession 2026 : abattements, droits, notaire"
 description: "En 2026, l'abattement succession est de 100 000 € par enfant. Découvre le barème 5-45%, les frais de notaire et comment optimiser avec les donations (15 ans)."
 date: 2026-06-07T06:50:19+00:00
 lastReviewed: 2026-06-07

@@ -1,5 +1,5 @@
 ---
-title: "Frais bancaires cachés 2026 : la liste complète pour ne plus se faire avoir"
+title: "Frais bancaires cachés 2026 : La liste pour ne plus payer"
 description: "Commission d'intervention, agios, lettre d'information, tenue de compte. La liste des frais bancaires cachés 2026 avec plafonds légaux et lettre type."
 date: 2026-05-28T07:42:00+00:00
 lastReviewed: 2026-05-28

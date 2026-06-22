@@ -1,5 +1,5 @@
 ---
-title: "TMI 2026 : barème complet, tranches et astuces pour payer moins d'impôt"
+title: "TMI 2026 : Barème, tranches et astuces pour moins d'impôt"
 description: "Découvre le barème TMI 2026 par tranche (0%, 11%, 30%, 41%, 45%) et des astuces concrètes pour réduire ton impôt : PER, dons, emploi à domicile. Exemples chiffr"
 date: 2026-05-18T05:41:49+00:00
 lastReviewed: 2026-05-18

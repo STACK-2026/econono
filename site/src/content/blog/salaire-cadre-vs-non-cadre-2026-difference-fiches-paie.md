@@ -1,5 +1,5 @@
 ---
-title: "Cadre ou non-cadre en 2026 : la vraie différence sur ta fiche de paie"
+title: "Cadre ou non-cadre : salaire net, la vraie différence 2026"
 description: "Cadre vs non-cadre en 2026 : cotisations Agirc-Arrco T2, APEC, prévoyance et net réel. On décortique l'écart sur ta fiche de paie, chiffres à l'appui."
 date: 2026-06-01T07:29:45+00:00
 lastReviewed: 2026-06-01

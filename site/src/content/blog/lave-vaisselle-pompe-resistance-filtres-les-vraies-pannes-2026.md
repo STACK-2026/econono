@@ -1,5 +1,5 @@
 ---
-title: "Lave-vaisselle : pompe, résistance, filtres, les vraies pannes 2026"
+title: "Lave-vaisselle : Pannes, réparer sans racheter (15-130€)"
 description: "Lave-vaisselle qui ne vidange, ne chauffe ou ne lave plus ? Les pannes qui se réparent pour 15 à 130 €, celles qui condamnent l'appareil, la règle pour décider."
 date: 2026-06-18T07:42:00+00:00
 lastReviewed: 2026-06-18

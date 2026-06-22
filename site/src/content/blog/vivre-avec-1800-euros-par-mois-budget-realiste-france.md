@@ -1,5 +1,5 @@
 ---
-title: "Vivre avec 1 800 € par mois en 2026 : budget type ville par ville"
+title: "Vivre avec 1800€/mois en 2026 : budget ville par ville"
 description: "Découvre comment vivre avec 1 800 € net/mois en France en 2026 : budget détaillé, loyer, courses, aides (LEP, prime activité), et astuces pour épargner 8%. Pari"
 date: 2026-05-12T05:49:28+00:00
 lastReviewed: 2026-05-12

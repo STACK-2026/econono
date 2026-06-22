@@ -1,5 +1,5 @@
 ---
-title: "Épargne de précaution 2026 : combien épargner et où la placer ?"
+title: "Épargne de précaution 2026 : combien, où placer ?"
 description: "Combien mettre de côté pour ton épargne de précaution en 2026 ? 3 à 6 mois de charges, 8 à 15k€ selon tes revenus. Où placer : Livret A, LEP, LDDS. Guide comple"
 date: 2026-05-23T07:56:58+00:00
 lastReviewed: 2026-05-23

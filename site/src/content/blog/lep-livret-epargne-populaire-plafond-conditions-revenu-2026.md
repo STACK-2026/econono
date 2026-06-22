@@ -1,5 +1,5 @@
 ---
-title: "LEP 2026 : plafond revenu, taux à 4%, éligibilité (calculateur)"
+title: "LEP 2026 : taux 4%, plafond revenu, éligibilité"
 description: "Le LEP 2026 offre 4% d'intérêts avec un plafond de revenu de 22 500€ (célibataire) et 34 480€ (couple). Vérifie ton éligibilité en 2 min et ouvre ton compte."
 date: 2026-05-30T05:20:15+00:00
 lastReviewed: 2026-05-30

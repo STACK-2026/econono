@@ -1,5 +1,5 @@
 ---
-title: "Vivre avec 2 200 € net/mois en 2026 : budget, épargne, immobilier"
+title: "Vivre avec 2 200 € net/mois : Budget, épargne, immo 2026"
 description: "2 200 € net/mois, c'est le salaire médian français en 2026. Découvre comment bien vivre, épargner 15-20%, et éviter les pièges fiscaux avec ce guide complet."
 date: 2026-05-13T07:45:18+00:00
 lastReviewed: 2026-05-13

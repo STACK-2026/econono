@@ -1,5 +1,5 @@
 ---
-title: "Compte épargne temps (CET) 2026 : congés en cash ou retraite, mode d'emploi"
+title: "CET 2026 : Optimisez vos congés en cash ou retraite"
 description: "Le CET te permet de transformer tes congés non pris en argent ou en retraite. Découvre les règles 2026, la fiscalité, et comment l'utiliser sans perdre d'argent"
 date: 2026-05-31T07:49:37+00:00
 lastReviewed: 2026-05-31

@@ -1,5 +1,5 @@
 ---
-title: "Bonus réparation 2026 : appareils éligibles, montants et démarches"
+title: "Bonus réparation 2026 : montants, démarches"
 description: "Bonus réparation 2026 : jusqu'à 60 € déduits sur ta facture pour réparer ton électroménager hors garantie. Montants par appareil, conditions et démarches."
 date: 2026-06-11T07:30:00+00:00
 lastReviewed: 2026-06-11

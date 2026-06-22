@@ -1,5 +1,5 @@
 ---
-title: "Top 10 électroménager les plus réparables en 2026 (indice + retours)"
+title: "Électroménager réparable 2026 : Top 10"
 description: "Quels appareils électroménagers sont les plus réparables en 2026 ? Notre top 10 par indice de réparabilité : lave-linge, lave-vaisselle, aspirateurs et plus."
 date: 2026-06-15T07:42:00+00:00
 lastReviewed: 2026-06-15

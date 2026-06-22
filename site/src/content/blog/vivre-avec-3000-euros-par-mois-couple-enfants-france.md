@@ -1,5 +1,5 @@
 ---
-title: "Vivre avec 3 000 € par mois en 2026 : budget couple et famille réaliste"
+title: "Vivre avec 3 000 €/mois 2026 : budget couple & famille"
 description: "Découvre comment vivre à deux ou en famille avec 3 000 €/mois en 2026 : répartition des dépenses, aides CAF, capacité d'épargne et outils pour gérer ton budget."
 date: 2026-05-15T07:39:10+00:00
 lastReviewed: 2026-05-15
