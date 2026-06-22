@@ -24,7 +24,7 @@ Tu as reçu ton avis d’imposition 2026 et tu as envie de vérifier le calcul ?
 - Les **astuces** pour payer moins : quotient familial, décote, crédits d’impôt.
 - Un **simulateur gratuit** pour faire le calcul en 2 minutes.
 
-On va éviter le jargon technique et les leçons de morale. Si tu es pressé·e, utilise notre [calculateur d’impôt sur le revenu 2026](/calculateurs/impot-revenu/) et reviens ici pour comprendre comment ça marche.
+On va éviter le jargon technique et les leçons de morale. Si tu es pressé·e, utilise notre calculateur d’impôt sur le revenu 2026 et reviens ici pour comprendre comment ça marche.
 
 ---
 
@@ -105,7 +105,7 @@ Voici les tranches et taux applicables en 2026 :
 
 💡 **Astuce** :
 - Le barème est **progressif** : tu ne paies pas 30% sur la totalité de ton revenu si tu es dans la tranche à 30%, mais seulement sur la partie qui dépasse 28 797 €.
-- Si tu veux vérifier ton calcul, utilise notre [calculateur d’impôt sur le revenu 2026](/calculateurs/impot-revenu/).
+- Si tu veux vérifier ton calcul, utilise notre calculateur d’impôt sur le revenu 2026.
 
 ---
 
@@ -329,6 +329,6 @@ Calculer ton **impôt sur le revenu 2026** n’est pas compliqué si tu suis ces
 4. **Déduis la décote** si tu y as droit.
 5. **Soustrais les crédits d’impôt** (garde d’enfants, dons, travaux, etc.).
 
-Pour gagner du temps, utilise notre [calculateur d’impôt sur le revenu 2026](/calculateurs/impot-revenu/) : tu auras une estimation en 2 minutes.
+Pour gagner du temps, utilise notre calculateur d’impôt sur le revenu 2026 : tu auras une estimation en 2 minutes.
 
 Et si tu veux recevoir des conseils pour optimiser ton budget chaque mois, abonne-toi au [Carnet d’Econono](https://econono.com/newsletter/) : on t’envoie des astuces pratiques, sans jargon et sans pub déguisée. Parce que gérer son argent, ça devrait être simple.

@@ -115,7 +115,7 @@ Avec **80 €/semaine** pour les courses, tu peux manger équilibré sans te pri
 - **Éviter le gaspillage** : 30 kg de nourriture jetés par personne/an en France ([ADEME](https://www.ademe.fr/)). Utilise les apps comme **Too Good To Go** pour des paniers anti-gaspi à petit prix.
 - **Faire les marchés en fin de journée** : réductions sur les invendus.
 
-👉 **Besoin d’aide pour tes courses ?** Découvre notre [guide pour manger à petit budget](/guides/manger-pas-cher/).
+👉 **Besoin d’aide pour tes courses ?** Découvre notre guide pour manger à petit budget.
 
 ---
 
@@ -140,7 +140,7 @@ Avec **10% de ton budget** (180 €/mois), voici tes options selon ta ville :
 
 *Exemple* : à **Toulouse**, un abonnement Tisséo (bus + métro) coûte **38,40 €/mois**, contre **86,40 €** pour le Navigo à Paris.
 
-👉 **Calcule ton budget transport** avec notre [outil dédié](/calculateurs/budget-transport/).
+👉 **Calcule ton budget transport** avec notre outil dédié.
 
 ---
 
@@ -163,7 +163,7 @@ Avec **10% de ton budget** (180 €/mois), tu peux :
 
 *Source : INSEE, 2023 - dépenses moyennes des Français.*
 
-👉 **Besoin d’idées ?** Consulte notre [guide des loisirs pas chers](/guides/loisirs-pas-chers/).
+👉 **Besoin d’idées ?** Consulte notre guide des loisirs pas chers.
 
 ---
 
@@ -218,7 +218,7 @@ Avec **1 800 € net/mois**, tu peux bénéficier de plusieurs aides :
 - **Conditions** : revenus < **1 200 €/mois** (pour une personne seule).
 - **Comment faire ?** Automatique si tu es éligible ([chequeenergie.gouv.fr](https://chequeenergie.gouv.fr/)).
 
-👉 **Vérifie toutes tes aides** avec notre [simulateur d’aides sociales](/calculateurs/aides-sociales/).
+👉 **Vérifie toutes tes aides** avec notre simulateur d’aides sociales.
 
 ---
 

@@ -165,7 +165,7 @@ L’assurance emprunteur (qui te couvre en cas de décès, invalidité, etc.) pe
 - **Assurance individuelle** (chez un assureur externe) : 0,15% du capital emprunté.
 - **Économie** : sur un prêt de 200 000 € sur 20 ans, tu économises **~8 400 €**.
 
-👉 *Compare les assurances emprunteur avec notre [guide complet](/guides/assurance-emprunteur-moins-chere/).*
+👉 *Compare les assurances emprunteur avec notre guide complet.*
 
 ---
 
@@ -221,7 +221,7 @@ Comme on l’a vu, l’assurance emprunteur peut représenter **jusqu’à 30% d
 - **Assurance individuelle** (assureur externe) : 0,15% du capital → **7 500 €** sur 20 ans.
 - **Économie** : **10 500 €**.
 
-👉 *Utilise notre [comparateur d’assurances emprunteur](/comparatifs/assurance-emprunteur-2026/) pour trouver la moins chère.*
+👉 *Utilise notre comparateur d’assurances emprunteur pour trouver la moins chère.*
 
 ### 2️⃣ Emprunter sur trop longtemps
 Plus la durée de ton prêt est longue, plus tu paieras d’intérêts. **Exemple** :
@@ -253,7 +253,7 @@ Un achat immobilier, ce n’est pas que le prix du bien. **Il y a plein de frais
 - Frais de dossier : 1 000 €.
 - **Total** : **283 500 €** (soit **33 500 € de frais en plus**).
 
-👉 *Utilise notre [calculateur de budget immobilier](/calculateurs/budget-achat-immobilier/) pour estimer tous les frais.*
+👉 *Utilise notre calculateur de budget immobilier pour estimer tous les frais.*
 
 ### 5️⃣ Ne pas anticiper les hausses de taux
 Si tu prends un **prêt à taux variable**, ton taux peut augmenter (ou baisser) en fonction des marchés. **Risque** : si les taux remontent, ta mensualité peut exploser.
@@ -311,7 +311,7 @@ En plus du prix du bien, prévois :
 - **Frais de garantie** : 1 à 2% du montant emprunté.
 - **Travaux** : si le bien a besoin de rénovation.
 
-👉 *Estime tous les frais avec notre [calculateur de budget immobilier](/calculateurs/budget-achat-immobilier/).*
+👉 *Estime tous les frais avec notre calculateur de budget immobilier.*
 
 ---
 

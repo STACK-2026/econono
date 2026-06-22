@@ -216,7 +216,7 @@ Voici une stratégie progressive :
 2. **Projets à moyen terme** : LDDS (3%), PEL (2-3%), assurance-vie en fonds euros (2-3%).
 3. **Long terme** : PER (réduction d’impôts), PEA (actions), ou immobilier locatif.
 
-*Découvre nos [comparatifs des meilleurs placements 2026](/comparatifs/meilleurs-placements-2026/).*
+*Découvre nos comparatifs des meilleurs placements 2026.*
 
 ### Comment optimiser mes impôts avec 2 200 € net/mois ?
 Quelques pistes :

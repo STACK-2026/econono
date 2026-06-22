@@ -91,7 +91,7 @@ Tu es célibataire, tu gagnes **1 300 € net/mois**, et tu paies un loyer de 50
 - **Montant de base** : 1 300 € - 67,84 € + 56,17 € = **1 288,33 €**.
 - **Prime d’activité** : 280,83 € - (1 288,33 € × 0,61) = **~150 €/mois**.
 
-Pour éviter les calculs compliqués, utilise **notre calculateur gratuit** : [Simule ta prime d’activité 2026](/calculateurs/prime-activite/).
+Pour éviter les calculs compliqués, utilise **notre calculateur gratuit** : Simule ta prime d’activité 2026.
 
 ---
 
@@ -180,7 +180,7 @@ Si tu es freelance ou auto-entrepreneur, tu dois **mettre à jour tes revenus to
 Si tu cumules plusieurs jobs, déclare **toutes tes heures**, même les petits boulots. La CAF vérifie avec ton employeur.
 
 ### 4. Ne pas faire de simulation avant de demander
-Beaucoup de gens demandent la prime d’activité **sans savoir combien ils vont toucher**. Résultat : ils sont déçus par le montant. **Fais une simulation d’abord** avec [notre calculateur](/calculateurs/prime-activite/).
+Beaucoup de gens demandent la prime d’activité **sans savoir combien ils vont toucher**. Résultat : ils sont déçus par le montant. **Fais une simulation d’abord** avec notre calculateur.
 
 ### 5. Ne pas faire de recours en cas de refus
 Si ta demande est refusée, tu as **2 mois pour faire un recours**. Beaucoup de gens abandonnent, alors qu’un simple mail peut faire changer la décision.
@@ -223,10 +223,10 @@ Si la CAF estime que tu as touché trop d’argent, elle peut te demander un **r
 
 La **prime d’activité 2026** peut t’apporter **jusqu’à 280 €/mois** si tu gagnes moins de 1 800 € net. Pour en bénéficier :
 1. **Vérifie que tu remplis les conditions** (revenus < 1,5 SMIC, résidence en France, etc.).
-2. **Fais une simulation** avec [notre calculateur](/calculateurs/prime-activite/) pour connaître ton montant exact.
+2. **Fais une simulation** avec notre calculateur pour connaître ton montant exact.
 3. **Fais ta demande en ligne** sur le site de la CAF (ou de la MSA) en 10 minutes.
 4. **Évite les erreurs** qui réduisent ton montant (oublier de déclarer un changement, mal déclarer tes revenus, etc.).
 
-Tu veux savoir **combien tu peux toucher exactement** ? Utilise notre [calculateur de prime d’activité](/calculateurs/prime-activite/) et fais ta simulation en 2 minutes.
+Tu veux savoir **combien tu peux toucher exactement** ? Utilise notre calculateur de prime d’activité et fais ta simulation en 2 minutes.
 
 Et si tu veux recevoir d’autres conseils pour **optimiser ton budget**, abonne-toi à [notre newsletter Le Carnet](https://econono.com/newsletter/). On t’envoie des astuces concrètes pour **épargner sans se priver**, **réduire tes factures**, et **mieux gérer ton argent** au quotidien. C’est gratuit, et sans spam. 😉

@@ -140,7 +140,7 @@ Maintenant que tu connais les bases, voyons **quel placement correspond à ton p
 - **Stratégie** : Commence par **80% fonds euros / 20% UC**, puis augmente la part d’UC avec le temps.
 - **Contrat recommandé** : [Linxea Spirit 2](https://www.linxea.com/) (frais bas, fonds euros performants).
 
-🔗 *Tu veux un guide pas à pas pour ouvrir une assurance vie ? Lis notre [guide pour bien choisir son assurance vie](/guides/comment-choisir-assurance-vie/).*
+🔗 *Tu veux un guide pas à pas pour ouvrir une assurance vie ? Lis notre guide pour bien choisir son assurance vie.*
 
 ---
 
@@ -150,7 +150,7 @@ Maintenant que tu connais les bases, voyons **quel placement correspond à ton p
 - **Stratégie** : Investis dans des **ETF européens** (comme le Lyxor Euro Stoxx 50) ou des actions individuelles (LVMH, L’Oréal, etc.).
 - **Courtier recommandé** : [Bourse Direct](https://www.boursedirect.fr/) (frais de courtage à 0,99 €/ordre).
 
-🔗 *Tu veux comparer les courtiers PEA ? Consulte notre [comparatif des meilleurs PEA 2026](/comparatifs/meilleurs-pea-2026/).*
+🔗 *Tu veux comparer les courtiers PEA ? Consulte notre comparatif des meilleurs PEA 2026.*
 
 ---
 
@@ -188,7 +188,7 @@ Maintenant que tu connais les bases, voyons **quel placement correspond à ton p
   - Désigne tes bénéficiaires (conjoint·e, enfants, etc.) pour optimiser la transmission.
 - **Contrat recommandé** : [Suravenir Opportunités](https://www.suravenir.fr/) (frais bas, fonds euros performants).
 
-🔗 *Tu veux en savoir plus sur la transmission ? Lis notre [guide sur l’assurance vie et la succession](/guides/assurance-vie-succession/).*
+🔗 *Tu veux en savoir plus sur la transmission ? Lis notre guide sur l’assurance vie et la succession.*
 
 ---
 
@@ -237,7 +237,7 @@ Tu n’es pas obligé·e de choisir entre les deux ! **Les combiner peut être u
 - **Livret A** : 20% (épargne de précaution).
 - **Pour qui ?** Les débutants qui veulent **apprendre à investir sans tout risquer**.
 
-🔗 *Tu veux un plan d’épargne sur mesure ? Consulte notre [guide pour bien gérer son budget mensuel](/guides/comment-gerer-son-budget-mensuel/).*
+🔗 *Tu veux un plan d’épargne sur mesure ? Consulte notre guide pour bien gérer son budget mensuel.*
 
 ---
 
@@ -271,7 +271,7 @@ Tu n’es pas obligé·e de choisir entre les deux ! **Les combiner peut être u
   - Tu peux **retirer ton argent à tout moment** (contrairement au PEA).
 - **Contrat recommandé** : [Linxea Avenir](https://www.linxea.com/) (frais bas, fonds euros performants).
 
-🔗 *Tu veux un guide pour débuter ? Lis notre [guide pour épargner avec un petit salaire](/guides/comment-epargner-petit-salaire/).*
+🔗 *Tu veux un guide pour débuter ? Lis notre guide pour épargner avec un petit salaire.*
 
 ---
 
@@ -311,7 +311,7 @@ Tu n’es pas obligé·e de choisir entre les deux ! **Les combiner peut être u
 - **Inconvénient** : Les banques traditionnelles (BNP, Société Générale, etc.) ont **des frais élevés** (1%/an pour l’assurance vie, 0,5%/ordre pour le PEA).
 - **Alternative** : Ouvre ton PEA chez un **courtier en ligne** (Bourse Direct, Fortuneo) et ton assurance vie chez un **assureur en ligne** (Linxea, Suravenir).
 
-🔗 *Tu veux comparer les frais ? Consulte notre [comparatif des meilleures applications budget 2026](/comparatifs/meilleures-applications-budget-2026/).*
+🔗 *Tu veux comparer les frais ? Consulte notre comparatif des meilleures applications budget 2026.*
 
 ---
 

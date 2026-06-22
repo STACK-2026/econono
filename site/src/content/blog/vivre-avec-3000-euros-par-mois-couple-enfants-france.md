@@ -37,7 +37,7 @@ Quand on parle de **3 000 € par mois**, il faut d’abord clarifier un point :
 ### Si c’est le salaire d’une seule personne
 - **Salaire net mensuel** : 3 000 € (soit environ **42 000 € brut/an**).
 - **Budget du couple** : si l’autre personne ne travaille pas ou gagne moins, ton budget réel sera plus serré.
-- **Exemple** : un couple où l’un gagne 3 000 € et l’autre 1 200 € aura un budget total de **4 200 €/mois**, ce qui change la donne (on en parle dans un autre article : [vivre avec 4 000 € par mois](/budget-4000-euros/)).
+- **Exemple** : un couple où l’un gagne 3 000 € et l’autre 1 200 € aura un budget total de **4 200 €/mois**, ce qui change la donne (on en parle dans un autre article : vivre avec 4 000 € par mois).
 
 ### Si c’est le total des revenus du couple
 - **Budget mensuel** : 3 000 € net pour deux personnes (ou plus si enfants).

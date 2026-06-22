@@ -126,7 +126,7 @@ C’est là que ça se complique (un peu). **Une partie de la CSG est déductibl
   - **Revenu imposable** : 3 000 € - 204 € = **2 796 €** (au lieu de 3 000 €)
   - **Économie d’impôt** : 204 € × ton taux marginal d’imposition (ex : 30% → 61,20 € d’économie).
 
-👉 **Calcule ton taux marginal d’imposition** avec notre [simulateur d’impôts 2026](/calculateurs/impots/).
+👉 **Calcule ton taux marginal d’imposition** avec notre simulateur d’impôts 2026.
 
 ---
 
@@ -251,7 +251,7 @@ Comme on l’a vu, **6,8% de la CSG** (pour les salariés) est déductible de to
 - CSG déductible : 204 €
 - **Économie d’impôt** : 204 € × 30% (taux marginal) = **61,20 €/an**
 
-👉 **Utilise notre [simulateur d’impôts](/calculateurs/impots/)** pour estimer ton gain.
+👉 **Utilise notre simulateur d’impôts** pour estimer ton gain.
 
 ---
 
@@ -260,7 +260,7 @@ Si tu es freelance ou auto-entrepreneur, tu peux :
 - **Déduire tes charges** pour réduire ton bénéfice imposable (et donc ta CSG/CRDS).
 - **Choisir le versement libératoire** (pour les auto-entrepreneurs) : tes cotisations (dont CSG/CRDS) sont prélevées en même temps que tes revenus.
 
-👉 **Compare les options** avec notre [guide pour les indépendants](/guides/budget-freelance/).
+👉 **Compare les options** avec notre guide pour les indépendants.
 
 ---
 
@@ -330,7 +330,7 @@ Plusieurs raisons possibles :
 
 👉 **Pour aller plus loin** :
 - Calcule ton **salaire net après CSG/CRDS** avec notre [outil dédié](/calculateurs/salaire-net/).
-- Optimise ton **reste à vivre** avec notre [guide budget mensuel](/guides/comment-gerer-son-budget-mensuel/).
+- Optimise ton **reste à vivre** avec notre guide budget mensuel.
 - Abonne-toi à notre **newsletter** pour recevoir nos conseils budget chaque mois : [Le Carnet d’Econono](https://econono.com/newsletter/).
 
 *Tu as une question sur ta situation ?* Pose-la en commentaire, on te répond !

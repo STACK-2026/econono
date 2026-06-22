@@ -233,7 +233,7 @@ Si tu as **rempli ton LDDS (12 000 €) et ton Livret A (22 950 €)**, tu peux 
 - **Assurance-vie** : Pour un placement à moyen/long terme (rendement variable, mais potentiellement plus élevé).
 - **Compte à terme** : Pour bloquer ton épargne quelques mois/années à un taux fixe.
 
-👉 **À faire** : Utilise notre [comparateur de livrets défiscalisés](/comparatifs/livrets-defiscalises/) pour trouver la meilleure option.
+👉 **À faire** : Utilise notre comparateur de livrets défiscalisés pour trouver la meilleure option.
 
 ---
 

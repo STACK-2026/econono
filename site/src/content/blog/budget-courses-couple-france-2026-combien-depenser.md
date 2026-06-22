@@ -643,10 +643,10 @@ Pour **économiser sans te priver**, voici les leviers à actionner :
 
 Tu veux **calculer ton budget courses personnalisé** ? Utilise notre **[calculateur de budget courses](/calculateurs/budget-courses/)** pour voir où tu peux économiser. Et si tu veux recevoir nos **astuces directement dans ta boîte mail**, abonne-toi à **[notre newsletter](https://econono.com/newsletter/)** !
 
-![Un couple fait ses courses en supermarché avec un panier bien rempli](/blog/images/courses-couple-supermarche.jpg)
+!Un couple fait ses courses en supermarché avec un panier bien rempli
 *Crédit photo : [Unsplash](https://unsplash.com/photos/couple-faisant-ses-courses)*
 
-![Comparaison visuelle des prix entre hard discount, supermarché et bio](/blog/images/comparatif-prix-courses.jpg)
+!Comparaison visuelle des prix entre hard discount, supermarché et bio
 *Crédit photo : [Econono](https://econono.com)*
 
 ---

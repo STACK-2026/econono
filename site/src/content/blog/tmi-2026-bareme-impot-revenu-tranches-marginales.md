@@ -162,7 +162,7 @@ Le **PER** te permet de déduire tes versements de ton revenu imposable, dans la
 - Ton revenu imposable passe de 40 000 € à **36 000 €**.
 - Si tu es célibataire, ton impôt baisse de **440 €** (4 000 × 11%).
 
-*Où ouvrir un PER ?* Compare les offres sur notre [comparatif des meilleurs PER 2026](/comparatifs/meilleurs-per-2026/).
+*Où ouvrir un PER ?* Compare les offres sur notre comparatif des meilleurs PER 2026.
 
 ### 2. Les dons aux associations : 66% ou 75% de réduction
 Si tu fais un don à une association reconnue d’utilité publique (comme la Croix-Rouge ou les Restos du Cœur), tu peux déduire :
@@ -197,7 +197,7 @@ Si tu investis dans l’immobilier locatif neuf (Pinel) ou ancien rénové (Deno
 - Tu achètes un appartement à 200 000 € en Pinel pour 9 ans.
 - Tu as droit à une réduction de **36 000 €** (200 000 × 18%), soit **4 000 €/an pendant 9 ans**.
 
-*Attention* : ces dispositifs sont complexes et réservés aux investisseurs. Lis notre [guide sur l’investissement locatif](/guides/investissement-locatif-2026/) avant de te lancer.
+*Attention* : ces dispositifs sont complexes et réservés aux investisseurs. Lis notre guide sur l’investissement locatif avant de te lancer.
 
 ### 5. Le quotient familial : l’avantage méconnu des familles
 Si tu as des enfants, le **quotient familial** peut te faire économiser des milliers d’euros. Voici comment ça marche :
@@ -227,7 +227,7 @@ Le quotient familial est super avantageux, mais il y a un **plafond** pour évit
 - Sans plafond, leur quotient familial serait de **30 000 €** (120 000 / 4).
 - Avec le plafond, leur impôt est calculé comme s’ils avaient **3,5 parts** (car la 4ème part est plafonnée à 1 759 €).
 
-*Comment savoir si tu es concerné ?* Utilise notre [calculateur de quotient familial](/calculateurs/quotient-familial/) pour vérifier.
+*Comment savoir si tu es concerné ?* Utilise notre calculateur de quotient familial pour vérifier.
 
 ---
 

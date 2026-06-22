@@ -215,6 +215,6 @@ Oui, **tes allocations chômage sont prises en compte dans le calcul de tes APL*
 
 Tu veux aller plus loin ? **Estime ton budget mensuel avec nos outils** :
 - [Calculateur de reste à vivre](/calculateurs/reste-a-vivre/) (pour savoir combien il te reste après loyer et charges).
-- [Guide "Comment gérer son budget étudiant"](/guides/budget-etudiant/) (astuces pour économiser sans se priver).
+- Guide "Comment gérer son budget étudiant" (astuces pour économiser sans se priver).
 
 Et si tu veux recevoir nos meilleurs conseils pour mieux gérer ton argent, **abonne-toi à notre newsletter** : [Le Carnet d’Econono](https://econono.com/newsletter/). On t’envoie 1 email par semaine, sans spam, promis. 💌

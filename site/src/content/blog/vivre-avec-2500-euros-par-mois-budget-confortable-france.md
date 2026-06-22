@@ -218,7 +218,7 @@ Même avec un salaire confortable, il est facile de **mal gérer son budget** et
 **Oui**, mais tout dépend de ton âge et de tes objectifs.
 - Si tu as **30 ans**, épargner **300 €/mois** sur un **PEA** ou une **assurance vie** (fonds euros) peut te rapporter **150 000 € à 60 ans** (avec un rendement moyen de 4%).
 - Si tu as **40 ans**, il faut épargner **plus** (500 €/mois) pour avoir un complément de retraite significatif.
-👉 **Ton outil** : Utilise notre [calculateur de retraite](/calculateurs/epargne-retraite/).
+👉 **Ton outil** : Utilise notre calculateur de retraite.
 
 ### 2. Est-ce que 2 500 €/mois, c’est un bon salaire en France ?
 **Oui**, mais tout dépend de ta situation :
@@ -226,8 +226,8 @@ Même avec un salaire confortable, il est facile de **mal gérer son budget** et
 - **2 500 € net/mois**, c’est **28% de plus que la médiane**, donc c’est un **bon salaire**.
 - **Mais** : si tu vis à Paris, que tu as un crédit voiture et des enfants, ça peut être serré.
 👉 **Comparaison** :
-- **Budget à 2 200 €/mois** : [Voir notre guide](/guides/budget-2200-euros-par-mois/).
-- **Budget à 3 000 €/mois** : [Voir notre guide](/guides/budget-3000-euros-par-mois/).
+- **Budget à 2 200 €/mois** : Voir notre guide.
+- **Budget à 3 000 €/mois** : Voir notre guide.
 
 ### 3. Puis-je acheter une voiture avec 2 500 €/mois ?
 **Oui**, mais attention au **coût total** :

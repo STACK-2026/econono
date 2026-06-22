@@ -88,7 +88,7 @@ Une fois tes jours épargnés, tu as **3 options** pour les utiliser :
 - **Avantage** : Les sommes sont **exonérées d’impôt sur le revenu** (mais soumises aux prélèvements sociaux).
 - **Inconvénient** : Tu ne pourras les récupérer qu’à la retraite (sauf cas exceptionnels comme l’achat d’une résidence principale).
 
-💡 *À savoir* : Si ton entreprise propose un **PERCO**, c’est souvent la meilleure option pour optimiser fiscalement ton CET. Compare avec notre [guide sur l’épargne retraite](/guides/comment-preparer-sa-retraite/).
+💡 *À savoir* : Si ton entreprise propose un **PERCO**, c’est souvent la meilleure option pour optimiser fiscalement ton CET. Compare avec notre guide sur l’épargne retraite.
 
 ---
 
@@ -141,7 +141,7 @@ Le CET est souvent confondu avec l’**épargne salariale** (PEE, PERCO), mais c
 - Utilise ton **CET pour des besoins à court terme** (cash ou jours de repos).
 - Place ton **épargne salariale sur un PERCO** pour ta retraite.
 
-Découvre notre [comparatif épargne salariale vs CET](/comparatifs/epargne-salariale-vs-cet/) pour faire le bon choix.
+Découvre notre comparatif épargne salariale vs CET pour faire le bon choix.
 
 ---
 
@@ -233,6 +233,6 @@ Le **compte épargne temps (CET)** est un outil méconnu mais puissant pour **tr
 - **Choisis la meilleure option** : cash (imposable), jours de repos (non imposable), ou retraite (exonéré d’impôt via un PERCO).
 - **Évite les pièges** : perds pas tes jours en quittant ton entreprise, et compare la fiscalité avant de convertir en cash.
 
-👉 **Prêt à optimiser ton CET ?** Utilise notre [calculateur d’épargne](/calculateurs/epargne/) pour savoir combien tu peux en tirer, et découvre notre [guide sur l’épargne salariale](/guides/epargne-salariale/) pour aller plus loin.
+👉 **Prêt à optimiser ton CET ?** Utilise notre [calculateur d’épargne](/calculateurs/epargne/) pour savoir combien tu peux en tirer, et découvre notre guide sur l’épargne salariale pour aller plus loin.
 
 📌 *Tu veux recevoir des conseils personnalisés pour gérer ton budget ?* Abonne-toi à [notre newsletter Le Carnet](https://econono.com/newsletter/) (100% gratuit, sans spam).

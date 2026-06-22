@@ -216,7 +216,7 @@ La **prime d’activité** est une aide versée par la CAF pour **compléter les
 - Elle est **recalculée tous les 3 mois** en fonction de tes revenus.
 - **Tu peux la cumuler avec le RSA, les APL, et d’autres aides**.
 
-👉 **Estime ton montant de prime d’activité avec notre [calculateur dédié](/calculateurs/prime-activite/)**.
+👉 **Estime ton montant de prime d’activité avec notre calculateur dédié**.
 
 ---
 
