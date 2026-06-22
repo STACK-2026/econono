@@ -292,6 +292,24 @@ Oui, mais il faut :
 
 ---
 
+## Questions fréquentes
+
+### Comment puis-je adapter la règle budgétaire 50/30/20 si mon loyer représente déjà une grande partie de mon salaire en France ?
+
+Pour adapter la règle 50/30/20 en France face à des loyers élevés, il est souvent nécessaire d'ajuster les pourcentages initiaux, notamment en augmentant la part allouée aux "besoins" au-delà de 50%. Cela implique généralement de réduire les catégories "envies" (30%) et "épargne/dettes" (20%) pour équilibrer le budget. L'article propose des calculs concrets pour des salaires variés (SMIC, 2 000 €, 3 000 €, 4 000 €) afin de trouver un équilibre viable.
+
+### Est-il réaliste d'appliquer la méthode budgétaire 50/30/20 pour un salaire au SMIC en France en 2026 ?
+
+Appliquer la méthode budgétaire 50/30/20 avec un salaire au SMIC en France en 2026 est souvent difficilement réalisable, surtout dans les grandes villes où le coût du logement est très élevé. Les "besoins" (loyer, courses) peuvent facilement dépasser les 50% du revenu, ne laissant que peu ou pas de marge pour les "envies" et l'épargne. L'article explore cette situation et suggère des ajustements ou des méthodes alternatives plus appropriées pour les revenus modestes.
+
+### Quelles sont les principales difficultés rencontrées par les ménages français qui tentent d'appliquer la règle 50/30/20 ?
+
+La principale difficulté pour les ménages français appliquant la règle 50/30/20 réside dans le coût élevé du logement, qui dépasse fréquemment les 50% alloués aux "besoins" dans la méthode originale. Cette contrainte force souvent à empiéter sur les catégories "envies" et "épargne", rendant l'équilibre financier précaire ou impossible. La règle, conçue pour un contexte américain avec des coûts de logement différents, est moins adaptée aux réalités budgétaires françaises.
+
+### Dans quelles situations est-il préférable d'envisager d'autres méthodes de gestion budgétaire que la règle 50/30/20 en France ?
+
+Il est préférable d'envisager d'autres méthodes de gestion budgétaire que la règle 50/30/20 en France lorsque la part des "besoins" (loyer, charges, alimentation) dépasse largement 50 à 60% de votre revenu mensuel. Si cette règle vous place systématiquement dans le rouge ou rend l'épargne impossible, elle n'est pas adaptée à votre situation. L'article mentionne des alternatives pour les personnes dont le budget ne permet pas de respecter ces proportions.
+
 ## Sources
 
 - INSEE · Les dépenses de logement des ménages en 2023

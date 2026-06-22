@@ -196,6 +196,24 @@ Oui, ton argent est **disponible 24h/24 et 7j/7** :
 
 ---
 
+## Questions fréquentes
+
+### Pourquoi le taux du Livret A est-il fixé à 2,4% net en 2026 et quand pourrait-il évoluer à nouveau ?
+
+Le taux du Livret A est bloqué à 2,4% net jusqu'en juillet 2026, suite à la révision de février. Cette décision est prise par l'État, généralement en fonction de l'inflation et des taux interbancaires. Une prochaine réévaluation pourrait avoir lieu après juillet, mais le gouvernement peut décider de le maintenir ou de le modifier selon la conjoncture économique et l'évolution des prix.
+
+### Quelles sont les options d'épargne recommandées si mon Livret A est plein en 2026 et que je souhaite placer mon argent de manière plus rentable ?
+
+Si votre Livret A est plein en 2026, vous pouvez envisager d'ouvrir un LEP (Livret d'Épargne Populaire) qui offre un taux de 6% sous conditions de revenus, ou un LDDS (Livret de Développement Durable et Solidaire) avec le même taux que le Livret A mais un plafond de 12 000 €. Pour un rendement potentiellement supérieur, l'assurance vie (fonds euros) ou le PEA (Plan d'Épargne en Actions) sont des alternatives à explorer, offrant des perspectives de croissance différentes.
+
+### Quelles sont les conditions de revenus précises pour ouvrir un Livret d'Épargne Populaire (LEP) en 2026 et quel rendement offre-t-il ?
+
+Pour ouvrir un LEP en 2026, vos revenus fiscaux de référence de l'année N-2 (soit 2024 pour une ouverture en 2026) ne doivent pas dépasser certains plafonds, qui varient selon le nombre de parts de votre foyer fiscal. Le LEP offre un taux d'intérêt attractif de 6% net en 2026, ce qui en fait une option très rentable pour les épargnants éligibles. Il est plafonné à 10 000 euros.
+
+### Quelle est la principale différence entre le Livret A et le LDDS en 2026, au-delà de leur taux d'intérêt identique ?
+
+La principale différence entre le Livret A et le LDDS en 2026, en plus de leur taux de 2,4% net identique, réside dans leurs plafonds de dépôt et leurs finalités. Le Livret A a un plafond de 22 950 €, tandis que le LDDS est plafonné à 12 000 €. Le LDDS vise spécifiquement à financer l'économie sociale et solidaire ainsi que la transition énergétique, bien que pour l'épargnant, la disponibilité des fonds soit similaire.
+
 ## Sources
 
 - [Banque de France - Taux du Livret A 2026](https://www.banque-france.fr/statistiques/taux-et-cours/taux-du-livret-a)

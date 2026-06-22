@@ -369,6 +369,24 @@ Investir 100 €/mois, c’est simple… à condition d’éviter ces pièges cl
 
 ---
 
+## Questions fréquentes
+
+### Comment un débutant peut-il commencer à investir 100 euros par mois en Bourse de manière simple et efficace en 2026 ?
+
+Pour débuter l'investissement avec 100 euros par mois en 2026, un novice devrait privilégier la stratégie du Dollar-Cost Averaging (DCA) en achetant régulièrement des ETF World via un compte PEA. Cette approche consiste à investir une somme fixe chaque mois, ce qui permet de lisser les fluctuations du marché et de diversifier automatiquement son portefeuille à l'échelle mondiale. Le PEA offre en outre des avantages fiscaux significatifs après cinq ans de détention.
+
+### Quelles plateformes de courtage sont recommandées pour investir 100 euros par mois en ETF et minimiser les frais en 2026 ?
+
+Pour investir 100 euros par mois en ETF et réduire les frais en 2026, des plateformes comme Trade Republic ou Boursorama sont souvent citées comme des options compétitives. Trade Republic est généralement reconnu pour ses frais très bas sur les ETF, tandis que Boursorama peut être avantageux pour ceux qui préfèrent une banque en ligne intégrée. Le choix dépendra des préférences de l'investisseur concernant l'interface, les services additionnels et la structure des frais spécifiques aux ETF.
+
+### Quel capital peut-on espérer accumuler en investissant 100 euros par mois sur une longue période avec des ETF World ?
+
+En investissant 100 euros par mois dans des ETF World sur une longue période, il est possible d'accumuler un capital significatif, avec une projection d'environ 40 000 euros sur 20 ans, basée sur une hypothèse de rendement annuel de 5%. Ce chiffre est une estimation et dépend des performances réelles des marchés financiers. La régularité des versements via le Dollar-Cost Averaging contribue à la croissance progressive du patrimoine.
+
+### Quelles sont les erreurs courantes à éviter lorsqu'on investit 100 euros par mois en Bourse via des ETF pour la première fois ?
+
+Une erreur courante à éviter est de paniquer et de vendre ses placements lors des baisses du marché, car l'investissement régulier (DCA) est conçu pour en profiter. Il faut également éviter de ne pas diversifier suffisamment, ce que les ETF World résolvent en investissant dans des centaines d'entreprises. Enfin, ne pas se renseigner sur les frais et la fiscalité du compte (comme le PEA) peut réduire la performance nette de l'investissement.
+
 ## Sources
 
 - INSEE · Épargne des ménages en France (2023)

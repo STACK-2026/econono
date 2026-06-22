@@ -299,6 +299,24 @@ Non. Une fois radié·e, **aucune trace ne subsiste** dans les fichiers consult�
 
 ---
 
+## Questions fréquentes
+
+### Puis-je faire appel à une entreprise pour me 'défficher' du FICP ou du FCC moyennant paiement ?
+
+Non, aucune société ne peut vous 'défficher' du FICP ou du FCC contre paiement, car il s'agit d'une arnaque. La seule manière légale et efficace de sortir de ces fichiers est de rembourser intégralement vos dettes pour le FICP, ou de régulariser vos chèques sans provision et payer les pénalités pour le FCC. La Banque de France est la seule entité gérant ces fichiers, et le processus de radiation est automatique une fois la situation régularisée par le créancier ou la banque.
+
+### Malgré un fichage FICP ou FCC, est-il toujours possible d'ouvrir un compte bancaire en France ?
+
+Oui, même en étant fiché FICP ou FCC, vous conservez le droit à un compte bancaire de base en France, grâce à la procédure du 'droit au compte'. Cette procédure, encadrée par l'article L312-1 du Code monétaire et financier, permet d'accéder à des services bancaires essentiels. Vous pouvez demander l'aide de la Banque de France, qui désignera une banque (souvent la Banque Postale ou Nickel) pour vous ouvrir un compte avec des services limités mais suffisants pour la vie quotidienne.
+
+### Quelles sont les étapes pour être radié du FICP après avoir remboursé intégralement mon crédit ?
+
+Pour être radié du FICP après un remboursement intégral, la démarche principale est de s'assurer que votre créancier signale cette régularisation à la Banque de France. Une fois la dette entièrement remboursée, le créancier (banque, organisme de crédit) est légalement tenu de notifier la Banque de France dans un délai de quatre jours ouvrés. La radiation du fichier est alors immédiate. Il est conseillé de conserver une preuve de remboursement et de vérifier votre situation auprès de la Banque de France si la radiation n'intervient pas dans les délais.
+
+### Comment puis-je régulariser un incident de chèque pour sortir du fichage FCC ?
+
+Pour sortir du fichage FCC suite à un chèque sans provision, vous devez régulariser l'incident en approvisionnant votre compte et en demandant la représentation du chèque ou en réglant directement le bénéficiaire. Vous pouvez aussi régler le chèque par un autre moyen de paiement et demander sa restitution à votre banque. Il est également nécessaire de payer l'éventuelle pénalité libératoire associée à l'incident. Une fois la régularisation effectuée et signalée par votre banque à la Banque de France, la radiation du FCC est immédiate.
+
 ## Sources
 
 - [Banque de France - Les fichiers d'incidents (FICP, FCC, FNCI)](https://www.banque-france.fr/fr/a-votre-service/particuliers/fichiers-incident-bancaire)

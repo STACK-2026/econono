@@ -244,6 +244,24 @@ Oui, le LEP est **100% garanti par l’État**, comme le Livret A. Même en cas 
 
 ---
 
+## Questions fréquentes
+
+### Comment puis-je vérifier mon éligibilité au LEP 2026 et quels justificatifs seront demandés pour son ouverture ?
+
+L'éligibilité au LEP 2026 se vérifie principalement via votre revenu fiscal de référence (RFR) de l'année N-2 ou N-1. Pour ouvrir le livret, vous devrez généralement fournir votre avis d'imposition le plus récent et une pièce d'identité valide. La banque consultera également votre RFR directement auprès de l'administration fiscale.
+
+### Quels sont les plafonds de revenus exacts à ne pas dépasser pour pouvoir ouvrir un LEP en 2026, en fonction de ma situation familiale ?
+
+Pour être éligible au LEP 2026, votre revenu fiscal de référence ne doit pas excéder 22 500 € pour une personne seule. Pour un couple, le plafond est de 34 480 €. Ces seuils varient en fonction du nombre de parts fiscales de votre foyer.
+
+### Le LEP 2026 est-il réellement un placement sans risque et quel est son principal avantage comparé aux autres livrets d'épargne réglementés ?
+
+Oui, le LEP 2026 est un placement garanti par l'État, ce qui signifie que votre capital est totalement sécurisé et ne peut pas diminuer. Son principal avantage est son taux d'intérêt de 4% depuis mars 2026, le rendant le plus rentable des placements sans risque en France, bien au-dessus du Livret A.
+
+### Comment ouvrir un LEP 2026 rapidement en ligne et quels sont les pièges courants à éviter pour maximiser mes gains ?
+
+L'ouverture d'un LEP peut se faire en ligne en une dizaine de minutes auprès de la plupart des banques, en fournissant les documents requis. Pour maximiser vos gains, évitez de laisser votre compte inactif ou de ne pas le recharger régulièrement, et assurez-vous que votre revenu fiscal de référence est bien à jour pour maintenir votre éligibilité.
+
 ## Sources
 
 - [Service-Public.fr - Plafonds LEP 2026](https://www.service-public.fr/particuliers/vosdroits/F1519)

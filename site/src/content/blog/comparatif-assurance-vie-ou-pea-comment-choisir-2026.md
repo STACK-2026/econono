@@ -315,6 +315,24 @@ Tu n’es pas obligé·e de choisir entre les deux ! **Les combiner peut être u
 
 ---
 
+## Questions fréquentes
+
+### Dans quelles situations est-il préférable de choisir une assurance vie plutôt qu'un PEA en 2026 ?
+
+L'assurance vie est généralement préférable pour les débutants en investissement ou les couples, offrant une plus grande souplesse et des fonds sécurisés comme les fonds euros. Elle permet également des retraits à tout moment sans pénalité fiscale majeure après 8 ans, et offre une diversification plus large avec des unités de compte. Sa polyvalence en fait un choix adapté pour des objectifs d'épargne variés.
+
+### Quels sont les risques fiscaux si je retire mon argent d'un PEA ou d'une assurance vie avant la durée recommandée ?
+
+Retirer de l'argent d'un PEA avant 5 ans entraîne une imposition des plus-values au Prélèvement Forfaitaire Unique (PFU) de 30%. Pour l'assurance vie, les gains sont également soumis au PFU de 30% avant 8 ans, mais un abattement annuel s'applique après cette période. Il est donc crucial de respecter ces durées pour optimiser la fiscalité de votre épargne.
+
+### Quelles sont les principales différences en termes de types d'investissements possibles entre un PEA et une assurance vie ?
+
+Le PEA est principalement conçu pour investir dans des actions européennes, offrant une fiscalité avantageuse sur ces titres après 5 ans de détention. L'assurance vie, en revanche, est un produit plus diversifié, permettant d'investir dans des fonds euros sécurisés, des unités de compte (actions, obligations, immobilier via des OPCVM) et d'autres supports financiers. Cette flexibilité rend l'assurance vie adaptée à un éventail plus large de profils d'investisseurs.
+
+### Quels sont les avantages fiscaux majeurs du PEA et de l'assurance vie après la période de détention minimale ?
+
+Après 5 ans, le PEA offre une exonération d'impôt sur les plus-values (hors prélèvements sociaux), ce qui le rend imbattable pour l'investissement en Bourse européenne. Pour l'assurance vie, après 8 ans, les retraits bénéficient d'un abattement annuel de 4 600 € pour une personne seule et 9 200 € pour un couple, avant application d'une fiscalité réduite sur les gains restants. Ces dispositifs permettent d'optimiser significativement les rendements nets.
+
 ## Sources
 
 - **Service-Public.fr** · Fiscalité du PEA (avril 2026).

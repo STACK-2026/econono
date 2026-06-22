@@ -267,6 +267,24 @@ Le chèque énergie est envoyé au **foyer fiscal**, pas à chaque personne. Si 
 
 ---
 
+## Questions fréquentes
+
+### Comment utiliser concrètement mon chèque énergie 2026 pour régler mes factures ou des travaux ?
+
+Vous pouvez utiliser votre chèque énergie 2026 pour régler vos factures d'électricité, de gaz, de fioul, de bois ou de chaleur directement auprès de votre fournisseur, soit en ligne sur le portail dédié, soit en l'envoyant par courrier. Pour des travaux de rénovation énergétique, remettez-le au professionnel RGE qui réalise les travaux, en déduction du montant dû. Il est essentiel de respecter la date limite d'utilisation, fixée au 31 mars 2027.
+
+### Quels sont les plafonds de revenus exacts pour être éligible au chèque énergie 2026 en fonction de la composition de mon foyer ?
+
+L'éligibilité au chèque énergie 2026 est déterminée par votre revenu fiscal de référence (RFR) de l'année N-2 (donc 2024 pour le chèque 2026) divisé par le nombre d'unités de consommation (UC) de votre foyer. Bien que les plafonds précis pour 2026 ne soient pas encore détaillés, le critère général est un RFR inférieur à 11 000 € par an pour une personne seule (1 UC), avec des seuils ajustés pour les ménages plus grands. Ces plafonds ont été revalorisés pour inclure davantage de foyers.
+
+### Quelle est la durée de validité du chèque énergie 2026 et que faire si je ne le reçois pas ou le perds ?
+
+Le chèque énergie 2026 est valable jusqu'au 31 mars 2027, après quoi il ne pourra plus être utilisé pour payer des factures ou financer des travaux. Si vous pensez être éligible mais ne le recevez pas automatiquement en avril-mai, ou si vous le perdez, vous pouvez contacter l'assistance chèque énergie via leur numéro dédié ou leur formulaire en ligne pour demander un remplacement ou vérifier votre situation. Il est envoyé sans démarche préalable.
+
+### Le chèque énergie 2026 peut-il financer tous types de travaux de rénovation énergétique et est-il cumulable avec d'autres aides ?
+
+Le chèque énergie 2026 peut financer des travaux de rénovation énergétique réalisés par un professionnel Reconnu Garant de l'Environnement (RGE), mais il ne couvre pas tous les types de travaux sans distinction. Il cible spécifiquement les améliorations visant à réduire la consommation d'énergie de votre logement. Oui, il est généralement cumulable avec d'autres dispositifs d'aide à la rénovation énergétique, comme MaPrimeRénov' ou l'éco prêt à taux zéro, sous réserve de respecter les conditions d'éligibilité propres à chaque aide.
+
 ## Sources
 
 - Arrêté du 28 mars 2026 fixant les montants et conditions du chèque énergie · [Journal officiel](https://www.legifrance.gouv.fr/)

@@ -228,6 +228,24 @@ Les intérêts sont **calculés par quinzaine** (2 fois par mois) et **versés l
 
 ---
 
+## Questions fréquentes
+
+### Comment vérifier si mon revenu fiscal de référence me permet d'ouvrir un Livret d'Épargne Populaire (LEP) en 2026 ?
+
+Pour vérifier votre éligibilité au LEP en 2026, vous devez consulter votre revenu fiscal de référence (RFR) de l'année 2024, qui figure sur votre avis d'imposition. Ce RFR ne doit pas dépasser un certain plafond, fixé à 22 940 € pour une personne seule (une part fiscale). Si votre RFR est inférieur ou égal à ce montant, vous pouvez ouvrir un LEP.
+
+### Quels sont les principaux avantages du LEP par rapport au Livret A pour mon épargne de précaution ?
+
+Le principal avantage du LEP par rapport au Livret A est son taux de rémunération significativement plus élevé, offrant 3,5% net en 2026 contre 3% pour le Livret A. Cela représente un gain de 0,5 point de plus, rendant le LEP le placement sans risque le plus rentable pour l'épargne de précaution. De plus, les intérêts du LEP sont totalement exonérés d'impôts et de prélèvements sociaux.
+
+### Combien puis-je espérer gagner annuellement si je place le montant maximum sur un Livret d'Épargne Populaire ?
+
+Si vous placez le montant maximum autorisé sur un LEP, soit 10 000 €, vous pouvez espérer gagner 350 € par an, avec le taux de 3,5% net applicable en 2026. Ces gains sont entièrement exonérés d'impôts et de prélèvements sociaux, ce qui en fait un rendement très intéressant pour une épargne sécurisée. Le plafond de versement est fixe et ne peut être dépassé.
+
+### Est-il possible d'ouvrir un LEP facilement en ligne et quels documents sont généralement requis pour cette démarche ?
+
+Oui, il est tout à fait possible d'ouvrir un LEP en ligne auprès de la plupart des banques, souvent en quelques minutes depuis votre domicile. Les documents requis sont principalement votre avis d'imposition le plus récent (pour vérifier le revenu fiscal de référence) et une pièce d'identité valide. Certaines banques peuvent également demander un justificatif de domicile.
+
 ## Sources
 
 - **Service-Public.fr** · LEP : conditions, taux, plafond (janvier 2026)

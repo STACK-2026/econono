@@ -385,6 +385,24 @@ Si tu ne peux **vraiment pas payer tes factures** (électricité, loyer, crédit
 
 ---
 
+## Questions fréquentes
+
+### Comment puis-je calculer mon 'reste à vivre' pour mieux gérer mon budget et sortir du découvert ?
+
+Le 'reste à vivre' se calcule en soustrayant vos dépenses fixes et incompressibles (loyer, charges, courses essentielles) de vos revenus mensuels, ce qui représente le montant disponible pour les dépenses variables. L'article suggère d'utiliser un calculateur dédié pour une estimation précise de ce budget après les dépenses primaires. Connaître ce chiffre est crucial pour identifier où des économies peuvent être réalisées et pour planifier efficacement la sortie du découvert.
+
+### Quelles sont les aides financières concrètes mentionnées dans l'article pour m'aider à sortir du découvert bancaire ?
+
+L'article mentionne cinq aides financières potentielles pour faciliter la sortie du découvert, incluant la prime d'activité, le Livret d'Épargne Populaire (LEP) avec un taux à 5%, et la révision des Aides Personnalisées au Logement (APL). Il est fortement conseillé de vérifier votre éligibilité à ces dispositifs, car beaucoup de personnes ignorent qu'elles peuvent en bénéficier. Ces aides peuvent apporter un soutien financier significatif pour rééquilibrer un budget.
+
+### Est-il vraiment réaliste de sortir du découvert en seulement 30 jours, même avec un petit salaire ?
+
+Oui, l'article affirme qu'il est réaliste de sortir du découvert bancaire en 30 jours, même avec un petit salaire, en suivant un plan concret et sans jugement. La méthode repose sur un audit rapide des dépenses, la négociation des agios, l'activation d'aides financières et la suppression des abonnements inutiles. Cette approche structurée permet de reprendre rapidement le contrôle de ses finances personnelles.
+
+### Comment puis-je négocier avec ma banque pour réduire ou supprimer les agios si je suis en difficulté financière ?
+
+Depuis 2022, la loi impose aux banques de supprimer les agios pour les clients en difficulté financière, ce qui offre une base solide pour la négociation. Il est recommandé de contacter votre conseiller bancaire pour expliquer votre situation et demander l'application de cette mesure légale. Cette démarche peut alléger considérablement la charge des frais bancaires et faciliter le retour à un solde positif.
+
 ## Sources
 
 - **Service-Public.fr** · SMIC net 2026 : https://www.service-public.fr/particuliers/actualites/A16003

@@ -234,6 +234,24 @@ Oui, et c'est souvent l'intérêt. En baissant la mensualité, le rachat fait re
 
 ---
 
+## Questions fréquentes
+
+### Quelles sont les conditions clés pour qu'un rachat de crédit soit considéré comme réellement rentable en 2026 ?
+
+En 2026, un rachat de crédit devient vraiment rentable lorsque le nouveau taux proposé est inférieur d'au moins un point à votre taux actuel. Il est également crucial qu'il vous reste plus du tiers de la durée initiale à rembourser et que le capital restant dû dépasse environ 70 000 euros. En deçà de ces seuils, les frais associés peuvent souvent absorber les économies potentielles.
+
+### Quels sont les frais cachés ou les coûts annexes qui peuvent rendre un rachat de crédit non rentable même avec un taux plus bas ?
+
+Les frais cachés qui peuvent annuler la rentabilité d'un rachat de crédit incluent principalement les indemnités de remboursement anticipé de votre prêt actuel. Il faut aussi considérer les frais de dossier pour le nouveau prêt et, si applicable, le coût d'une nouvelle garantie comme une hypothèque ou une caution. Ces coûts peuvent rapidement s'accumuler et dépasser les économies espérées sur les intérêts.
+
+### Comment puis-je rapidement évaluer si la proposition d'un courtier pour baisser ma mensualité via un rachat de crédit est vraiment un bon plan ?
+
+Pour évaluer rapidement la proposition d'un courtier, ne vous fiez pas uniquement à la baisse de mensualité, car elle résulte souvent d'un allongement de la durée de remboursement. Demandez plutôt le coût total du nouveau crédit et comparez-le au capital restant dû de votre prêt actuel, en incluant tous les frais de rachat. Le vrai gain se mesure sur le coût total du crédit.
+
+### Est-il toujours intéressant de faire un rachat de crédit si le capital restant à rembourser est faible ou si la durée restante est courte ?
+
+Non, un rachat de crédit n'est généralement pas rentable si le capital restant dû est inférieur à environ 70 000 euros ou s'il vous reste moins du tiers de la durée initiale à rembourser. Dans ces situations, les frais inhérents à l'opération, tels que les indemnités de remboursement anticipé et les frais de dossier, risquent de dépasser largement les économies potentielles sur les intérêts.
+
 ## Sources
 
 - Code de la consommation, articles R. 313-25 (indemnités de remboursement anticipé) et L. 313-34 (délai de réflexion), version consolidée sur Légifrance, mai 2026.

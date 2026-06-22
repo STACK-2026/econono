@@ -152,6 +152,24 @@ L'APEC est l'association pour l'emploi des cadres. Elle propose accompagnement e
 ### Le statut cadre améliore-t-il ma retraite ?
 Oui, indirectement. En cotisant davantage à l'Agirc-Arrco, notamment sur la tranche 2, tu accumules plus de points de retraite complémentaire. Ta pension future sera donc plus élevée. Une partie de l'écart de net mensuel est en réalité de l'épargne retraite obligatoire.
 
+## Questions fréquentes
+
+### Quelles cotisations spécifiques un salarié cadre paie-t-il en plus par rapport à un non-cadre en France ?
+
+Un salarié cadre paie des cotisations supplémentaires par rapport à un non-cadre, notamment pour l'Agirc-Arrco sur la tranche 2 du salaire, l'APEC et une prévoyance obligatoire spécifique. Ces cotisations sont la principale raison pour laquelle un cadre perçoit généralement un salaire net légèrement inférieur à brut égal, contribuant à des avantages sociaux différents sur le long terme.
+
+### À partir de quel niveau de salaire brut mensuel l'écart de salaire net entre un cadre et un non-cadre devient-il significatif en 2026 ?
+
+L'écart de salaire net entre un cadre et un non-cadre commence à se creuser significativement au-delà du plafond de la Sécurité sociale, qui est fixé à 3 925 euros brut par mois en 2026. En dessous de ce seuil, la différence de net est minime, mais elle augmente proportionnellement avec la part du salaire dépassant ce plafond en raison des cotisations spécifiques des cadres.
+
+### Quels sont les véritables avantages du statut cadre qui compensent un salaire net potentiellement inférieur à brut égal ?
+
+Les véritables avantages du statut cadre résident dans une meilleure retraite complémentaire, une prévoyance plus complète, un préavis de départ plus long et des perspectives de progression de carrière souvent plus structurées. Ces bénéfices à long terme et en matière de sécurité sociale sont les principaux atouts du statut, au-delà de la rémunération nette immédiate.
+
+### Comment comparer efficacement deux offres d'emploi, l'une cadre et l'autre non-cadre, pour prendre la meilleure décision en 2026 ?
+
+Pour comparer efficacement deux offres d'emploi, il est crucial de regarder au-delà du simple salaire net et d'analyser le salaire brut, le statut (cadre ou non-cadre) et l'ensemble des avantages sociaux. Prenez en compte la retraite complémentaire, la prévoyance, le préavis et les opportunités de carrière associées à chaque statut. Une analyse globale permet une décision éclairée.
+
 ## Sources
 
 - Urssaf · [Plafond de la Sécurité sociale](https://www.urssaf.fr/) (2026)

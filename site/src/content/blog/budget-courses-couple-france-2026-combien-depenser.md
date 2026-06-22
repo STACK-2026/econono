@@ -611,6 +611,24 @@ Pour économiser, voici les meilleurs moments pour faire tes courses :
 
 ---
 
+## Questions fréquentes
+
+### Quels facteurs expliquent les grandes variations du budget courses mensuel pour un couple en France ?
+
+Le budget courses mensuel d'un couple varie fortement en fonction du choix des magasins, du type de produits consommés et des habitudes culinaires. Un couple peut dépenser entre 350 € (hard discount) et plus de 600 € (bio) par mois selon ces critères. La fréquence de la cuisine maison, la consommation de produits frais ou transformés, et la gestion du gaspillage alimentaire influencent également le coût final.
+
+### Quelles sont les stratégies concrètes pour un couple afin de réduire son budget alimentaire sans se priver ?
+
+Pour réduire le budget alimentaire sans se priver, un couple peut planifier ses repas à l'avance, acheter des produits en vrac et privilégier les marques distributeurs. Cuisiner davantage à la maison et utiliser des applications de cashback sont également des leviers efficaces. Ces méthodes permettent d'optimiser les dépenses tout en maintenant une alimentation variée et équilibrée.
+
+### Combien coûte le gaspillage alimentaire à un couple chaque année et comment peut-on l'éviter efficacement ?
+
+Le gaspillage alimentaire coûte en moyenne entre 200 et 300 € par an à un couple, selon l'ADEME. Pour l'éviter efficacement, il est conseillé de bien planifier les repas, de faire des listes de courses précises et de vérifier les dates de péremption. Une meilleure gestion des stocks, la réutilisation des restes et la congélation des surplus contribuent également à réduire ces pertes financières.
+
+### Comment l'augmentation des prix alimentaires a-t-elle affecté le budget des couples depuis 2020 ?
+
+Les prix de l'alimentation ont augmenté de 12% depuis 2020, selon l'INSEE, impactant significativement le budget des couples. Cette hausse a particulièrement touché les produits frais, rendant leur achat plus coûteux. Pour compenser, de nombreux couples ont dû adapter leurs habitudes de consommation et chercher des alternatives plus économiques ou des stratégies d'optimisation budgétaire.
+
 ## Sources
 
 1. INSEE · Enquête Budget de famille 2026 - Données sur les dépenses des ménages en France.

@@ -209,6 +209,24 @@ Si la CAF estime que tu as touché trop d’argent, elle peut te demander un **r
 
 ---
 
+## Questions fréquentes
+
+### Comment puis-je vérifier mon éligibilité à la prime d'activité 2026 et estimer le montant que je pourrais percevoir ?
+
+Pour vérifier votre éligibilité et estimer le montant de la prime d'activité 2026, vous devez utiliser le simulateur officiel disponible sur le site de la Caisse d'Allocations Familiales (CAF). Ce simulateur prend en compte votre situation familiale, vos revenus et d'autres critères pour vous donner une estimation précise. La démarche en ligne est rapide et ne prend généralement que quelques minutes.
+
+### Quelles sont les erreurs fréquentes à ne pas commettre lors de ma demande de prime d'activité pour éviter de perdre des droits ou des montants ?
+
+Les erreurs fréquentes à éviter lors de votre demande de prime d'activité incluent l'oubli de déclarer tous vos revenus, y compris ceux de votre conjoint, ou une mauvaise estimation de vos ressources trimestrielles. Une déclaration incomplète ou inexacte peut entraîner un versement inférieur à vos droits réels ou un trop-perçu à rembourser. Il est crucial de renseigner toutes les informations demandées avec précision pour maximiser vos droits.
+
+### Est-ce que les personnes en CDD ou en contrat d'intérim sont éligibles à la prime d'activité 2026, et quelles sont les conditions spécifiques pour ces situations ?
+
+Oui, les personnes en CDD ou en contrat d'intérim sont éligibles à la prime d'activité 2026, au même titre que les autres salariés, tant que leurs revenus respectent les plafonds fixés. La prime est conçue pour compléter les revenus des travailleurs modestes, qu'ils soient en CDI, CDD, intérim ou cumulent plusieurs emplois. L'essentiel est de percevoir entre 0,5 et 1,5 fois le SMIC et de remplir les conditions générales d'âge et de résidence.
+
+### Quel est le montant maximal de la prime d'activité qu'un célibataire sans enfant peut espérer recevoir en 2026 ?
+
+En 2026, le montant maximal de la prime d'activité qu'un célibataire sans enfant peut espérer recevoir est de 280 euros par mois. Ce montant est une référence et peut varier légèrement en fonction d'autres éléments spécifiques à la situation de l'individu, comme d'éventuels autres revenus ou aides perçues. La prime vise à soutenir le pouvoir d'achat des travailleurs modestes.
+
 ## Sources
 
 - CAF · [Barème prime d’activité 2026](https://www.caf.fr/) (données vérifiées en avril 2026)

@@ -229,6 +229,24 @@ Quelques pistes :
 
 ---
 
+## Questions fréquentes
+
+### Est-il réaliste d'envisager un achat immobilier avec 2200 euros net par mois en 2026 ?
+
+Oui, il est réaliste d'envisager un achat immobilier avec 2200 euros net par mois en 2026, notamment en province. Ce salaire permet d'emprunter environ 150 000 euros, à condition d'optimiser son budget et de disposer d'un apport personnel. La capacité d'emprunt dépendra fortement des taux d'intérêt et de la gestion de vos dépenses courantes.
+
+### Comment optimiser son budget mensuel de 2200 euros net pour réussir à épargner en 2026 ?
+
+Pour optimiser son budget de 2200 euros net et épargner en 2026, il faut d'abord identifier et réduire les dépenses non essentielles. L'objectif est de dégager 15 à 20% du revenu pour l'épargne, soit environ 330 à 440 euros par mois. Cela implique de suivre ses dépenses, de comparer les prix et de privilégier les achats réfléchis pour maximiser le pouvoir d'achat.
+
+### Quelle est la différence de qualité de vie entre la province et l'Île-de-France avec un salaire de 2200 euros net par mois en 2026 ?
+
+La qualité de vie avec 2200 euros net par mois en 2026 diffère significativement entre la province et l'Île-de-France. Ce salaire permet de vivre correctement en province grâce à des coûts de logement et de vie généralement plus bas. En revanche, il sera plus juste, voire serré, en Île-de-France en raison des loyers élevés et du coût de la vie supérieur.
+
+### Quels sont les pièges fiscaux courants à éviter lorsque l'on gagne 2200 euros net par mois en France ?
+
+Les principaux pièges fiscaux à éviter avec un salaire de 2200 euros net par mois incluent la prime d'activité et le quotient familial. Ce revenu peut vous situer à la limite de l'éligibilité pour certaines aides, ce qui peut entraîner des calculs complexes ou des surprises si les revenus varient. Il est crucial de bien déclarer ses revenus pour éviter les ajustements ou les remboursements inattendus.
+
 ## Sources
 - INSEE · Salaire médian et moyen en France (2026)
 - Service-Public · [Simulateur impôts 2026](https://www.service-public.fr/particuliers/vosdroits/F1419)

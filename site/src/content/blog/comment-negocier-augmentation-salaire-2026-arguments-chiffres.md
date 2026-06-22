@@ -316,6 +316,24 @@ En freelance, tu négocies **tes tarifs**, pas une augmentation. Voici comment f
 
 ---
 
+## Questions fréquentes
+
+### Comment préparer efficacement ma demande d'augmentation salariale pour 2026 ?
+
+Pour préparer efficacement votre demande d'augmentation en 2026, rassemblez des données concrètes telles que l'inflation actuelle, des benchmarks salariaux pour votre poste et secteur, et listez vos réalisations mesurables. Mettez en avant votre valeur ajoutée pour l'entreprise et l'atteinte de vos objectifs, en utilisant la méthode SMART pour structurer vos arguments de manière spécifique et réaliste.
+
+### Quel est le meilleur moment pour demander une augmentation de salaire en 2026 ?
+
+Le meilleur moment pour demander une augmentation de salaire en 2026 est généralement lors de l'entretien annuel d'évaluation, à la fin d'un projet majeur couronné de succès, ou après une victoire significative de votre équipe à laquelle vous avez fortement contribué. Choisissez un moment où l'entreprise est en bonne santé financière et où vos succès récents sont encore frais dans les esprits de vos supérieurs.
+
+### Quelles erreurs éviter absolument lors de la négociation de mon salaire en 2026 ?
+
+Lors de la négociation de votre salaire en 2026, évitez absolument de baser votre demande sur vos besoins personnels ou financiers, car l'entreprise se concentre sur votre valeur ajoutée. Ne menacez jamais de démissionner et ne comparez pas votre salaire à celui de vos collègues, car cela peut être perçu négativement. Concentrez-vous toujours sur vos performances et votre contribution aux objectifs de l'entreprise.
+
+### Comment répondre aux objections courantes de mon employeur lors d'une demande d'augmentation en 2026 ?
+
+Pour répondre aux objections courantes de votre employeur en 2026, préparez des scripts spécifiques pour des phrases comme "budget serré" ou "on verra plus tard". Face à un "budget serré", vous pouvez proposer des objectifs clairs pour une réévaluation rapide. Si l'on vous dit "plus tard", demandez une date précise et des conditions mesurables pour cette future discussion, montrant ainsi votre proactivité et votre engagement.
+
 ## Sources
 
 - **INSEE** : Inflation en France (2022-2025)

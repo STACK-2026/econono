@@ -275,6 +275,24 @@ Si tu as déjà un matelas de sécurité, tu peux utiliser ces 32 € pour :
 
 ---
 
+## Questions fréquentes
+
+### Quel sera le montant net du SMIC en 2026 et quel gain mensuel représente cette revalorisation ?
+
+En 2026, le SMIC net mensuel s'établira à 1 443 euros, après une revalorisation de +2,2% applicable dès le 1er janvier. Cette hausse se traduit par un gain net de 32 euros supplémentaires par mois pour un salarié à temps plein. Elle vise à compenser l'inflation prévue pour 2025.
+
+### La hausse du SMIC 2026 compense-t-elle l'inflation et améliore-t-elle le pouvoir d'achat ?
+
+La revalorisation du SMIC 2026, fixée à +2,2%, est conçue pour suivre l'inflation de 2025, estimée à +2,1%. Ainsi, elle vise principalement à maintenir le pouvoir d'achat des salariés au SMIC plutôt qu'à l'augmenter significativement. Le gain net de 32 euros par mois peut être atténué par la hausse générale des prix.
+
+### L'augmentation du SMIC en 2026 peut-elle entraîner une perte d'aides sociales comme la prime d'activité ou les APL ?
+
+Oui, l'augmentation du SMIC en 2026 peut potentiellement réduire ou supprimer certaines aides sociales telles que la prime d'activité ou les APL pour certains bénéficiaires. Si vos revenus dépassent les plafonds d'éligibilité suite à cette revalorisation, le montant de vos aides pourrait être ajusté à la baisse. Il est crucial d'anticiper cet effet collatéral.
+
+### Comment anticiper les effets de la revalorisation du SMIC 2026 sur mon budget personnel ?
+
+Pour anticiper les effets de la revalorisation du SMIC 2026 sur votre budget, il est conseillé de vérifier l'impact potentiel sur vos aides sociales dès que les nouveaux barèmes seront connus. Calculez votre nouveau revenu net et estimez si le gain de 32 euros compense une éventuelle baisse de la prime d'activité ou des APL. Une planification budgétaire proactive est essentielle.
+
 ## Sources
 
 - **Décret n°2025-1542 du 20 décembre 2025** (Journal Officiel) · Service-Public.fr

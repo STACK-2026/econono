@@ -285,6 +285,24 @@ Si ta demande est refusée, la CAF t’envoie une **notification avec les motifs
 
 ---
 
+## Questions fréquentes
+
+### Quelles sont les conditions d'âge et de revenus pour toucher le RSA en 2026, notamment pour les jeunes et les parents isolés ?
+
+Pour bénéficier du RSA en 2026, il faut généralement avoir plus de 25 ans et des revenus inférieurs à 635,70€ par mois pour une personne seule. Les jeunes de 18 à 24 ans peuvent y prétendre sous conditions spécifiques, comme avoir travaillé un certain nombre d'heures. Les parents isolés, quant à eux, bénéficient d'un RSA majoré avec des plafonds de revenus et des montants plus élevés, pouvant atteindre 1 335€ avec deux enfants.
+
+### Si je travaille à temps partiel, est-ce que je peux cumuler le RSA avec d'autres aides et comment calculer mon revenu total en 2026 ?
+
+Oui, il est possible de cumuler le RSA avec des revenus d'activité à temps partiel, et même avec la Prime d'activité, pour augmenter votre revenu total. Le montant du RSA est alors ajusté en fonction de vos ressources, et une partie de vos revenus professionnels n'est pas prise en compte. Pour connaître le montant exact de vos aides cumulées, il est recommandé d'effectuer une simulation personnalisée sur le site de la CAF.
+
+### Quelles sont les étapes pour faire une demande de RSA en ligne sur caf.fr et quels documents dois-je préparer ?
+
+La demande de RSA s'effectue principalement en ligne sur le site caf.fr, dans la rubrique "Mes services en ligne". Vous devrez remplir un formulaire détaillé concernant votre situation familiale, professionnelle et vos ressources. Il est essentiel de préparer votre numéro d'allocataire (si vous en avez un), vos relevés de revenus des trois derniers mois, un justificatif d'identité et un relevé d'identité bancaire (RIB) pour faciliter la démarche et éviter les retards de traitement.
+
+### Une fois que je perçois le RSA, y a-t-il des obligations ou des démarches à suivre pour continuer à le recevoir ?
+
+Oui, la perception du RSA implique des obligations pour continuer à en bénéficier, notamment la déclaration trimestrielle de vos ressources auprès de la CAF. Vous devez également informer la CAF de tout changement de situation (familiale, professionnelle, adresse) qui pourrait impacter vos droits. De plus, selon votre situation, un accompagnement social ou professionnel peut être mis en place, et participer aux rendez-vous proposés est souvent une condition pour le maintien de l'aide.
+
 ## Sources
 
 - [CAF - Barème RSA 2026](https://www.caf.fr/)
