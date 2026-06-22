@@ -652,9 +652,10 @@
       "vertical": "seconde-main",
       "topic": "Top 10 plateformes seconde main 2026 (Vinted, Leboncoin, Backmarket)",
       "intent": "comparatif",
-      "done": false,
+      "done": true,
       "slug": "top-10-plateformes-seconde-main-2026-vinted-leboncoin-backmarket",
-      "working_title": "Top 10 plateformes seconde main 2026 (Vinted, Leboncoin, Backmarket)"
+      "working_title": "Top 10 plateformes seconde main 2026 (Vinted, Leboncoin, Backmarket)",
+      "published_at": "2026-06-22"
     },
     {
       "vertical": "seconde-main",
