@@ -311,7 +311,7 @@ Plusieurs raisons possibles :
 ## Sources
 
 - [Service-Public.fr - CSG et CRDS : taux et exonérations](https://www.service-public.fr/particuliers/vosdroits/F1419)
-- [INSEE - Prélèvements sociaux en France](https://www.insee.fr/fr/statistiques/2521067)
+- INSEE - Prélèvements sociaux en France
 - [Banque de France - Financement de la protection sociale](https://www.banque-france.fr/)
 - [HCSF - Règles de déductibilité de la CSG](https://www.hcsf.gouv.fr/)
 - [La Finance pour Tous - Comprendre la CSG](https://www.lafinancepourtous.com/)

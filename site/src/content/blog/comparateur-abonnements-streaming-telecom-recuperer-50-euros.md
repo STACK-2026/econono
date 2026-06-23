@@ -99,7 +99,7 @@ Maintenant que tu as ta liste, **pose-toi ces 3 questions pour chaque abonnement
   - **Netflix (15,99 €/mois)** → **Bibliothèque publique** (films et séries gratuits) ou **YouTube Premium (11,99 €/mois)** pour éviter les pubs.
   - **Spotify Premium (9,99 €/mois)** → **Spotify Free** (avec pubs) ou **Deezer Free**.
 - **Mobile** :
-  - **Forfait à 20 €/mois** → **Forfait RED by SFR (10 €/mois)** ou **Prixtel (8 €/mois)**. Voir notre **[comparatif des forfaits mobiles low-cost](https://econono.com/comparatifs/mobile-low-cost/)**.
+  - **Forfait à 20 €/mois** → **Forfait RED by SFR (10 €/mois)** ou **Prixtel (8 €/mois)**. Voir notre **comparatif des forfaits mobiles low-cost**.
 - **Salle de sport** :
   - **Basic-Fit (29,99 €/mois)** → **Course à pied gratuite** ou **applis de sport à domicile** (Nike Training Club, Freeletics - gratuites).
 
@@ -138,7 +138,7 @@ Maintenant que tu as ta liste, **pose-toi ces 3 questions pour chaque abonnement
 - **Karim, 40 ans** : *"J’ai négocié mon assurance habitation avec AXA et j’ai économisé **80 €/an** en 10 minutes."*
 
 ### 3. Outils pour t’aider à négocier
-- **[Econono · Scripts de négociation](https://econono.com/guides/negocier-ses-abonnements/)** : Modèles de messages prêts à l’emploi.
+- **Econono · Scripts de négociation** : Modèles de messages prêts à l’emploi.
 - **[Resilier.com](https://www.resilier.com/)** : Lettre type pour résilier un abonnement.
 - **[Selectra](https://selectra.info/)** : Comparateur d’offres mobile et internet.
 
@@ -175,7 +175,7 @@ Maintenant que tu as ta liste, **pose-toi ces 3 questions pour chaque abonnement
 
 ### 3. Outils pour automatiser les annulations
 - **[Resilier.com](https://www.resilier.com/)** : Génère des lettres de résiliation pour tous types d’abonnements.
-- **[Econono · Guide résiliation](https://econono.com/guides/resilier-ses-abonnements/)** : Étapes détaillées par type d’abonnement.
+- **Econono · Guide résiliation** : Étapes détaillées par type d’abonnement.
 - **[HelloResil](https://www.helloresil.fr/)** : Service payant (5 €) pour résilier à ta place.
 
 ---

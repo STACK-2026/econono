@@ -330,9 +330,9 @@ L'utilisation du simulateur d'impôt sur le revenu 2026 est très rapide, prenan
 
 - [Loi de finances 2026 · Legifrance](https://www.legifrance.gouv.fr/)
 - [Barème de l’impôt sur le revenu 2026 · Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/F1419)
-- [Quotient familial 2026 · Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/F1417)
+- Quotient familial 2026 · Service-Public.fr
 - [Décote 2026 · Direction générale des Finances publiques](https://www.impots.gouv.fr/portail/)
-- [Crédits et réductions d’impôt 2026 · Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/F1418)
+- Crédits et réductions d’impôt 2026 · Service-Public.fr
 - [Revenu net imposable · INSEE](https://www.insee.fr/fr/metadonnees/definition/c1101)
 - [Prélèvement à la source · Banque de France](https://www.banque-france.fr/)
 

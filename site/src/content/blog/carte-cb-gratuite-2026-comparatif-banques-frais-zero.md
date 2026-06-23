@@ -244,7 +244,7 @@ Pour choisir la meilleure carte bancaire gratuite, il faut évaluer vos habitude
 
 - Banque de France · [Observatoire des tarifs bancaires, rapport CCSF 2025](https://www.banque-france.fr/) (novembre 2025)
 - Service-Public · [Tarifs et frais bancaires](https://www.service-public.fr/particuliers/vosdroits/F2456) (2026)
-- Service-Public · [Carte bancaire : fonctionnement et droits](https://www.service-public.fr/particuliers/vosdroits/F2410) (2026)
+- Service-Public · Carte bancaire : fonctionnement et droits (2026)
 - INSEE · [Taux d'épargne et comportements bancaires des ménages](https://www.insee.fr/fr/statistiques) (2026)
 - Commission européenne · [Règlement 2015/751 sur les commissions d'interchange](https://eur-lex.europa.eu/) (en vigueur 2026)
 

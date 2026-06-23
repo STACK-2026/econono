@@ -259,7 +259,7 @@ La déclaration de succession doit être faite **dans les 6 mois** suivant le d�
 
 - [Service-Public.fr - Droits de succession (2026)](https://www.service-public.fr/particuliers/vosdroits/F1419)
 - [Notaires de France - Frais de notaire (2026)](https://www.notaires.fr/)
-- [INSEE - Statistiques sur les successions en France (2025)](https://www.insee.fr/fr/statistiques/2521067)
+- INSEE - Statistiques sur les successions en France (2025)
 - [Banque de France - Délais de paiement des droits de succession](https://www.banque-france.fr/)
 - [La Finance pour Tous - Comprendre les donations (2026)](https://www.lafinancepourtous.com/)
 - [UFC-Que Choisir - Frais de succession : ce que coûte vraiment un notaire (2026)](https://www.quechoisir.org/)

@@ -67,7 +67,7 @@ Le barème applicable aux revenus 2025, déclarés au printemps 2026, a été ac
 | 6 CV              | d × 0,665        | (d × 0,374) + 1 457  | d × 0,447            |
 | 7 CV et plus      | d × 0,697        | (d × 0,394) + 1 515  | d × 0,470            |
 
-*Dans ces formules, « d » représente la distance totale parcourue dans l'année à titre professionnel. Source : [Service-Public.fr - Barème kilométrique](https://www.service-public.fr/particuliers/vosdroits/F1990)*
+*Dans ces formules, « d » représente la distance totale parcourue dans l'année à titre professionnel. Source : Service-Public.fr - Barème kilométrique*
 
 ### Pourquoi trois colonnes et pas un tarif unique ?
 
@@ -232,7 +232,7 @@ Cet article traite des salariés. Les travailleurs indépendants (BIC, BNC) ont 
 
 ## Sources
 
-- [Service-Public.fr - Frais kilométriques et barème](https://www.service-public.fr/particuliers/vosdroits/F1990)
+- Service-Public.fr - Frais kilométriques et barème
 - [Service-Public.fr - Déduction des frais professionnels réels](https://www.service-public.fr/particuliers/vosdroits/F1989)
 - [Legifrance - Arrêté barème kilométrique](https://www.legifrance.gouv.fr/)
 - [Impots.gouv.fr - Déclaration des revenus 2026](https://www.impots.gouv.fr/)

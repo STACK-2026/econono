@@ -216,7 +216,7 @@ Oui ! Le CET et l’**épargne salariale** (PEE, PERCO) sont **complémentaires*
 
 ## Sources
 
-- [Service-Public.fr · Compte épargne temps (CET)](https://www.service-public.fr/particuliers/vosdroits/F1985)
+- Service-Public.fr · Compte épargne temps (CET)
 - [DARES · Les dispositifs d’épargne salariale et le CET (2025)](https://dares.travail-emploi.gouv.fr/)
 - [URSSAF · Fiscalité du CET](https://www.urssaf.fr/)
 - [Banque de France · Épargne retraite et PERCO](https://www.banque-france.fr/)

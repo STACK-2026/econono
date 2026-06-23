@@ -50,7 +50,7 @@ Pour ouvrir un LEP en 2026, ton **revenu fiscal de référence (RFR)** de 2024 (
 | +1 part (1 enfant)        | +5 980 €                        |
 | +0,5 part (enfant supplémentaire) | +2 990 €                |
 
-*Source : [Service-Public.fr (janvier 2026)](https://www.service-public.fr/particuliers/vosdroits/F1519)*
+*Source : Service-Public.fr (janvier 2026)*
 
 ### Comment calculer ton RFR ?
 Ton **revenu fiscal de référence** (RFR) est indiqué sur :
@@ -67,7 +67,7 @@ Pas besoin de calculs compliqués : voici **3 méthodes simples** pour savoir si
 
 ### 1️⃣ Utilise le calculateur officiel de la Banque de France
 La Banque de France propose un **simulateur en ligne** qui te dit en 30 secondes si tu es éligible :
-👉 [Vérifier mon éligibilité LEP (Banque de France)](https://www.banque-france.fr/particuliers/epargne/livret-epargne-populaire-lep)
+👉 Vérifier mon éligibilité LEP (Banque de France)
 
 Il te suffit d’entrer :
 - Ton **RFR** (revenu fiscal de référence).
@@ -151,7 +151,7 @@ Si ton RFR dépasse les plafonds, pas de panique : il existe d’autres solution
 - **Taux** : 3% (net d’impôts).
 - **Avantage** : Disponible pour tout le monde, sans condition de revenu.
 
-👉 [Comparer Livret A et LEP (Econono)](https://econono.com/guides/livrets-defiscalises/)
+👉 Comparer Livret A et LEP (Econono)
 
 ### 2️⃣ Le LDDS (Livret de Développement Durable et Solidaire)
 - **Plafond** : 12 000 €.
@@ -212,7 +212,7 @@ Toute personne **fiscalement domiciliée en France** dont le **revenu fiscal de 
 - **34 480 €** pour un couple.
 - **+5 980 € par demi-part supplémentaire** (enfant, invalidité).
 
-*Source : [Service-Public.fr (2026)](https://www.service-public.fr/particuliers/vosdroits/F1519)*
+*Source : Service-Public.fr (2026)*
 
 ### 🔹 Comment savoir si j’ai déjà un LEP ?
 Pour vérifier si tu as déjà un LEP :
@@ -228,14 +228,14 @@ Non, le LEP est **réservé aux majeurs** (18 ans et plus). En revanche, tu peux
 - Un **LDDS** (plafond 12 000 €, taux 3%).
 - Un **LEJ** (Livret d’Épargne Jeune, pour les 12-25 ans, taux variable).
 
-👉 [Guide : Comment épargner pour ses enfants (Econono)](https://econono.com/guides/epargner-pour-ses-enfants/)
+👉 Guide : Comment épargner pour ses enfants (Econono)
 
 ### 🔹 Que se passe-t-il si mon revenu dépasse le plafond en cours d’année ?
 Si ton **RFR dépasse le plafond** une année, tu peux **garder ton LEP** jusqu’à la fin de l’année suivante. Par exemple :
 - Si ton RFR 2024 dépasse le plafond, tu peux garder ton LEP **jusqu’au 31/12/2026**.
 - Après cette date, la banque **fermera automatiquement** ton LEP.
 
-*Source : [Banque de France (2026)](https://www.banque-france.fr/particuliers/epargne/livret-epargne-populaire-lep)*
+*Source : Banque de France (2026)*
 
 ### 🔹 Le LEP est-il vraiment sans risque ?
 Oui, le LEP est **100% garanti par l’État**, comme le Livret A. Même en cas de crise bancaire, ton argent est **protégé à 100%**.
@@ -264,9 +264,9 @@ L'ouverture d'un LEP peut se faire en ligne en une dizaine de minutes auprès de
 
 ## Sources
 
-- [Service-Public.fr - Plafonds LEP 2026](https://www.service-public.fr/particuliers/vosdroits/F1519)
-- [Banque de France - Taux du LEP 2026](https://www.banque-france.fr/particuliers/epargne/livret-epargne-populaire-lep)
-- [INSEE - Revenus des ménages 2024](https://www.insee.fr/fr/statistiques/2521378)
+- Service-Public.fr - Plafonds LEP 2026
+- Banque de France - Taux du LEP 2026
+- INSEE - Revenus des ménages 2024
 - [impots.gouv.fr - Revenu fiscal de référence](https://www.impots.gouv.fr/portail/)
 - [La Finance pour Tous - Comparatif livrets 2026](https://www.lafinancepourtous.com/epargne/livrets-reglementes/)
 - [UFC-Que Choisir - Guide LEP 2026](https://www.quechoisir.org/guide-d-achat-livret-epargne-populaire-n12345/)
@@ -277,7 +277,7 @@ L'ouverture d'un LEP peut se faire en ligne en une dizaine de minutes auprès de
 
 Le **LEP 2026** est **le meilleur placement sans risque** pour les petits budgets, avec un **taux à 4%** et une exonération totale d’impôts. Voici ce qu’il faut retenir :
 
-✅ **Vérifie ton éligibilité** en 2 min avec [notre calculateur](https://econono.com/calculateurs/epargne/) ou celui de la [Banque de France](https://www.banque-france.fr/particuliers/epargne/livret-epargne-populaire-lep).
+✅ **Vérifie ton éligibilité** en 2 min avec [notre calculateur](https://econono.com/calculateurs/epargne/) ou celui de la Banque de France.
 ✅ **Ouvre ton LEP en ligne** (gratuit, sans frais) dans une banque comme **Boursorama, Fortuneo ou le Crédit Mutuel**.
 ✅ **Alimente-le jusqu’à 10 000 €** pour maximiser tes gains (400 €/an pour 10 000 € placés).
 ✅ **Évite les erreurs** : pas de double LEP, pas de dépassement du plafond, pas de fermeture prématurée.
