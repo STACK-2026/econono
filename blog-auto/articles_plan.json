@@ -669,9 +669,10 @@
       "vertical": "seconde-main",
       "topic": "Vendre sur Vinted ou Leboncoin : frais, visibilite, gains compares",
       "intent": "comparatif",
-      "done": false,
+      "done": true,
       "slug": "vendre-sur-vinted-ou-leboncoin-frais-visibilite-gains-compares",
-      "working_title": "Vendre sur Vinted ou Leboncoin : frais, visibilite, gains compares"
+      "working_title": "Vendre sur Vinted ou Leboncoin : frais, visibilite, gains compares",
+      "published_at": "2026-06-25"
     },
     {
       "vertical": "seconde-main",
