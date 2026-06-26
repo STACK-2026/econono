@@ -71,6 +71,8 @@ jobs:
 
       - name: Build site
         working-directory: site
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run build
 
       - name: Deploy to Cloudflare Pages
@@ -109,3 +111,9 @@ jobs:
               "keyLocation": "https://econono.com/${{ secrets.INDEXNOW_KEY }}.txt",
               "urlList": ["https://econono.com/", "https://econono.com/calculateurs/"]
             }' || echo "IndexNow ping failed (non-blocking)"
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: python3 blog-auto/alert_cron_failure.py "${{ github.workflow }}" "${{ github.run_id }}"
