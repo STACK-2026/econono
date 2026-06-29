@@ -678,9 +678,10 @@
       "vertical": "seconde-main",
       "topic": "Expedier en seconde main sans se faire arnaquer : guide pratique 2026",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "expedier-en-seconde-main-sans-se-faire-arnaquer-guide-pratique-2026",
-      "working_title": "Expedier en seconde main sans se faire arnaquer : guide pratique 2026"
+      "working_title": "Expedier en seconde main sans se faire arnaquer : guide pratique 2026",
+      "published_at": "2026-06-29"
     },
     {
       "vertical": "seconde-main",
