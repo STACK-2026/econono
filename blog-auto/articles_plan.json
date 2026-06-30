@@ -687,9 +687,10 @@
       "vertical": "seconde-main",
       "topic": "Arnaques Vinted, Leboncoin, Vestiaire : 12 signaux a reperer",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "arnaques-vinted-leboncoin-vestiaire-12-signaux-a-reperer",
-      "working_title": "Arnaques Vinted, Leboncoin, Vestiaire : 12 signaux a reperer"
+      "working_title": "Arnaques Vinted, Leboncoin, Vestiaire : 12 signaux a reperer",
+      "published_at": "2026-06-30"
     },
     {
       "vertical": "seconde-main",
