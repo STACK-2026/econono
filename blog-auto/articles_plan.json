@@ -661,9 +661,10 @@
       "vertical": "seconde-main",
       "topic": "Acheter un appareil reconditionne : garantie, grades et pieges",
       "intent": "commercial",
-      "done": false,
+      "done": true,
       "slug": "acheter-un-appareil-reconditionne-garantie-grades-et-pieges",
-      "working_title": "Acheter un appareil reconditionne : garantie, grades et pieges"
+      "working_title": "Acheter un appareil reconditionne : garantie, grades et pieges",
+      "note": "slug deja present dans le contenu, marque done le 2026-07-02"
     },
     {
       "vertical": "seconde-main",
@@ -696,9 +697,10 @@
       "vertical": "seconde-main",
       "topic": "Retour SAV reconditionne : droits, delais et recours 2026",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "retour-sav-reconditionne-droits-delais-et-recours-2026",
-      "working_title": "Retour SAV reconditionne : droits, delais et recours 2026"
+      "working_title": "Retour SAV reconditionne : droits, delais et recours 2026",
+      "published_at": "2026-07-02"
     },
     {
       "vertical": "textile-mode",
