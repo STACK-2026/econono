@@ -706,9 +706,10 @@
       "vertical": "textile-mode",
       "topic": "Fast fashion : l'impact reel sur ton portefeuille et la planete 2026",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "fast-fashion-l-impact-reel-sur-ton-portefeuille-et-la-planete-2026",
-      "working_title": "Fast fashion : l'impact reel sur ton portefeuille et la planete 2026"
+      "working_title": "Fast fashion : l'impact reel sur ton portefeuille et la planete 2026",
+      "published_at": "2026-07-03"
     },
     {
       "vertical": "textile-mode",
