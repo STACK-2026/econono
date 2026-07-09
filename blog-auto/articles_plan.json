@@ -715,9 +715,10 @@
       "vertical": "textile-mode",
       "topic": "Marques de mode eco-responsables 2026 : notre selection FR honnete",
       "intent": "commercial",
-      "done": false,
+      "done": true,
       "slug": "marques-de-mode-eco-responsables-2026-notre-selection-fr-honnete",
-      "working_title": "Marques de mode eco-responsables 2026 : notre selection FR honnete"
+      "working_title": "Marques de mode eco-responsables 2026 : notre selection FR honnete",
+      "published_at": "2026-07-09T08:20:00+00:00"
     },
     {
       "vertical": "textile-mode",
