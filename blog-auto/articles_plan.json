@@ -724,9 +724,10 @@
       "vertical": "textile-mode",
       "topic": "Friperies en ligne 2026 : Vinted, Vestiaire, Rebelle, qui choisir",
       "intent": "comparatif",
-      "done": false,
+      "done": true,
       "slug": "friperies-en-ligne-2026-vinted-vestiaire-rebelle-qui-choisir",
-      "working_title": "Friperies en ligne 2026 : Vinted, Vestiaire, Rebelle, qui choisir"
+      "working_title": "Friperies en ligne 2026 : Vinted, Vestiaire, Rebelle, qui choisir",
+      "published_at": "2026-07-10"
     },
     {
       "vertical": "textile-mode",
