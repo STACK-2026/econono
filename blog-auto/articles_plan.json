@@ -733,9 +733,10 @@
       "vertical": "textile-mode",
       "topic": "Upcycling vetements : 10 idees pour transformer ta garde-robe",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "upcycling-vetements-10-idees-pour-transformer-ta-garde-robe",
-      "working_title": "Upcycling vetements : 10 idees pour transformer ta garde-robe"
+      "working_title": "Upcycling vetements : 10 idees pour transformer ta garde-robe",
+      "published_at": "2026-07-17"
     },
     {
       "vertical": "textile-mode",
