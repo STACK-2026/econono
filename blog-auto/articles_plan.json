@@ -742,9 +742,10 @@
       "vertical": "textile-mode",
       "topic": "Lessives ecologiques 2026 : le comparatif efficacite vs prix",
       "intent": "comparatif",
-      "done": false,
+      "done": true,
       "slug": "lessives-ecologiques-2026-le-comparatif-efficacite-vs-prix",
-      "working_title": "Lessives ecologiques 2026 : le comparatif efficacite vs prix"
+      "working_title": "Lessives ecologiques 2026 : le comparatif efficacite vs prix",
+      "published_at": "2026-07-22"
     },
     {
       "vertical": "antigaspi",
