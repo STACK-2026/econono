@@ -751,9 +751,10 @@
       "vertical": "antigaspi",
       "topic": "Too Good To Go : combien tu economises vraiment chaque mois ?",
       "intent": "commercial",
-      "done": false,
+      "done": true,
       "slug": "too-good-to-go-combien-tu-economises-vraiment-chaque-mois",
-      "working_title": "Too Good To Go : combien tu economises vraiment chaque mois ?"
+      "working_title": "Too Good To Go : combien tu economises vraiment chaque mois ?",
+      "published_at": "2026-07-23"
     },
     {
       "vertical": "antigaspi",
