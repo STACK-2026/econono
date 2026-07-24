@@ -760,9 +760,10 @@
       "vertical": "antigaspi",
       "topic": "Phenix, Karma, Hop Hop Food : le reseau antigaspi compare 2026",
       "intent": "comparatif",
-      "done": false,
+      "done": true,
       "slug": "phenix-karma-hop-hop-food-le-reseau-antigaspi-compare-2026",
-      "working_title": "Phenix, Karma, Hop Hop Food : le reseau antigaspi compare 2026"
+      "working_title": "Phenix, Karma, Hop Hop Food : le reseau antigaspi compare 2026",
+      "published_at": "2026-07-24"
     },
     {
       "vertical": "antigaspi",
