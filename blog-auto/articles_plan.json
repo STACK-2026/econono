@@ -769,9 +769,10 @@
       "vertical": "antigaspi",
       "topic": "Doggy bag au restau : ton droit reel depuis la loi AGEC",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "doggy-bag-au-restau-ton-droit-reel-depuis-la-loi-agec",
-      "working_title": "Doggy bag au restau : ton droit reel depuis la loi AGEC"
+      "working_title": "Doggy bag au restau : ton droit reel depuis la loi AGEC",
+      "published_at": "2026-07-27"
     },
     {
       "vertical": "antigaspi",
