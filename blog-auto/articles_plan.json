@@ -778,9 +778,10 @@
       "vertical": "antigaspi",
       "topic": "DLC vs DDM 2026 : ce que tu peux manger apres la date",
       "intent": "informational",
-      "done": false,
+      "done": true,
       "slug": "dlc-vs-ddm-2026-ce-que-tu-peux-manger-apres-la-date",
-      "working_title": "DLC vs DDM 2026 : ce que tu peux manger apres la date"
+      "working_title": "DLC vs DDM 2026 : ce que tu peux manger apres la date",
+      "published_at": "2026-08-07"
     },
     {
       "vertical": "antigaspi",
